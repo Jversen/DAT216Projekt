@@ -26,7 +26,6 @@ public class iMatFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         leftPanel = new javax.swing.JPanel();
         searchField = new javax.swing.JTextField();
@@ -154,7 +153,7 @@ public class iMatFrame extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("jLabel15");
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Dev\\GUIproject\\guiProfile.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
 
         cartContentsNumber.setText("Varor");
 
