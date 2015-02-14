@@ -5,12 +5,16 @@
  */
 package guiproject;
 
+
+
 /**
  *
  * @author Johan
  */
-public class GUIproject {
+public class GUIproject{
+    
 
+     
     /**
      * @param args the command line arguments
      */

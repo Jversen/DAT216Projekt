@@ -5,17 +5,23 @@
  */
 package guiproject;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author Johan
  */
 public class iMatFrame extends javax.swing.JFrame {
-
+    
+    private CardLayout cl;
+    
     /**
      * Creates new form iMatFrame
      */
     public iMatFrame() {
         initComponents();
+        
+        cl = (CardLayout)featurePanel.getLayout();
     }
 
     /**
@@ -52,7 +58,7 @@ public class iMatFrame extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        FeaturePanel = new javax.swing.JPanel();
+        featurePanel = new javax.swing.JPanel();
         startViewPanel = new javax.swing.JPanel();
         recentlyBoughtLabel = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -61,10 +67,15 @@ public class iMatFrame extends javax.swing.JFrame {
         dealsLabel = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         myShoppingBagsViewPanel = new javax.swing.JPanel();
-        favoritesViewPanel = new javax.swing.JPanel();
+        myShoppingBagsHeadlineLabel = new javax.swing.JLabel();
+        myFavoritesViewPanel = new javax.swing.JPanel();
+        myFavoritesHeadlineLabel = new javax.swing.JLabel();
         recipesViewPanel = new javax.swing.JPanel();
+        recipesHeadlineLabel = new javax.swing.JLabel();
         dealsViewPanel = new javax.swing.JPanel();
+        dealsHeadlineLabel = new javax.swing.JLabel();
         historyViewPanel = new javax.swing.JPanel();
+        historyHeadlineLabel = new javax.swing.JLabel();
         logoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -85,26 +96,51 @@ public class iMatFrame extends javax.swing.JFrame {
         bagsMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bagsMenuLabel.setText("Mina matkassar");
         bagsMenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bagsMenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bagsMenuLabelMouseClicked(evt);
+            }
+        });
         leftPanel.add(bagsMenuLabel);
 
         favoritesMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         favoritesMenuLabel.setText("Favoriter");
         favoritesMenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favoritesMenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                favoritesMenuLabelMouseClicked(evt);
+            }
+        });
         leftPanel.add(favoritesMenuLabel);
 
         recipesMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         recipesMenuLabel.setText("Recept");
         recipesMenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipesMenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recipesMenuLabelMouseClicked(evt);
+            }
+        });
         leftPanel.add(recipesMenuLabel);
 
         dealsMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dealsMenuLabel.setText("Erbjudanden");
         dealsMenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dealsMenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dealsMenuLabelMouseClicked(evt);
+            }
+        });
         leftPanel.add(dealsMenuLabel);
 
         historyMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         historyMenuLabel.setText("Historik");
         historyMenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        historyMenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                historyMenuLabelMouseClicked(evt);
+            }
+        });
         leftPanel.add(historyMenuLabel);
         leftPanel.add(jSeparator1);
 
@@ -227,8 +263,8 @@ public class iMatFrame extends javax.swing.JFrame {
                         .addGap(47, 47, 47))))
         );
 
-        FeaturePanel.setBackground(new java.awt.Color(255, 51, 255));
-        FeaturePanel.setLayout(new java.awt.CardLayout());
+        featurePanel.setBackground(new java.awt.Color(255, 51, 255));
+        featurePanel.setLayout(new java.awt.CardLayout());
 
         startViewPanel.setBackground(new java.awt.Color(255, 255, 204));
 
@@ -254,7 +290,7 @@ public class iMatFrame extends javax.swing.JFrame {
                     .addComponent(popularLabel)
                     .addComponent(recentlyBoughtLabel)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(805, Short.MAX_VALUE))
+                .addContainerGap(802, Short.MAX_VALUE))
         );
         startViewPanelLayout.setVerticalGroup(
             startViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,80 +307,121 @@ public class iMatFrame extends javax.swing.JFrame {
                 .addComponent(dealsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
 
-        FeaturePanel.add(startViewPanel, "card2");
+        featurePanel.add(startViewPanel, "cardStart");
+
+        myShoppingBagsHeadlineLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        myShoppingBagsHeadlineLabel.setText("Mina matkassar");
 
         javax.swing.GroupLayout myShoppingBagsViewPanelLayout = new javax.swing.GroupLayout(myShoppingBagsViewPanel);
         myShoppingBagsViewPanel.setLayout(myShoppingBagsViewPanelLayout);
         myShoppingBagsViewPanelLayout.setHorizontalGroup(
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1114, Short.MAX_VALUE)
+            .addGroup(myShoppingBagsViewPanelLayout.createSequentialGroup()
+                .addComponent(myShoppingBagsHeadlineLabel)
+                .addGap(0, 946, Short.MAX_VALUE))
         );
         myShoppingBagsViewPanelLayout.setVerticalGroup(
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGroup(myShoppingBagsViewPanelLayout.createSequentialGroup()
+                .addComponent(myShoppingBagsHeadlineLabel)
+                .addGap(0, 496, Short.MAX_VALUE))
         );
 
-        FeaturePanel.add(myShoppingBagsViewPanel, "card5");
+        featurePanel.add(myShoppingBagsViewPanel, "cardBags");
 
-        javax.swing.GroupLayout favoritesViewPanelLayout = new javax.swing.GroupLayout(favoritesViewPanel);
-        favoritesViewPanel.setLayout(favoritesViewPanelLayout);
-        favoritesViewPanelLayout.setHorizontalGroup(
-            favoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1114, Short.MAX_VALUE)
+        myFavoritesHeadlineLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        myFavoritesHeadlineLabel.setText("Mina favoriter");
+
+        javax.swing.GroupLayout myFavoritesViewPanelLayout = new javax.swing.GroupLayout(myFavoritesViewPanel);
+        myFavoritesViewPanel.setLayout(myFavoritesViewPanelLayout);
+        myFavoritesViewPanelLayout.setHorizontalGroup(
+            myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myFavoritesViewPanelLayout.createSequentialGroup()
+                .addComponent(myFavoritesHeadlineLabel)
+                .addGap(0, 966, Short.MAX_VALUE))
         );
-        favoritesViewPanelLayout.setVerticalGroup(
-            favoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+        myFavoritesViewPanelLayout.setVerticalGroup(
+            myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myFavoritesViewPanelLayout.createSequentialGroup()
+                .addComponent(myFavoritesHeadlineLabel)
+                .addGap(0, 496, Short.MAX_VALUE))
         );
 
-        FeaturePanel.add(favoritesViewPanel, "card3");
+        featurePanel.add(myFavoritesViewPanel, "cardFavorites");
+
+        recipesHeadlineLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        recipesHeadlineLabel.setText("Recept");
 
         javax.swing.GroupLayout recipesViewPanelLayout = new javax.swing.GroupLayout(recipesViewPanel);
         recipesViewPanel.setLayout(recipesViewPanelLayout);
         recipesViewPanelLayout.setHorizontalGroup(
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1114, Short.MAX_VALUE)
+            .addGroup(recipesViewPanelLayout.createSequentialGroup()
+                .addComponent(recipesHeadlineLabel)
+                .addGap(0, 1041, Short.MAX_VALUE))
         );
         recipesViewPanelLayout.setVerticalGroup(
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGroup(recipesViewPanelLayout.createSequentialGroup()
+                .addComponent(recipesHeadlineLabel)
+                .addGap(0, 496, Short.MAX_VALUE))
         );
 
-        FeaturePanel.add(recipesViewPanel, "card4");
+        featurePanel.add(recipesViewPanel, "cardRecipes");
+
+        dealsHeadlineLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        dealsHeadlineLabel.setText("Erbjudanden");
 
         javax.swing.GroupLayout dealsViewPanelLayout = new javax.swing.GroupLayout(dealsViewPanel);
         dealsViewPanel.setLayout(dealsViewPanelLayout);
         dealsViewPanelLayout.setHorizontalGroup(
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1114, Short.MAX_VALUE)
+            .addGroup(dealsViewPanelLayout.createSequentialGroup()
+                .addComponent(dealsHeadlineLabel)
+                .addGap(0, 981, Short.MAX_VALUE))
         );
         dealsViewPanelLayout.setVerticalGroup(
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGroup(dealsViewPanelLayout.createSequentialGroup()
+                .addComponent(dealsHeadlineLabel)
+                .addGap(0, 496, Short.MAX_VALUE))
         );
 
-        FeaturePanel.add(dealsViewPanel, "card6");
+        featurePanel.add(dealsViewPanel, "cardDeals");
+
+        historyHeadlineLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        historyHeadlineLabel.setText("Historik");
 
         javax.swing.GroupLayout historyViewPanelLayout = new javax.swing.GroupLayout(historyViewPanel);
         historyViewPanel.setLayout(historyViewPanelLayout);
         historyViewPanelLayout.setHorizontalGroup(
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1114, Short.MAX_VALUE)
+            .addGroup(historyViewPanelLayout.createSequentialGroup()
+                .addComponent(historyHeadlineLabel)
+                .addGap(0, 1035, Short.MAX_VALUE))
         );
         historyViewPanelLayout.setVerticalGroup(
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGroup(historyViewPanelLayout.createSequentialGroup()
+                .addComponent(historyHeadlineLabel)
+                .addGap(0, 496, Short.MAX_VALUE))
         );
 
-        FeaturePanel.add(historyViewPanel, "card7");
+        featurePanel.add(historyViewPanel, "cardHistory");
 
         logoPanel.setBackground(new java.awt.Color(255, 255, 0));
+        logoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoPanelMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("iMat");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout logoPanelLayout = new javax.swing.GroupLayout(logoPanel);
         logoPanel.setLayout(logoPanelLayout);
@@ -358,7 +435,7 @@ public class iMatFrame extends javax.swing.JFrame {
         logoPanelLayout.setVerticalGroup(
             logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoPanelLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -373,7 +450,7 @@ public class iMatFrame extends javax.swing.JFrame {
                     .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FeaturePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(featurePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(topPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -386,7 +463,7 @@ public class iMatFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(leftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FeaturePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(featurePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -396,6 +473,30 @@ public class iMatFrame extends javax.swing.JFrame {
     private void searchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFieldMouseClicked
         searchField.setText("");
     }//GEN-LAST:event_searchFieldMouseClicked
+
+    private void bagsMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bagsMenuLabelMouseClicked
+        cl.show(featurePanel, "cardBags");     
+    }//GEN-LAST:event_bagsMenuLabelMouseClicked
+
+    private void favoritesMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoritesMenuLabelMouseClicked
+        cl.show(featurePanel, "cardFavorites");
+    }//GEN-LAST:event_favoritesMenuLabelMouseClicked
+
+    private void recipesMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipesMenuLabelMouseClicked
+        cl.show(featurePanel, "cardRecipes");
+    }//GEN-LAST:event_recipesMenuLabelMouseClicked
+
+    private void dealsMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dealsMenuLabelMouseClicked
+        cl.show(featurePanel, "cardDeals");
+    }//GEN-LAST:event_dealsMenuLabelMouseClicked
+
+    private void historyMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyMenuLabelMouseClicked
+        cl.show(featurePanel, "cardHistory");
+    }//GEN-LAST:event_historyMenuLabelMouseClicked
+
+    private void logoPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoPanelMouseClicked
+        cl.show(featurePanel, "cardStart");
+    }//GEN-LAST:event_logoPanelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -433,7 +534,6 @@ public class iMatFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel FeaturePanel;
     private javax.swing.JLabel bagsMenuLabel;
     private javax.swing.JLabel cartContentsNumber;
     private javax.swing.JLabel cartSumLabel;
@@ -443,11 +543,13 @@ public class iMatFrame extends javax.swing.JFrame {
     private javax.swing.JLabel category4MenuLabel;
     private javax.swing.JLabel category5MenuLabel;
     private javax.swing.JLabel category6MenuLabel;
+    private javax.swing.JLabel dealsHeadlineLabel;
     private javax.swing.JLabel dealsLabel;
     private javax.swing.JLabel dealsMenuLabel;
     private javax.swing.JPanel dealsViewPanel;
     private javax.swing.JLabel favoritesMenuLabel;
-    private javax.swing.JPanel favoritesViewPanel;
+    private javax.swing.JPanel featurePanel;
+    private javax.swing.JLabel historyHeadlineLabel;
     private javax.swing.JLabel historyMenuLabel;
     private javax.swing.JPanel historyViewPanel;
     private javax.swing.JLabel jLabel1;
@@ -465,9 +567,13 @@ public class iMatFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel logoPanel;
+    private javax.swing.JLabel myFavoritesHeadlineLabel;
+    private javax.swing.JPanel myFavoritesViewPanel;
+    private javax.swing.JLabel myShoppingBagsHeadlineLabel;
     private javax.swing.JPanel myShoppingBagsViewPanel;
     private javax.swing.JLabel popularLabel;
     private javax.swing.JLabel recentlyBoughtLabel;
+    private javax.swing.JLabel recipesHeadlineLabel;
     private javax.swing.JLabel recipesMenuLabel;
     private javax.swing.JPanel recipesViewPanel;
     private javax.swing.JTextField searchField;
