@@ -16,7 +16,7 @@ import javax.swing.*;
  */
 
 
-public class iMatFrame extends javax.swing.JFrame implements ActionListener {
+public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     /**
      * prefix för objekt:
@@ -27,13 +27,22 @@ public class iMatFrame extends javax.swing.JFrame implements ActionListener {
      * ex: lpRecipesLabel = label "Recept" i vänsterpanelen
      */
     
+    /** Skapar controller från GUIProject.java
+     */
+    GUIProject gpCon = new GUIProject();
+    
     private CardLayout cl;
-    private ArrayList<JLabel> categoryArrayList = new ArrayList<JLabel>(); //Skapar arraylist för matkategorierna och deras underkategorier.
+    
+    /**
+     * Skapar arraylist för matkategorierna och deras underkategorier.
+     */
+    private ArrayList<JLabel> categoryArrayList = new ArrayList<JLabel>();
     /**
      * Creates new form iMatFrame
      */
-    public iMatFrame() {
+    public IMatFrame() {
         initComponents();
+        
         
         cl = (CardLayout)featurePanel.getLayout();
         
@@ -271,7 +280,7 @@ public class iMatFrame extends javax.swing.JFrame implements ActionListener {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(213, 213, 213)
+                .addGap(189, 189, 189)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel12)
@@ -527,10 +536,15 @@ public class iMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(category1MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(category2MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(category3MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(category4MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(category5MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(category6MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(128, 128, 128))
         );
@@ -650,20 +664,21 @@ public class iMatFrame extends javax.swing.JFrame implements ActionListener {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(iMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(iMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(iMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(iMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IMatFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new iMatFrame().setVisible(true);
+                new IMatFrame().setVisible(true);
             }
         });
     }

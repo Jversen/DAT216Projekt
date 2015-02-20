@@ -5,22 +5,35 @@
  */
 package guiproject;
 
+import java.util.List;
+import se.chalmers.ait.dat215.project.*;
+
 
 
 /**
  *
  * @author Johan
  */
-public class GUIproject{
+public class GUIProject{
     
-
-     
+    /**
+     * Skapar instans av IMatDataHandler och lista för produkter.
+     */
+    IMatDataHandler iMDH = IMatDataHandler.getInstance();
+    List<Product> products;
     /**
      * @param args the command line arguments
      */
+    
+    public void doSearch(String s){
+        this.products = iMDH.findProducts(s);
+    }
+    
     public static void main(String[] args) {
-        iMatFrame app = new iMatFrame();
+        IMatFrame app = new IMatFrame();
         app.setVisible(true);
+        
+        
         // TODO code application logic here
     }
     
