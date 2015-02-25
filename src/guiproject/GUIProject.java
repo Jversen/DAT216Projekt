@@ -5,8 +5,10 @@
  */
 package guiproject;
 
+import java.awt.Image;
 import java.util.Iterator;
 import java.util.List;
+import javax.swing.ImageIcon;
 import se.chalmers.ait.dat215.project.*;
 
 
@@ -21,21 +23,21 @@ public class GUIProject{
      * Skapar instans av IMatDataHandler och lista för produkter.
      */
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
-    List<Product> products;
+    public List<Product> products;
+    public List<ProductCard> productCards;
     /**
      * @param args the command line arguments
      */
+        public ImageIcon getImage(Product prod){
+        
+            return iMDH.getImageIcon(prod);
+    }
     
     public void doSearch(String s){
            this.products = iMDH.findProducts(s);
-//           Iterator<Product> iterator = products.iterator();
-//           int i=0;
-//           while(iterator.hasNext()){
-//               methodToMakeCard(iterator.next());
-//               i++;
-           for(int i=0; i<products.size(); i++){
-               methodToMakeCard(products.get(i);
            
+           for(int i=0; i<products.size(); i++){
+               productCards.add(new ProductCard(products.get(i)));
            }
     }
     
