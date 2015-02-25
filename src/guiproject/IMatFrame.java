@@ -191,11 +191,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpSearchFieldMouseClicked(evt);
             }
         });
+        lpSearchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lpSearchFieldActionPerformed(evt);
+            }
+        });
         leftPanel.add(lpSearchField);
 
         lpBagsLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpBagsLabel.setText("Mina matkassar");
-        lpBagsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpBagsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpBagsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpBagsLabelMouseClicked(evt);
@@ -205,7 +210,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpFavoritesLabel.setText("Favoriter");
-        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpFavoritesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpFavoritesLabelMouseClicked(evt);
@@ -215,7 +220,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpRecipesLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpRecipesLabel.setText("Recept");
-        lpRecipesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpRecipesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpRecipesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpRecipesLabelMouseClicked(evt);
@@ -225,7 +230,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpDealsLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpDealsLabel.setText("Erbjudanden");
-        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpDealsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpDealsLabelMouseClicked(evt);
@@ -235,7 +240,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpHistoryLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpHistoryLabel.setText("Historik");
-        lpHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpHistoryLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpHistoryLabelMouseClicked(evt);
@@ -250,11 +255,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         tpChangeUserLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpChangeUserLabel.setText("Byt användare");
-        tpChangeUserLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpChangeUserLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
 
@@ -264,7 +269,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpCartSumLabel.setText("kr");
 
         tpGoToCashierLabel.setText("Gå till kassan");
-        tpGoToCashierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpGoToCashierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("XstVaror");
@@ -470,7 +475,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         category1MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category1MenuLabel.setText("Kategori 1");
-        category1MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category1MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         category1MenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category1MenuLabelMouseClicked(evt);
@@ -479,23 +484,23 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         category2MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category2MenuLabel.setText("Kategori 2");
-        category2MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category2MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category3MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category3MenuLabel.setText("Kategori 3");
-        category3MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category3MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category4MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category4MenuLabel.setText("Kategori 4");
-        category4MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category4MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category5MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category5MenuLabel.setText("Kategori 5");
-        category5MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category5MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category6MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category6MenuLabel.setText("Kategori 6");
-        category6MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category6MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("OBS dessa kategorilabels används ej, ");
@@ -560,14 +565,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         iMatLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         iMatLabel.setText("iMat");
-        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout logoPanelLayout = new javax.swing.GroupLayout(logoPanel);
         logoPanel.setLayout(logoPanelLayout);
         logoPanelLayout.setHorizontalGroup(
             logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoPanelLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(iMatLabel)
                 .addContainerGap())
         );
@@ -646,6 +651,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         //leftPanel.add(new JLabel("- Und.kat. 1"), category1MenuLabel.get ); // "Utvidgar" en matkategori genom att lägga till dess underkategorier i categoryArrayList.
         revalidate();
     }//GEN-LAST:event_category1MenuLabelMouseClicked
+
+    private void lpSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lpSearchFieldActionPerformed
+        
+    }//GEN-LAST:event_lpSearchFieldActionPerformed
 
     /**
      * @param args the command line arguments

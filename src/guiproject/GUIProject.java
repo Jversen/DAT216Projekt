@@ -5,6 +5,7 @@
  */
 package guiproject;
 
+import java.util.Iterator;
 import java.util.List;
 import se.chalmers.ait.dat215.project.*;
 
@@ -26,7 +27,16 @@ public class GUIProject{
      */
     
     public void doSearch(String s){
-        this.products = iMDH.findProducts(s);
+           this.products = iMDH.findProducts(s);
+//           Iterator<Product> iterator = products.iterator();
+//           int i=0;
+//           while(iterator.hasNext()){
+//               methodToMakeCard(iterator.next());
+//               i++;
+           for(int i=0; i<products.size(); i++){
+               methodToMakeCard(products.get(i);
+           
+           }
     }
     
     public static void main(String[] args) {
