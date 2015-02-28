@@ -42,6 +42,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private ArrayList<JLabel> breadCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> drinkCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> fishCategoryArrayList = new ArrayList<JLabel>();
+    private ArrayList<JLabel> fruitVegsCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> spiceCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> meatCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> dairiesCategoryArrayList = new ArrayList<JLabel>();
@@ -106,51 +107,37 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
          * Sötsaker
          */
         JLabel headCategoryBread = new JLabel("Bröd och torrvaror");
-        headCategoryArrayList.add(1, headCategoryBread);
+        headCategoryArrayList.add(headCategoryBread);
         
             JLabel subCategoryBreadLabel = new JLabel("Bröd");
             JLabel subCategoryFlourSugarSaltLabel = new JLabel("Mjöl, socker och salt");
             JLabel subCategoryPastaLabel = new JLabel("Pasta");
             JLabel subCategoryPotatoRiceLabel = new JLabel("Potatis och ris");
-        
+            
+        breadCategoryArrayList.add(subCategoryBreadLabel);
+        breadCategoryArrayList.add(subCategoryFlourSugarSaltLabel);
+        breadCategoryArrayList.add(subCategoryPastaLabel);
+        breadCategoryArrayList.add(subCategoryPotatoRiceLabel);
+            
         
         JLabel headCategoryDrinks = new JLabel("Drycker");
-        headCategoryArrayList.add(2, headCategoryDrinks);
+        headCategoryArrayList.add(headCategoryDrinks);
         
             JLabel subCategoryHotDrinksLabel = new JLabel("Varma drycker");
             JLabel subCategoryColdDrinksLabel = new JLabel("Kalla drycker");
-        
+            
+        drinkCategoryArrayList.add(subCategoryHotDrinksLabel);
+        drinkCategoryArrayList.add(subCategoryColdDrinksLabel);
         
         JLabel headCategoryFish = new JLabel("Fisk");
-        headCategoryArrayList.add(3, headCategoryFish);
+        headCategoryArrayList.add(headCategoryFish);
         
             JLabel subCategoryFishLabel = new JLabel("Fisk");
-        
-        
-        JLabel headCategorySpice = new JLabel("Kryddor");
-        headCategoryArrayList.add(4, headCategorySpice);
-        
-            JLabel subCategoryHerbLabel = new JLabel("Örter");
-        
-        
-        JLabel headCategoryMeat = new JLabel("Kött");
-        headCategoryArrayList.add(5, headCategoryMeat);
-        
-            JLabel subCategoryMeatLabel = new JLabel("Kött");
-        
-        
-        JLabel headCategoryDairies = new JLabel("Mejeriprodukter");
-        headCategoryArrayList.add(6, headCategoryDaires);
-        
-            JLabel category12Label = new JLabel("Mejeriprodukter");
-        
-        JLabel headCategorySweets = new JLabel("Sötsaker");
-        headCategoryArrayList.add(7, headCategorySweets);
-        
-        JLabel category20Label = new JLabel("Sötsaker");
-        
+            
+        fishCategoryArrayList.add(subCategoryFishLabel);
+
         JLabel headCategoryFruitsAndVegs = new JLabel("Frukt och grönt");
-        headCategoryArrayList.add(8, headCategoryFruitsAndVegs);
+        headCategoryArrayList.add(headCategoryFruitsAndVegs);
         
         
             JLabel subCategoryPodLabel = new JLabel("Baljväxter");
@@ -162,34 +149,71 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             JLabel subCategoryMelonsLabel = new JLabel("Meloner");
             JLabel subCategoryNutsAndSeedsLabel = new JLabel("Nötter och frön");
             JLabel subCategoryRootVegetableLabel = new JLabel("Rotfrukter");
-            JLabel subCategoryCabbageLabel = new JLabel("Kål");                                             
+            JLabel subCategoryCabbageLabel = new JLabel("Kål");   
+        
+        JLabel headCategorySpice = new JLabel("Kryddor");
+        headCategoryArrayList.add(headCategorySpice);
+        
+            JLabel subCategoryHerbLabel = new JLabel("Örter");
+        fishCategoryArrayList.add(subCategoryHerbLabel);
+        
+        JLabel headCategoryMeat = new JLabel("Kött");
+        headCategoryArrayList.add(headCategoryMeat);
+        
+            JLabel subCategoryMeatLabel = new JLabel("Kött");
+        meatCategoryArrayList.add(subCategoryMeatLabel);
+        
+        JLabel headCategoryDairies = new JLabel("Mejeriprodukter");
+        headCategoryArrayList.add(headCategoryDairies);
+        
+            JLabel category12Label = new JLabel("Mejeriprodukter");
+        dairiesCategoryArrayList.add(category12Label);
+        
+        JLabel headCategorySweets = new JLabel("Sötsaker");
+        headCategoryArrayList.add(headCategorySweets);
+        
+        JLabel category20Label = new JLabel("Sötsaker");
+        sweetsCategoryArrayList.add(category20Label);
+        
+                                          
+        
+        fruitVegsCategoryArrayList.add(subCategoryPodLabel);
+        fruitVegsCategoryArrayList.add(subCategoryBerryLabel);
+        fruitVegsCategoryArrayList.add(subCategoryCitrusFruitLabel);
+        fruitVegsCategoryArrayList.add(subCategoryExoticFruitLabel);
+        fruitVegsCategoryArrayList.add(subCategoryFruitLabel);
+        fruitVegsCategoryArrayList.add(subCategoryVegetableFruitLabel);
+        fruitVegsCategoryArrayList.add(subCategoryMelonsLabel);
+        fruitVegsCategoryArrayList.add(subCategoryNutsAndSeedsLabel);
+        fruitVegsCategoryArrayList.add(subCategoryRootVegetableLabel);
+        fruitVegsCategoryArrayList.add(subCategoryCabbageLabel);
         
         
         
         
         
         
-        categoryArrayList.add(category1Label);
-        categoryArrayList.add(category2Label);
-        categoryArrayList.add(category3Label);
-        categoryArrayList.add(category4Label);
-        categoryArrayList.add(category5Label);
-        categoryArrayList.add(category6Label);
-        categoryArrayList.add(category7Label);
-        categoryArrayList.add(category8Label);
-        categoryArrayList.add(category9Label);
-        categoryArrayList.add(category10Label);
-        categoryArrayList.add(category11Label);
-        categoryArrayList.add(category12Label);
-        categoryArrayList.add(category13Label);
-        categoryArrayList.add(category14Label);
-        categoryArrayList.add(category15Label);
-        categoryArrayList.add(category16Label);
-        categoryArrayList.add(category17Label);
-        categoryArrayList.add(category18Label);
-        categoryArrayList.add(category19Label);
-        categoryArrayList.add(category20Label);
-        categoryArrayList.add(category21Label);
+//        categoryArrayList.add(category1Label);
+//        categoryArrayList.add(category2Label);
+//        categoryArrayList.add(category3Label);
+//        categoryArrayList.add(category4Label);
+//        categoryArrayList.add(category5Label);
+//        categoryArrayList.add(category6Label);
+//        categoryArrayList.add(category7Label);
+//        categoryArrayList.add(category8Label);
+//        categoryArrayList.add(category9Label);
+//        categoryArrayList.add(category10Label);
+//        categoryArrayList.add(category11Label);
+//        categoryArrayList.add(category12Label);
+//        categoryArrayList.add(category13Label);
+//        categoryArrayList.add(category14Label);
+//        categoryArrayList.add(category15Label);
+//        categoryArrayList.add(category16Label);
+//        categoryArrayList.add(category17Label);
+//        categoryArrayList.add(category18Label);
+//        categoryArrayList.add(category19Label);
+//        categoryArrayList.add(category20Label);
+//        categoryArrayList.add(category21Label);
         
 //        for (int = 1; i<categoryArrayList; i++){
 //        
@@ -215,23 +239,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //            this.add(new JLabel(categoriesXX.categories.get(i).toString()));
 //            revalidate();
 //        }
-        for (int i = 0; i<categoryArrayList.size(); i++){
-            
-            leftPanel.add(categoryArrayList.get(i));
-            categoryArrayList.get(i).setHorizontalAlignment(SwingConstants.RIGHT);
-            categoryArrayList.get(i).setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-            
-            /**
-             * Ofärdigt försök att tillskriva kategori-labels klickegenskaper.
-             * Tillhörande underkategorier ska läggas till categoryArrayList.
-             * Lite osäker på syntax här. Vill dessutom helst få med index i till metoden.
-             */
-            categoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
-              public void mouseClicked(java.awt.event.MouseEvent evt) {
-                categoryLabelMouseClicked(evt);
-            }
-        });
-        }
+        
+        addCategories();
+        
+        
         
         
     }
@@ -240,6 +251,27 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
      * 
      * oanvänd än så länge...
      */
+    private void addCategories(){
+            for (int i = 0; i<headCategoryArrayList.size(); i++){
+            
+            categoryPanel.add(headCategoryArrayList.get(i));
+            headCategoryArrayList.get(i).setHorizontalAlignment(SwingConstants.RIGHT);
+            headCategoryArrayList.get(i).setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            
+            /**
+             * Ofärdigt försök att tillskriva kategori-labels klickegenskaper.
+             * Tillhörande underkategorier ska läggas till categoryArrayList.
+             * Lite osäker på syntax här. Vill dessutom helst få med index i till metoden.
+             */
+            headCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
+           
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    categoryLabelMouseClicked(evt);
+                }
+            });
+        }
+        }
+    
     public void actionPerformed(ActionEvent e) {
         
     }
@@ -252,11 +284,30 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
      */
     private void categoryLabelMouseClicked(java.awt.event.MouseEvent evt) {   
         
-        JLabel tempLabel1 = (JLabel)evt.getSource();
         
-        tempLabel1 = new JLabel(tempLabel1.getText());     //x Skapar temporär label med samma text som den klickade kategorin.
-        categoryArrayList.add(tempLabel1);           //x Lägger till denna i kategorilistan.
-//        leftPanel.add(tempLabel1);                  //x Lägger till denna i vänsterpanelen, men det verkar ske någon konstig
+        
+        JLabel tempLabel1 = (JLabel)evt.getSource();
+        System.out.println(tempLabel1.getText());
+//        tempLabel1 = new JLabel(tempLabel1.getText());     //x Skapar temporär label med samma text som den klickade kategorin.
+        
+        switch(tempLabel1.getText()){
+            case "Bröd och torrvaror": 
+                System.out.println("Brödkategori öppnad");
+                for (int i = 0; i<breadCategoryArrayList.size(); i++){
+                    
+                    headCategoryArrayList.add(1+i, breadCategoryArrayList.get(i));
+                    System.out.println(breadCategoryArrayList.get(i));
+                }
+                
+                break;
+            case "Kött": 
+                System.out.println("Köttkategori öppnad");
+                break;
+        }
+        categoryPanel.removeAll();
+        addCategories();
+//        categoryArrayList.add(tempLabel1);           //x Lägger till denna i kategorilistan.
+//        leftPanel.add(headCategoryArrayList);                  //x Lägger till denna i vänsterpanelen, men det verkar ske någon konstig
                                                     //rotation istället för att den synliga listan blir längre.
 //        categoryFeaturePanel cfp = new categoryFeaturePanel;
         revalidate();
@@ -274,6 +325,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void initComponents() {
 
         leftPanel = new javax.swing.JPanel();
+        leftUpperPanel = new javax.swing.JPanel();
         lpSearchField = new javax.swing.JTextField();
         lpBagsLabel = new javax.swing.JLabel();
         lpFavoritesLabel = new javax.swing.JLabel();
@@ -281,6 +333,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         lpDealsLabel = new javax.swing.JLabel();
         lpHistoryLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        categoryPanel = new javax.swing.JPanel();
         topPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         tpMyAccountLabel = new javax.swing.JLabel();
@@ -291,8 +344,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpGoToCashierLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        myShoppingBagsBtn = new javax.swing.JButton();
+        myFavoritesBtn = new javax.swing.JButton();
+        recipesBtn = new javax.swing.JButton();
+        dealsBtn = new javax.swing.JButton();
+        historyBtn = new javax.swing.JButton();
         featurePanel = new javax.swing.JPanel();
         startViewPanel = new javax.swing.JPanel();
         recentlyBoughtLabel = new javax.swing.JLabel();
@@ -325,8 +382,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        leftPanel.setBackground(new java.awt.Color(102, 255, 255));
-        leftPanel.setLayout(new java.awt.GridLayout(30, 1));
+        leftPanel.setBackground(new java.awt.Color(204, 0, 0));
+        leftPanel.setLayout(new java.awt.GridLayout(2, 1));
+
+        leftUpperPanel.setLayout(new java.awt.GridLayout(8, 1));
 
         lpSearchField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         lpSearchField.setText("Sök...");
@@ -335,7 +394,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpSearchFieldMouseClicked(evt);
             }
         });
-        leftPanel.add(lpSearchField);
+        leftUpperPanel.add(lpSearchField);
 
         lpBagsLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpBagsLabel.setText("Mina matkassar");
@@ -345,7 +404,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpBagsLabelMouseClicked(evt);
             }
         });
-        leftPanel.add(lpBagsLabel);
+        leftUpperPanel.add(lpBagsLabel);
 
         lpFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpFavoritesLabel.setText("Favoriter");
@@ -355,7 +414,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpFavoritesLabelMouseClicked(evt);
             }
         });
-        leftPanel.add(lpFavoritesLabel);
+        leftUpperPanel.add(lpFavoritesLabel);
 
         lpRecipesLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpRecipesLabel.setText("Recept");
@@ -365,7 +424,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpRecipesLabelMouseClicked(evt);
             }
         });
-        leftPanel.add(lpRecipesLabel);
+        leftUpperPanel.add(lpRecipesLabel);
 
         lpDealsLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpDealsLabel.setText("Erbjudanden");
@@ -375,7 +434,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpDealsLabelMouseClicked(evt);
             }
         });
-        leftPanel.add(lpDealsLabel);
+        leftUpperPanel.add(lpDealsLabel);
 
         lpHistoryLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lpHistoryLabel.setText("Historik");
@@ -385,10 +444,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 lpHistoryLabelMouseClicked(evt);
             }
         });
-        leftPanel.add(lpHistoryLabel);
-        leftPanel.add(jSeparator1);
+        leftUpperPanel.add(lpHistoryLabel);
+        leftUpperPanel.add(jSeparator1);
 
-        topPanel.setBackground(new java.awt.Color(153, 255, 0));
+        leftPanel.add(leftUpperPanel);
+
+        categoryPanel.setLayout(new java.awt.GridLayout(30, 1));
+        leftPanel.add(categoryPanel);
+
+        topPanel.setBackground(new java.awt.Color(204, 0, 0));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiKundvagn.png"))); // NOI18N
 
@@ -416,13 +480,45 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Xkr");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Färgerna används bara temporärt för tydlighets skull...");
-
         jButton1.setText("Testknappen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        myShoppingBagsBtn.setText("Mina matkassar");
+        myShoppingBagsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myShoppingBagsBtnActionPerformed(evt);
+            }
+        });
+
+        myFavoritesBtn.setText("Favoriter");
+        myFavoritesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myFavoritesBtnActionPerformed(evt);
+            }
+        });
+
+        recipesBtn.setText("Recept");
+        recipesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recipesBtnActionPerformed(evt);
+            }
+        });
+
+        dealsBtn.setText("Erbjudanden");
+        dealsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dealsBtnActionPerformed(evt);
+            }
+        });
+
+        historyBtn.setText("Historik");
+        historyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historyBtnActionPerformed(evt);
             }
         });
 
@@ -431,11 +527,24 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jButton1)
-                .addGap(57, 57, 57)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(myShoppingBagsBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(myFavoritesBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(recipesBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dealsBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(historyBtn)
+                .addGap(230, 230, 230)
                 .addComponent(jLabel12)
                 .addGap(28, 28, 28)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -460,6 +569,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topPanelLayout.createSequentialGroup()
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(myShoppingBagsBtn)
+                    .addComponent(myFavoritesBtn)
+                    .addComponent(recipesBtn)
+                    .addComponent(dealsBtn)
+                    .addComponent(historyBtn))
+                .addGap(49, 49, 49))
+            .addGroup(topPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(topPanelLayout.createSequentialGroup()
@@ -483,13 +602,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tpChangeUserLabel)
                         .addGap(67, 67, 67))))
-            .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel5)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(topPanelLayout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(49, 49, 49))
         );
 
         featurePanel.setBackground(new java.awt.Color(255, 51, 255));
@@ -514,17 +626,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         startViewPanelLayout.setHorizontalGroup(
             startViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(startViewPanelLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(208, 208, 208)
                 .addGroup(startViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dealsLabel)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(popularLabel)
                     .addComponent(recentlyBoughtLabel)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(startViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(popularLabel)))
+                .addGap(138, 138, 138)
                 .addComponent(empPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(545, Short.MAX_VALUE))
+                .addContainerGap(323, Short.MAX_VALUE))
         );
         startViewPanelLayout.setVerticalGroup(
             startViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,17 +647,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(empPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(startViewPanelLayout.createSequentialGroup()
                         .addComponent(recentlyBoughtLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(104, 104, 104)
                         .addComponent(popularLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
+                        .addGap(214, 214, 214)
                         .addComponent(dealsLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 228, Short.MAX_VALUE)))
+                        .addGap(0, 121, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -559,7 +672,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myShoppingBagsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyShoppingBagsLabel)
-                .addGap(0, 946, Short.MAX_VALUE))
+                .addGap(0, 960, Short.MAX_VALUE))
         );
         myShoppingBagsViewPanelLayout.setVerticalGroup(
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,7 +692,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myFavoritesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyFavoritesLabel)
-                .addGap(0, 966, Short.MAX_VALUE))
+                .addGap(0, 980, Short.MAX_VALUE))
         );
         myFavoritesViewPanelLayout.setVerticalGroup(
             myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -599,7 +712,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpRecipesLabel)
-                .addGap(0, 1041, Short.MAX_VALUE))
+                .addGap(0, 1055, Short.MAX_VALUE))
         );
         recipesViewPanelLayout.setVerticalGroup(
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,7 +732,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dealsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpDealsLabel)
-                .addGap(0, 981, Short.MAX_VALUE))
+                .addGap(0, 995, Short.MAX_VALUE))
         );
         dealsViewPanelLayout.setVerticalGroup(
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -674,7 +787,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
-                .addGap(0, 1035, Short.MAX_VALUE))
+                .addGap(0, 1049, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyViewPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -716,7 +829,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(historyViewPanel, "cardHistory");
 
-        logoPanel.setBackground(new java.awt.Color(255, 255, 0));
+        logoPanel.setBackground(new java.awt.Color(204, 0, 0));
         logoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoPanelMouseClicked(evt);
@@ -732,7 +845,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         logoPanelLayout.setHorizontalGroup(
             logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoPanelLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(iMatLabel)
                 .addContainerGap())
         );
@@ -821,6 +934,26 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         revalidate();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void myShoppingBagsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myShoppingBagsBtnActionPerformed
+        cl.show(featurePanel, "cardBags");
+    }//GEN-LAST:event_myShoppingBagsBtnActionPerformed
+
+    private void myFavoritesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myFavoritesBtnActionPerformed
+        cl.show(featurePanel, "cardFavorites");
+    }//GEN-LAST:event_myFavoritesBtnActionPerformed
+
+    private void recipesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recipesBtnActionPerformed
+        cl.show(featurePanel, "cardRecipes");
+    }//GEN-LAST:event_recipesBtnActionPerformed
+
+    private void dealsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dealsBtnActionPerformed
+        cl.show(featurePanel, "cardDeals");
+    }//GEN-LAST:event_dealsBtnActionPerformed
+
+    private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
+        cl.show(featurePanel, "cardHistory");
+    }//GEN-LAST:event_historyBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -864,6 +997,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel category4MenuLabel;
     private javax.swing.JLabel category5MenuLabel;
     private javax.swing.JLabel category6MenuLabel;
+    private javax.swing.JPanel categoryPanel;
+    private javax.swing.JButton dealsBtn;
     private javax.swing.JLabel dealsLabel;
     private javax.swing.JPanel dealsViewPanel;
     private javax.swing.JPanel empPanel;
@@ -873,6 +1008,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel fpMyFavoritesLabel;
     private javax.swing.JLabel fpMyShoppingBagsLabel;
     private javax.swing.JLabel fpRecipesLabel;
+    private javax.swing.JButton historyBtn;
     private javax.swing.JPanel historyViewPanel;
     private javax.swing.JLabel iMatLabel;
     private javax.swing.JButton jButton1;
@@ -882,12 +1018,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPanel leftPanel;
+    private javax.swing.JPanel leftUpperPanel;
     private javax.swing.JPanel logoPanel;
     private javax.swing.JLabel lpBagsLabel;
     private javax.swing.JLabel lpDealsLabel;
@@ -895,10 +1031,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel lpHistoryLabel;
     private javax.swing.JLabel lpRecipesLabel;
     private javax.swing.JTextField lpSearchField;
+    private javax.swing.JButton myFavoritesBtn;
     private javax.swing.JPanel myFavoritesViewPanel;
+    private javax.swing.JButton myShoppingBagsBtn;
     private javax.swing.JPanel myShoppingBagsViewPanel;
     private javax.swing.JLabel popularLabel;
     private javax.swing.JLabel recentlyBoughtLabel;
+    private javax.swing.JButton recipesBtn;
     private javax.swing.JPanel recipesViewPanel;
     private javax.swing.JPanel startViewPanel;
     private javax.swing.JPanel topPanel;
