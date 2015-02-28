@@ -5,8 +5,7 @@
  */
 package guiproject;
 
-import java.awt.Image;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import se.chalmers.ait.dat215.project.*;
@@ -23,22 +22,31 @@ public class GUIProject{
      * Skapar instans av IMatDataHandler och lista för produkter.
      */
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
-    public List<Product> products;
-    public List<ProductCard> productCards;
+    public List<Product> products = new ArrayList<Product>();
+    public List<ProductCard> productCards = new ArrayList<ProductCard>();
     /**
      * @param args the command line arguments
      */
         public ImageIcon getImage(Product prod){
         
-            return iMDH.getImageIcon(prod);
+            return iMDH.getImageIcon(prod,70,70);
     }
     
     public void doSearch(String s){
            this.products = iMDH.findProducts(s);
+           productCards.clear();
+           
+//           for (int i = 0; i<products.size(); i++){
+//               System.out.println(products.get(i));
+//           }
            
            for(int i=0; i<products.size(); i++){
                productCards.add(new ProductCard(products.get(i)));
            }
+//            for(int i=0; i<gpCon.productCards.size(); i++ ){
+//                    searchResultPanel.add(gpCon.productCards.get(i));
+//        } // TODO add your handling code here:
+           
     }
     
     public static void main(String[] args) {

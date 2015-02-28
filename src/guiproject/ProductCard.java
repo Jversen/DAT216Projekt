@@ -23,8 +23,8 @@ public class ProductCard extends javax.swing.JPanel {
     public ProductCard(Product prod) {
         initComponents();
         this.pictureLabel.setIcon(gpCon.getImage(prod));
-        this.productName = searchField.getInputContext(); //hur ska man skriva?
-        
+//        this.productName = searchField.getInputContext(); //hur ska man skriva?
+        this.productCardName.setText(prod.getName());
        }
   
     /**
@@ -36,70 +36,23 @@ public class ProductCard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Head = new javax.swing.JPanel();
-        productName = new javax.swing.JLabel();
         Body = new javax.swing.JPanel();
+        Head = new javax.swing.JPanel();
         pictureLabel = new javax.swing.JLabel();
+        productCardName = new javax.swing.JLabel();
 
-        Head.setBackground(new java.awt.Color(204, 255, 204));
+        setLayout(new java.awt.BorderLayout());
 
-        productName.setText("jLabel1");
+        Body.setBackground(new java.awt.Color(204, 255, 204));
+        add(Body, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout HeadLayout = new javax.swing.GroupLayout(Head);
-        Head.setLayout(HeadLayout);
-        HeadLayout.setHorizontalGroup(
-            HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeadLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(productName, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        HeadLayout.setVerticalGroup(
-            HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeadLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(productName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-        );
+        Head.setBackground(new java.awt.Color(0, 204, 204));
+        Head.add(pictureLabel);
 
-        Body.setBackground(new java.awt.Color(0, 204, 204));
+        productCardName.setText("jLabel1");
+        Head.add(productCardName);
 
-        pictureLabel.setText("jLabel1");
-
-        javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
-        Body.setLayout(BodyLayout);
-        BodyLayout.setHorizontalGroup(
-            BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BodyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pictureLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        BodyLayout.setVerticalGroup(
-            BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BodyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pictureLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Head, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        add(Head, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -107,6 +60,6 @@ public class ProductCard extends javax.swing.JPanel {
     private javax.swing.JPanel Body;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel pictureLabel;
-    private javax.swing.JLabel productName;
+    private javax.swing.JLabel productCardName;
     // End of variables declaration//GEN-END:variables
 }
