@@ -705,12 +705,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
               gpCon.doSearch(searchField.getText());
-              GridLayout layout = new GridLayout(gpCon.products.size(), 3);
+              GridLayout layout = new GridLayout(gpCon.products.size(), 1);
               itemShower.setLayout(layout);
+              itemShower.removeAll();
               for(int i=0; i<gpCon.products.size(); i++ ){
                   itemShower.add(gpCon.productCards.get(i));
-                
+          
               } 
+ //             itemShower.repaint();
+//              itemShower.revalidate();
             
               
               //cl.show(featurePanel, "searchResultPanel");
