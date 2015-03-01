@@ -31,17 +31,19 @@ public class GUIProject{
     public void doSearch(String s){
         this.products = iMDH.findProducts(s);
     }
-    public void guiAdd(JPanel p, JPanel q){
-        p.add(q);
-    }
-    public void guiAdd(JPanel p, JLabel q){
-        p.add(q);
+    
+    public void listCatProds(String s){
+        this.products = iMDH.getProducts(ProductCategory.valueOf(s));
+//        System.out.println(s + "sträng");
+//        System.out.println("test");
+        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
+        
     }
     
     public static void main(String[] args) {
         IMatFrame app = new IMatFrame();
-        CategoryPanel catPanel = new CategoryPanel();
-        app.add(catPanel);
+//        CategoryPanel catPanel = new CategoryPanel();
+//        app.add(catPanel);
         app.setVisible(true);
         
         
