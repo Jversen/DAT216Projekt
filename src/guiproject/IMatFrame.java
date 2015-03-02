@@ -54,7 +54,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     
+    
+    private void displayGroceries(){
+                
+                GridLayout layout = new GridLayout(3, gpCon.products.size());
+                              
+                itemShower.setLayout(layout);
+                itemShower.removeAll();
+                for (int i = 0; i < gpCon.products.size(); i++) {
+                    itemShower.add(gpCon.productCards.get(i));
+                }
 
+                cl.show(featurePanel, "searchResultPanel");
+                revalidate();
+                repaint();
+    }
     
     /**
      * Creates new form iMatFrame
@@ -360,113 +374,92 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                
             case "Baljväxter":
                 gpCon.listCatProds("POD");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Bröd":
                 gpCon.listCatProds("BREAD");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Bär":
                 gpCon.listCatProds("BERRY");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Citrusfrukter":
                 gpCon.listCatProds("CITRUS_FRUIT");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
                 
             case "Varma drycker":
                 gpCon.listCatProds("HOT_DRINKS");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Kalla drycker":
                 gpCon.listCatProds("COLD_DRINKS");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
                 
             case "Exotiska frukter":
                 gpCon.listCatProds("EXOTIC_FRUIT");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Fisk":
                 gpCon.listCatProds("FISH");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
                 
             case "Grönsaksfrukter":
                 gpCon.listCatProds("VEGETABLE_FRUIT");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Kål":
                 gpCon.listCatProds("CABBAGE");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Kött":
                 gpCon.listCatProds("MEAT");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Mejeriprodukter":
                 gpCon.listCatProds("DAIRIES");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Meloner":
                 gpCon.listCatProds("MELONS");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
            
             case "Mjöl, socker och salt":
                 gpCon.listCatProds("FLOUR_SUGAR_SALT");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Nötter och frön":
                 gpCon.listCatProds("NUTS_AND_SEEDS");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Pasta":
                 gpCon.listCatProds("PASTA");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Potatis och ris":
                 gpCon.listCatProds("POTATO_RICE");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Rotfrukter":
                 gpCon.listCatProds("ROOT_VEGETABLE");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
              
             case "Frukt":
                 gpCon.listCatProds("FRUIT");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Sötsaker":
                 gpCon.listCatProds("SWEET");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
             case "Örter":
                 gpCon.listCatProds("HERB");
-                categoryFeatureLabel.setText(tempLabel1.getText());
-                cl.show(featurePanel, "categoryFeaturePanel");
+                displayGroceries();
                 break;
                     
                     default:

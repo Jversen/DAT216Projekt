@@ -62,16 +62,19 @@ public class GUIProject{
     
     public void listCatProds(String s){
         this.products = iMDH.getProducts(ProductCategory.valueOf(s));
-//        System.out.println(s + "sträng");
-//        System.out.println("test");
+         this.productCards.clear();
+           this.productCards.removeAll(productCards);
+
+           for(int i=0; i<products.size(); i++){
+               productCards.add(new ProductCard(products.get(i)));
+           }
+           
         System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
         
     }
     
     public static void main(String[] args) {
         IMatFrame app = new IMatFrame();
-//        CategoryPanel catPanel = new CategoryPanel();
-//        app.add(catPanel);
         app.setVisible(true);
         
         
