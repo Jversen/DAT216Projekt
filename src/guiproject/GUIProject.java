@@ -22,9 +22,11 @@ public class GUIProject{
      * Skapar instans av IMatDataHandler och lista för produkter.
      */
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
+    ShoppingCart sc = iMDH.getShoppingCart();
+    
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
-    public List <Product> cart = new ArrayList<Product>();
+    public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
         
     
     /**
@@ -47,17 +49,28 @@ public class GUIProject{
            
     }
     
-        
+    /**
+     * Work in progress... 
+     */
     public void addToCart(ProductCard pc){
-        int value = pc.getSpinnerValue();
+        double amount = pc.getSpinnerValue();
         
-        for(int i=0; i<value; i++){
-            cart.add(pc.getProduct());
+//        for(int i=0; i<amount; i++){
+//            cart.add(pc.getProduct());
+            System.out.println("amount: " + amount + ", produkt: " + pc.getProduct());
+            sc.addProduct(pc.getProduct());
            //  System.out.print(pc.getProduct().getName());
-        }
-        for(int i=0; i<cart.size(); i++){
-         System.out.print(cart.get(i).getName());   
-        }
+//        }
+            cartContents.clear();
+            cartContents.addAll(sc.getItems());
+            
+            
+            
+//        for(int i=0; i<cartContents.size(); i++){
+//         System.out.print(cartContents.get(i).getProduct());  
+//         System.out.print(cartContents.get(i).getAmount() + " amount");
+//         System.out.print(cartContents.get(i).getTotal() + " total");  
+//        }
     }
     
     public void listCatProds(String s){
@@ -74,6 +87,8 @@ public class GUIProject{
     }
     
     public static void main(String[] args) {
+        
+        
         IMatFrame app = new IMatFrame();
         app.setVisible(true);
         

@@ -30,13 +30,17 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="featurePanel" pref="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="topPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="featurePanel" min="-2" pref="934" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cartPanel" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,6 +58,7 @@
                       <Component id="leftPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="cartPanel" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -382,7 +387,7 @@
                           <Component id="jSeparator3" alignment="0" min="-2" pref="244" max="-2" attributes="0"/>
                           <Component id="popularLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="697" max="32767" attributes="0"/>
+                      <EmptySpace pref="575" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -451,7 +456,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpMyShoppingBagsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="888" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="766" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -487,7 +492,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpMyFavoritesLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="908" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="786" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -523,7 +528,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpRecipesLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="983" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="861" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -559,7 +564,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpDealsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="923" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="801" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -595,7 +600,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpHistoryLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="977" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="855" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -739,7 +744,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="categoryFeatureLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="980" max="32767" attributes="0"/>
+                      <EmptySpace pref="858" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -843,6 +848,80 @@
             </Property>
           </Properties>
         </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="cartPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                          <Component id="goToCashierBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="cartHeadlineLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cartPanelScrollPane" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="cartHeadlineLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="cartPanelScrollPane" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="goToCashierBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="cartHeadlineLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kundvagn"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="goToCashierBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="G&#xe5; till kassa"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="cartPanelScrollPane">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="cartContentsPanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="cc" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="1"/>
+                <Property name="rows" type="int" value="20"/>
+              </Layout>
+            </Container>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

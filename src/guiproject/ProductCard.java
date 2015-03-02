@@ -86,6 +86,7 @@ public class ProductCard extends javax.swing.JPanel {
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
       gpCon.addToCart(this);
+      
     }//GEN-LAST:event_addProductButtonActionPerformed
 
 
