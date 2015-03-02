@@ -54,10 +54,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     
-    int clickCounter = 0;
-    public int klick1 = 0;
+
     
-//    CategoryPanel catPanel = new CategoryPanel();
     /**
      * Creates new form iMatFrame
      */
@@ -66,12 +64,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         initComponents();
         
         revalidate();
-//        for (ProductCategory c : ProductCategory.values())
-//            
-//         categoryArrayList.add(new JLabel(c.toString()));
-//            System.out.println(c);
-        
-        //System.out.println(s);
+
         cl = (CardLayout)featurePanel.getLayout();
         
         /**
@@ -251,8 +244,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         }
         
                     for (int i = 0; i<allCategoryArrayList.size(); i++){
-                        klick1++;
-                    System.out.println("klickare skapat: " + klick1);   
                         allCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
                             public void mouseClicked(java.awt.event.MouseEvent evt) {
                     
@@ -262,18 +253,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     }
                         
                     for (int i = 0; i<allSubCategoryArrayList.size(); i++){
-//                       klick1++;
-//                    System.out.println("klickare skapat: " + klick1);     
+  
                         allSubCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
                             public void mouseClicked(java.awt.event.MouseEvent evt) {
                     
                                 categoryLabelMouseClicked(evt);
                             }
                         });
-//                    
-////                                placeCategories();
-//           
-//                
+         
                     }
                     placeCategories();
     }
@@ -281,8 +268,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void placeCategories(){
         
-//        allCategoryArrayList.clear();
-//        System.out.println(allCategoryArrayList.size());
+
         
         
         for (int i = 0; i<allCategoryArrayList.size(); i++){
@@ -306,19 +292,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
      */
     private void categoryLabelMouseClicked(java.awt.event.MouseEvent evt) {   
         
-//        clickCounter++;
-//        System.out.println("klickat?: " + clickCounter);
+
         JLabel tempLabel1 = (JLabel)evt.getSource();
-        System.out.println(tempLabel1.getText());
-//        tempLabel1 = new JLabel(tempLabel1.getText());     //x Skapar temporär label med samma text som den klickade kategorin.
-        
+ 
         categoryPanel.removeAll();
         allCategoryArrayList.clear();
         for (int i = 0; i<headCategoryArrayList.size(); i++){
             allCategoryArrayList.add(headCategoryArrayList.get(i));
         }
-//        placeCategories();
-        System.out.println(tempLabel1.getText());
         switch(tempLabel1.getText()){
             case "Bröd och torrvaror": 
                 for (int i = 0; i<breadCategoryArrayList.size(); i++){
@@ -493,15 +474,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 
                 
         }
-//        System.out.println("slut på case");
+
         placeCategories();
-//        categoryArrayList.add(tempLabel1);           //x Lägger till denna i kategorilistan.
-//        leftPanel.add(headCategoryArrayList);                  //x Lägger till denna i vänsterpanelen, men det verkar ske någon konstig
-                                                    //rotation istället för att den synliga listan blir längre.
-//        categoryFeaturePanel cfp = new categoryFeaturePanel;
+
         revalidate();
         
-        //System.out.println(categoryArrayList.size());
     }                
 
     /**
@@ -527,7 +504,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpGoToCashierLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         myShoppingBagsBtn = new javax.swing.JButton();
         myFavoritesBtn = new javax.swing.JButton();
         recipesBtn = new javax.swing.JButton();
@@ -638,13 +614,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Xkr");
 
-        jButton1.setText("Testknappen");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         myShoppingBagsBtn.setText("Mina matkassar");
         myShoppingBagsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -708,9 +677,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(dealsBtn))
                     .addGroup(topPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(123, 123, 123)
+                        .addGap(248, 248, 248)
                         .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(historyBtn)
@@ -740,8 +707,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topPanelLayout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(myShoppingBagsBtn)
                             .addComponent(myFavoritesBtn)
@@ -1094,13 +1060,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         revalidate();
     }//GEN-LAST:event_category1MenuLabelMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JLabel hej = new JLabel("hej");
-        
-        
-        revalidate();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void myShoppingBagsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myShoppingBagsBtnActionPerformed
         cl.show(featurePanel, "cardBags");
     }//GEN-LAST:event_myShoppingBagsBtnActionPerformed
@@ -1210,7 +1169,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel historyViewPanel;
     private javax.swing.JLabel iMatLabel;
     private javax.swing.JPanel itemShower;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
