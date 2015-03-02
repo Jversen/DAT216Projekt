@@ -485,8 +485,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         leftPanel = new javax.swing.JPanel();
         leftUpperPanel = new javax.swing.JPanel();
-        categoryPanel = new javax.swing.JPanel();
         searchField = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
+        categoryPanel = new javax.swing.JPanel();
         topPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         tpMyAccountLabel = new javax.swing.JLabel();
@@ -502,7 +503,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         recipesBtn = new javax.swing.JButton();
         dealsBtn = new javax.swing.JButton();
         historyBtn = new javax.swing.JButton();
-        searchButton = new javax.swing.JButton();
         featurePanel = new javax.swing.JPanel();
         startViewPanel = new javax.swing.JPanel();
         recentlyBoughtLabel = new javax.swing.JLabel();
@@ -547,40 +547,46 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         leftPanel.setBackground(new java.awt.Color(204, 0, 0));
 
-        leftUpperPanel.setLayout(new java.awt.GridLayout(1, 1));
+        leftUpperPanel.setBackground(new java.awt.Color(51, 255, 51));
+        leftUpperPanel.setLayout(new java.awt.BorderLayout());
 
-        categoryPanel.setBackground(new java.awt.Color(204, 0, 0));
-        categoryPanel.setLayout(new java.awt.GridLayout(30, 1));
-
-        searchField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        searchField.setText("Sök...");
-        searchField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchFieldMouseClicked(evt);
-            }
-        });
+        searchField.setText("Skriv här...");
         searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFieldActionPerformed(evt);
             }
         });
-        categoryPanel.add(searchField);
+        leftUpperPanel.add(searchField, java.awt.BorderLayout.CENTER);
+
+        searchButton.setText("sök!");
+        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchButtonMouseClicked(evt);
+            }
+        });
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+        leftUpperPanel.add(searchButton, java.awt.BorderLayout.PAGE_END);
+
+        categoryPanel.setBackground(new java.awt.Color(204, 0, 0));
+        categoryPanel.setLayout(new java.awt.GridLayout(30, 1));
 
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftPanelLayout.createSequentialGroup()
-                .addComponent(leftUpperPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-            .addComponent(categoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(categoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+            .addComponent(leftUpperPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         leftPanelLayout.setVerticalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftPanelLayout.createSequentialGroup()
-                .addComponent(leftUpperPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(categoryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(leftUpperPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(categoryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -590,11 +596,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         tpChangeUserLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpChangeUserLabel.setText("Byt användare");
-        tpChangeUserLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpChangeUserLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
 
@@ -604,7 +610,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpCartSumLabel.setText("kr");
 
         tpGoToCashierLabel.setText("Gå till kassan");
-        tpGoToCashierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpGoToCashierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("XstVaror");
@@ -647,36 +653,19 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        searchButton.setText("SÖK");
-        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchButtonMouseClicked(evt);
-            }
-        });
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(topPanelLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(myShoppingBagsBtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(myFavoritesBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(recipesBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dealsBtn))
-                    .addGroup(topPanelLayout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(73, 73, 73)
+                .addComponent(myShoppingBagsBtn)
+                .addGap(18, 18, 18)
+                .addComponent(myFavoritesBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(recipesBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dealsBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(historyBtn)
                 .addGap(161, 161, 161)
@@ -733,9 +722,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                                         .addComponent(jLabel3))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tpGoToCashierLabel))
-                                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel12))))))
+                                .addComponent(jLabel12)))))
                 .addGap(49, 49, 49))
         );
 
@@ -783,7 +770,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(dealsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         featurePanel.add(startViewPanel, "cardStart");
@@ -803,7 +790,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myShoppingBagsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyShoppingBagsLabel)
-                .addGap(0, 571, Short.MAX_VALUE))
+                .addGap(0, 607, Short.MAX_VALUE))
         );
 
         featurePanel.add(myShoppingBagsViewPanel, "cardBags");
@@ -823,7 +810,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myFavoritesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyFavoritesLabel)
-                .addGap(0, 571, Short.MAX_VALUE))
+                .addGap(0, 607, Short.MAX_VALUE))
         );
 
         featurePanel.add(myFavoritesViewPanel, "cardFavorites");
@@ -843,7 +830,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpRecipesLabel)
-                .addGap(0, 571, Short.MAX_VALUE))
+                .addGap(0, 607, Short.MAX_VALUE))
         );
 
         featurePanel.add(recipesViewPanel, "cardRecipes");
@@ -863,7 +850,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dealsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpDealsLabel)
-                .addGap(0, 571, Short.MAX_VALUE))
+                .addGap(0, 607, Short.MAX_VALUE))
         );
 
         featurePanel.add(dealsViewPanel, "cardDeals");
@@ -873,7 +860,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         category1MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category1MenuLabel.setText("Kategori 1");
-        category1MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category1MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         category1MenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category1MenuLabelMouseClicked(evt);
@@ -882,23 +869,23 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         category2MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category2MenuLabel.setText("Kategori 2");
-        category2MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category2MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category3MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category3MenuLabel.setText("Kategori 3");
-        category3MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category3MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category4MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category4MenuLabel.setText("Kategori 4");
-        category4MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category4MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category5MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category5MenuLabel.setText("Kategori 5");
-        category5MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category5MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         category6MenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         category6MenuLabel.setText("Kategori 6");
-        category6MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        category6MenuLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("OBS dessa kategorilabels används ej, ");
@@ -933,7 +920,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel4)
@@ -970,7 +957,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(categoryFeaturePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(categoryFeatureLabel)
-                .addContainerGap(575, Short.MAX_VALUE))
+                .addContainerGap(614, Short.MAX_VALUE))
         );
 
         featurePanel.add(categoryFeaturePanel, "categoryFeaturePanel");
@@ -997,7 +984,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         iMatLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         iMatLabel.setText("iMat");
-        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout logoPanelLayout = new javax.swing.GroupLayout(logoPanel);
         logoPanel.setLayout(logoPanelLayout);
@@ -1031,27 +1018,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cartPanelLayout.setHorizontalGroup(
             cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartPanelLayout.createSequentialGroup()
-                        .addContainerGap(21, Short.MAX_VALUE)
-                        .addComponent(goToCashierBtn))
-                    .addGroup(cartPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(cartHeadlineLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(cartPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(cartPanelScrollPane)))
+                    .addComponent(goToCashierBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cartPanelScrollPane)
+                    .addComponent(cartHeadlineLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         cartPanelLayout.setVerticalGroup(
             cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartPanelLayout.createSequentialGroup()
-                .addComponent(cartHeadlineLabel)
-                .addGap(39, 39, 39)
-                .addComponent(cartPanelScrollPane)
+                .addComponent(cartHeadlineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(goToCashierBtn)
+                .addComponent(cartPanelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(goToCashierBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1132,12 +1113,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     }//GEN-LAST:event_searchButtonActionPerformed
 
-    private void searchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFieldMouseClicked
-        searchField.setText("");
-    }//GEN-LAST:event_searchFieldMouseClicked
-
     private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_searchFieldActionPerformed
 
     /**
