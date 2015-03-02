@@ -31,7 +31,6 @@ public class UserPanel extends javax.swing.JPanel {
             titleNameLabel.setText("");
         }
         
-        
         // Sets values for text fields in "Personal information"
         firstNameTextField.setText(IMatDataHandler.getInstance().getCustomer().getFirstName());
         lastNameTextField.setText(IMatDataHandler.getInstance().getCustomer().getLastName());
@@ -40,10 +39,16 @@ public class UserPanel extends javax.swing.JPanel {
         emailTextField.setText(IMatDataHandler.getInstance().getCustomer().getEmail());
         phoneNumberTextField.setText(IMatDataHandler.getInstance().getCustomer().getPhoneNumber());
         
-        // Sets values for text fields in "Payment"
+        // Sets values for text fields and comboboxes in "Payment"
         cardNumberTextField.setText(IMatDataHandler.getInstance().getCreditCard().getCardNumber());
+        validMonthComboBox.setSelectedIndex(iMDH.getCreditCard().getValidMonth());
+        validYearComboBox.setSelectedIndex(iMDH.getCreditCard().getValidYear());
         verificationCodeTextField.setText(IMatDataHandler.getInstance().getCreditCard().getVerificationCode() + "");
-        cardHolderNameTextField.setText(IMatDataHandler.getInstance().getCreditCard().getHoldersName());
+        cardHolderTextField.setText(IMatDataHandler.getInstance().getCreditCard().getHoldersName());
+        
+        // Sets values for combo- and checkboxes in "Delivery"
+        
+        
     }
 
     /**
@@ -79,16 +84,16 @@ public class UserPanel extends javax.swing.JPanel {
         paymentInfoLabel = new javax.swing.JLabel();
         cardNumberLabel = new javax.swing.JLabel();
         cardNumberTextField = new javax.swing.JTextField();
-        cardTypeTextField = new javax.swing.JComboBox();
+        cardTypeComboBox = new javax.swing.JComboBox();
         cardTypeLabel = new javax.swing.JLabel();
         expirationDateLabel = new javax.swing.JLabel();
-        expDateMonthCombBox = new javax.swing.JComboBox();
+        validMonthComboBox = new javax.swing.JComboBox();
         expDateSlashLabel = new javax.swing.JLabel();
-        expDateYearCombBox = new javax.swing.JComboBox();
+        validYearComboBox = new javax.swing.JComboBox();
         verificationCodeLabel = new javax.swing.JLabel();
         verificationCodeTextField = new javax.swing.JTextField();
         cardHolderNameLabel = new javax.swing.JLabel();
-        cardHolderNameTextField = new javax.swing.JTextField();
+        cardHolderTextField = new javax.swing.JTextField();
         separator2 = new javax.swing.JLabel();
         deliveryPanel = new javax.swing.JPanel();
         personalInfoLabel1 = new javax.swing.JLabel();
@@ -110,7 +115,7 @@ public class UserPanel extends javax.swing.JPanel {
 
         contentPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        personalInfoPanel.setBackground(new java.awt.Color(204, 204, 204));
+        personalInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         personalInfoLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         personalInfoLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -121,13 +126,13 @@ public class UserPanel extends javax.swing.JPanel {
         firstNameLabel.setText("Förnamn");
 
         firstNameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 FirstNameUpdate(evt);
             }
         });
 
         lastNameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 LastNameUpdate(evt);
             }
         });
@@ -137,7 +142,7 @@ public class UserPanel extends javax.swing.JPanel {
         lastNameLabel.setText("Efternamn");
 
         address1TextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 Address1Update(evt);
             }
         });
@@ -158,7 +163,7 @@ public class UserPanel extends javax.swing.JPanel {
         postCodeLabel.setText("Postnummer");
 
         postCodeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 PostCodeUpdate(evt);
             }
         });
@@ -175,7 +180,7 @@ public class UserPanel extends javax.swing.JPanel {
         emailLabel.setText("E-mailadress");
 
         emailTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 EmailUpdate(evt);
             }
         });
@@ -279,7 +284,7 @@ public class UserPanel extends javax.swing.JPanel {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        paymentInfoPanel.setBackground(new java.awt.Color(204, 204, 204));
+        paymentInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         paymentInfoLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         paymentInfoLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -290,12 +295,18 @@ public class UserPanel extends javax.swing.JPanel {
         cardNumberLabel.setText("Kortnummer");
 
         cardNumberTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 CardNumberUpdate(evt);
             }
         });
 
-        cardTypeTextField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "VISA", "MasterCard", "Item 3", "Item 4" }));
+        cardTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "VISA", "MasterCard", "PayPal" }));
+        cardTypeComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cardTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CardTypeUpdate(evt);
+            }
+        });
 
         cardTypeLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
         cardTypeLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -305,24 +316,35 @@ public class UserPanel extends javax.swing.JPanel {
         expirationDateLabel.setForeground(new java.awt.Color(51, 51, 51));
         expirationDateLabel.setText("Expiration date");
 
-        expDateMonthCombBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-        expDateMonthCombBox.setSelectedIndex(5);
-        expDateMonthCombBox.setToolTipText("Månad");
+        validMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        validMonthComboBox.setSelectedIndex(5);
+        validMonthComboBox.setToolTipText("Månad");
+        validMonthComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        validMonthComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ValidMonthUpdate(evt);
+            }
+        });
 
         expDateSlashLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         expDateSlashLabel.setForeground(new java.awt.Color(51, 51, 51));
         expDateSlashLabel.setText("/");
 
-        expDateYearCombBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020" }));
-        expDateYearCombBox.setSelectedIndex(2);
-        expDateYearCombBox.setToolTipText("År");
+        validYearComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020" }));
+        validYearComboBox.setToolTipText("År");
+        validYearComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        validYearComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ValidYearUpdate(evt);
+            }
+        });
 
         verificationCodeLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
         verificationCodeLabel.setForeground(new java.awt.Color(51, 51, 51));
         verificationCodeLabel.setText("CVV");
 
         verificationCodeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 VerificationCodeUpdate(evt);
             }
         });
@@ -331,8 +353,8 @@ public class UserPanel extends javax.swing.JPanel {
         cardHolderNameLabel.setForeground(new java.awt.Color(51, 51, 51));
         cardHolderNameLabel.setText("Kortinnehavare");
 
-        cardHolderNameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+        cardHolderTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
                 CardHolderUpdate(evt);
             }
         });
@@ -355,19 +377,19 @@ public class UserPanel extends javax.swing.JPanel {
                                 .addComponent(verificationCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cardTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(paymentInfoPanelLayout.createSequentialGroup()
-                                    .addComponent(expDateMonthCombBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(expDateSlashLabel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(expDateYearCombBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(paymentInfoPanelLayout.createSequentialGroup()
                             .addComponent(cardHolderNameLabel)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cardHolderNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(separator2)
                     .addComponent(paymentInfoLabel))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -385,13 +407,13 @@ public class UserPanel extends javax.swing.JPanel {
                     .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cardTypeLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(expirationDateLabel)
-                    .addComponent(expDateMonthCombBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(expDateYearCombBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(expDateSlashLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -400,35 +422,40 @@ public class UserPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cardHolderNameLabel)
-                    .addComponent(cardHolderNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        deliveryPanel.setBackground(new java.awt.Color(204, 204, 204));
+        deliveryPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         personalInfoLabel1.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         personalInfoLabel1.setForeground(new java.awt.Color(51, 51, 51));
         personalInfoLabel1.setText("Leverans");
 
         deliveryDateLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
-        deliveryDateLabel.setForeground(new java.awt.Color(51, 51, 51));
+        deliveryDateLabel.setForeground(new java.awt.Color(153, 153, 153));
         deliveryDateLabel.setText("Leveranstid");
 
         deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00", "20:00-22:00" }));
-        deliveryTimeComboBox.setSelectedIndex(4);
+        deliveryTimeComboBox.setSelectedIndex(1);
         deliveryTimeComboBox.setToolTipText("");
         deliveryTimeComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deliveryTimeComboBox.setEnabled(false);
 
         deliveryDayComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "idag", "imorgon", "i övermorgon" }));
+        deliveryDayComboBox.setSelectedIndex(1);
+        deliveryDayComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deliveryDayComboBox.setEnabled(false);
 
         deliverToMyAdressPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         deliverToMyAddressLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
-        deliverToMyAddressLabel.setForeground(new java.awt.Color(51, 51, 51));
+        deliverToMyAddressLabel.setForeground(new java.awt.Color(153, 153, 153));
         deliverToMyAddressLabel.setText("Leverera till annan adress");
 
         deliveryCheckBox.setBackground(new java.awt.Color(255, 255, 255));
         deliveryCheckBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deliveryCheckBox.setEnabled(false);
         deliveryCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deliveryCheckBoxActionPerformed(evt);
@@ -619,74 +646,10 @@ public class UserPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_deliveryCheckBoxActionPerformed
-
-    // --------- PERSONAL INFORMATION -----------------
-    private void FirstNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FirstNameUpdate
-        IMatDataHandler.getInstance().getCustomer().setFirstName(firstNameTextField.getText());
-    }//GEN-LAST:event_FirstNameUpdate
-
-    private void LastNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LastNameUpdate
-        IMatDataHandler.getInstance().getCustomer().setLastName(lastNameTextField.getText());
-    }//GEN-LAST:event_LastNameUpdate
-
-    private void Address1Update(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Address1Update
-        if(addressPanel.hasAddress()){
-            System.out.println("dddddddddd");
-        } else{
-            
-        }
-        IMatDataHandler.getInstance().getCustomer().setPostAddress(address1TextField.getText());
-    }//GEN-LAST:event_Address1Update
-
-    private void PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PostCodeUpdate
-        IMatDataHandler.getInstance().getCustomer().setPostCode(postCodeTextField.getText());
-    }//GEN-LAST:event_PostCodeUpdate
-
-    private void EmailUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EmailUpdate
-        IMatDataHandler.getInstance().getCustomer().setEmail(emailTextField.getText());
-    }//GEN-LAST:event_EmailUpdate
-    // --------------------------------------------------
-    
-    // --------- PAYMENT --------------------------------
-    private void CardNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CardNumberUpdate
-        IMatDataHandler.getInstance().getCreditCard().setCardNumber(cardNumberTextField.getText());
-    }//GEN-LAST:event_CardNumberUpdate
-
-    private void VerificationCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VerificationCodeUpdate
-        try{
-            Integer.parseInt(verificationCodeTextField.getText());
-            isInteger = true;
-        } catch(NumberFormatException nfe){
-            System.out.println("Ooops");
-            isInteger = false;
-        }
-        
-        if(isInteger){
-            IMatDataHandler.getInstance().getCreditCard()
-                    .setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
-            System.out.println("Updated");
-        }
-        
-        /*scan = new Scanner(cardHolderNameTextField.getText());
-        
-        while(!scan.hasNextInt()) {
-            scan.next();
-        }
-        int input = scan.nextInt();
-        
-        IMatDataHandler.getInstance().getCreditCard()
-                    .setVerificationCode(input);
-        */
-    }//GEN-LAST:event_VerificationCodeUpdate
-
-    private void CardHolderUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CardHolderUpdate
-        IMatDataHandler.getInstance().getCreditCard()
-                    .setHoldersName(cardHolderNameTextField.getText());
-    }//GEN-LAST:event_CardHolderUpdate
-
+ 
+    // ------ Changes the icon for the save button -----------------------------
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        IMatDataHandler.getInstance().shutDown();
-        System.out.println("Saving information");
+        iMDH.shutDown();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void SaveButtonHover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButtonHover
@@ -702,12 +665,68 @@ public class UserPanel extends javax.swing.JPanel {
         saveButton.setIcon(saveButtonClick);
         saveButton.setForeground(Color.WHITE);
     }//GEN-LAST:event_SaveButtonClicked
-
+    // -------------------------------------------------------------------------
+    
+    
+    // ------ Personal information ---------------------------------------------
     private void phoneNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneNumberUpdate
-        IMatDataHandler.getInstance().getCustomer()
-                    .setPhoneNumber(phoneNumberTextField.getText());
+        iMDH.getCustomer().setPhoneNumber(phoneNumberTextField.getText());
     }//GEN-LAST:event_phoneNumberUpdate
- 
+
+    private void FirstNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FirstNameUpdate
+        iMDH.getCustomer().setFirstName(firstNameTextField.getText());
+    }//GEN-LAST:event_FirstNameUpdate
+
+    private void LastNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LastNameUpdate
+        iMDH.getCustomer().setLastName(lastNameTextField.getText());
+    }//GEN-LAST:event_LastNameUpdate
+
+    private void Address1Update(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Address1Update
+        iMDH.getCustomer().setAddress(address1TextField.getText());
+    }//GEN-LAST:event_Address1Update
+
+    private void PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PostCodeUpdate
+        iMDH.getCustomer().setPostCode(postCodeTextField.getText());
+    }//GEN-LAST:event_PostCodeUpdate
+
+    private void EmailUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EmailUpdate
+        iMDH.getCustomer().setEmail(emailTextField.getText());
+    }//GEN-LAST:event_EmailUpdate
+    // -------------------------------------------------------------------------
+    
+    
+    // ------ Payment ----------------------------------------------------------
+    private void CardNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CardNumberUpdate
+        iMDH.getCreditCard().setCardNumber(cardNumberTextField.getText());
+    }//GEN-LAST:event_CardNumberUpdate
+
+    private void VerificationCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VerificationCodeUpdate
+        try{
+            iMDH.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+        } catch(NumberFormatException nfe){
+            System.out.println("Incorrect input.");
+        }
+    }//GEN-LAST:event_VerificationCodeUpdate
+
+    private void CardHolderUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CardHolderUpdate
+        iMDH.getCreditCard().setHoldersName(cardHolderTextField.getText());
+    }//GEN-LAST:event_CardHolderUpdate
+
+    private void CardTypeUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardTypeUpdate
+        iMDH.getCreditCard().setCardType(cardTypeComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_CardTypeUpdate
+
+    private void ValidMonthUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidMonthUpdate
+        iMDH.getCreditCard().setValidMonth(validMonthComboBox.getSelectedIndex());
+    }//GEN-LAST:event_ValidMonthUpdate
+
+    private void ValidYearUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidYearUpdate
+        iMDH.getCreditCard().setValidYear(validYearComboBox.getSelectedIndex());
+    }//GEN-LAST:event_ValidYearUpdate
+    // -------------------------------------------------------------------------
+    
+    
+    IMatDataHandler iMDH = IMatDataHandler.getInstance();
     private final ImageIcon saveButtonNormal = new ImageIcon(getClass().getResource("/greenButton.png"));
     private final ImageIcon saveButtonHover = new ImageIcon(getClass().getResource("/greenButtonHover.png"));
     private final ImageIcon saveButtonClick = new ImageIcon(getClass().getResource("/greenButtonClick.png"));
@@ -720,11 +739,11 @@ public class UserPanel extends javax.swing.JPanel {
     private javax.swing.JLabel adress1Label;
     private javax.swing.JLabel adress2Label;
     private javax.swing.JLabel cardHolderNameLabel;
-    private javax.swing.JTextField cardHolderNameTextField;
+    private javax.swing.JTextField cardHolderTextField;
     private javax.swing.JLabel cardNumberLabel;
     private javax.swing.JTextField cardNumberTextField;
+    private javax.swing.JComboBox cardTypeComboBox;
     private javax.swing.JLabel cardTypeLabel;
-    private javax.swing.JComboBox cardTypeTextField;
     private javax.swing.JLabel cityLabel;
     private javax.swing.JTextField cityTextField;
     private javax.swing.JPanel contentPanel;
@@ -737,9 +756,7 @@ public class UserPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox deliveryTimeComboBox;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
-    private javax.swing.JComboBox expDateMonthCombBox;
     private javax.swing.JLabel expDateSlashLabel;
-    private javax.swing.JComboBox expDateYearCombBox;
     private javax.swing.JLabel expirationDateLabel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JTextField firstNameTextField;
@@ -761,6 +778,8 @@ public class UserPanel extends javax.swing.JPanel {
     private javax.swing.JLabel separator3;
     private javax.swing.JLabel titleNameLabel;
     private javax.swing.JPanel topPanel;
+    private javax.swing.JComboBox validMonthComboBox;
+    private javax.swing.JComboBox validYearComboBox;
     private javax.swing.JLabel verificationCodeLabel;
     private javax.swing.JTextField verificationCodeTextField;
     // End of variables declaration//GEN-END:variables

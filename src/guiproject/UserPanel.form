@@ -85,7 +85,7 @@
         <Container class="javax.swing.JPanel" name="personalInfoPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -221,12 +221,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="firstNameTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FirstNameUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FirstNameUpdate"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="lastNameTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="LastNameUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="LastNameUpdate"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lastNameLabel">
@@ -242,7 +242,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="address1TextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Address1Update"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Address1Update"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="adress1Label">
@@ -288,7 +288,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="postCodeTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PostCodeUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PostCodeUpdate"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="cityLabel">
@@ -323,7 +323,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="emailTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EmailUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EmailUpdate"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="separator1">
@@ -357,7 +357,7 @@
         <Container class="javax.swing.JPanel" name="paymentInfoPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -377,14 +377,14 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="cardTypeTextField" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="cardTypeComboBox" min="-2" pref="100" max="-2" attributes="0"/>
                                       <Component id="cardNumberTextField" min="-2" pref="195" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="expDateMonthCombBox" min="-2" max="-2" attributes="0"/>
+                                          <Component id="validMonthComboBox" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="expDateSlashLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="expDateYearCombBox" min="-2" max="-2" attributes="0"/>
+                                          <Component id="validYearComboBox" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="verificationCodeTextField" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
@@ -392,7 +392,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="cardHolderNameLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cardHolderNameTextField" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="cardHolderTextField" min="-2" pref="195" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="separator2" min="-2" max="-2" attributes="0"/>
@@ -416,14 +416,14 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cardTypeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cardTypeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cardTypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="expirationDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="expDateMonthCombBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="expDateYearCombBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="validMonthComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="validYearComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="expDateSlashLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -434,7 +434,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cardHolderNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cardHolderNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cardHolderTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -466,20 +466,25 @@
             </Component>
             <Component class="javax.swing.JTextField" name="cardNumberTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CardNumberUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CardNumberUpdate"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cardTypeTextField">
+            <Component class="javax.swing.JComboBox" name="cardTypeComboBox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="3">
                     <StringItem index="0" value="VISA"/>
                     <StringItem index="1" value="MasterCard"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="2" value="PayPal"/>
                   </StringArray>
                 </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Handmark&#xf6;r"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CardTypeUpdate"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="cardTypeLabel">
               <Properties>
@@ -503,7 +508,7 @@
                 <Property name="text" type="java.lang.String" value="Expiration date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="expDateMonthCombBox">
+            <Component class="javax.swing.JComboBox" name="validMonthComboBox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="12">
@@ -523,7 +528,13 @@
                 </Property>
                 <Property name="selectedIndex" type="int" value="5"/>
                 <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Handmark&#xf6;r"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ValidMonthUpdate"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="expDateSlashLabel">
               <Properties>
@@ -536,7 +547,7 @@
                 <Property name="text" type="java.lang.String" value="/"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="expDateYearCombBox">
+            <Component class="javax.swing.JComboBox" name="validYearComboBox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="6">
@@ -548,9 +559,14 @@
                     <StringItem index="5" value="2020"/>
                   </StringArray>
                 </Property>
-                <Property name="selectedIndex" type="int" value="2"/>
                 <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Handmark&#xf6;r"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ValidYearUpdate"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="verificationCodeLabel">
               <Properties>
@@ -565,7 +581,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="verificationCodeTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="VerificationCodeUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="VerificationCodeUpdate"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="cardHolderNameLabel">
@@ -579,9 +595,9 @@
                 <Property name="text" type="java.lang.String" value="Kortinnehavare"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="cardHolderNameTextField">
+            <Component class="javax.swing.JTextField" name="cardHolderTextField">
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CardHolderUpdate"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CardHolderUpdate"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="separator2">
@@ -596,7 +612,7 @@
         <Container class="javax.swing.JPanel" name="deliveryPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -668,7 +684,7 @@
                   <Font name="Gautami" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
+                  <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Leveranstid"/>
               </Properties>
@@ -685,11 +701,12 @@
                     <StringItem index="5" value="20:00-22:00"/>
                   </StringArray>
                 </Property>
-                <Property name="selectedIndex" type="int" value="4"/>
+                <Property name="selectedIndex" type="int" value="1"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Handmark&#xf6;r"/>
                 </Property>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="deliveryDayComboBox">
@@ -701,6 +718,11 @@
                     <StringItem index="2" value="i &#xf6;vermorgon"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="1"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Handmark&#xf6;r"/>
+                </Property>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="deliverToMyAdressPanel">
@@ -750,7 +772,7 @@
                       <Font name="Gautami" size="14" style="0"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="33" green="33" red="33" type="rgb"/>
+                      <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Leverera till annan adress"/>
                   </Properties>
@@ -763,6 +785,7 @@
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Handmark&#xf6;r"/>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deliveryCheckBoxActionPerformed"/>
