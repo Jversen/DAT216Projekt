@@ -7,6 +7,7 @@ package guiproject;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -514,8 +515,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         leftPanel = new javax.swing.JPanel();
         leftUpperPanel = new javax.swing.JPanel();
-        lpSearchField = new javax.swing.JTextField();
         categoryPanel = new javax.swing.JPanel();
+        searchField = new javax.swing.JTextField();
         topPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         tpMyAccountLabel = new javax.swing.JLabel();
@@ -532,6 +533,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         recipesBtn = new javax.swing.JButton();
         dealsBtn = new javax.swing.JButton();
         historyBtn = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
         featurePanel = new javax.swing.JPanel();
         startViewPanel = new javax.swing.JPanel();
         recentlyBoughtLabel = new javax.swing.JLabel();
@@ -560,6 +562,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jLabel4 = new javax.swing.JLabel();
         categoryFeaturePanel = new javax.swing.JPanel();
         categoryFeatureLabel = new javax.swing.JLabel();
+        searchResultPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        itemShower = new javax.swing.JPanel();
         logoPanel = new javax.swing.JPanel();
         iMatLabel = new javax.swing.JLabel();
 
@@ -569,17 +575,22 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         leftUpperPanel.setLayout(new java.awt.GridLayout(1, 1));
 
-        lpSearchField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        lpSearchField.setText("Sök...");
-        lpSearchField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lpSearchFieldMouseClicked(evt);
-            }
-        });
-        leftUpperPanel.add(lpSearchField);
-
         categoryPanel.setBackground(new java.awt.Color(204, 0, 0));
         categoryPanel.setLayout(new java.awt.GridLayout(30, 1));
+
+        searchField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        searchField.setText("Sök...");
+        searchField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchFieldMouseClicked(evt);
+            }
+        });
+        searchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchFieldActionPerformed(evt);
+            }
+        });
+        categoryPanel.add(searchField);
 
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
         leftPanel.setLayout(leftPanelLayout);
@@ -669,6 +680,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
+        searchButton.setText("SÖK");
+        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchButtonMouseClicked(evt);
+            }
+        });
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
@@ -686,7 +709,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addComponent(dealsBtn))
                     .addGroup(topPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
+                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(historyBtn)
                 .addGap(161, 161, 161)
@@ -734,7 +759,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                                     .addComponent(tpChangeUserLabel)
                                     .addGap(18, 18, 18)))
                             .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel12)
                                 .addGroup(topPanelLayout.createSequentialGroup()
                                     .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(tpCartContentsNumber)
@@ -744,7 +768,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                                         .addComponent(tpCartSumLabel)
                                         .addComponent(jLabel3))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tpGoToCashierLabel))))))
+                                    .addComponent(tpGoToCashierLabel))
+                                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12))))))
                 .addGap(49, 49, 49))
         );
 
@@ -984,6 +1011,19 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(categoryFeaturePanel, "categoryFeaturePanel");
 
+        searchResultPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        itemShower.setLayout(new java.awt.GridLayout(1, 2));
+        jPanel1.add(itemShower);
+
+        jScrollPane1.setViewportView(jPanel1);
+
+        searchResultPanel.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        featurePanel.add(searchResultPanel, "searchResultPanel");
+
         logoPanel.setBackground(new java.awt.Color(204, 0, 0));
         logoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1046,15 +1086,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        /**
-         * tar bort texten "sök..." från sökrutan när denna markeras.
-         * Ytterligare funktionalitet ej tillagd (texten bör komma tillbaka när
-         * rutan avmarkerats etc.)
-         */
-    private void lpSearchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lpSearchFieldMouseClicked
-        lpSearchField.setText("");
-    }//GEN-LAST:event_lpSearchFieldMouseClicked
-
     private void logoPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoPanelMouseClicked
         cl.show(featurePanel, "cardStart");
     }//GEN-LAST:event_logoPanelMouseClicked
@@ -1089,6 +1120,36 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
         cl.show(featurePanel, "cardHistory");
     }//GEN-LAST:event_historyBtnActionPerformed
+
+    private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
+        cl.show(featurePanel, "searchResultPanel");
+    }//GEN-LAST:event_searchButtonMouseClicked
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        gpCon.doSearch(searchField.getText());
+        GridLayout layout = new GridLayout(gpCon.products.size(), 1);
+        itemShower.setLayout(layout);
+        itemShower.removeAll();
+        for(int i=0; i<gpCon.products.size(); i++ ){
+            itemShower.add(gpCon.productCards.get(i));
+
+        }
+        //             itemShower.repaint();
+        //              itemShower.revalidate();
+
+        //cl.show(featurePanel, "searchResultPanel");
+        revalidate();
+        repaint();
+
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void searchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFieldMouseClicked
+        searchField.setText("");
+    }//GEN-LAST:event_searchFieldMouseClicked
+
+    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
+
+    }//GEN-LAST:event_searchFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1148,6 +1209,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton historyBtn;
     private javax.swing.JPanel historyViewPanel;
     private javax.swing.JLabel iMatLabel;
+    private javax.swing.JPanel itemShower;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -1155,13 +1217,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel leftUpperPanel;
     private javax.swing.JPanel logoPanel;
-    private javax.swing.JTextField lpSearchField;
     private javax.swing.JButton myFavoritesBtn;
     private javax.swing.JPanel myFavoritesViewPanel;
     private javax.swing.JButton myShoppingBagsBtn;
@@ -1170,6 +1233,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel recentlyBoughtLabel;
     private javax.swing.JButton recipesBtn;
     private javax.swing.JPanel recipesViewPanel;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchField;
+    private javax.swing.JPanel searchResultPanel;
     private javax.swing.JPanel startViewPanel;
     private javax.swing.JPanel topPanel;
     private javax.swing.JLabel tpCartContentsNumber;
