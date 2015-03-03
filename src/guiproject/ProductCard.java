@@ -16,14 +16,17 @@ public class ProductCard extends javax.swing.JPanel {
     
     GUIProject gpCon = new GUIProject();
     Product prod;
+    IMatFrame imf;
     
-    public ProductCard(Product prod) {
+    public ProductCard(Product prod, IMatFrame imf) {
         initComponents();
         this.prod = prod;
+        this.imf = imf;
         pictureLabel.setIcon(gpCon.getImage(prod));
 //        this.productName = searchField.getInputContext(); //hur ska man skriva?
         productCardName.setText(prod.getName());
         priceLabel.setText(""+ prod.getPrice());
+        
        }
     
     public int getSpinnerValue(){
@@ -90,8 +93,7 @@ public class ProductCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
-      gpCon.addToCart(this);
-      
+      gpCon.addToCart(this, imf);
     }//GEN-LAST:event_addProductButtonActionPerformed
 
 

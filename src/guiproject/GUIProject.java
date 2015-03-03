@@ -39,13 +39,13 @@ public class GUIProject{
             return iMDH.getImageIcon(prod,100,100);
     }
     
-    public void doSearch(String s){
+    public void doSearch(String s, IMatFrame imf){
            this.products = iMDH.findProducts(s);
            this.productCards.clear();
            this.productCards.removeAll(productCards);
 
            for(int i=0; i<products.size(); i++){
-               productCards.add(new ProductCard(products.get(i)));
+               productCards.add(new ProductCard(products.get(i), imf));
            }
            
     }
@@ -53,20 +53,20 @@ public class GUIProject{
     /**
      * Work in progress... 
      */
-    public void addToCart(ProductCard pc){
+    public void addToCart(ProductCard pc, IMatFrame imf){
         double amount = pc.getSpinnerValue();
         
         if (amount > 0){
 //        for(int i=0; i<amount; i++){
 //            cart.add(pc.getProduct());
 //            System.out.println("amount: " + amount + ", produkt: " + pc.getProduct());
-            sc.addProduct(pc.getProduct());
+            sc.addProduct(pc.getProduct(), amount);
            //  System.out.print(pc.getProduct().getName());
 //        }
             cartContents.clear();
             cartContents.addAll(sc.getItems());
             
-            this.app.updateCartPanel(); //Funkar inte
+            imf.updateCartPanel();
             
         }
 //        for(int i=0; i<cartContents.size(); i++){
@@ -76,13 +76,13 @@ public class GUIProject{
 //        }
     }
     
-    public void listCatProds(String s){
+    public void listCatProds(String s, IMatFrame imf){
         this.products = iMDH.getProducts(ProductCategory.valueOf(s));
          this.productCards.clear();
            this.productCards.removeAll(productCards);
 
            for(int i=0; i<products.size(); i++){
-               productCards.add(new ProductCard(products.get(i)));
+               productCards.add(new ProductCard(products.get(i), imf));
            }
            
 //        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
@@ -92,8 +92,8 @@ public class GUIProject{
     public static void main(String[] args) {
         
         
-        IMatFrame app = new IMatFrame();
-        app.setVisible(true);
+            IMatFrame app = new IMatFrame();
+            app.setVisible(true);
         
         
         
