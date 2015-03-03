@@ -23,6 +23,7 @@ public class GUIProject{
      */
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
     ShoppingCart sc = iMDH.getShoppingCart();
+    IMatFrame app;
     
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
@@ -55,17 +56,19 @@ public class GUIProject{
     public void addToCart(ProductCard pc){
         double amount = pc.getSpinnerValue();
         
+        if (amount > 0){
 //        for(int i=0; i<amount; i++){
 //            cart.add(pc.getProduct());
-            System.out.println("amount: " + amount + ", produkt: " + pc.getProduct());
+//            System.out.println("amount: " + amount + ", produkt: " + pc.getProduct());
             sc.addProduct(pc.getProduct());
            //  System.out.print(pc.getProduct().getName());
 //        }
             cartContents.clear();
             cartContents.addAll(sc.getItems());
             
+            this.app.updateCartPanel(); //Funkar inte
             
-            
+        }
 //        for(int i=0; i<cartContents.size(); i++){
 //         System.out.print(cartContents.get(i).getProduct());  
 //         System.out.print(cartContents.get(i).getAmount() + " amount");
@@ -82,7 +85,7 @@ public class GUIProject{
                productCards.add(new ProductCard(products.get(i)));
            }
            
-        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
+//        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
         
     }
     

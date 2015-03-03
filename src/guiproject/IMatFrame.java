@@ -10,8 +10,10 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  *
@@ -36,6 +38,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private CardLayout cl;
     
+    private final ImageIcon saveButtonNormal = new ImageIcon(getClass().getResource("/greenButton.png"));
+    private final ImageIcon saveButtonHover = new ImageIcon(getClass().getResource("/greenButtonHover.png"));
+    private final ImageIcon saveButtonClick = new ImageIcon(getClass().getResource("/greenButtonClick.png"));
+    
     /**
      * Skapar arraylist för matkategorierna och deras underkategorier.
      */
@@ -54,7 +60,25 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     
-    
+    public void updateCartPanel(){
+                                                   
+        cartContentsPanel.removeAll();
+        
+        List <ShoppingItem> cartContentList = gpCon.sc.getItems();
+        
+        for (int i = 0; i < gpCon.sc.getItems().size(); i++){
+            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName()));
+        }
+        
+        cartContentsPanel.add(new JLabel("Totalt: " + gpCon.sc.getTotal() + " kr"));
+//        for (int i = 0; i < gpCon.cartContents.size(); i++){
+//        cartContentsPanel.add(new JLabel(gpCon.cartContents.get(i).toString()));
+//            System.out.println(gpCon.cartContents.get(i).toString());
+//        }
+        repaint();
+        revalidate();
+                               
+    }
     private void displayGroceries(){
                 
                 GridLayout layout = new GridLayout(3, gpCon.products.size());
@@ -503,6 +527,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         recipesBtn = new javax.swing.JButton();
         dealsBtn = new javax.swing.JButton();
         historyBtn = new javax.swing.JButton();
+        updCartBtn = new javax.swing.JButton();
         featurePanel = new javax.swing.JPanel();
         startViewPanel = new javax.swing.JPanel();
         recentlyBoughtLabel = new javax.swing.JLabel();
@@ -535,6 +560,64 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         itemShower = new javax.swing.JPanel();
+        myAccountPanel = new javax.swing.JPanel();
+        myAccountContentPanel = new javax.swing.JPanel();
+        personalInfoPanel = new javax.swing.JPanel();
+        personalInfoLabel = new javax.swing.JLabel();
+        firstNameLabel = new javax.swing.JLabel();
+        firstNameTextField = new javax.swing.JTextField();
+        lastNameTextField = new javax.swing.JTextField();
+        lastNameLabel = new javax.swing.JLabel();
+        address1TextField = new javax.swing.JTextField();
+        adress1Label = new javax.swing.JLabel();
+        address2TextField = new javax.swing.JTextField();
+        adress2Label = new javax.swing.JLabel();
+        postCodeLabel = new javax.swing.JLabel();
+        postCodeTextField = new javax.swing.JTextField();
+        cityLabel = new javax.swing.JLabel();
+        cityTextField = new javax.swing.JTextField();
+        emailLabel = new javax.swing.JLabel();
+        emailTextField = new javax.swing.JTextField();
+        separator1 = new javax.swing.JLabel();
+        phoneNumberTextField = new javax.swing.JTextField();
+        phoneNumberLabel = new javax.swing.JLabel();
+        paymentInfoPanel = new javax.swing.JPanel();
+        paymentInfoLabel = new javax.swing.JLabel();
+        cardNumberLabel = new javax.swing.JLabel();
+        cardNumberTextField = new javax.swing.JTextField();
+        cardTypeComboBox = new javax.swing.JComboBox();
+        cardTypeLabel = new javax.swing.JLabel();
+        expirationDateLabel = new javax.swing.JLabel();
+        validMonthComboBox = new javax.swing.JComboBox();
+        expDateSlashLabel = new javax.swing.JLabel();
+        validYearComboBox = new javax.swing.JComboBox();
+        verificationCodeLabel = new javax.swing.JLabel();
+        verificationCodeTextField = new javax.swing.JTextField();
+        cardHolderNameLabel = new javax.swing.JLabel();
+        cardHolderTextField = new javax.swing.JTextField();
+        separator2 = new javax.swing.JLabel();
+        deliveryPanel = new javax.swing.JPanel();
+        personalInfoLabel1 = new javax.swing.JLabel();
+        deliveryDateLabel = new javax.swing.JLabel();
+        deliveryTimeComboBox = new javax.swing.JComboBox();
+        deliveryDayComboBox = new javax.swing.JComboBox();
+        deliverToMyAdressPanel = new javax.swing.JPanel();
+        deliverToMyAddressLabel = new javax.swing.JLabel();
+        deliveryCheckBox = new javax.swing.JCheckBox();
+        separator3 = new javax.swing.JLabel();
+        addressPanel = new javax.swing.JPanel();
+        adress1Label1 = new javax.swing.JLabel();
+        address1TextField1 = new javax.swing.JTextField();
+        adress2TextField1 = new javax.swing.JTextField();
+        adress2Label1 = new javax.swing.JLabel();
+        codeLabel1 = new javax.swing.JLabel();
+        postCodeTextField1 = new javax.swing.JTextField();
+        cityTextField1 = new javax.swing.JTextField();
+        cityLabel1 = new javax.swing.JLabel();
+        saveButton = new javax.swing.JButton();
+        myAccountTopPanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        titleNameLabel = new javax.swing.JLabel();
         logoPanel = new javax.swing.JPanel();
         iMatLabel = new javax.swing.JLabel();
         cartPanel = new javax.swing.JPanel();
@@ -597,6 +680,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
         tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tpMyAccountLabelMouseClicked(evt);
+            }
+        });
 
         tpChangeUserLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpChangeUserLabel.setText("Byt användare");
@@ -653,6 +741,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
+        updCartBtn.setText("Uppdatera varukorg");
+        updCartBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updCartBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
@@ -663,12 +758,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGap(18, 18, 18)
                 .addComponent(myFavoritesBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(recipesBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dealsBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(historyBtn)
-                .addGap(161, 161, 161)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addComponent(recipesBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dealsBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(historyBtn)
+                        .addGap(161, 161, 161))
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addComponent(updCartBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel12)
                 .addGap(28, 28, 28)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -695,6 +795,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(updCartBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(myShoppingBagsBtn)
                             .addComponent(myFavoritesBtn)
@@ -975,6 +1077,613 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(searchResultPanel, "searchResultPanel");
 
+        myAccountPanel.setBackground(new java.awt.Color(255, 255, 255));
+        myAccountPanel.setPreferredSize(new java.awt.Dimension(1121, 525));
+
+        myAccountContentPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        personalInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        personalInfoLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
+        personalInfoLabel.setForeground(new java.awt.Color(51, 51, 51));
+        personalInfoLabel.setText("Personlig information");
+
+        firstNameLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        firstNameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        firstNameLabel.setText("Förnamn");
+
+        firstNameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                firstNameTextFieldFirstNameUpdate(evt);
+            }
+        });
+
+        lastNameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lastNameTextFieldLastNameUpdate(evt);
+            }
+        });
+
+        lastNameLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        lastNameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        lastNameLabel.setText("Efternamn");
+
+        address1TextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                address1TextFieldAddress1Update(evt);
+            }
+        });
+
+        adress1Label.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        adress1Label.setForeground(new java.awt.Color(51, 51, 51));
+        adress1Label.setText("Adress 1");
+
+        address2TextField.setEditable(false);
+        address2TextField.setBackground(new java.awt.Color(204, 204, 204));
+
+        adress2Label.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        adress2Label.setForeground(new java.awt.Color(153, 153, 153));
+        adress2Label.setText("Adress 2");
+
+        postCodeLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        postCodeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        postCodeLabel.setText("Postnummer");
+
+        postCodeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                postCodeTextFieldPostCodeUpdate(evt);
+            }
+        });
+
+        cityLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        cityLabel.setForeground(new java.awt.Color(153, 153, 153));
+        cityLabel.setText("Ort");
+
+        cityTextField.setEditable(false);
+        cityTextField.setBackground(new java.awt.Color(204, 204, 204));
+
+        emailLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        emailLabel.setForeground(new java.awt.Color(51, 51, 51));
+        emailLabel.setText("E-mailadress");
+
+        emailTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                emailTextFieldEmailUpdate(evt);
+            }
+        });
+
+        separator1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redSeparator.png"))); // NOI18N
+        separator1.setPreferredSize(new java.awt.Dimension(285, 2));
+
+        phoneNumberTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                phoneNumberTextFieldphoneNumberUpdate(evt);
+            }
+        });
+
+        phoneNumberLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        phoneNumberLabel.setForeground(new java.awt.Color(51, 51, 51));
+        phoneNumberLabel.setText("Telefon");
+
+        javax.swing.GroupLayout personalInfoPanelLayout = new javax.swing.GroupLayout(personalInfoPanel);
+        personalInfoPanel.setLayout(personalInfoPanelLayout);
+        personalInfoPanelLayout.setHorizontalGroup(
+            personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                            .addComponent(adress1Label)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(address1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                            .addComponent(lastNameLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                            .addComponent(firstNameLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                            .addComponent(personalInfoLabel)
+                            .addGap(126, 126, 126))
+                        .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                            .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(postCodeLabel)
+                                .addComponent(adress2Label)
+                                .addComponent(cityLabel)
+                                .addComponent(emailLabel))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(address2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(postCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalInfoPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(phoneNumberLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        personalInfoPanelLayout.setVerticalGroup(
+            personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(personalInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(personalInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstNameLabel)
+                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lastNameLabel)
+                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adress1Label)
+                    .addComponent(address1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adress2Label)
+                    .addComponent(address2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(postCodeLabel)
+                    .addComponent(postCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cityLabel)
+                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLabel)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(personalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phoneNumberLabel))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        paymentInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        paymentInfoLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
+        paymentInfoLabel.setForeground(new java.awt.Color(51, 51, 51));
+        paymentInfoLabel.setText("Betalning");
+
+        cardNumberLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        cardNumberLabel.setForeground(new java.awt.Color(51, 51, 51));
+        cardNumberLabel.setText("Kortnummer");
+
+        cardNumberTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cardNumberTextFieldCardNumberUpdate(evt);
+            }
+        });
+
+        cardTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "VISA", "MasterCard", "PayPal" }));
+        cardTypeComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cardTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cardTypeComboBoxCardTypeUpdate(evt);
+            }
+        });
+
+        cardTypeLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        cardTypeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        cardTypeLabel.setText("Korttyp");
+
+        expirationDateLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        expirationDateLabel.setForeground(new java.awt.Color(51, 51, 51));
+        expirationDateLabel.setText("Expiration date");
+
+        validMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        validMonthComboBox.setSelectedIndex(5);
+        validMonthComboBox.setToolTipText("Månad");
+        validMonthComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        validMonthComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validMonthComboBoxValidMonthUpdate(evt);
+            }
+        });
+
+        expDateSlashLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        expDateSlashLabel.setForeground(new java.awt.Color(51, 51, 51));
+        expDateSlashLabel.setText("/");
+
+        validYearComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020" }));
+        validYearComboBox.setToolTipText("År");
+        validYearComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        validYearComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validYearComboBoxValidYearUpdate(evt);
+            }
+        });
+
+        verificationCodeLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        verificationCodeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        verificationCodeLabel.setText("CVV");
+
+        verificationCodeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                verificationCodeTextFieldVerificationCodeUpdate(evt);
+            }
+        });
+
+        cardHolderNameLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        cardHolderNameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        cardHolderNameLabel.setText("Kortinnehavare");
+
+        cardHolderTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cardHolderTextFieldCardHolderUpdate(evt);
+            }
+        });
+
+        separator2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redSeparator.png"))); // NOI18N
+
+        javax.swing.GroupLayout paymentInfoPanelLayout = new javax.swing.GroupLayout(paymentInfoPanel);
+        paymentInfoPanel.setLayout(paymentInfoPanelLayout);
+        paymentInfoPanelLayout.setHorizontalGroup(
+            paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                            .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cardNumberLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cardTypeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(expirationDateLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(verificationCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(expDateSlashLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                            .addComponent(cardHolderNameLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(separator2)
+                    .addComponent(paymentInfoLabel))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        paymentInfoPanelLayout.setVerticalGroup(
+            paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(paymentInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardNumberLabel)
+                    .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardTypeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(expirationDateLabel)
+                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(expDateSlashLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verificationCodeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardHolderNameLabel)
+                    .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        deliveryPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        personalInfoLabel1.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
+        personalInfoLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        personalInfoLabel1.setText("Leverans");
+
+        deliveryDateLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        deliveryDateLabel.setForeground(new java.awt.Color(153, 153, 153));
+        deliveryDateLabel.setText("Leveranstid");
+
+        deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00", "20:00-22:00" }));
+        deliveryTimeComboBox.setSelectedIndex(1);
+        deliveryTimeComboBox.setToolTipText("");
+        deliveryTimeComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        deliveryTimeComboBox.setEnabled(false);
+
+        deliveryDayComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "idag", "imorgon", "i övermorgon" }));
+        deliveryDayComboBox.setSelectedIndex(1);
+        deliveryDayComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        deliveryDayComboBox.setEnabled(false);
+
+        deliverToMyAdressPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        deliverToMyAddressLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        deliverToMyAddressLabel.setForeground(new java.awt.Color(153, 153, 153));
+        deliverToMyAddressLabel.setText("Leverera till annan adress");
+
+        deliveryCheckBox.setBackground(new java.awt.Color(255, 255, 255));
+        deliveryCheckBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        deliveryCheckBox.setEnabled(false);
+        deliveryCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deliveryCheckBoxActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout deliverToMyAdressPanelLayout = new javax.swing.GroupLayout(deliverToMyAdressPanel);
+        deliverToMyAdressPanel.setLayout(deliverToMyAdressPanelLayout);
+        deliverToMyAdressPanelLayout.setHorizontalGroup(
+            deliverToMyAdressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliverToMyAdressPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(deliverToMyAddressLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deliveryCheckBox)
+                .addGap(120, 120, 120))
+        );
+        deliverToMyAdressPanelLayout.setVerticalGroup(
+            deliverToMyAdressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliverToMyAdressPanelLayout.createSequentialGroup()
+                .addGroup(deliverToMyAdressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(deliveryCheckBox, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deliverToMyAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        separator3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redSeparator.png"))); // NOI18N
+
+        addressPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        adress1Label1.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        adress1Label1.setForeground(new java.awt.Color(51, 51, 51));
+        adress1Label1.setText("Adress 1");
+
+        address1TextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address1TextField1AddressUpdate(evt);
+            }
+        });
+
+        adress2TextField1.setEditable(false);
+        adress2TextField1.setBackground(new java.awt.Color(204, 204, 204));
+
+        adress2Label1.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        adress2Label1.setForeground(new java.awt.Color(153, 153, 153));
+        adress2Label1.setText("Adress 2");
+
+        codeLabel1.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        codeLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        codeLabel1.setText("Postnummer");
+
+        postCodeTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                postCodeTextField1PostCodeUpdate(evt);
+            }
+        });
+
+        cityTextField1.setEditable(false);
+        cityTextField1.setBackground(new java.awt.Color(204, 204, 204));
+
+        cityLabel1.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
+        cityLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        cityLabel1.setText("Ort");
+
+        javax.swing.GroupLayout addressPanelLayout = new javax.swing.GroupLayout(addressPanel);
+        addressPanel.setLayout(addressPanelLayout);
+        addressPanelLayout.setHorizontalGroup(
+            addressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addressPanelLayout.createSequentialGroup()
+                .addComponent(adress1Label1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(address1TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addressPanelLayout.createSequentialGroup()
+                .addComponent(adress2Label1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adress2TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addressPanelLayout.createSequentialGroup()
+                .addComponent(codeLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(postCodeTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addressPanelLayout.createSequentialGroup()
+                .addComponent(cityLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        addressPanelLayout.setVerticalGroup(
+            addressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addressPanelLayout.createSequentialGroup()
+                .addGroup(addressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adress1Label1)
+                    .addComponent(address1TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(addressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adress2Label1)
+                    .addComponent(adress2TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(addressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(codeLabel1)
+                    .addComponent(postCodeTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(addressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cityLabel1)
+                    .addComponent(cityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        javax.swing.GroupLayout deliveryPanelLayout = new javax.swing.GroupLayout(deliveryPanel);
+        deliveryPanel.setLayout(deliveryPanelLayout);
+        deliveryPanelLayout.setHorizontalGroup(
+            deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliveryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(deliveryPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(deliveryDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deliveryTimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deliveryDayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliveryPanelLayout.createSequentialGroup()
+                        .addComponent(deliverToMyAdressPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(deliveryPanelLayout.createSequentialGroup()
+                        .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(personalInfoLabel1)
+                            .addComponent(separator3))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(deliveryPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(addressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        deliveryPanelLayout.setVerticalGroup(
+            deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliveryPanelLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(personalInfoLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deliveryDateLabel)
+                    .addComponent(deliveryTimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deliveryDayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deliverToMyAdressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(deliveryPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(addressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        saveButton.setBackground(new java.awt.Color(255, 255, 255));
+        saveButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(0, 51, 0));
+        saveButton.setText("Spara ändringar");
+        saveButton.setToolTipText("Spara ändringar");
+        saveButton.setBorder(null);
+        saveButton.setBorderPainted(false);
+        saveButton.setContentAreaFilled(false);
+        saveButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        saveButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonHover(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonUnhover(evt);
+            }
+        });
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout myAccountContentPanelLayout = new javax.swing.GroupLayout(myAccountContentPanel);
+        myAccountContentPanel.setLayout(myAccountContentPanelLayout);
+        myAccountContentPanelLayout.setHorizontalGroup(
+            myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myAccountContentPanelLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(personalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(paymentInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(deliveryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        myAccountContentPanelLayout.setVerticalGroup(
+            myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myAccountContentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(personalInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(myAccountContentPanelLayout.createSequentialGroup()
+                        .addComponent(deliveryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
+                        .addComponent(saveButton))
+                    .addComponent(paymentInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
+        );
+
+        myAccountTopPanel.setBackground(new java.awt.Color(255, 255, 255));
+        myAccountTopPanel.setForeground(new java.awt.Color(255, 0, 51));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Mitt konto -");
+
+        titleNameLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        titleNameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        titleNameLabel.setText("Namn");
+
+        javax.swing.GroupLayout myAccountTopPanelLayout = new javax.swing.GroupLayout(myAccountTopPanel);
+        myAccountTopPanel.setLayout(myAccountTopPanelLayout);
+        myAccountTopPanelLayout.setHorizontalGroup(
+            myAccountTopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myAccountTopPanelLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(titleNameLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        myAccountTopPanelLayout.setVerticalGroup(
+            myAccountTopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myAccountTopPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(myAccountTopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titleNameLabel))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout myAccountPanelLayout = new javax.swing.GroupLayout(myAccountPanel);
+        myAccountPanel.setLayout(myAccountPanelLayout);
+        myAccountPanelLayout.setHorizontalGroup(
+            myAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(myAccountContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(myAccountTopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        myAccountPanelLayout.setVerticalGroup(
+            myAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myAccountPanelLayout.createSequentialGroup()
+                .addComponent(myAccountTopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(myAccountContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        featurePanel.add(myAccountPanel, "myAccount");
+
         logoPanel.setBackground(new java.awt.Color(204, 0, 0));
         logoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1116,6 +1825,119 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchFieldActionPerformed
+/**
+ * 
+ * Flytta detta till en egen metod, kalla från gpcon. 
+ */
+    private void updCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updCartBtnActionPerformed
+        cartContentsPanel.removeAll();
+        
+        List <ShoppingItem> cartContentList = gpCon.sc.getItems();
+        
+        for (int i = 0; i < gpCon.sc.getItems().size(); i++){
+            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName()));
+        }
+        cartContentsPanel.add(new JLabel("Totalt: " + gpCon.sc.getTotal() + " kr"));
+//        for (int i = 0; i < gpCon.cartContents.size(); i++){
+//        cartContentsPanel.add(new JLabel(gpCon.cartContents.get(i).toString()));
+//            System.out.println(gpCon.cartContents.get(i).toString());
+//        }
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_updCartBtnActionPerformed
+
+    private void firstNameTextFieldFirstNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNameTextFieldFirstNameUpdate
+        gpCon.iMDH.getCustomer().setFirstName(firstNameTextField.getText());
+    }//GEN-LAST:event_firstNameTextFieldFirstNameUpdate
+
+    private void lastNameTextFieldLastNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lastNameTextFieldLastNameUpdate
+        gpCon.iMDH.getCustomer().setLastName(lastNameTextField.getText());
+    }//GEN-LAST:event_lastNameTextFieldLastNameUpdate
+
+    private void address1TextFieldAddress1Update(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1TextFieldAddress1Update
+        gpCon.iMDH.getCustomer().setAddress(address1TextField.getText());
+    }//GEN-LAST:event_address1TextFieldAddress1Update
+
+    private void postCodeTextFieldPostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeTextFieldPostCodeUpdate
+        gpCon.iMDH.getCustomer().setPostCode(postCodeTextField.getText());
+    }//GEN-LAST:event_postCodeTextFieldPostCodeUpdate
+
+    private void emailTextFieldEmailUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTextFieldEmailUpdate
+        gpCon.iMDH.getCustomer().setEmail(emailTextField.getText());
+    }//GEN-LAST:event_emailTextFieldEmailUpdate
+
+    private void phoneNumberTextFieldphoneNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldphoneNumberUpdate
+        gpCon.iMDH.getCustomer().setPhoneNumber(phoneNumberTextField.getText());
+    }//GEN-LAST:event_phoneNumberTextFieldphoneNumberUpdate
+
+    private void cardNumberTextFieldCardNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTextFieldCardNumberUpdate
+        gpCon.iMDH.getCreditCard().setCardNumber(cardNumberTextField.getText());
+    }//GEN-LAST:event_cardNumberTextFieldCardNumberUpdate
+
+    private void cardTypeComboBoxCardTypeUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardTypeComboBoxCardTypeUpdate
+        gpCon.iMDH.getCreditCard().setCardType(cardTypeComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_cardTypeComboBoxCardTypeUpdate
+
+    private void validMonthComboBoxValidMonthUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validMonthComboBoxValidMonthUpdate
+        gpCon.iMDH.getCreditCard().setValidMonth(validMonthComboBox.getSelectedIndex());
+    }//GEN-LAST:event_validMonthComboBoxValidMonthUpdate
+
+    private void validYearComboBoxValidYearUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validYearComboBoxValidYearUpdate
+        gpCon.iMDH.getCreditCard().setValidYear(validYearComboBox.getSelectedIndex());
+    }//GEN-LAST:event_validYearComboBoxValidYearUpdate
+
+    private void verificationCodeTextFieldVerificationCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_verificationCodeTextFieldVerificationCodeUpdate
+        try{
+            gpCon.iMDH.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+        } catch(NumberFormatException nfe){
+            System.out.println("Incorrect input.");
+        }
+    }//GEN-LAST:event_verificationCodeTextFieldVerificationCodeUpdate
+
+    private void cardHolderTextFieldCardHolderUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardHolderTextFieldCardHolderUpdate
+        gpCon.iMDH.getCreditCard().setHoldersName(cardHolderTextField.getText());
+    }//GEN-LAST:event_cardHolderTextFieldCardHolderUpdate
+
+    private void deliveryCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryCheckBoxActionPerformed
+        // Happens when the user checks/unchecks the delivery checkbox.
+
+        if(deliveryCheckBox.isSelected()){
+            addressPanel.setVisible(true);
+        } else{
+            addressPanel.setVisible(false);
+        }
+
+    }//GEN-LAST:event_deliveryCheckBoxActionPerformed
+
+    private void saveButtonSaveButtonClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonSaveButtonClicked
+        saveButton.setIcon(saveButtonClick);
+        saveButton.setForeground(Color.WHITE);
+    }//GEN-LAST:event_saveButtonSaveButtonClicked
+
+    private void saveButtonSaveButtonHover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonSaveButtonHover
+        saveButton.setIcon(saveButtonHover);
+    }//GEN-LAST:event_saveButtonSaveButtonHover
+
+    private void saveButtonSaveButtonUnhover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonSaveButtonUnhover
+        saveButton.setIcon(saveButtonNormal);
+        saveButton.setForeground(new Color(003400));
+    }//GEN-LAST:event_saveButtonSaveButtonUnhover
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        gpCon.iMDH.shutDown();
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void tpMyAccountLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tpMyAccountLabelMouseClicked
+        cl.show(featurePanel, "myAccount"); 
+    }//GEN-LAST:event_tpMyAccountLabelMouseClicked
+
+    private void address1TextField1AddressUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1TextField1AddressUpdate
+        gpCon.iMDH.getCustomer().setPostAddress(address1TextField.getText());
+    }//GEN-LAST:event_address1TextField1AddressUpdate
+
+    private void postCodeTextField1PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeTextField1PostCodeUpdate
+        gpCon.iMDH.getInstance().getCustomer().setPostCode(postCodeTextField.getText());
+    }//GEN-LAST:event_postCodeTextField1PostCodeUpdate
 
     /**
      * @param args the command line arguments
@@ -1154,6 +1976,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField address1TextField;
+    private javax.swing.JTextField address1TextField1;
+    private javax.swing.JTextField address2TextField;
+    private javax.swing.JPanel addressPanel;
+    private javax.swing.JLabel adress1Label;
+    private javax.swing.JLabel adress1Label1;
+    private javax.swing.JLabel adress2Label;
+    private javax.swing.JLabel adress2Label1;
+    private javax.swing.JTextField adress2TextField1;
+    private javax.swing.JLabel cardHolderNameLabel;
+    private javax.swing.JTextField cardHolderTextField;
+    private javax.swing.JLabel cardNumberLabel;
+    private javax.swing.JTextField cardNumberTextField;
+    private javax.swing.JComboBox cardTypeComboBox;
+    private javax.swing.JLabel cardTypeLabel;
     private javax.swing.JPanel cartContentsPanel;
     private javax.swing.JLabel cartHeadlineLabel;
     private javax.swing.JPanel cartPanel;
@@ -1167,10 +2004,28 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel categoryFeatureLabel;
     private javax.swing.JPanel categoryFeaturePanel;
     private javax.swing.JPanel categoryPanel;
+    private javax.swing.JLabel cityLabel;
+    private javax.swing.JLabel cityLabel1;
+    private javax.swing.JTextField cityTextField;
+    private javax.swing.JTextField cityTextField1;
+    private javax.swing.JLabel codeLabel1;
     private javax.swing.JButton dealsBtn;
     private javax.swing.JLabel dealsLabel;
     private javax.swing.JPanel dealsViewPanel;
+    private javax.swing.JLabel deliverToMyAddressLabel;
+    private javax.swing.JPanel deliverToMyAdressPanel;
+    private javax.swing.JCheckBox deliveryCheckBox;
+    private javax.swing.JLabel deliveryDateLabel;
+    private javax.swing.JComboBox deliveryDayComboBox;
+    private javax.swing.JPanel deliveryPanel;
+    private javax.swing.JComboBox deliveryTimeComboBox;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel expDateSlashLabel;
+    private javax.swing.JLabel expirationDateLabel;
     private javax.swing.JPanel featurePanel;
+    private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JTextField firstNameTextField;
     private javax.swing.JLabel fpDealsLabel;
     private javax.swing.JLabel fpHistoryLabel;
     private javax.swing.JLabel fpMyFavoritesLabel;
@@ -1187,31 +2042,57 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JLabel lastNameLabel;
+    private javax.swing.JTextField lastNameTextField;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel leftUpperPanel;
     private javax.swing.JPanel logoPanel;
+    private javax.swing.JPanel myAccountContentPanel;
+    private javax.swing.JPanel myAccountPanel;
+    private javax.swing.JPanel myAccountTopPanel;
     private javax.swing.JButton myFavoritesBtn;
     private javax.swing.JPanel myFavoritesViewPanel;
     private javax.swing.JButton myShoppingBagsBtn;
     private javax.swing.JPanel myShoppingBagsViewPanel;
+    private javax.swing.JLabel paymentInfoLabel;
+    private javax.swing.JPanel paymentInfoPanel;
+    private javax.swing.JLabel personalInfoLabel;
+    private javax.swing.JLabel personalInfoLabel1;
+    private javax.swing.JPanel personalInfoPanel;
+    private javax.swing.JLabel phoneNumberLabel;
+    private javax.swing.JTextField phoneNumberTextField;
     private javax.swing.JLabel popularLabel;
+    private javax.swing.JLabel postCodeLabel;
+    private javax.swing.JTextField postCodeTextField;
+    private javax.swing.JTextField postCodeTextField1;
     private javax.swing.JLabel recentlyBoughtLabel;
     private javax.swing.JButton recipesBtn;
     private javax.swing.JPanel recipesViewPanel;
+    private javax.swing.JButton saveButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchField;
     private javax.swing.JPanel searchResultPanel;
+    private javax.swing.JLabel separator1;
+    private javax.swing.JLabel separator2;
+    private javax.swing.JLabel separator3;
     private javax.swing.JPanel startViewPanel;
+    private javax.swing.JLabel titleNameLabel;
     private javax.swing.JPanel topPanel;
     private javax.swing.JLabel tpCartContentsNumber;
     private javax.swing.JLabel tpCartSumLabel;
     private javax.swing.JLabel tpChangeUserLabel;
     private javax.swing.JLabel tpGoToCashierLabel;
     private javax.swing.JLabel tpMyAccountLabel;
+    private javax.swing.JButton updCartBtn;
+    private javax.swing.JComboBox validMonthComboBox;
+    private javax.swing.JComboBox validYearComboBox;
+    private javax.swing.JLabel verificationCodeLabel;
+    private javax.swing.JTextField verificationCodeTextField;
     // End of variables declaration//GEN-END:variables
 }
