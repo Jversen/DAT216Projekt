@@ -28,6 +28,7 @@ public class GUIProject{
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
     public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
+    public List <CartProdObject> cpo = new ArrayList<CartProdObject>();
         
     
     /**
@@ -56,11 +57,12 @@ public class GUIProject{
     public void addToCart(ProductCard pc, IMatFrame imf){
         double amount = pc.getSpinnerValue();
         
-        if (amount > 0){
+ //       if (amount > 0){
 //        for(int i=0; i<amount; i++){
 //            cart.add(pc.getProduct());
 //            System.out.println("amount: " + amount + ", produkt: " + pc.getProduct());
-            sc.addProduct(pc.getProduct(), amount);
+           sc.addProduct(pc.getProduct(), amount);
+           cpo.add(new CartProdObject(new ShoppingItem(pc.getProduct(), amount)));
            //  System.out.print(pc.getProduct().getName());
 //        }
             cartContents.clear();
@@ -74,7 +76,6 @@ public class GUIProject{
 //         System.out.print(cartContents.get(i).getAmount() + " amount");
 //         System.out.print(cartContents.get(i).getTotal() + " total");  
 //        }
-    }
     
     public void listCatProds(String s, IMatFrame imf){
         this.products = iMDH.getProducts(ProductCategory.valueOf(s));
