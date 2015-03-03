@@ -95,7 +95,7 @@
         <Container class="javax.swing.JPanel" name="leftUpperPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="ff" red="33" type="rgb"/>
+              <Color blue="0" green="0" red="cc" type="rgb"/>
             </Property>
           </Properties>
 
@@ -174,7 +174,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                  <Component id="cartImage" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="tpGoToCashierLabel" min="-2" max="-2" attributes="0"/>
@@ -191,7 +191,7 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                  <Component id="accountImage" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="tpMyAccountLabel" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -221,7 +221,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="accountImage" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="tpMyAccountLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -243,7 +243,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="tpGoToCashierLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cartImage" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -254,7 +254,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="cartImage">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/guiKundvagn.png"/>
@@ -266,7 +266,7 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
           <Events>
@@ -278,11 +278,11 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Byt anv&#xe4;ndare"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel16">
+        <Component class="javax.swing.JLabel" name="accountImage">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/guiProfile.png"/>
@@ -304,7 +304,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="G&#xe5; till kassan"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
         </Component>
@@ -423,7 +423,7 @@
                       <Component id="dealsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace pref="168" max="32767" attributes="0"/>
+                      <EmptySpace pref="174" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -481,7 +481,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpMyShoppingBagsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="607" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="613" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -517,7 +517,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpMyFavoritesLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="607" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="613" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -553,7 +553,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpRecipesLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="607" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="613" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -589,7 +589,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpDealsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="607" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="613" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -643,7 +643,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpHistoryLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="265" max="32767" attributes="0"/>
+                      <EmptySpace pref="271" max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="25" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -678,7 +678,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 1"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -690,7 +690,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 2"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -699,7 +699,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 3"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -708,7 +708,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 4"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -717,7 +717,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 5"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -726,7 +726,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 6"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -770,7 +770,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="categoryFeatureLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="614" max="32767" attributes="0"/>
+                      <EmptySpace pref="620" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -805,10 +805,20 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel1">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ad" green="dd" red="f4" type="rgb"/>
+                    </Property>
+                  </Properties>
 
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="itemShower">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="-1" gridY="-1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                         <Property name="columns" type="int" value="2"/>
@@ -865,33 +875,22 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="personalInfoPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="paymentInfoPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="deliveryPanel" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="saveButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="165" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="personalInfoPanel" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="deliveryPanel" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                  <Component id="saveButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="paymentInfoPanel" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="personalInfoPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="paymentInfoPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="184" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1213,7 +1212,11 @@
                                   <Component id="separator2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="paymentInfoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="27" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="deliveryPanel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1251,6 +1254,8 @@
                                   <Component id="cardHolderNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cardHolderTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="deliveryPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1294,7 +1299,7 @@
                           </StringArray>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1344,7 +1349,7 @@
                         <Property name="selectedIndex" type="int" value="5"/>
                         <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1376,7 +1381,7 @@
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1422,139 +1427,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="deliveryPanel">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Component id="deliveryDateLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="deliveryTimeComboBox" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="deliveryDayComboBox" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="deliverToMyAdressPanel" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="personalInfoLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="separator3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="addressPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="personalInfoLabel1" min="-2" pref="24" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="separator3" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="deliveryDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deliveryTimeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deliveryDayComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="deliverToMyAdressPanel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="addressPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="personalInfoLabel1">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Gautami" size="18" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Leverans"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="deliveryDateLabel">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Gautami" size="14" style="0"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="99" green="99" red="99" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Leveranstid"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="deliveryTimeComboBox">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="6">
-                            <StringItem index="0" value="10:00-12:00"/>
-                            <StringItem index="1" value="12:00-14:00"/>
-                            <StringItem index="2" value="14:00-16:00"/>
-                            <StringItem index="3" value="16:00-18:00"/>
-                            <StringItem index="4" value="18:00-20:00"/>
-                            <StringItem index="5" value="20:00-22:00"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="1"/>
-                        <Property name="toolTipText" type="java.lang.String" value=""/>
-                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
-                        </Property>
-                        <Property name="enabled" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="deliveryDayComboBox">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
-                            <StringItem index="0" value="idag"/>
-                            <StringItem index="1" value="imorgon"/>
-                            <StringItem index="2" value="i &#xf6;vermorgon"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="1"/>
-                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
-                        </Property>
-                        <Property name="enabled" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                    <Container class="javax.swing.JPanel" name="deliverToMyAdressPanel">
+                    <Container class="javax.swing.JPanel" name="deliveryPanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1564,29 +1437,71 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="deliverToMyAddressLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="deliveryCheckBox" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                          <Component id="deliveryDateLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="deliveryTimeComboBox" min="-2" pref="145" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="deliveryDayComboBox" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="separator3" alignment="0" min="-2" pref="358" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="deliverToMyAdressPanel" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="personalInfoLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="addressPanel" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="saveButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="deliveryCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="deliverToMyAddressLabel" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Component id="personalInfoLabel1" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="separator3" min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="deliveryDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deliveryTimeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deliveryDayComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="deliverToMyAdressPanel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="addressPanel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="saveButton" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <EmptySpace pref="14" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="deliverToMyAddressLabel">
+                        <Component class="javax.swing.JLabel" name="personalInfoLabel1">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Gautami" size="18" style="0"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="33" green="33" red="33" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Leverans"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="deliveryDateLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Gautami" size="14" style="0"/>
@@ -1594,195 +1509,276 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="99" green="99" red="99" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Leverera till annan adress"/>
+                            <Property name="text" type="java.lang.String" value="Leveranstid"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="deliveryCheckBox">
+                        <Component class="javax.swing.JComboBox" name="deliveryTimeComboBox">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value="10:00-12:00"/>
+                                <StringItem index="1" value="12:00-14:00"/>
+                                <StringItem index="2" value="14:00-16:00"/>
+                                <StringItem index="3" value="16:00-18:00"/>
+                                <StringItem index="4" value="18:00-20:00"/>
+                                <StringItem index="5" value="20:00-22:00"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="1"/>
+                            <Property name="toolTipText" type="java.lang.String" value=""/>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Standardmark&#xf6;r"/>
+                            </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="deliveryDayComboBox">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="idag"/>
+                                <StringItem index="1" value="imorgon"/>
+                                <StringItem index="2" value="i &#xf6;vermorgon"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="1"/>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Standardmark&#xf6;r"/>
+                            </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                        </Component>
+                        <Container class="javax.swing.JPanel" name="deliverToMyAdressPanel">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deliveryCheckBoxActionPerformed"/>
-                          </Events>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JLabel" name="separator3">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/redSeparator.png"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Container class="javax.swing.JPanel" name="addressPanel">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
-                      </Properties>
 
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="adress1Label1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="address1TextField1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="adress2Label1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="adress2TextField1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="codeLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="postCodeTextField1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="cityLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cityTextField1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="adress1Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="address1TextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="adress2Label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="adress2TextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="codeLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="postCodeTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cityLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cityTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="deliverToMyAddressLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="deliveryCheckBox" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                      <SubComponents>
-                        <Component class="javax.swing.JLabel" name="adress1Label1">
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="deliveryCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="deliverToMyAddressLabel" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="deliverToMyAddressLabel">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Gautami" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Leverera till annan adress"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="deliveryCheckBox">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                  <Color id="Standardmark&#xf6;r"/>
+                                </Property>
+                                <Property name="enabled" type="boolean" value="false"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deliveryCheckBoxActionPerformed"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="javax.swing.JLabel" name="separator3">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Gautami" size="14" style="0"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/redSeparator.png"/>
                             </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Adress 1"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="address1TextField1">
-                          <Events>
-                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="address1TextField1AddressUpdate"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="adress2TextField1">
+                        <Container class="javax.swing.JPanel" name="addressPanel">
                           <Properties>
-                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="adress2Label1">
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="adress1Label1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="address1TextField1" min="-2" pref="195" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="adress2Label1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="adress2TextField1" min="-2" pref="195" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="codeLabel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="postCodeTextField1" min="-2" pref="195" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="cityLabel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cityTextField1" min="-2" pref="195" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="adress1Label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="address1TextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="adress2Label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="adress2TextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="codeLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="postCodeTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="cityLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cityTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="adress1Label1">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Gautami" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="33" green="33" red="33" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Adress 1"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="address1TextField1">
+                              <Events>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="address1TextField1AddressUpdate"/>
+                              </Events>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="adress2TextField1">
+                              <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="adress2Label1">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Gautami" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Adress 2"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="codeLabel1">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Gautami" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="33" green="33" red="33" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Postnummer"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="postCodeTextField1">
+                              <Events>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="postCodeTextField1PostCodeUpdate"/>
+                              </Events>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="cityTextField1">
+                              <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="cityLabel1">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Gautami" size="14" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Ort"/>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="javax.swing.JButton" name="saveButton">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Gautami" size="14" style="0"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="99" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Adress 2"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="codeLabel1">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Gautami" size="14" style="0"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Postnummer"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="postCodeTextField1">
-                          <Events>
-                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="postCodeTextField1PostCodeUpdate"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="cityTextField1">
-                          <Properties>
-                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="cityLabel1">
-                          <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Gautami" size="14" style="0"/>
+                              <Font name="Tahoma" size="14" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="99" type="rgb"/>
+                              <Color blue="0" green="33" red="0" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Ort"/>
+                            <Property name="text" type="java.lang.String" value="Spara &#xe4;ndringar"/>
+                            <Property name="toolTipText" type="java.lang.String" value="Spara &#xe4;ndringar"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="null"/>
+                            </Property>
+                            <Property name="borderPainted" type="boolean" value="false"/>
+                            <Property name="contentAreaFilled" type="boolean" value="false"/>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Standardmark&#xf6;r"/>
+                            </Property>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonClicked"/>
+                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonUnhover"/>
+                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonHover"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="saveButton">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="33" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Spara &#xe4;ndringar"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Spara &#xe4;ndringar"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
-                    <Property name="borderPainted" type="boolean" value="false"/>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
-                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
-                    </Property>
-                    <Property name="horizontalTextPosition" type="int" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonHover"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonUnhover"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
-                  </Events>
-                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="myAccountTopPanel">
@@ -1887,7 +1883,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="iMat"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
         </Component>
@@ -1896,7 +1892,7 @@
     <Container class="javax.swing.JPanel" name="cartPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+          <Color blue="0" green="64" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
@@ -1945,7 +1941,7 @@
             <Container class="javax.swing.JPanel" name="cartContentsPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="66" red="cc" type="rgb"/>
+                  <Color blue="0" green="64" red="cc" type="rgb"/>
                 </Property>
               </Properties>
 

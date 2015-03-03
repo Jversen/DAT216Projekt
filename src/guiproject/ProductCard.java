@@ -45,19 +45,20 @@ public class ProductCard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Body = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jSpinner1 = new javax.swing.JSpinner();
         addProductButton = new javax.swing.JButton();
         PriceLabel2 = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
-        Head = new javax.swing.JPanel();
+        Body = new javax.swing.JPanel();
         pictureLabel = new javax.swing.JLabel();
+        Head = new javax.swing.JPanel();
         productCardName = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        Body.setBackground(new java.awt.Color(204, 255, 204));
-        Body.add(jSpinner1);
+        jPanel1.setBackground(new java.awt.Color(244, 221, 173));
+        jPanel1.add(jSpinner1);
 
         addProductButton.setText("OK");
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,18 +66,22 @@ public class ProductCard extends javax.swing.JPanel {
                 addProductButtonActionPerformed(evt);
             }
         });
-        Body.add(addProductButton);
+        jPanel1.add(addProductButton);
 
         PriceLabel2.setText("Pris:");
-        Body.add(PriceLabel2);
+        jPanel1.add(PriceLabel2);
 
         priceLabel.setText("Pris");
-        Body.add(priceLabel);
+        jPanel1.add(priceLabel);
+
+        add(jPanel1, java.awt.BorderLayout.PAGE_END);
+
+        Body.setBackground(new java.awt.Color(244, 221, 173));
+        Body.add(pictureLabel);
 
         add(Body, java.awt.BorderLayout.CENTER);
 
-        Head.setBackground(new java.awt.Color(0, 204, 204));
-        Head.add(pictureLabel);
+        Head.setBackground(new java.awt.Color(224, 175, 118));
 
         productCardName.setText("jLabel1");
         Head.add(productCardName);
@@ -95,6 +100,7 @@ public class ProductCard extends javax.swing.JPanel {
     private javax.swing.JPanel Head;
     private javax.swing.JLabel PriceLabel2;
     private javax.swing.JButton addProductButton;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel pictureLabel;
     private javax.swing.JLabel priceLabel;

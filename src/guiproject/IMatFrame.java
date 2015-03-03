@@ -38,6 +38,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private CardLayout cl;
     
+    
+    //var används dessa?
     private final ImageIcon saveButtonNormal = new ImageIcon(getClass().getResource("/greenButton.png"));
     private final ImageIcon saveButtonHover = new ImageIcon(getClass().getResource("/greenButtonHover.png"));
     private final ImageIcon saveButtonClick = new ImageIcon(getClass().getResource("/greenButtonClick.png"));
@@ -81,7 +83,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
     private void displayGroceries(){
                 
-                GridLayout layout = new GridLayout(3, gpCon.products.size());
+                GridLayout layout = new GridLayout(gpCon.products.size(),1);
                               
                 itemShower.setLayout(layout);
                 itemShower.removeAll();
@@ -513,10 +515,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         searchButton = new javax.swing.JButton();
         categoryPanel = new javax.swing.JPanel();
         topPanel = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        cartImage = new javax.swing.JLabel();
         tpMyAccountLabel = new javax.swing.JLabel();
         tpChangeUserLabel = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        accountImage = new javax.swing.JLabel();
         tpCartContentsNumber = new javax.swing.JLabel();
         tpCartSumLabel = new javax.swing.JLabel();
         tpGoToCashierLabel = new javax.swing.JLabel();
@@ -630,7 +632,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         leftPanel.setBackground(new java.awt.Color(204, 0, 0));
 
-        leftUpperPanel.setBackground(new java.awt.Color(51, 255, 51));
+        leftUpperPanel.setBackground(new java.awt.Color(204, 0, 0));
         leftUpperPanel.setLayout(new java.awt.BorderLayout());
 
         searchField.setText("Skriv här...");
@@ -675,7 +677,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         topPanel.setBackground(new java.awt.Color(204, 0, 0));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiKundvagn.png"))); // NOI18N
+        cartImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiKundvagn.png"))); // NOI18N
 
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
@@ -690,7 +692,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpChangeUserLabel.setText("Byt användare");
         tpChangeUserLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
+        accountImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
 
         tpCartContentsNumber.setText("Varor");
 
@@ -769,7 +771,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addGroup(topPanelLayout.createSequentialGroup()
                         .addComponent(updCartBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jLabel12)
+                .addComponent(cartImage)
                 .addGap(28, 28, 28)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tpGoToCashierLabel)
@@ -782,7 +784,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                             .addComponent(tpCartSumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tpCartContentsNumber))))
                 .addGap(49, 49, 49)
-                .addComponent(jLabel16)
+                .addComponent(accountImage)
                 .addGap(18, 18, 18)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tpMyAccountLabel)
@@ -807,7 +809,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel16)
+                                .addComponent(accountImage)
                                 .addGroup(topPanelLayout.createSequentialGroup()
                                     .addComponent(tpMyAccountLabel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -824,7 +826,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                                         .addComponent(jLabel3))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tpGoToCashierLabel))
-                                .addComponent(jLabel12)))))
+                                .addComponent(cartImage)))))
                 .addGap(49, 49, 49))
         );
 
@@ -872,7 +874,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(dealsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         featurePanel.add(startViewPanel, "cardStart");
@@ -892,7 +894,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myShoppingBagsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyShoppingBagsLabel)
-                .addGap(0, 607, Short.MAX_VALUE))
+                .addGap(0, 613, Short.MAX_VALUE))
         );
 
         featurePanel.add(myShoppingBagsViewPanel, "cardBags");
@@ -912,7 +914,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myFavoritesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyFavoritesLabel)
-                .addGap(0, 607, Short.MAX_VALUE))
+                .addGap(0, 613, Short.MAX_VALUE))
         );
 
         featurePanel.add(myFavoritesViewPanel, "cardFavorites");
@@ -932,7 +934,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpRecipesLabel)
-                .addGap(0, 607, Short.MAX_VALUE))
+                .addGap(0, 613, Short.MAX_VALUE))
         );
 
         featurePanel.add(recipesViewPanel, "cardRecipes");
@@ -952,7 +954,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dealsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpDealsLabel)
-                .addGap(0, 607, Short.MAX_VALUE))
+                .addGap(0, 613, Short.MAX_VALUE))
         );
 
         featurePanel.add(dealsViewPanel, "cardDeals");
@@ -1022,7 +1024,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel4)
@@ -1059,7 +1061,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(categoryFeaturePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(categoryFeatureLabel)
-                .addContainerGap(614, Short.MAX_VALUE))
+                .addContainerGap(620, Short.MAX_VALUE))
         );
 
         featurePanel.add(categoryFeaturePanel, "categoryFeaturePanel");
@@ -1068,8 +1070,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
+        jPanel1.setBackground(new java.awt.Color(244, 221, 173));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+
         itemShower.setLayout(new java.awt.GridLayout(1, 2));
-        jPanel1.add(itemShower);
+        jPanel1.add(itemShower, new java.awt.GridBagConstraints());
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -1328,71 +1333,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         separator2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redSeparator.png"))); // NOI18N
 
-        javax.swing.GroupLayout paymentInfoPanelLayout = new javax.swing.GroupLayout(paymentInfoPanel);
-        paymentInfoPanel.setLayout(paymentInfoPanelLayout);
-        paymentInfoPanelLayout.setHorizontalGroup(
-            paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(paymentInfoPanelLayout.createSequentialGroup()
-                            .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cardNumberLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(cardTypeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(expirationDateLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(verificationCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(paymentInfoPanelLayout.createSequentialGroup()
-                                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(expDateSlashLabel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(paymentInfoPanelLayout.createSequentialGroup()
-                            .addComponent(cardHolderNameLabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(separator2)
-                    .addComponent(paymentInfoLabel))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        paymentInfoPanelLayout.setVerticalGroup(
-            paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(paymentInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardNumberLabel)
-                    .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cardTypeLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(expirationDateLabel)
-                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(expDateSlashLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(verificationCodeLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardHolderNameLabel)
-                    .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         deliveryPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         personalInfoLabel1.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
@@ -1446,7 +1386,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGroup(deliverToMyAdressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(deliveryCheckBox, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(deliverToMyAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         separator3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redSeparator.png"))); // NOI18N
@@ -1528,57 +1468,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(cityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        javax.swing.GroupLayout deliveryPanelLayout = new javax.swing.GroupLayout(deliveryPanel);
-        deliveryPanel.setLayout(deliveryPanelLayout);
-        deliveryPanelLayout.setHorizontalGroup(
-            deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(deliveryPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(deliveryPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(deliveryDateLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deliveryTimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deliveryDayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliveryPanelLayout.createSequentialGroup()
-                        .addComponent(deliverToMyAdressPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(deliveryPanelLayout.createSequentialGroup()
-                        .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(personalInfoLabel1)
-                            .addComponent(separator3))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(deliveryPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(addressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        deliveryPanelLayout.setVerticalGroup(
-            deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(deliveryPanelLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(personalInfoLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(separator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deliveryDateLabel)
-                    .addComponent(deliveryTimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deliveryDayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(deliverToMyAdressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(deliveryPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(addressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
         saveButton.setBackground(new java.awt.Color(255, 255, 255));
         saveButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         saveButton.setForeground(new java.awt.Color(0, 51, 0));
@@ -1593,11 +1482,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveButtonSaveButtonClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                saveButtonSaveButtonHover(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 saveButtonSaveButtonUnhover(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonHover(evt);
             }
         });
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1606,33 +1495,140 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
+        javax.swing.GroupLayout deliveryPanelLayout = new javax.swing.GroupLayout(deliveryPanel);
+        deliveryPanel.setLayout(deliveryPanelLayout);
+        deliveryPanelLayout.setHorizontalGroup(
+            deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliveryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(deliveryPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(deliveryDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deliveryTimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deliveryDayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(13, Short.MAX_VALUE))
+                    .addGroup(deliveryPanelLayout.createSequentialGroup()
+                        .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(separator3, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(deliverToMyAdressPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(personalInfoLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(addressPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        deliveryPanelLayout.setVerticalGroup(
+            deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliveryPanelLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(personalInfoLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(deliveryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deliveryDateLabel)
+                    .addComponent(deliveryTimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deliveryDayComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deliverToMyAdressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout paymentInfoPanelLayout = new javax.swing.GroupLayout(paymentInfoPanel);
+        paymentInfoPanel.setLayout(paymentInfoPanelLayout);
+        paymentInfoPanelLayout.setHorizontalGroup(
+            paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                            .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cardNumberLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cardTypeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(expirationDateLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(verificationCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(expDateSlashLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                            .addComponent(cardHolderNameLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(separator2)
+                    .addComponent(paymentInfoLabel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                .addComponent(deliveryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        paymentInfoPanelLayout.setVerticalGroup(
+            paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paymentInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(paymentInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardNumberLabel)
+                    .addComponent(cardNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardTypeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(expirationDateLabel)
+                    .addComponent(validMonthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(validYearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(expDateSlashLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(verificationCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verificationCodeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paymentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardHolderNameLabel)
+                    .addComponent(cardHolderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deliveryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout myAccountContentPanelLayout = new javax.swing.GroupLayout(myAccountContentPanel);
         myAccountContentPanel.setLayout(myAccountContentPanelLayout);
         myAccountContentPanelLayout.setHorizontalGroup(
             myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myAccountContentPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addComponent(personalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
+                .addGap(50, 50, 50)
                 .addComponent(paymentInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(deliveryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(saveButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         myAccountContentPanelLayout.setVerticalGroup(
             myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myAccountContentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(personalInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(myAccountContentPanelLayout.createSequentialGroup()
-                        .addComponent(deliveryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(39, 39, 39)
-                        .addComponent(saveButton))
-                    .addComponent(paymentInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addGroup(myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(personalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(paymentInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         myAccountTopPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -1712,13 +1708,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap())
         );
 
-        cartPanel.setBackground(new java.awt.Color(204, 255, 255));
+        cartPanel.setBackground(new java.awt.Color(204, 100, 0));
 
         cartHeadlineLabel.setText("Kundvagn");
 
         goToCashierBtn.setText("Gå till kassa");
 
-        cartContentsPanel.setBackground(new java.awt.Color(204, 102, 255));
+        cartContentsPanel.setBackground(new java.awt.Color(204, 100, 0));
         cartContentsPanel.setLayout(new java.awt.GridLayout(20, 1));
         cartPanelScrollPane.setViewportView(cartContentsPanel);
 
@@ -1976,6 +1972,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel accountImage;
     private javax.swing.JTextField address1TextField;
     private javax.swing.JTextField address1TextField1;
     private javax.swing.JTextField address2TextField;
@@ -1993,6 +1990,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel cardTypeLabel;
     private javax.swing.JPanel cartContentsPanel;
     private javax.swing.JLabel cartHeadlineLabel;
+    private javax.swing.JLabel cartImage;
     private javax.swing.JPanel cartPanel;
     private javax.swing.JScrollPane cartPanelScrollPane;
     private javax.swing.JLabel category1MenuLabel;
@@ -2037,8 +2035,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel iMatLabel;
     private javax.swing.JPanel itemShower;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
