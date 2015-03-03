@@ -69,7 +69,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         List <ShoppingItem> cartContentList = gpCon.sc.getItems();
         
         for (int i = 0; i < gpCon.sc.getItems().size(); i++){
-            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName()));
+            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName() + 
+                   " " + cartContentList.get(i).getProduct().getPrice() + " " +
+                    cartContentList.get(i).getProduct().getUnit() + " "
+                    + cartContentList.get(i).getAmount() + " " 
+            + cartContentList.get(i).getProduct().getUnitSuffix()));
         }
         
         cartContentsPanel.add(new JLabel("Totalt: " + gpCon.sc.getTotal() + " kr"));
@@ -399,92 +403,92 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //                break;
                
             case "Baljväxter":
-                gpCon.listCatProds("POD");
+                gpCon.listCatProds("POD", this);
                 displayGroceries();
                 break;
             case "Bröd":
-                gpCon.listCatProds("BREAD");
+                gpCon.listCatProds("BREAD", this);
                 displayGroceries();
                 break;
             case "Bär":
-                gpCon.listCatProds("BERRY");
+                gpCon.listCatProds("BERRY", this);
                 displayGroceries();
                 break;
             case "Citrusfrukter":
-                gpCon.listCatProds("CITRUS_FRUIT");
+                gpCon.listCatProds("CITRUS_FRUIT", this);
                 displayGroceries();
                 break;
                 
             case "Varma drycker":
-                gpCon.listCatProds("HOT_DRINKS");
+                gpCon.listCatProds("HOT_DRINKS", this);
                 displayGroceries();
                 break;
             case "Kalla drycker":
-                gpCon.listCatProds("COLD_DRINKS");
+                gpCon.listCatProds("COLD_DRINKS", this);
                 displayGroceries();
                 break;
                 
             case "Exotiska frukter":
-                gpCon.listCatProds("EXOTIC_FRUIT");
+                gpCon.listCatProds("EXOTIC_FRUIT", this);
                 displayGroceries();
                 break;
             case "Fisk":
-                gpCon.listCatProds("FISH");
+                gpCon.listCatProds("FISH", this);
                 displayGroceries();
                 break;
                 
             case "Grönsaksfrukter":
-                gpCon.listCatProds("VEGETABLE_FRUIT");
+                gpCon.listCatProds("VEGETABLE_FRUIT", this);
                 displayGroceries();
                 break;
             case "Kål":
-                gpCon.listCatProds("CABBAGE");
+                gpCon.listCatProds("CABBAGE", this);
                 displayGroceries();
                 break;
             case "Kött":
-                gpCon.listCatProds("MEAT");
+                gpCon.listCatProds("MEAT", this);
                 displayGroceries();
                 break;
             case "Mejeriprodukter":
-                gpCon.listCatProds("DAIRIES");
+                gpCon.listCatProds("DAIRIES", this);
                 displayGroceries();
                 break;
             case "Meloner":
-                gpCon.listCatProds("MELONS");
+                gpCon.listCatProds("MELONS", this);
                 displayGroceries();
                 break;
            
             case "Mjöl, socker och salt":
-                gpCon.listCatProds("FLOUR_SUGAR_SALT");
+                gpCon.listCatProds("FLOUR_SUGAR_SALT", this);
                 displayGroceries();
                 break;
             case "Nötter och frön":
-                gpCon.listCatProds("NUTS_AND_SEEDS");
+                gpCon.listCatProds("NUTS_AND_SEEDS", this);
                 displayGroceries();
                 break;
             case "Pasta":
-                gpCon.listCatProds("PASTA");
+                gpCon.listCatProds("PASTA", this);
                 displayGroceries();
                 break;
             case "Potatis och ris":
-                gpCon.listCatProds("POTATO_RICE");
+                gpCon.listCatProds("POTATO_RICE", this);
                 displayGroceries();
                 break;
             case "Rotfrukter":
-                gpCon.listCatProds("ROOT_VEGETABLE");
+                gpCon.listCatProds("ROOT_VEGETABLE", this);
                 displayGroceries();
                 break;
              
             case "Frukt":
-                gpCon.listCatProds("FRUIT");
+                gpCon.listCatProds("FRUIT", this);
                 displayGroceries();
                 break;
             case "Sötsaker":
-                gpCon.listCatProds("SWEET");
+                gpCon.listCatProds("SWEET", this);
                 displayGroceries();
                 break;
             case "Örter":
-                gpCon.listCatProds("HERB");
+                gpCon.listCatProds("HERB", this);
                 displayGroceries();
                 break;
                     
@@ -681,7 +685,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tpMyAccountLabelMouseClicked(evt);
@@ -1689,7 +1693,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         iMatLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         iMatLabel.setText("iMat");
-        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        iMatLabel.setToolTipText("Gå till startsidan");
+        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout logoPanelLayout = new javax.swing.GroupLayout(logoPanel);
         logoPanel.setLayout(logoPanelLayout);
@@ -1812,7 +1817,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_searchButtonMouseClicked
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        gpCon.doSearch(searchField.getText());
+        gpCon.doSearch(searchField.getText(), this);
         displayGroceries();
         repaint();
 
