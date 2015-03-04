@@ -165,10 +165,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
     
     public void ShowCheckoutShoppingCart(){
-        for(int i=0; i<){
+        /*for(int i=0; i<){
             productScrollPane.setLayout(new GridLayout(gpCon.products.size(),1));
             productScrollPane.add(new CheckoutProductCard());
-        }
+        }*/
     }
     
     /**
