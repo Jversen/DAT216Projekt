@@ -19,13 +19,12 @@ public class CartProdObject extends javax.swing.JPanel {
      * Creates new form CartProdObject
      */
     
-    private GUIProject gpCon = new GUIProject();
 
     
-    public CartProdObject(ShoppingItem si) {
+    public CartProdObject(ShoppingItem si, IMatFrame imf) {
         initComponents();
         nameLabel.setText(si.getProduct().getName());
-        imageLabel.setIcon(gpCon.getImage(si.getProduct()));
+        imageLabel.setIcon(imf.gpCon.getImage(si.getProduct()));
         jSpinner2.setValue(si.getAmount());
         
         double amount=0;
@@ -35,6 +34,10 @@ public class CartProdObject extends javax.swing.JPanel {
         
         priceLabel.setText(""+ amount);
         
+    }
+    @Override
+    public String toString(){
+        return nameLabel.getText()+ ", amount:" + jSpinner2.getValue();
     }
 
     /**
@@ -123,7 +126,7 @@ public class CartProdObject extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(headPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(headPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
