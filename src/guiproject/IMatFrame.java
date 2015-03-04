@@ -164,6 +164,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 }
     }
     
+    public void ShowCheckoutShoppingCart(){
+        for(int i=0; i<){
+            productScrollPane.setLayout(new GridLayout(gpCon.products.size(),1));
+            productScrollPane.add(new CheckoutProductCard());
+        }
+    }
+    
     /**
      * Creates new form iMatFrame
      */
@@ -761,6 +768,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         postCodeTextField1 = new javax.swing.JTextField();
         cityTextField1 = new javax.swing.JTextField();
         cityLabel1 = new javax.swing.JLabel();
+        saveButton2 = new javax.swing.JButton();
         myAccountTopPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         titleNameLabel = new javax.swing.JLabel();
@@ -1735,6 +1743,33 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(cityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        saveButton2.setBackground(new java.awt.Color(255, 255, 255));
+        saveButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        saveButton2.setForeground(new java.awt.Color(0, 51, 0));
+        saveButton2.setText("Spara ändringar");
+        saveButton2.setToolTipText("Spara ändringar");
+        saveButton2.setBorder(null);
+        saveButton2.setBorderPainted(false);
+        saveButton2.setContentAreaFilled(false);
+        saveButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        saveButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        saveButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonUnhover(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                saveButtonSaveButtonHover(evt);
+            }
+        });
+        saveButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout deliveryPanelLayout = new javax.swing.GroupLayout(deliveryPanel);
         deliveryPanel.setLayout(deliveryPanelLayout);
         deliveryPanelLayout.setHorizontalGroup(
@@ -2049,20 +2084,24 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         shoppingCartPanelLayout.setHorizontalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(shoppingCartPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextStepButtonToPersonalInfo)
-                .addContainerGap())
-            .addGroup(shoppingCartPanelLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
                 .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shoppingCartPanelLayout.createSequentialGroup()
-                        .addComponent(totalPriceLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(priceLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(krLabel))
-                    .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
+                    .addGroup(shoppingCartPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nextStepButtonToPersonalInfo))
+                    .addGroup(shoppingCartPanelLayout.createSequentialGroup()
+                        .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(shoppingCartPanelLayout.createSequentialGroup()
+                                .addGap(524, 524, 524)
+                                .addComponent(totalPriceLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(priceLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(krLabel))
+                            .addGroup(shoppingCartPanelLayout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 56, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         shoppingCartPanelLayout.setVerticalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3318,6 +3357,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JScrollPane recommendedProductsScrollPane;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton saveButton1;
+    private javax.swing.JButton saveButton2;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchField;
     private javax.swing.JPanel searchResultPanel;
