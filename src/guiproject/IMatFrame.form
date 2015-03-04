@@ -879,7 +879,7 @@
                           <Component id="personalInfoPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="paymentInfoPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="383" max="32767" attributes="0"/>
+                          <EmptySpace pref="196" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1930,9 +1930,9 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/greenButton.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel5"/>
+                    <Property name="text" type="java.lang.String" value="Kundvagn"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
-                    <Property name="iconTextGap" type="int" value="-80"/>
+                    <Property name="iconTextGap" type="int" value="-90"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
@@ -1941,9 +1941,10 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/greenButton.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel5"/>
+                    <Property name="text" type="java.lang.String" value="Leverans"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
-                    <Property name="iconTextGap" type="int" value="-80"/>
+                    <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
+                    <Property name="iconTextGap" type="int" value="-85"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
@@ -1952,9 +1953,9 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/greenButton.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel5"/>
+                    <Property name="text" type="java.lang.String" value="Betalning"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
-                    <Property name="iconTextGap" type="int" value="-80"/>
+                    <Property name="iconTextGap" type="int" value="-85"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
@@ -1963,9 +1964,9 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/greenButton.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel5"/>
+                    <Property name="text" type="java.lang.String" value="Slutf&#xf6;r k&#xf6;p"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
-                    <Property name="iconTextGap" type="int" value="-80"/>
+                    <Property name="iconTextGap" type="int" value="-90"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
@@ -2083,9 +2084,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="534" max="32767" attributes="0"/>
-                              <Component id="backButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="nextStepButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -2101,7 +2100,7 @@
                                   </Group>
                                   <Component id="productScrollPane" min="-2" pref="583" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="66" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2116,11 +2115,8 @@
                                   <Component id="priceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="krLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="backButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nextStepButtonToPersonalInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace pref="36" max="32767" attributes="0"/>
+                              <Component id="nextStepButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2131,11 +2127,6 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                     </Container>
-                    <Component class="javax.swing.JButton" name="backButton">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Tillbaka"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JButton" name="nextStepButtonToPersonalInfo">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="G&#xe5; vidare"/>
@@ -2190,7 +2181,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="backButton1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="backButtonToShoppingCart" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="nextStepButtonToPayment" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2222,7 +2213,7 @@
                               <Component id="saveButton1" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace pref="125" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="backButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="backButtonToShoppingCart" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nextStepButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2231,11 +2222,13 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JButton" name="backButton1">
+                    <Component class="javax.swing.JButton" name="backButtonToShoppingCart">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Tillbaka"/>
-                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acceptBackToShoppingCart"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="nextStepButtonToPayment">
                       <Properties>

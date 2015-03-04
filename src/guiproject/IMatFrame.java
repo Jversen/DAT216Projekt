@@ -644,13 +644,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         productPanel = new javax.swing.JPanel();
         shoppingCartPanel = new javax.swing.JPanel();
         productScrollPane = new javax.swing.JScrollPane();
-        backButton = new javax.swing.JButton();
         nextStepButtonToPersonalInfo = new javax.swing.JButton();
         totalPriceLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         krLabel = new javax.swing.JLabel();
         checkPersonalInfoPanel = new javax.swing.JPanel();
-        backButton1 = new javax.swing.JButton();
+        backButtonToShoppingCart = new javax.swing.JButton();
         nextStepButtonToPayment = new javax.swing.JButton();
         personalInfoPanel1 = new javax.swing.JPanel();
         personalInfoLabel2 = new javax.swing.JLabel();
@@ -1725,7 +1724,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(personalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(paymentInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         myAccountContentPanelLayout.setVerticalGroup(
             myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1789,27 +1788,28 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Kundvagn");
         jLabel5.setFocusCycleRoot(true);
-        jLabel5.setIconTextGap(-80);
+        jLabel5.setIconTextGap(-90);
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
-        jLabel7.setText("jLabel5");
+        jLabel7.setText("Leverans");
         jLabel7.setFocusCycleRoot(true);
-        jLabel7.setIconTextGap(-80);
+        jLabel7.setFocusTraversalPolicyProvider(true);
+        jLabel7.setIconTextGap(-85);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
-        jLabel8.setText("jLabel5");
+        jLabel8.setText("Betalning");
         jLabel8.setFocusCycleRoot(true);
-        jLabel8.setIconTextGap(-80);
+        jLabel8.setIconTextGap(-85);
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
-        jLabel9.setText("jLabel5");
+        jLabel9.setText("Slutför köp");
         jLabel9.setFocusCycleRoot(true);
-        jLabel9.setIconTextGap(-80);
+        jLabel9.setIconTextGap(-90);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
@@ -1893,8 +1893,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         shoppingCartPanel.setBackground(new java.awt.Color(204, 204, 255));
 
-        backButton.setText("Tillbaka");
-
         nextStepButtonToPersonalInfo.setText("Gå vidare");
         nextStepButtonToPersonalInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1916,9 +1914,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         shoppingCartPanelLayout.setHorizontalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(shoppingCartPanelLayout.createSequentialGroup()
-                .addContainerGap(534, Short.MAX_VALUE)
-                .addComponent(backButton)
-                .addGap(18, 18, 18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(nextStepButtonToPersonalInfo)
                 .addContainerGap())
             .addGroup(shoppingCartPanelLayout.createSequentialGroup()
@@ -1931,7 +1927,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(krLabel))
                     .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         shoppingCartPanelLayout.setVerticalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1943,10 +1939,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(totalPriceLabel)
                     .addComponent(priceLabel)
                     .addComponent(krLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backButton)
-                    .addComponent(nextStepButtonToPersonalInfo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(nextStepButtonToPersonalInfo)
                 .addContainerGap())
         );
 
@@ -1954,8 +1948,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         checkPersonalInfoPanel.setBackground(new java.awt.Color(204, 204, 255));
 
-        backButton1.setText("Tillbaka");
-        backButton1.setEnabled(false);
+        backButtonToShoppingCart.setText("Tillbaka");
+        backButtonToShoppingCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acceptBackToShoppingCart(evt);
+            }
+        });
 
         nextStepButtonToPayment.setText("Gå vidare");
         nextStepButtonToPayment.addActionListener(new java.awt.event.ActionListener() {
@@ -2293,7 +2291,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(checkPersonalInfoPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(backButton1)
+                        .addComponent(backButtonToShoppingCart)
                         .addGap(18, 18, 18)
                         .addComponent(nextStepButtonToPayment))
                     .addGroup(checkPersonalInfoPanelLayout.createSequentialGroup()
@@ -2318,7 +2316,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(saveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                 .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backButton1)
+                    .addComponent(backButtonToShoppingCart)
                     .addComponent(nextStepButtonToPayment))
                 .addContainerGap())
         );
@@ -2883,7 +2881,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void nextStepButtonToAccept(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStepButtonToAccept
         // Go to the next step, to accept.
-        //cl.show(featurePanel, "cashier");
+        cl2.show(cashierPanel, "accept");
     }//GEN-LAST:event_nextStepButtonToAccept
 
     private void postCodeTextField1PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeTextField1PostCodeUpdate
@@ -2958,6 +2956,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cl2.show(productPanel, "payment");
     }//GEN-LAST:event_cashierBackToPayment
 
+    private void acceptBackToShoppingCart(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptBackToShoppingCart
+        cl2.show(productPanel, "shoppingCart");
+    }//GEN-LAST:event_acceptBackToShoppingCart
+
     /**
      * @param args the command line arguments
      */
@@ -3027,10 +3029,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel adress2Label3;
     private javax.swing.JTextField adress2TextField1;
     private javax.swing.JTextField adress2TextField2;
-    private javax.swing.JButton backButton;
-    private javax.swing.JButton backButton1;
     private javax.swing.JButton backButtonToPayment;
     private javax.swing.JButton backButtonToPersonalInfo;
+    private javax.swing.JButton backButtonToShoppingCart;
     private javax.swing.JLabel cardHolderNameLabel;
     private javax.swing.JLabel cardHolderNameLabel1;
     private javax.swing.JTextField cardHolderTextField;
