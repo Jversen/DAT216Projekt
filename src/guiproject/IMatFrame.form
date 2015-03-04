@@ -266,7 +266,7 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Standardmark&#xf6;r"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>
@@ -278,7 +278,7 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Byt anv&#xe4;ndare"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Standardmark&#xf6;r"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
         </Component>
@@ -304,7 +304,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="G&#xe5; till kassan"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Standardmark&#xf6;r"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
         </Component>
@@ -678,7 +678,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 1"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
               <Events>
@@ -690,7 +690,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 2"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
             </Component>
@@ -699,7 +699,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 3"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
             </Component>
@@ -708,7 +708,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 4"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
             </Component>
@@ -717,7 +717,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 5"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
             </Component>
@@ -726,7 +726,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 6"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Default Cursor"/>
                 </Property>
               </Properties>
             </Component>
@@ -1299,7 +1299,7 @@
                           </StringArray>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Standardmark&#xf6;r"/>
+                          <Color id="Default Cursor"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1349,7 +1349,7 @@
                         <Property name="selectedIndex" type="int" value="5"/>
                         <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Standardmark&#xf6;r"/>
+                          <Color id="Default Cursor"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1381,7 +1381,7 @@
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Standardmark&#xf6;r"/>
+                          <Color id="Default Cursor"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1525,7 +1525,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1541,7 +1541,7 @@
                             </Property>
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1595,7 +1595,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Standardmark&#xf6;r"/>
+                                  <Color id="Default Cursor"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1633,7 +1633,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -1775,7 +1775,7 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="saveButton">
+                        <Component class="javax.swing.JButton" name="saveButton2">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1794,7 +1794,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -1912,6 +1912,7 @@
                   <Color blue="ff" green="99" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -2616,7 +2617,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -2632,7 +2633,7 @@
                             </Property>
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -2686,7 +2687,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Standardmark&#xf6;r"/>
+                                  <Color id="Default Cursor"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -2851,7 +2852,7 @@
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Standardmark&#xf6;r"/>
+                          <Color id="Default Cursor"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                       </Properties>
@@ -3053,7 +3054,7 @@
                               </StringArray>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3100,7 +3101,7 @@
                             <Property name="selectedIndex" type="int" value="5"/>
                             <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3129,7 +3130,7 @@
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Standardmark&#xf6;r"/>
+                              <Color id="Default Cursor"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3479,7 +3480,7 @@
             <Property name="text" type="java.lang.String" value="iMat"/>
             <Property name="toolTipText" type="java.lang.String" value="G&#xe5; till startsidan"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Standardmark&#xf6;r"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
         </Component>

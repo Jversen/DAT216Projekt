@@ -66,6 +66,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     
+    private ArrayList<String> categoryStrings = new ArrayList<String>();
+    
     public void updateCartPanel(List<CartProdObject> cpolist){
                                                    
         cartContentsPanel.removeAll();
@@ -123,6 +125,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //            System.out.println(gpCon.cartContents.get(i).toString());
 //        }
                                
+    }
+    private void redrawCategories(){
+        
+        categoryPanel.removeAll();
+        allCategoryArrayList.clear();
+        for (int i = 0; i<headCategoryArrayList.size(); i++){
+            allCategoryArrayList.add(headCategoryArrayList.get(i));
+        }
+        
     }
     private void displayGroceries(){
                 
@@ -382,24 +393,38 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         
     }
     
-    /**
-     * Ännu ej särskilt funktionell kod för att utöka kategorilistan med en underkategori
-     * när en kategorilabel klickas på. Behöver få tillgång till categoryArrayList.get(i).
-     * TODO: dölj/ta bort andra kategoriers underkategorier när man går in på en ny.
-     * Kanske underlättar om man lägger underkategorier sist i categoryListArray men på specifik plats i panelen?
-     */
+
     private void categoryLabelMouseClicked(java.awt.event.MouseEvent evt) {   
         
 
         JLabel tempLabel1 = (JLabel)evt.getSource();
- 
-        categoryPanel.removeAll();
-        allCategoryArrayList.clear();
-        for (int i = 0; i<headCategoryArrayList.size(); i++){
-            allCategoryArrayList.add(headCategoryArrayList.get(i));
-        }
+
+        categoryStrings.clear();
+        /**
+         * Flyttat till redrawCategories()
+         */
+//        categoryPanel.removeAll();
+//        allCategoryArrayList.clear();
+//        for (int i = 0; i<headCategoryArrayList.size(); i++){
+//            allCategoryArrayList.add(headCategoryArrayList.get(i));
+//        }
         switch(tempLabel1.getText()){
             case "Bröd och torrvaror": 
+                redrawCategories();
+                
+                categoryStrings.add("BREAD");
+                categoryStrings.add("FLOUR_SUGAR_SALT");
+                categoryStrings.add("PASTA");
+                categoryStrings.add("POTATO_RICE");
+                
+                for (int i = 0; i<categoryStrings.size(); i++){
+                    System.out.println(categoryStrings.get(i).toString());
+                }
+                
+                gpCon.listCatProds(categoryStrings, this);
+                
+                displayGroceries();
+                
                 for (int i = 0; i<breadCategoryArrayList.size(); i++){
                     allCategoryArrayList.add(1+i, breadCategoryArrayList.get(i));
                                                 
@@ -407,6 +432,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 
                 break;
             case "Drycker": 
+                redrawCategories();
+                categoryStrings.add("HOT_DRINKS");
+                categoryStrings.add("COLD_DRINKS");
+                                
+                for (int i = 0; i<categoryStrings.size(); i++){
+                    System.out.println(categoryStrings.get(i).toString());
+                }
+                
+                gpCon.listCatProds(categoryStrings, this);
+                
+                displayGroceries();
+                
                 for (int i = 0; i<drinkCategoryArrayList.size(); i++){
                     
                     allCategoryArrayList.add(2+i, drinkCategoryArrayList.get(i));
@@ -421,13 +458,41 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //                
 //                break;
             case "Frukt och grönt": 
+                redrawCategories();
+                categoryStrings.add("POD");
+                categoryStrings.add("BERRY");
+                categoryStrings.add("CITRUS_FRUIT");
+                categoryStrings.add("EXOTIC_FRUIT");
+                categoryStrings.add("FRUIT");
+                categoryStrings.add("VEGETABLE_FRUIT");
+                categoryStrings.add("CABBAGE");
+                categoryStrings.add("MELONS");
+                categoryStrings.add("NUTS_AND_SEEDS");
+                categoryStrings.add("ROOT_VEGETABLE");
+                
+                
+                
+                for (int i = 0; i<categoryStrings.size(); i++){
+                    System.out.println(categoryStrings.get(i).toString());
+                }
+                
+                gpCon.listCatProds(categoryStrings, this);
+                
+                displayGroceries();
+                
                 for (int i = 0; i<fruitVegsCategoryArrayList.size(); i++){
                     
                     allCategoryArrayList.add(4+i, fruitVegsCategoryArrayList.get(i));
                 }
                 
                 break;
-            case "Kryddor": 
+            case "Kryddor":
+                redrawCategories();
+                
+                categoryStrings.add("HERB");
+                gpCon.listCatProds(categoryStrings, this);
+                displayGroceries();
+                
                 for (int i = 0; i<spiceCategoryArrayList.size(); i++){
                     
                     allCategoryArrayList.add(5+i, spiceCategoryArrayList.get(i));
@@ -457,92 +522,113 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //                break;
                
             case "Baljväxter":
-                gpCon.listCatProds("POD", this);
+                categoryStrings.add("POD");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Bröd":
-                gpCon.listCatProds("BREAD", this);
+                categoryStrings.add("BREAD");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Bär":
-                gpCon.listCatProds("BERRY", this);
+                categoryStrings.add("BERRY");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Citrusfrukter":
-                gpCon.listCatProds("CITRUS_FRUIT", this);
+                categoryStrings.add("CITRUS_FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                 
             case "Varma drycker":
-                gpCon.listCatProds("HOT_DRINKS", this);
+                categoryStrings.add("HOT_DRINKS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Kalla drycker":
-                gpCon.listCatProds("COLD_DRINKS", this);
+                categoryStrings.add("COLD_DRINKS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                 
             case "Exotiska frukter":
-                gpCon.listCatProds("EXOTIC_FRUIT", this);
+                categoryStrings.add("EXOTIC_FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Fisk":
-                gpCon.listCatProds("FISH", this);
+                categoryStrings.add("FISH");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                 
             case "Grönsaksfrukter":
-                gpCon.listCatProds("VEGETABLE_FRUIT", this);
+                categoryStrings.add("VEGETABLE_FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Kål":
-                gpCon.listCatProds("CABBAGE", this);
+                categoryStrings.add("CABBAGE");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Kött":
-                gpCon.listCatProds("MEAT", this);
+                categoryStrings.add("MEAT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Mejeriprodukter":
-                gpCon.listCatProds("DAIRIES", this);
+                categoryStrings.add("DAIRIES");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Meloner":
-                gpCon.listCatProds("MELONS", this);
+                categoryStrings.add("MELONS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
            
             case "Mjöl, socker och salt":
-                gpCon.listCatProds("FLOUR_SUGAR_SALT", this);
+                categoryStrings.add("FLOUR_SUGAR_SALT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Nötter och frön":
-                gpCon.listCatProds("NUTS_AND_SEEDS", this);
+                categoryStrings.add("NUTS_AND_SEEDS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Pasta":
-                gpCon.listCatProds("PASTA", this);
+                categoryStrings.add("PASTA");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Potatis och ris":
-                gpCon.listCatProds("POTATO_RICE", this);
+                categoryStrings.add("POTATO_RICE");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Rotfrukter":
-                gpCon.listCatProds("ROOT_VEGETABLE", this);
+                categoryStrings.add("ROOT_VEGETABLE");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
              
             case "Frukt":
-                gpCon.listCatProds("FRUIT", this);
+                categoryStrings.add("FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Sötsaker":
-                gpCon.listCatProds("SWEET", this);
+                categoryStrings.add("SWEET");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Örter":
-                gpCon.listCatProds("HERB", this);
+                categoryStrings.add("HERB");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                     
