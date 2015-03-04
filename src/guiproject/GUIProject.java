@@ -18,12 +18,13 @@ import se.chalmers.ait.dat215.project.*;
  */
 public class GUIProject{
     
+    
     /**
      * Skapar instans av IMatDataHandler och lista för produkter.
      */
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
     ShoppingCart sc = iMDH.getShoppingCart();
-    IMatFrame app;
+    //IMatFrame app;
     
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
@@ -34,6 +35,7 @@ public class GUIProject{
     /**
      * @param args the command line arguments
      */
+    
     
     public ImageIcon getImage(Product prod){
         
@@ -49,33 +51,37 @@ public class GUIProject{
                productCards.add(new ProductCard(products.get(i), imf));
            }
            
+//            this.products = iMDH.findProducts(s);
+//           this.productCards.clear();
+//           this.productCards.removeAll(productCards);
+//
+//           
+//           for(int i=0; i<products.size(); i++){
+//               
+//               cpo.add(new CartProdObject(new ShoppingItem(products.get(i), 1.0), imf));
+//           }
+           
     }
     
     /**
      * Work in progress... 
      */
-    public void addToCart(ProductCard pc, IMatFrame imf){
-        double amount = pc.getSpinnerValue();
+    public void addToCart(Product p, int amount, IMatFrame imf){
         
- //       if (amount > 0){
-//        for(int i=0; i<amount; i++){
-//            cart.add(pc.getProduct());
-//            System.out.println("amount: " + amount + ", produkt: " + pc.getProduct());
-           sc.addProduct(pc.getProduct(), amount);
-           cpo.add(new CartProdObject(new ShoppingItem(pc.getProduct(), amount)));
-           //  System.out.print(pc.getProduct().getName());
-//        }
-            cartContents.clear();
-            cartContents.addAll(sc.getItems());
-            
-            imf.updateCartPanel();
-            
-        }
-//        for(int i=0; i<cartContents.size(); i++){
-//         System.out.print(cartContents.get(i).getProduct());  
-//         System.out.print(cartContents.get(i).getAmount() + " amount");
-//         System.out.print(cartContents.get(i).getTotal() + " total");  
-//        }
+            sc.addProduct(p, amount);
+            cpo.clear();
+            ShoppingItem si = new ShoppingItem(p, amount);
+            cartContents.add(si);
+            for (int i = 0; i < cartContents.size(); i++){
+                cpo.add(new CartProdObject(cartContents.get(i), imf));
+            }
+           
+            System.out.println("addToCart cpo: " + cpo);
+            System.out.println("cpo size = " + cpo.size());
+            imf.updateCartPanel(cpo);
+            imf.displayCart(cpo);
+           
+    }
     
     public void listCatProds(String s, IMatFrame imf){
         this.products = iMDH.getProducts(ProductCategory.valueOf(s));
@@ -90,19 +96,19 @@ public class GUIProject{
         
     }
     
-    public static void main(String[] args) {
-        
-        
-            IMatFrame app = new IMatFrame();
-            app.setVisible(true);
-        
-        
-        
-        
- 
-        
-        
-        // TODO code application logic here
-    }
+//    public static void main(String[] args) {
+//        
+//        
+//            IMatFrame app = new IMatFrame(this);
+//            app.setVisible(true);
+//        
+//        
+//        
+//        
+// 
+//        
+//        
+//        // TODO code application logic here
+//    }
     
 }
