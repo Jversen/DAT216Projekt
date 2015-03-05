@@ -37,7 +37,7 @@ public class GUIProject{
      */
     
     
-    public ImageIcon getImage(Product prod){
+    public ImageIcon getImage100(Product prod){
         
             return iMDH.getImageIcon(prod,100,100);
     }

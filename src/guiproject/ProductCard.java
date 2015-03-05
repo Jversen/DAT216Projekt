@@ -22,7 +22,7 @@ public class ProductCard extends javax.swing.JPanel {
         initComponents();
         this.prod = prod;
         this.imf = imf;
-        pictureLabel.setIcon(gpCon.getImage(prod));
+        pictureLabel.setIcon(gpCon.getImage100(prod));
 //        this.productName = searchField.getInputContext(); //hur ska man skriva?
         productCardName.setText(prod.getName());
         priceLabel.setText(""+ prod.getPrice());
