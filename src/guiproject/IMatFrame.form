@@ -1936,7 +1936,7 @@
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2052,7 +2052,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="recommendedProductsScrollPane" min="-2" pref="108" max="-2" attributes="0"/>
-                          <EmptySpace pref="8" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -2137,7 +2137,7 @@
                                   </Group>
                                   <Component id="productScrollPane" min="-2" pref="583" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="77" max="32767" attributes="0"/>
+                              <EmptySpace pref="64" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2145,16 +2145,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="productScrollPane" min="-2" pref="489" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="productScrollPane" min="-2" pref="470" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="totalPriceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="priceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="krLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="36" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="nextStepButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2213,27 +2213,26 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="backButtonToShoppingCart" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="nextStepButtonToPayment" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="personalInfoPanel1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="deliveryPanel1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="personalInfoPanel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="deliveryPanel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="16" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="backButtonToShoppingCart" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="nextStepButtonToPayment" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2247,12 +2246,12 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="saveButton1" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace pref="139" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="backButtonToShoppingCart" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nextStepButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="backButtonToShoppingCart" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2885,8 +2884,8 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace pref="499" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="532" max="32767" attributes="0"/>
                               <Component id="backButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="nextStepButtonToAccept" min="-2" max="-2" attributes="0"/>
@@ -2896,26 +2895,26 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                                   <Component id="paymentInfoPanel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="158" max="32767" attributes="0"/>
+                                  <EmptySpace pref="166" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace pref="576" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="436" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="backButtonToPersonalInfo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nextStepButtonToAccept" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                   <Component id="paymentInfoPanel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="364" max="32767" attributes="0"/>
+                                  <EmptySpace pref="285" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3199,29 +3198,32 @@
                                   <Component id="acceptShoppingCartLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="acceptSeparator1" alignment="0" pref="215" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="143" max="32767" attributes="0"/>
+                              <EmptySpace pref="130" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="acceptDeliveryLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptSeparator4" min="-2" pref="215" max="-2" attributes="0"/>
-                                  <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptAddressLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptPostCodeLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptPaymentLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptSeparator3" min="-2" pref="215" max="-2" attributes="0"/>
-                                  <Component id="acceptCardNumberLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptCardTypeLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptValidMonthYearLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptVerificationCodeLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="acceptCardHolderLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="acceptDeliveryLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptSeparator4" min="-2" pref="215" max="-2" attributes="0"/>
+                                          <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptAddressLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptPostCodeLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptPaymentLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptSeparator3" min="-2" pref="215" max="-2" attributes="0"/>
+                                          <Component id="acceptCardNumberLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptCardTypeLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptValidMonthYearLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptVerificationCodeLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptCardHolderLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="backButtonToPayment" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="nextStepButtonToAccept1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="backButtonToPayment" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="nextStepButtonToAccept1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3242,7 +3244,8 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Component id="jScrollPane2" alignment="0" min="-2" pref="370" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="acceptAddressLabel" min="-2" max="-2" attributes="0"/>
@@ -3263,14 +3266,13 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="acceptCardHolderLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane2" min="-2" pref="370" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="141" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="backButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nextStepButtonToAccept1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

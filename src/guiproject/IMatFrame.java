@@ -1951,7 +1951,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(jLabel13)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         progressPanelLayout.setVerticalGroup(
             progressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1983,7 +1983,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(recommendedProductsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendedProductsPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(recommendedProductsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2038,21 +2038,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(krLabel))
                     .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         shoppingCartPanelLayout.setVerticalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(shoppingCartPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(totalPriceLabel)
                     .addComponent(priceLabel)
                     .addComponent(krLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nextStepButtonToPersonalInfo)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         productPanel.add(shoppingCartPanel, "shoppingCart");
@@ -2398,22 +2398,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         checkPersonalInfoPanelLayout.setHorizontalGroup(
             checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(checkPersonalInfoPanelLayout.createSequentialGroup()
-                .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(checkPersonalInfoPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backButtonToShoppingCart)
-                        .addGap(18, 18, 18)
-                        .addComponent(nextStepButtonToPayment))
-                    .addGroup(checkPersonalInfoPanelLayout.createSequentialGroup()
-                        .addComponent(personalInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deliveryPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addComponent(personalInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deliveryPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(saveButton1)
-                .addGap(124, 124, 124))
+                .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
+                        .addComponent(saveButton1)
+                        .addGap(124, 124, 124))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
+                        .addComponent(backButtonToShoppingCart)
+                        .addGap(18, 18, 18)
+                        .addComponent(nextStepButtonToPayment)
+                        .addContainerGap())))
         );
         checkPersonalInfoPanelLayout.setVerticalGroup(
             checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2424,11 +2423,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(deliveryPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(saveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backButtonToShoppingCart)
-                    .addComponent(nextStepButtonToPayment))
-                .addContainerGap())
+                    .addComponent(nextStepButtonToPayment)
+                    .addComponent(backButtonToShoppingCart))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         productPanel.add(checkPersonalInfoPanel, "personalInfoDelivery");
@@ -2562,8 +2561,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         checkPaymentPanel.setLayout(checkPaymentPanelLayout);
         checkPaymentPanelLayout.setHorizontalGroup(
             checkPaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(checkPaymentPanelLayout.createSequentialGroup()
-                .addContainerGap(499, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPaymentPanelLayout.createSequentialGroup()
+                .addContainerGap(532, Short.MAX_VALUE)
                 .addComponent(backButtonToPersonalInfo)
                 .addGap(18, 18, 18)
                 .addComponent(nextStepButtonToAccept)
@@ -2572,21 +2571,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGroup(checkPaymentPanelLayout.createSequentialGroup()
                     .addGap(167, 167, 167)
                     .addComponent(paymentInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(158, Short.MAX_VALUE)))
+                    .addContainerGap(166, Short.MAX_VALUE)))
         );
         checkPaymentPanelLayout.setVerticalGroup(
             checkPaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(checkPaymentPanelLayout.createSequentialGroup()
-                .addContainerGap(576, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPaymentPanelLayout.createSequentialGroup()
+                .addContainerGap(436, Short.MAX_VALUE)
                 .addGroup(checkPaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButtonToPersonalInfo)
                     .addComponent(nextStepButtonToAccept))
-                .addContainerGap())
+                .addGap(72, 72, 72))
             .addGroup(checkPaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(checkPaymentPanelLayout.createSequentialGroup()
                     .addGap(14, 14, 14)
                     .addComponent(paymentInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(364, Short.MAX_VALUE)))
+                    .addContainerGap(285, Short.MAX_VALUE)))
         );
 
         productPanel.add(checkPaymentPanel, "payment");
@@ -2668,27 +2667,28 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(jScrollPane2)
                     .addComponent(acceptShoppingCartLabel)
                     .addComponent(acceptSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(acceptDeliveryLabel)
-                    .addComponent(acceptSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(acceptNameLabel)
-                    .addComponent(acceptAddressLabel)
-                    .addComponent(acceptPostCodeLabel)
-                    .addComponent(acceptPaymentLabel)
-                    .addComponent(acceptSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(acceptCardNumberLabel)
-                    .addComponent(acceptCardTypeLabel)
-                    .addComponent(acceptValidMonthYearLabel)
-                    .addComponent(acceptVerificationCodeLabel)
-                    .addComponent(acceptCardHolderLabel))
-                .addGap(101, 101, 101))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, acceptPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backButtonToPayment)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nextStepButtonToAccept1)
-                .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, acceptPanelLayout.createSequentialGroup()
+                        .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(acceptDeliveryLabel)
+                            .addComponent(acceptSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(acceptNameLabel)
+                            .addComponent(acceptAddressLabel)
+                            .addComponent(acceptPostCodeLabel)
+                            .addComponent(acceptPaymentLabel)
+                            .addComponent(acceptSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(acceptCardNumberLabel)
+                            .addComponent(acceptCardTypeLabel)
+                            .addComponent(acceptValidMonthYearLabel)
+                            .addComponent(acceptVerificationCodeLabel)
+                            .addComponent(acceptCardHolderLabel))
+                        .addGap(101, 101, 101))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, acceptPanelLayout.createSequentialGroup()
+                        .addComponent(backButtonToPayment)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nextStepButtonToAccept1)
+                        .addContainerGap())))
         );
         acceptPanelLayout.setVerticalGroup(
             acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2704,6 +2704,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(acceptSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(acceptPanelLayout.createSequentialGroup()
                         .addComponent(acceptNameLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2723,13 +2724,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(acceptVerificationCodeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(acceptCardHolderLabel))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                        .addComponent(acceptCardHolderLabel)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButtonToPayment)
                     .addComponent(nextStepButtonToAccept1))
-                .addContainerGap())
+                .addGap(71, 71, 71))
         );
 
         productPanel.add(acceptPanel, "accept");
@@ -2741,7 +2741,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(cashierPanelLayout.createSequentialGroup()
                 .addGroup(cashierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(progressPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(productPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(productPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2996,7 +2996,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void nextStepButtonToAccept(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStepButtonToAccept
         // Go to the next step, to accept.
-        cl2.show(cashierPanel, "accept");
+        cl2.show(productPanel, "accept");
     }//GEN-LAST:event_nextStepButtonToAccept
 
     private void postCodeTextField1PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeTextField1PostCodeUpdate
@@ -3111,221 +3111,221 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
     }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JLabel acceptAddressLabel;
-        private javax.swing.JLabel acceptCardHolderLabel;
-        private javax.swing.JLabel acceptCardNumberLabel;
-        private javax.swing.JLabel acceptCardTypeLabel;
-        private javax.swing.JLabel acceptDeliveryLabel;
-        private javax.swing.JLabel acceptNameLabel;
-        private javax.swing.JPanel acceptPanel;
-        private javax.swing.JLabel acceptPaymentLabel;
-        private javax.swing.JLabel acceptPostCodeLabel;
-        private javax.swing.JLabel acceptSeparator1;
-        private javax.swing.JLabel acceptSeparator3;
-        private javax.swing.JLabel acceptSeparator4;
-        private javax.swing.JLabel acceptShoppingCartLabel;
-        private javax.swing.JLabel acceptValidMonthYearLabel;
-        private javax.swing.JLabel acceptVerificationCodeLabel;
-        private javax.swing.JLabel accountImage;
-        private javax.swing.JTextField address1TextField;
-        private javax.swing.JTextField address1TextField1;
-        private javax.swing.JTextField address2TextField;
-        private javax.swing.JTextField address2TextField1;
-        private javax.swing.JPanel addressPanel;
-        private javax.swing.JPanel addressPanel2;
-        private javax.swing.JLabel adress1Label;
-        private javax.swing.JLabel adress1Label1;
-        private javax.swing.JLabel adress1Label2;
-        private javax.swing.JLabel adress1Label3;
-        private javax.swing.JLabel adress2Label;
-        private javax.swing.JLabel adress2Label1;
-        private javax.swing.JLabel adress2Label2;
-        private javax.swing.JLabel adress2Label3;
-        private javax.swing.JTextField adress2TextField1;
-        private javax.swing.JTextField adress2TextField2;
-        private javax.swing.JButton backButtonToPayment;
-        private javax.swing.JButton backButtonToPersonalInfo;
-        private javax.swing.JButton backButtonToShoppingCart;
-        private javax.swing.JLabel cardHolderNameLabel;
-        private javax.swing.JLabel cardHolderNameLabel1;
-        private javax.swing.JTextField cardHolderTextField;
-        private javax.swing.JTextField cardHolderTextField1;
-        private javax.swing.JLabel cardNumberLabel;
-        private javax.swing.JLabel cardNumberLabel1;
-        private javax.swing.JTextField cardNumberTextField;
-        private javax.swing.JTextField cardNumberTextField1;
-        private javax.swing.JComboBox cardTypeComboBox;
-        private javax.swing.JComboBox cardTypeComboBox1;
-        private javax.swing.JLabel cardTypeLabel;
-        private javax.swing.JLabel cardTypeLabel1;
-        private javax.swing.JPanel cartContentsPanel;
-        private javax.swing.JLabel cartHeadlineLabel;
-        private javax.swing.JLabel cartImage;
-        private javax.swing.JPanel cartPanel;
-        private javax.swing.JScrollPane cartPanelScrollPane;
-        private javax.swing.JTextField cashierAddressTF;
-        private javax.swing.JTextField cashierEmailTF;
-        private javax.swing.JTextField cashierFirstNameTF;
-        private javax.swing.JTextField cashierLastNameTF;
-        private javax.swing.JTextField cashierOtherAddressTF;
-        private javax.swing.JTextField cashierOtherPostCodeTF;
-        private javax.swing.JPanel cashierPanel;
-        private javax.swing.JTextField cashierPhoneNumberTF;
-        private javax.swing.JTextField cashierPostCodeTF;
-        private javax.swing.JLabel category1MenuLabel;
-        private javax.swing.JLabel category2MenuLabel;
-        private javax.swing.JLabel category3MenuLabel;
-        private javax.swing.JLabel category4MenuLabel;
-        private javax.swing.JLabel category5MenuLabel;
-        private javax.swing.JLabel category6MenuLabel;
-        private javax.swing.JLabel categoryFeatureLabel;
-        private javax.swing.JPanel categoryFeaturePanel;
-        private javax.swing.JPanel categoryPanel;
-        private javax.swing.JPanel checkPaymentPanel;
-        private javax.swing.JPanel checkPersonalInfoPanel;
-        private javax.swing.JLabel cityLabel;
-        private javax.swing.JLabel cityLabel1;
-        private javax.swing.JLabel cityLabel2;
-        private javax.swing.JLabel cityLabel3;
-        private javax.swing.JTextField cityTextField;
-        private javax.swing.JTextField cityTextField1;
-        private javax.swing.JTextField cityTextField2;
-        private javax.swing.JTextField cityTextField3;
-        private javax.swing.JLabel codeLabel1;
-        private javax.swing.JLabel codeLabel2;
-        private javax.swing.JButton dealsBtn;
-        private javax.swing.JLabel dealsLabel;
-        private javax.swing.JPanel dealsViewPanel;
-        private javax.swing.JLabel deliverToMyAddressLabel;
-        private javax.swing.JLabel deliverToMyAddressLabel1;
-        private javax.swing.JPanel deliverToMyAdressPanel;
-        private javax.swing.JPanel deliverToMyAdressPanel1;
-        private javax.swing.JCheckBox deliveryCheckBox;
-        private javax.swing.JCheckBox deliveryCheckBox1;
-        private javax.swing.JLabel deliveryDateLabel;
-        private javax.swing.JLabel deliveryDateLabel1;
-        private javax.swing.JComboBox deliveryDayComboBox;
-        private javax.swing.JComboBox deliveryDayComboBox1;
-        private javax.swing.JPanel deliveryPanel;
-        private javax.swing.JPanel deliveryPanel1;
-        private javax.swing.JComboBox deliveryTimeComboBox;
-        private javax.swing.JComboBox deliveryTimeComboBox1;
-        private javax.swing.JLabel emailLabel;
-        private javax.swing.JLabel emailLabel1;
-        private javax.swing.JTextField emailTextField;
-        private javax.swing.JLabel expDateSlashLabel;
-        private javax.swing.JLabel expDateSlashLabel1;
-        private javax.swing.JLabel expirationDateLabel;
-        private javax.swing.JLabel expirationDateLabel1;
-        private javax.swing.JPanel featurePanel;
-        private javax.swing.JLabel firstNameLabel;
-        private javax.swing.JLabel firstNameLabel1;
-        private javax.swing.JTextField firstNameTextField;
-        private javax.swing.JLabel fpDealsLabel;
-        private javax.swing.JLabel fpHistoryLabel;
-        private javax.swing.JLabel fpMyFavoritesLabel;
-        private javax.swing.JLabel fpMyShoppingBagsLabel;
-        private javax.swing.JLabel fpRecipesLabel;
-        private javax.swing.JButton goToCashierBtn;
-        private javax.swing.JButton historyBtn;
-        private javax.swing.JPanel historyViewPanel;
-        private javax.swing.JLabel iMatLabel;
-        private javax.swing.JPanel itemShower;
-        private javax.swing.JLabel jLabel1;
-        private javax.swing.JLabel jLabel10;
-        private javax.swing.JLabel jLabel11;
-        private javax.swing.JLabel jLabel13;
-        private javax.swing.JLabel jLabel2;
-        private javax.swing.JLabel jLabel3;
-        private javax.swing.JLabel jLabel4;
-        private javax.swing.JLabel jLabel5;
-        private javax.swing.JLabel jLabel6;
-        private javax.swing.JLabel jLabel7;
-        private javax.swing.JLabel jLabel8;
-        private javax.swing.JLabel jLabel9;
-        private javax.swing.JPanel jPanel1;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JScrollPane jScrollPane2;
-        private javax.swing.JSeparator jSeparator2;
-        private javax.swing.JSeparator jSeparator3;
-        private javax.swing.JSeparator jSeparator4;
-        private javax.swing.JLabel krLabel;
-        private javax.swing.JLabel lastNameLabel;
-        private javax.swing.JLabel lastNameLabel1;
-        private javax.swing.JTextField lastNameTextField;
-        private javax.swing.JPanel leftPanel;
-        private javax.swing.JPanel leftUpperPanel;
-        private javax.swing.JPanel logoPanel;
-        private javax.swing.JPanel myAccountContentPanel;
-        private javax.swing.JPanel myAccountPanel;
-        private javax.swing.JPanel myAccountTopPanel;
-        private javax.swing.JButton myFavoritesBtn;
-        private javax.swing.JPanel myFavoritesViewPanel;
-        private javax.swing.JButton myShoppingBagsBtn;
-        private javax.swing.JPanel myShoppingBagsViewPanel;
-        private javax.swing.JButton nextStepButtonToAccept;
-        private javax.swing.JButton nextStepButtonToAccept1;
-        private javax.swing.JButton nextStepButtonToPayment;
-        private javax.swing.JButton nextStepButtonToPersonalInfo;
-        private javax.swing.JLabel paymentInfoLabel;
-        private javax.swing.JLabel paymentInfoLabel1;
-        private javax.swing.JPanel paymentInfoPanel;
-        private javax.swing.JPanel paymentInfoPanel1;
-        private javax.swing.JLabel personalInfoLabel;
-        private javax.swing.JLabel personalInfoLabel1;
-        private javax.swing.JLabel personalInfoLabel2;
-        private javax.swing.JLabel personalInfoLabel3;
-        private javax.swing.JPanel personalInfoPanel;
-        private javax.swing.JPanel personalInfoPanel1;
-        private javax.swing.JLabel phoneNumberLabel;
-        private javax.swing.JLabel phoneNumberLabel1;
-        private javax.swing.JTextField phoneNumberTextField;
-        private javax.swing.JLabel popularLabel;
-        private javax.swing.JLabel postCodeLabel;
-        private javax.swing.JLabel postCodeLabel1;
-        private javax.swing.JTextField postCodeTextField;
-        private javax.swing.JTextField postCodeTextField1;
-        private javax.swing.JLabel priceLabel;
-        private javax.swing.JPanel productPanel;
-        private javax.swing.JScrollPane productScrollPane;
-        private javax.swing.JPanel progressPanel;
-        private javax.swing.JLabel recentlyBoughtLabel;
-        private javax.swing.JButton recipesBtn;
-        private javax.swing.JPanel recipesViewPanel;
-        private javax.swing.JLabel recommendedProductsLabel;
-        private javax.swing.JPanel recommendedProductsPanel;
-        private javax.swing.JScrollPane recommendedProductsScrollPane;
-        private javax.swing.JButton saveButton;
-        private javax.swing.JButton saveButton1;
-        private javax.swing.JButton saveButton2;
-        private javax.swing.JButton searchButton;
-        private javax.swing.JTextField searchField;
-        private javax.swing.JPanel searchResultPanel;
-        private javax.swing.JLabel separator1;
-        private javax.swing.JLabel separator2;
-        private javax.swing.JLabel separator3;
-        private javax.swing.JLabel separator4;
-        private javax.swing.JLabel separator5;
-        private javax.swing.JLabel separator8;
-        private javax.swing.JPanel shoppingCartPanel;
-        private javax.swing.JPanel startViewPanel;
-        private javax.swing.JLabel titleNameLabel;
-        private javax.swing.JPanel topPanel;
-        private javax.swing.JLabel totalPriceLabel;
-        private javax.swing.JLabel tpCartContentsNumber;
-        private javax.swing.JLabel tpCartSumLabel;
-        private javax.swing.JLabel tpChangeUserLabel;
-        private javax.swing.JLabel tpGoToCashierLabel;
-        private javax.swing.JLabel tpMyAccountLabel;
-        private javax.swing.JButton updCartBtn;
-        private javax.swing.JComboBox validMonthComboBox;
-        private javax.swing.JComboBox validMonthComboBox1;
-        private javax.swing.JComboBox validYearComboBox;
-        private javax.swing.JComboBox validYearComboBox1;
-        private javax.swing.JLabel verificationCodeLabel;
-        private javax.swing.JLabel verificationCodeLabel1;
-        private javax.swing.JTextField verificationCodeTextField;
-        private javax.swing.JTextField verificationCodeTextField1;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel acceptAddressLabel;
+    private javax.swing.JLabel acceptCardHolderLabel;
+    private javax.swing.JLabel acceptCardNumberLabel;
+    private javax.swing.JLabel acceptCardTypeLabel;
+    private javax.swing.JLabel acceptDeliveryLabel;
+    private javax.swing.JLabel acceptNameLabel;
+    private javax.swing.JPanel acceptPanel;
+    private javax.swing.JLabel acceptPaymentLabel;
+    private javax.swing.JLabel acceptPostCodeLabel;
+    private javax.swing.JLabel acceptSeparator1;
+    private javax.swing.JLabel acceptSeparator3;
+    private javax.swing.JLabel acceptSeparator4;
+    private javax.swing.JLabel acceptShoppingCartLabel;
+    private javax.swing.JLabel acceptValidMonthYearLabel;
+    private javax.swing.JLabel acceptVerificationCodeLabel;
+    private javax.swing.JLabel accountImage;
+    private javax.swing.JTextField address1TextField;
+    private javax.swing.JTextField address1TextField1;
+    private javax.swing.JTextField address2TextField;
+    private javax.swing.JTextField address2TextField1;
+    private javax.swing.JPanel addressPanel;
+    private javax.swing.JPanel addressPanel2;
+    private javax.swing.JLabel adress1Label;
+    private javax.swing.JLabel adress1Label1;
+    private javax.swing.JLabel adress1Label2;
+    private javax.swing.JLabel adress1Label3;
+    private javax.swing.JLabel adress2Label;
+    private javax.swing.JLabel adress2Label1;
+    private javax.swing.JLabel adress2Label2;
+    private javax.swing.JLabel adress2Label3;
+    private javax.swing.JTextField adress2TextField1;
+    private javax.swing.JTextField adress2TextField2;
+    private javax.swing.JButton backButtonToPayment;
+    private javax.swing.JButton backButtonToPersonalInfo;
+    private javax.swing.JButton backButtonToShoppingCart;
+    private javax.swing.JLabel cardHolderNameLabel;
+    private javax.swing.JLabel cardHolderNameLabel1;
+    private javax.swing.JTextField cardHolderTextField;
+    private javax.swing.JTextField cardHolderTextField1;
+    private javax.swing.JLabel cardNumberLabel;
+    private javax.swing.JLabel cardNumberLabel1;
+    private javax.swing.JTextField cardNumberTextField;
+    private javax.swing.JTextField cardNumberTextField1;
+    private javax.swing.JComboBox cardTypeComboBox;
+    private javax.swing.JComboBox cardTypeComboBox1;
+    private javax.swing.JLabel cardTypeLabel;
+    private javax.swing.JLabel cardTypeLabel1;
+    private javax.swing.JPanel cartContentsPanel;
+    private javax.swing.JLabel cartHeadlineLabel;
+    private javax.swing.JLabel cartImage;
+    private javax.swing.JPanel cartPanel;
+    private javax.swing.JScrollPane cartPanelScrollPane;
+    private javax.swing.JTextField cashierAddressTF;
+    private javax.swing.JTextField cashierEmailTF;
+    private javax.swing.JTextField cashierFirstNameTF;
+    private javax.swing.JTextField cashierLastNameTF;
+    private javax.swing.JTextField cashierOtherAddressTF;
+    private javax.swing.JTextField cashierOtherPostCodeTF;
+    private javax.swing.JPanel cashierPanel;
+    private javax.swing.JTextField cashierPhoneNumberTF;
+    private javax.swing.JTextField cashierPostCodeTF;
+    private javax.swing.JLabel category1MenuLabel;
+    private javax.swing.JLabel category2MenuLabel;
+    private javax.swing.JLabel category3MenuLabel;
+    private javax.swing.JLabel category4MenuLabel;
+    private javax.swing.JLabel category5MenuLabel;
+    private javax.swing.JLabel category6MenuLabel;
+    private javax.swing.JLabel categoryFeatureLabel;
+    private javax.swing.JPanel categoryFeaturePanel;
+    private javax.swing.JPanel categoryPanel;
+    private javax.swing.JPanel checkPaymentPanel;
+    private javax.swing.JPanel checkPersonalInfoPanel;
+    private javax.swing.JLabel cityLabel;
+    private javax.swing.JLabel cityLabel1;
+    private javax.swing.JLabel cityLabel2;
+    private javax.swing.JLabel cityLabel3;
+    private javax.swing.JTextField cityTextField;
+    private javax.swing.JTextField cityTextField1;
+    private javax.swing.JTextField cityTextField2;
+    private javax.swing.JTextField cityTextField3;
+    private javax.swing.JLabel codeLabel1;
+    private javax.swing.JLabel codeLabel2;
+    private javax.swing.JButton dealsBtn;
+    private javax.swing.JLabel dealsLabel;
+    private javax.swing.JPanel dealsViewPanel;
+    private javax.swing.JLabel deliverToMyAddressLabel;
+    private javax.swing.JLabel deliverToMyAddressLabel1;
+    private javax.swing.JPanel deliverToMyAdressPanel;
+    private javax.swing.JPanel deliverToMyAdressPanel1;
+    private javax.swing.JCheckBox deliveryCheckBox;
+    private javax.swing.JCheckBox deliveryCheckBox1;
+    private javax.swing.JLabel deliveryDateLabel;
+    private javax.swing.JLabel deliveryDateLabel1;
+    private javax.swing.JComboBox deliveryDayComboBox;
+    private javax.swing.JComboBox deliveryDayComboBox1;
+    private javax.swing.JPanel deliveryPanel;
+    private javax.swing.JPanel deliveryPanel1;
+    private javax.swing.JComboBox deliveryTimeComboBox;
+    private javax.swing.JComboBox deliveryTimeComboBox1;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JLabel emailLabel1;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel expDateSlashLabel;
+    private javax.swing.JLabel expDateSlashLabel1;
+    private javax.swing.JLabel expirationDateLabel;
+    private javax.swing.JLabel expirationDateLabel1;
+    private javax.swing.JPanel featurePanel;
+    private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JLabel firstNameLabel1;
+    private javax.swing.JTextField firstNameTextField;
+    private javax.swing.JLabel fpDealsLabel;
+    private javax.swing.JLabel fpHistoryLabel;
+    private javax.swing.JLabel fpMyFavoritesLabel;
+    private javax.swing.JLabel fpMyShoppingBagsLabel;
+    private javax.swing.JLabel fpRecipesLabel;
+    private javax.swing.JButton goToCashierBtn;
+    private javax.swing.JButton historyBtn;
+    private javax.swing.JPanel historyViewPanel;
+    private javax.swing.JLabel iMatLabel;
+    private javax.swing.JPanel itemShower;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JLabel krLabel;
+    private javax.swing.JLabel lastNameLabel;
+    private javax.swing.JLabel lastNameLabel1;
+    private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JPanel leftPanel;
+    private javax.swing.JPanel leftUpperPanel;
+    private javax.swing.JPanel logoPanel;
+    private javax.swing.JPanel myAccountContentPanel;
+    private javax.swing.JPanel myAccountPanel;
+    private javax.swing.JPanel myAccountTopPanel;
+    private javax.swing.JButton myFavoritesBtn;
+    private javax.swing.JPanel myFavoritesViewPanel;
+    private javax.swing.JButton myShoppingBagsBtn;
+    private javax.swing.JPanel myShoppingBagsViewPanel;
+    private javax.swing.JButton nextStepButtonToAccept;
+    private javax.swing.JButton nextStepButtonToAccept1;
+    private javax.swing.JButton nextStepButtonToPayment;
+    private javax.swing.JButton nextStepButtonToPersonalInfo;
+    private javax.swing.JLabel paymentInfoLabel;
+    private javax.swing.JLabel paymentInfoLabel1;
+    private javax.swing.JPanel paymentInfoPanel;
+    private javax.swing.JPanel paymentInfoPanel1;
+    private javax.swing.JLabel personalInfoLabel;
+    private javax.swing.JLabel personalInfoLabel1;
+    private javax.swing.JLabel personalInfoLabel2;
+    private javax.swing.JLabel personalInfoLabel3;
+    private javax.swing.JPanel personalInfoPanel;
+    private javax.swing.JPanel personalInfoPanel1;
+    private javax.swing.JLabel phoneNumberLabel;
+    private javax.swing.JLabel phoneNumberLabel1;
+    private javax.swing.JTextField phoneNumberTextField;
+    private javax.swing.JLabel popularLabel;
+    private javax.swing.JLabel postCodeLabel;
+    private javax.swing.JLabel postCodeLabel1;
+    private javax.swing.JTextField postCodeTextField;
+    private javax.swing.JTextField postCodeTextField1;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JPanel productPanel;
+    private javax.swing.JScrollPane productScrollPane;
+    private javax.swing.JPanel progressPanel;
+    private javax.swing.JLabel recentlyBoughtLabel;
+    private javax.swing.JButton recipesBtn;
+    private javax.swing.JPanel recipesViewPanel;
+    private javax.swing.JLabel recommendedProductsLabel;
+    private javax.swing.JPanel recommendedProductsPanel;
+    private javax.swing.JScrollPane recommendedProductsScrollPane;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JButton saveButton1;
+    private javax.swing.JButton saveButton2;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchField;
+    private javax.swing.JPanel searchResultPanel;
+    private javax.swing.JLabel separator1;
+    private javax.swing.JLabel separator2;
+    private javax.swing.JLabel separator3;
+    private javax.swing.JLabel separator4;
+    private javax.swing.JLabel separator5;
+    private javax.swing.JLabel separator8;
+    private javax.swing.JPanel shoppingCartPanel;
+    private javax.swing.JPanel startViewPanel;
+    private javax.swing.JLabel titleNameLabel;
+    private javax.swing.JPanel topPanel;
+    private javax.swing.JLabel totalPriceLabel;
+    private javax.swing.JLabel tpCartContentsNumber;
+    private javax.swing.JLabel tpCartSumLabel;
+    private javax.swing.JLabel tpChangeUserLabel;
+    private javax.swing.JLabel tpGoToCashierLabel;
+    private javax.swing.JLabel tpMyAccountLabel;
+    private javax.swing.JButton updCartBtn;
+    private javax.swing.JComboBox validMonthComboBox;
+    private javax.swing.JComboBox validMonthComboBox1;
+    private javax.swing.JComboBox validYearComboBox;
+    private javax.swing.JComboBox validYearComboBox1;
+    private javax.swing.JLabel verificationCodeLabel;
+    private javax.swing.JLabel verificationCodeLabel1;
+    private javax.swing.JTextField verificationCodeTextField;
+    private javax.swing.JTextField verificationCodeTextField1;
+    // End of variables declaration//GEN-END:variables
 }
