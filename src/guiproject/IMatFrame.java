@@ -968,7 +968,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         iMatLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         iMatLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logga.png"))); // NOI18N
         iMatLabel.setToolTipText("Gå till startsidan");
-        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iMatLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                goToHomePage(evt);
+            }
+        });
 
         javax.swing.GroupLayout logoPanelLayout = new javax.swing.GroupLayout(logoPanel);
         logoPanel.setLayout(logoPanelLayout);
@@ -2745,13 +2750,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         acceptPanelLayout.setVerticalGroup(
             acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(acceptPanelLayout.createSequentialGroup()
-                .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(16, 16, 16)
+                .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(acceptShoppingCartLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(acceptDeliveryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(acceptPanelLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(acceptShoppingCartLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(acceptDeliveryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(acceptSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(acceptNameLabel)
@@ -2772,14 +2777,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(acceptVerificationCodeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(acceptCardHolderLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(acceptCardHolderLabel))
                     .addGroup(acceptPanelLayout.createSequentialGroup()
-                        .addContainerGap(118, Short.MAX_VALUE)
                         .addComponent(acceptSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButtonToPayment)
                     .addComponent(acceptPurchaseButton))
@@ -2836,7 +2839,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(checkoutPanelLayout.createSequentialGroup()
                 .addGroup(checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(progressPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(productPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(productPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3085,7 +3088,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_NextStepToPayment
 
     private void goToCashierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToCashierBtnActionPerformed
-        // Go to the cashier.
+        // Go to the checkout.
+        cl2.show(productPanel, "shoppingCart");
         cl.show(featurePanel, "checkout");
     }//GEN-LAST:event_goToCashierBtnActionPerformed
 
@@ -3172,8 +3176,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void backToStore(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToStore
         cl.show(featurePanel, "cardStart");
-        cl2.show(productPanel, "shoppingCart");
     }//GEN-LAST:event_backToStore
+
+    private void goToHomePage(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_goToHomePage
+        cl.show(featurePanel, "cardStart");
+    }//GEN-LAST:event_goToHomePage
 
     /**
      * @param args the command line arguments

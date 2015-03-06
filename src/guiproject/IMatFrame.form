@@ -341,9 +341,12 @@
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="G&#xe5; till startsidan"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Handmark&#xf6;r"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="goToHomePage"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -3256,14 +3259,14 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="acceptShoppingCartLabel" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Component id="acceptDeliveryLabel" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="acceptShoppingCartLabel" min="-2" pref="22" max="-2" attributes="0"/>
-                                          <Component id="acceptDeliveryLabel" min="-2" pref="24" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="acceptSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
@@ -3285,16 +3288,14 @@
                                       <Component id="acceptVerificationCodeLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="acceptCardHolderLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="118" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
                                       <Component id="acceptSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jScrollPane2" min="-2" pref="370" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="90" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="backButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="acceptPurchaseButton" alignment="3" min="-2" max="-2" attributes="0"/>
