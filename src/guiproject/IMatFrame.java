@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package guiproject;
 
 import java.awt.CardLayout;
@@ -17,12 +12,6 @@ import java.util.List;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
-
-/**
- *
- * @author Johan
- */
-
 
 public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
@@ -76,53 +65,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
            cartContentsPanel.add(cpo);
        }
         System.out.println("updateCartPanel cpo: " + cpolist);
-       //    gpCon.cpo  listan med cartprodobjects
-        
- //       for(CartProdObject cp: gpCon.cpo){
-   //         cartContentsPanel.add(cp);
-     //   }
-  //      revalidate();
-    //    repaint();
-        
-//        GridLayout layout = new GridLayout(gpCon.cpo.size(),1);
-//                              
-//                cartContentsPanel.setLayout(layout);
-//                cartContentsPanel.removeAll();
-//   //             for (int i = 0; i < gpCon.cpo.size(); i++) {
-//     //               cartContentsPanel.add(gpCon.cpo.get(i));
-//       //         }
-////                for(CartProdObject cp: gpCon.cpo){
-////                    cartContentsPanel.add(cp);
-////                }
-//                Iterator it = gpCon.cpo.iterator();
-//                while(it.hasNext()){
-//                    cartContentsPanel.add((JPanel)it.next());
-//                    
-//                }
-                
+
                 revalidate();
                 repaint();
                 System.out.print("Updating cart panel! "+ cartContentsPanel.getComponentCount() + "gpCon"+cpolist.size());
-
-       
-        
-                
-//        List <ShoppingItem> cartContentList = gpCon.sc.getItems();
-        
-//        for (int i = 0; i < gpCon.sc.getItems().size(); i++){
-//            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName() + 
-//                   " " + cartContentList.get(i).getProduct().getPrice() + " " +
-//                    cartContentList.get(i).getProduct().getUnit() + " "
-//                    + cartContentList.get(i).getAmount() + " " 
-//            + cartContentList.get(i).getProduct().getUnitSuffix()));
-//        }
-//        
-//        cartContentsPanel.add(new JLabel("Totalt: " + gpCon.sc.getTotal() + " kr"));
-//        for (int i = 0; i < gpCon.cartContents.size(); i++){
-//        cartContentsPanel.add(new JLabel(gpCon.cartContents.get(i).toString()));
-//            System.out.println(gpCon.cartContents.get(i).toString());
-//        }
-                               
     }
     private void displayGroceries(){
                 
@@ -140,9 +86,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
     
     public void displayCart(List<CartProdObject> cpolist){
-        GridLayout layout = new GridLayout(gpCon.products.size(),1);
+        //GridLayout layout = new GridLayout(gpCon.products.size(),1);
                               
-                cartContentsPanel.setLayout(layout);
+        //        cartContentsPanel.setLayout(layout);
                 cartContentsPanel.removeAll();
 //                for (int i = 0; i < gpCon.products.size(); i++) {
                     for (int i = 0; i < cpolist.size(); i++) {

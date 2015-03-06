@@ -10,12 +10,6 @@ import java.util.List;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
 
-
-
-/**
- *
- * @author Johan
- */
 public class GUIProject{
     
     
@@ -40,6 +34,10 @@ public class GUIProject{
     public ImageIcon getImage100(Product prod){
         
             return iMDH.getImageIcon(prod,100,100);
+    }
+    public ImageIcon getImage50(Product prod){
+        
+            return iMDH.getImageIcon(prod,50,50);
     }
     
     public void doSearch(String s, IMatFrame imf){
