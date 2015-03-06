@@ -14,36 +14,36 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 public class IMatFrame extends javax.swing.JFrame implements ActionListener {
-    
-    
+
+
     /**
      * prefix för objekt:
      * lp = leftPanel
      * tp = topPanel
      * fp = featurePanel (mittenpanel)
-     * 
+     *
      * ex: lpRecipesLabel = label "Recept" i vänsterpanelen
      */
-    
+
     /** Skapar controller från GUIProject.java
      */
     GUIProject gpCon;
     private CardLayout cl;
     private CardLayout cl2;
-    
+
     private final AddressPanel addressPanel1 = new AddressPanel();
-    
+
     private final ImageIcon saveButtonNormal = new ImageIcon(getClass().getResource("/greenButton.png"));
     private final ImageIcon saveButtonHover = new ImageIcon(getClass().getResource("/greenButtonHover.png"));
     private final ImageIcon saveButtonClick = new ImageIcon(getClass().getResource("/greenButtonClick.png"));
-    
+
     /**
      * Skapar arraylist för matkategorierna och deras underkategorier.
      */
     private ArrayList<JLabel> allCategoryArrayList = new ArrayList<JLabel>();
-    
+
     private ArrayList<JLabel> headCategoryArrayList = new ArrayList<JLabel>();
-    
+
     private ArrayList<JLabel> breadCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> drinkCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> fishCategoryArrayList = new ArrayList<JLabel>();
@@ -52,11 +52,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private ArrayList<JLabel> meatCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> dairiesCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> sweetsCategoryArrayList = new ArrayList<JLabel>();
-    
+
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
-    
+    private ArrayList<String> categoryStrings = new ArrayList<String>();
+
+
     public void updateCartPanel(List<CartProdObject> cpolist){
-                                                   
+
         cartContentsPanel.removeAll();
         System.out.println(cpolist.size());
        for (CartProdObject cpo : cpolist) {
@@ -70,10 +72,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 repaint();
                 System.out.print("Updating cart panel! "+ cartContentsPanel.getComponentCount() + "gpCon"+cpolist.size());
     }
+    
+    private void redrawCategories(){
+        
+        categoryPanel.removeAll();
+        allCategoryArrayList.clear();
+        for(int i = 0; i<headCategoryArrayList.size(); i++){
+            allCategoryArrayList.add(headCategoryArrayList.get(i));
+        }
+        
+    }
+    
     private void displayGroceries(){
-                
+
         GridLayout layout = new GridLayout(gpCon.products.size(),1);
-                              
+
         itemShower.setLayout(layout);
         itemShower.removeAll();
         for (int i = 0; i < gpCon.products.size(); i++) {
@@ -84,10 +97,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         revalidate();
         repaint();
     }
-    
+
     public void displayCart(List<CartProdObject> cpolist){
         //GridLayout layout = new GridLayout(gpCon.products.size(),1);
-                              
+
         //        cartContentsPanel.setLayout(layout);
                 cartContentsPanel.removeAll();
 //                for (int i = 0; i < gpCon.products.size(); i++) {
@@ -98,7 +111,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
                 }
     }
-    
+
     /**
      * Creates new form iMatFrame
      */
@@ -110,16 +123,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         cl = (CardLayout)featurePanel.getLayout();
         cl2 = (CardLayout)productPanel.getLayout();
-        
+
         deliveryPanel.add(addressPanel1);
-        
+
         /**
          * Skapar label för varje matkategori.
          * Skapa eventuellt JButtons istället för JLabels senare.
          */
-        
+
         /**Kategorier och underkategorier:
-         * 
+         *
          * Frukt och grönt
          *  -Baljväxter
          *  -Bär
@@ -131,79 +144,79 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
          *  -Nötter och frön?
          *  -Frukter
          *  -Rotfrukter
-         * 
+         *
          * Bröd och torrvaror
          *  -Bröd
          *  -Mjöl, socker och salt
          *  -Pasta
          *  -Potatis och ris
-         *  
+         *
          * Kryddor
          *  -Örter
-         * 
-         * Drycker 
+         *
+         * Drycker
          *  -Varma drycker
          *  -Kalla drycker
-         * 
+         *
          * Mejeriprodukter
-         * 
+         *
          * Kött
-         * 
+         *
          * Fisk
-         * 
+         *
          * Sötsaker
          */
-        
-            
-        
+
+
+
         JLabel headCategoryBread = new JLabel("Bröd och torrvaror");
         headCategoryArrayList.add(headCategoryBread);
-        
+
             JLabel subCategoryBreadLabel = new JLabel("Bröd");
             JLabel subCategoryFlourSugarSaltLabel = new JLabel("Mjöl, socker och salt");
             JLabel subCategoryPastaLabel = new JLabel("Pasta");
             JLabel subCategoryPotatoRiceLabel = new JLabel("Potatis och ris");
-            
+
         breadCategoryArrayList.add(subCategoryBreadLabel);
         breadCategoryArrayList.add(subCategoryFlourSugarSaltLabel);
         breadCategoryArrayList.add(subCategoryPastaLabel);
         breadCategoryArrayList.add(subCategoryPotatoRiceLabel);
-        
+
         for (int i = 0; i<breadCategoryArrayList.size(); i++){
             breadCategoryArrayList.get(i).setBackground(Color.white);
             breadCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategoryDrinks = new JLabel("Drycker");
         headCategoryArrayList.add(headCategoryDrinks);
-        
+
             JLabel subCategoryHotDrinksLabel = new JLabel("Varma drycker");
             JLabel subCategoryColdDrinksLabel = new JLabel("Kalla drycker");
-            
+
         drinkCategoryArrayList.add(subCategoryHotDrinksLabel);
         drinkCategoryArrayList.add(subCategoryColdDrinksLabel);
-        
+
         for (int i = 0; i<drinkCategoryArrayList.size(); i++){
             drinkCategoryArrayList.get(i).setBackground(Color.white);
             drinkCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategoryFish = new JLabel("Fisk");
         headCategoryArrayList.add(headCategoryFish);
-        
+
             JLabel subCategoryFishLabel = new JLabel("Fisk");
-            
+
         fishCategoryArrayList.add(subCategoryFishLabel);
-        
+
         for (int i = 0; i<fishCategoryArrayList.size(); i++){
             fishCategoryArrayList.get(i).setBackground(Color.white);
             fishCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategoryFruitsAndVegs = new JLabel("Frukt och grönt");
         headCategoryArrayList.add(headCategoryFruitsAndVegs);
-        
-        
+
+
             JLabel subCategoryPodLabel = new JLabel("Baljväxter");
             JLabel subCategoryBerryLabel = new JLabel("Bär");
             JLabel subCategoryCitrusFruitLabel = new JLabel("Citrusfrukter");
@@ -213,8 +226,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             JLabel subCategoryMelonsLabel = new JLabel("Meloner");
             JLabel subCategoryNutsAndSeedsLabel = new JLabel("Nötter och frön");
             JLabel subCategoryRootVegetableLabel = new JLabel("Rotfrukter");
-            JLabel subCategoryCabbageLabel = new JLabel("Kål");  
-            
+            JLabel subCategoryCabbageLabel = new JLabel("Kål");
+
         fruitVegsCategoryArrayList.add(subCategoryPodLabel);
         fruitVegsCategoryArrayList.add(subCategoryBerryLabel);
         fruitVegsCategoryArrayList.add(subCategoryCitrusFruitLabel);
@@ -225,56 +238,56 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         fruitVegsCategoryArrayList.add(subCategoryNutsAndSeedsLabel);
         fruitVegsCategoryArrayList.add(subCategoryRootVegetableLabel);
         fruitVegsCategoryArrayList.add(subCategoryCabbageLabel);
-        
+
         for (int i = 0; i<fruitVegsCategoryArrayList.size(); i++){
             fruitVegsCategoryArrayList.get(i).setBackground(Color.white);
             fruitVegsCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategorySpice = new JLabel("Kryddor");
         headCategoryArrayList.add(headCategorySpice);
-        
+
             JLabel subCategoryHerbLabel = new JLabel("Örter");
         spiceCategoryArrayList.add(subCategoryHerbLabel);
-        
+
         for (int i = 0; i<spiceCategoryArrayList.size(); i++){
             spiceCategoryArrayList.get(i).setBackground(Color.white);
             spiceCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategoryMeat = new JLabel("Kött");
         headCategoryArrayList.add(headCategoryMeat);
-        
+
             JLabel subCategoryMeatLabel = new JLabel("Kött");
         meatCategoryArrayList.add(subCategoryMeatLabel);
-        
+
         for (int i = 0; i<meatCategoryArrayList.size(); i++){
             meatCategoryArrayList.get(i).setBackground(Color.white);
             meatCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategoryDairies = new JLabel("Mejeriprodukter");
         headCategoryArrayList.add(headCategoryDairies);
-        
+
             JLabel category12Label = new JLabel("Mejeriprodukter");
         dairiesCategoryArrayList.add(category12Label);
-        
+
         for (int i = 0; i<dairiesCategoryArrayList.size(); i++){
             dairiesCategoryArrayList.get(i).setBackground(Color.white);
             dairiesCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         JLabel headCategorySweets = new JLabel("Sötsaker");
         headCategoryArrayList.add(headCategorySweets);
-        
+
         JLabel category20Label = new JLabel("Sötsaker");
         sweetsCategoryArrayList.add(category20Label);
-        
+
         for (int i = 0; i<sweetsCategoryArrayList.size(); i++){
             sweetsCategoryArrayList.get(i).setBackground(Color.white);
             sweetsCategoryArrayList.get(i).setOpaque(true);
-        }    
-        
+        }
+
         allSubCategoryArrayList.addAll(breadCategoryArrayList);
         allSubCategoryArrayList.addAll(fishCategoryArrayList);
         allSubCategoryArrayList.addAll(fruitVegsCategoryArrayList);
@@ -282,39 +295,39 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         allSubCategoryArrayList.addAll(meatCategoryArrayList);
         allSubCategoryArrayList.addAll(dairiesCategoryArrayList);
         allSubCategoryArrayList.addAll(sweetsCategoryArrayList);
-        
-        
-        
+
+
+
         for (int i = 0; i<headCategoryArrayList.size(); i++){
             allCategoryArrayList.add(headCategoryArrayList.get(i));
         }
-        
+
                     for (int i = 0; i<allCategoryArrayList.size(); i++){
                         allCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
                             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    
+
                                 categoryLabelMouseClicked(evt);
                             }
                         });
                     }
-                        
+
                     for (int i = 0; i<allSubCategoryArrayList.size(); i++){
-  
+
                         allSubCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
                             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    
+
                                 categoryLabelMouseClicked(evt);
                             }
                         });
-         
+
                     }
-                    placeCategories();                
+                    placeCategories();
                     revalidate();
     }
-    
+
 
     private void placeCategories(){
-                
+
         for (int i = 0; i<allCategoryArrayList.size(); i++){
                 categoryPanel.add(allCategoryArrayList.get(i));
                 allCategoryArrayList.get(i).setHorizontalAlignment(SwingConstants.RIGHT);
@@ -323,29 +336,41 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         }
     }
-    
+
     public void actionPerformed(ActionEvent e) {
-        
+
     }
-    
-    /**
-     * Ännu ej särskilt funktionell kod för att utöka kategorilistan med en underkategori
-     * när en kategorilabel klickas på. Behöver få tillgång till categoryArrayList.get(i).
-     * TODO: dölj/ta bort andra kategoriers underkategorier när man går in på en ny.
-     * Kanske underlättar om man lägger underkategorier sist i categoryListArray men på specifik plats i panelen?
-     */
     private void categoryLabelMouseClicked(java.awt.event.MouseEvent evt) {   
         
 
         JLabel tempLabel1 = (JLabel)evt.getSource();
- 
-        categoryPanel.removeAll();
-        allCategoryArrayList.clear();
-        for (int i = 0; i<headCategoryArrayList.size(); i++){
-            allCategoryArrayList.add(headCategoryArrayList.get(i));
-        }
+
+        categoryStrings.clear();
+        /**
+         * Flyttat till redrawCategories()
+         */
+//        categoryPanel.removeAll();
+//        allCategoryArrayList.clear();
+//        for (int i = 0; i<headCategoryArrayList.size(); i++){
+//            allCategoryArrayList.add(headCategoryArrayList.get(i));
+//        }
         switch(tempLabel1.getText()){
             case "Bröd och torrvaror": 
+                redrawCategories();
+                
+                categoryStrings.add("BREAD");
+                categoryStrings.add("FLOUR_SUGAR_SALT");
+                categoryStrings.add("PASTA");
+                categoryStrings.add("POTATO_RICE");
+                
+                for (int i = 0; i<categoryStrings.size(); i++){
+                    System.out.println(categoryStrings.get(i).toString());
+                }
+                
+                gpCon.listCatProds(categoryStrings, this);
+                
+                displayGroceries();
+                
                 for (int i = 0; i<breadCategoryArrayList.size(); i++){
                     allCategoryArrayList.add(1+i, breadCategoryArrayList.get(i));
                                                 
@@ -353,6 +378,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 
                 break;
             case "Drycker": 
+                redrawCategories();
+                categoryStrings.add("HOT_DRINKS");
+                categoryStrings.add("COLD_DRINKS");
+                                
+                for (int i = 0; i<categoryStrings.size(); i++){
+                    System.out.println(categoryStrings.get(i).toString());
+                }
+                
+                gpCon.listCatProds(categoryStrings, this);
+                
+                displayGroceries();
+                
                 for (int i = 0; i<drinkCategoryArrayList.size(); i++){
                     
                     allCategoryArrayList.add(2+i, drinkCategoryArrayList.get(i));
@@ -367,13 +404,41 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //                
 //                break;
             case "Frukt och grönt": 
+                redrawCategories();
+                categoryStrings.add("POD");
+                categoryStrings.add("BERRY");
+                categoryStrings.add("CITRUS_FRUIT");
+                categoryStrings.add("EXOTIC_FRUIT");
+                categoryStrings.add("FRUIT");
+                categoryStrings.add("VEGETABLE_FRUIT");
+                categoryStrings.add("CABBAGE");
+                categoryStrings.add("MELONS");
+                categoryStrings.add("NUTS_AND_SEEDS");
+                categoryStrings.add("ROOT_VEGETABLE");
+                
+                
+                
+                for (int i = 0; i<categoryStrings.size(); i++){
+                    System.out.println(categoryStrings.get(i).toString());
+                }
+                
+                gpCon.listCatProds(categoryStrings, this);
+                
+                displayGroceries();
+                
                 for (int i = 0; i<fruitVegsCategoryArrayList.size(); i++){
                     
                     allCategoryArrayList.add(4+i, fruitVegsCategoryArrayList.get(i));
                 }
                 
                 break;
-            case "Kryddor": 
+            case "Kryddor":
+                redrawCategories();
+                
+                categoryStrings.add("HERB");
+                gpCon.listCatProds(categoryStrings, this);
+                displayGroceries();
+                
                 for (int i = 0; i<spiceCategoryArrayList.size(); i++){
                     
                     allCategoryArrayList.add(5+i, spiceCategoryArrayList.get(i));
@@ -403,92 +468,113 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //                break;
                
             case "Baljväxter":
-                gpCon.listCatProds("POD", this);
+                categoryStrings.add("POD");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Bröd":
-                gpCon.listCatProds("BREAD", this);
+                categoryStrings.add("BREAD");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Bär":
-                gpCon.listCatProds("BERRY", this);
+                categoryStrings.add("BERRY");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Citrusfrukter":
-                gpCon.listCatProds("CITRUS_FRUIT", this);
+                categoryStrings.add("CITRUS_FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                 
             case "Varma drycker":
-                gpCon.listCatProds("HOT_DRINKS", this);
+                categoryStrings.add("HOT_DRINKS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Kalla drycker":
-                gpCon.listCatProds("COLD_DRINKS", this);
+                categoryStrings.add("COLD_DRINKS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                 
             case "Exotiska frukter":
-                gpCon.listCatProds("EXOTIC_FRUIT", this);
+                categoryStrings.add("EXOTIC_FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Fisk":
-                gpCon.listCatProds("FISH", this);
+                categoryStrings.add("FISH");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                 
             case "Grönsaksfrukter":
-                gpCon.listCatProds("VEGETABLE_FRUIT", this);
+                categoryStrings.add("VEGETABLE_FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Kål":
-                gpCon.listCatProds("CABBAGE", this);
+                categoryStrings.add("CABBAGE");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Kött":
-                gpCon.listCatProds("MEAT", this);
+                categoryStrings.add("MEAT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Mejeriprodukter":
-                gpCon.listCatProds("DAIRIES", this);
+                categoryStrings.add("DAIRIES");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Meloner":
-                gpCon.listCatProds("MELONS", this);
+                categoryStrings.add("MELONS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
            
             case "Mjöl, socker och salt":
-                gpCon.listCatProds("FLOUR_SUGAR_SALT", this);
+                categoryStrings.add("FLOUR_SUGAR_SALT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Nötter och frön":
-                gpCon.listCatProds("NUTS_AND_SEEDS", this);
+                categoryStrings.add("NUTS_AND_SEEDS");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Pasta":
-                gpCon.listCatProds("PASTA", this);
+                categoryStrings.add("PASTA");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Potatis och ris":
-                gpCon.listCatProds("POTATO_RICE", this);
+                categoryStrings.add("POTATO_RICE");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Rotfrukter":
-                gpCon.listCatProds("ROOT_VEGETABLE", this);
+                categoryStrings.add("ROOT_VEGETABLE");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
              
             case "Frukt":
-                gpCon.listCatProds("FRUIT", this);
+                categoryStrings.add("FRUIT");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Sötsaker":
-                gpCon.listCatProds("SWEET", this);
+                categoryStrings.add("SWEET");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
             case "Örter":
-                gpCon.listCatProds("HERB", this);
+                categoryStrings.add("HERB");
+                gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
                     
@@ -2824,14 +2910,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchFieldActionPerformed
 /**
- * 
- * Flytta detta till en egen metod, kalla från gpcon. 
+ *
+ * Flytta detta till en egen metod, kalla från gpcon.
  */
     private void updCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updCartBtnActionPerformed
         cartContentsPanel.removeAll();
-        
+
         List <ShoppingItem> cartContentList = gpCon.sc.getItems();
-        
+
         for (int i = 0; i < gpCon.sc.getItems().size(); i++){
             cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName()));
         }
@@ -2874,7 +2960,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void tpMyAccountLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tpMyAccountLabelMouseClicked
-        cl.show(featurePanel, "myAccount"); 
+        cl.show(featurePanel, "myAccount");
     }//GEN-LAST:event_tpMyAccountLabelMouseClicked
 
     private void deliveryCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryCheckBox1ActionPerformed
@@ -2996,7 +3082,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -3025,221 +3111,221 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel acceptAddressLabel;
-    private javax.swing.JLabel acceptCardHolderLabel;
-    private javax.swing.JLabel acceptCardNumberLabel;
-    private javax.swing.JLabel acceptCardTypeLabel;
-    private javax.swing.JLabel acceptDeliveryLabel;
-    private javax.swing.JLabel acceptNameLabel;
-    private javax.swing.JPanel acceptPanel;
-    private javax.swing.JLabel acceptPaymentLabel;
-    private javax.swing.JLabel acceptPostCodeLabel;
-    private javax.swing.JLabel acceptSeparator1;
-    private javax.swing.JLabel acceptSeparator3;
-    private javax.swing.JLabel acceptSeparator4;
-    private javax.swing.JLabel acceptShoppingCartLabel;
-    private javax.swing.JLabel acceptValidMonthYearLabel;
-    private javax.swing.JLabel acceptVerificationCodeLabel;
-    private javax.swing.JLabel accountImage;
-    private javax.swing.JTextField address1TextField;
-    private javax.swing.JTextField address1TextField1;
-    private javax.swing.JTextField address2TextField;
-    private javax.swing.JTextField address2TextField1;
-    private javax.swing.JPanel addressPanel;
-    private javax.swing.JPanel addressPanel2;
-    private javax.swing.JLabel adress1Label;
-    private javax.swing.JLabel adress1Label1;
-    private javax.swing.JLabel adress1Label2;
-    private javax.swing.JLabel adress1Label3;
-    private javax.swing.JLabel adress2Label;
-    private javax.swing.JLabel adress2Label1;
-    private javax.swing.JLabel adress2Label2;
-    private javax.swing.JLabel adress2Label3;
-    private javax.swing.JTextField adress2TextField1;
-    private javax.swing.JTextField adress2TextField2;
-    private javax.swing.JButton backButtonToPayment;
-    private javax.swing.JButton backButtonToPersonalInfo;
-    private javax.swing.JButton backButtonToShoppingCart;
-    private javax.swing.JLabel cardHolderNameLabel;
-    private javax.swing.JLabel cardHolderNameLabel1;
-    private javax.swing.JTextField cardHolderTextField;
-    private javax.swing.JTextField cardHolderTextField1;
-    private javax.swing.JLabel cardNumberLabel;
-    private javax.swing.JLabel cardNumberLabel1;
-    private javax.swing.JTextField cardNumberTextField;
-    private javax.swing.JTextField cardNumberTextField1;
-    private javax.swing.JComboBox cardTypeComboBox;
-    private javax.swing.JComboBox cardTypeComboBox1;
-    private javax.swing.JLabel cardTypeLabel;
-    private javax.swing.JLabel cardTypeLabel1;
-    private javax.swing.JPanel cartContentsPanel;
-    private javax.swing.JLabel cartHeadlineLabel;
-    private javax.swing.JLabel cartImage;
-    private javax.swing.JPanel cartPanel;
-    private javax.swing.JScrollPane cartPanelScrollPane;
-    private javax.swing.JTextField cashierAddressTF;
-    private javax.swing.JTextField cashierEmailTF;
-    private javax.swing.JTextField cashierFirstNameTF;
-    private javax.swing.JTextField cashierLastNameTF;
-    private javax.swing.JTextField cashierOtherAddressTF;
-    private javax.swing.JTextField cashierOtherPostCodeTF;
-    private javax.swing.JPanel cashierPanel;
-    private javax.swing.JTextField cashierPhoneNumberTF;
-    private javax.swing.JTextField cashierPostCodeTF;
-    private javax.swing.JLabel category1MenuLabel;
-    private javax.swing.JLabel category2MenuLabel;
-    private javax.swing.JLabel category3MenuLabel;
-    private javax.swing.JLabel category4MenuLabel;
-    private javax.swing.JLabel category5MenuLabel;
-    private javax.swing.JLabel category6MenuLabel;
-    private javax.swing.JLabel categoryFeatureLabel;
-    private javax.swing.JPanel categoryFeaturePanel;
-    private javax.swing.JPanel categoryPanel;
-    private javax.swing.JPanel checkPaymentPanel;
-    private javax.swing.JPanel checkPersonalInfoPanel;
-    private javax.swing.JLabel cityLabel;
-    private javax.swing.JLabel cityLabel1;
-    private javax.swing.JLabel cityLabel2;
-    private javax.swing.JLabel cityLabel3;
-    private javax.swing.JTextField cityTextField;
-    private javax.swing.JTextField cityTextField1;
-    private javax.swing.JTextField cityTextField2;
-    private javax.swing.JTextField cityTextField3;
-    private javax.swing.JLabel codeLabel1;
-    private javax.swing.JLabel codeLabel2;
-    private javax.swing.JButton dealsBtn;
-    private javax.swing.JLabel dealsLabel;
-    private javax.swing.JPanel dealsViewPanel;
-    private javax.swing.JLabel deliverToMyAddressLabel;
-    private javax.swing.JLabel deliverToMyAddressLabel1;
-    private javax.swing.JPanel deliverToMyAdressPanel;
-    private javax.swing.JPanel deliverToMyAdressPanel1;
-    private javax.swing.JCheckBox deliveryCheckBox;
-    private javax.swing.JCheckBox deliveryCheckBox1;
-    private javax.swing.JLabel deliveryDateLabel;
-    private javax.swing.JLabel deliveryDateLabel1;
-    private javax.swing.JComboBox deliveryDayComboBox;
-    private javax.swing.JComboBox deliveryDayComboBox1;
-    private javax.swing.JPanel deliveryPanel;
-    private javax.swing.JPanel deliveryPanel1;
-    private javax.swing.JComboBox deliveryTimeComboBox;
-    private javax.swing.JComboBox deliveryTimeComboBox1;
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JLabel emailLabel1;
-    private javax.swing.JTextField emailTextField;
-    private javax.swing.JLabel expDateSlashLabel;
-    private javax.swing.JLabel expDateSlashLabel1;
-    private javax.swing.JLabel expirationDateLabel;
-    private javax.swing.JLabel expirationDateLabel1;
-    private javax.swing.JPanel featurePanel;
-    private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JLabel firstNameLabel1;
-    private javax.swing.JTextField firstNameTextField;
-    private javax.swing.JLabel fpDealsLabel;
-    private javax.swing.JLabel fpHistoryLabel;
-    private javax.swing.JLabel fpMyFavoritesLabel;
-    private javax.swing.JLabel fpMyShoppingBagsLabel;
-    private javax.swing.JLabel fpRecipesLabel;
-    private javax.swing.JButton goToCashierBtn;
-    private javax.swing.JButton historyBtn;
-    private javax.swing.JPanel historyViewPanel;
-    private javax.swing.JLabel iMatLabel;
-    private javax.swing.JPanel itemShower;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel krLabel;
-    private javax.swing.JLabel lastNameLabel;
-    private javax.swing.JLabel lastNameLabel1;
-    private javax.swing.JTextField lastNameTextField;
-    private javax.swing.JPanel leftPanel;
-    private javax.swing.JPanel leftUpperPanel;
-    private javax.swing.JPanel logoPanel;
-    private javax.swing.JPanel myAccountContentPanel;
-    private javax.swing.JPanel myAccountPanel;
-    private javax.swing.JPanel myAccountTopPanel;
-    private javax.swing.JButton myFavoritesBtn;
-    private javax.swing.JPanel myFavoritesViewPanel;
-    private javax.swing.JButton myShoppingBagsBtn;
-    private javax.swing.JPanel myShoppingBagsViewPanel;
-    private javax.swing.JButton nextStepButtonToAccept;
-    private javax.swing.JButton nextStepButtonToAccept1;
-    private javax.swing.JButton nextStepButtonToPayment;
-    private javax.swing.JButton nextStepButtonToPersonalInfo;
-    private javax.swing.JLabel paymentInfoLabel;
-    private javax.swing.JLabel paymentInfoLabel1;
-    private javax.swing.JPanel paymentInfoPanel;
-    private javax.swing.JPanel paymentInfoPanel1;
-    private javax.swing.JLabel personalInfoLabel;
-    private javax.swing.JLabel personalInfoLabel1;
-    private javax.swing.JLabel personalInfoLabel2;
-    private javax.swing.JLabel personalInfoLabel3;
-    private javax.swing.JPanel personalInfoPanel;
-    private javax.swing.JPanel personalInfoPanel1;
-    private javax.swing.JLabel phoneNumberLabel;
-    private javax.swing.JLabel phoneNumberLabel1;
-    private javax.swing.JTextField phoneNumberTextField;
-    private javax.swing.JLabel popularLabel;
-    private javax.swing.JLabel postCodeLabel;
-    private javax.swing.JLabel postCodeLabel1;
-    private javax.swing.JTextField postCodeTextField;
-    private javax.swing.JTextField postCodeTextField1;
-    private javax.swing.JLabel priceLabel;
-    private javax.swing.JPanel productPanel;
-    private javax.swing.JScrollPane productScrollPane;
-    private javax.swing.JPanel progressPanel;
-    private javax.swing.JLabel recentlyBoughtLabel;
-    private javax.swing.JButton recipesBtn;
-    private javax.swing.JPanel recipesViewPanel;
-    private javax.swing.JLabel recommendedProductsLabel;
-    private javax.swing.JPanel recommendedProductsPanel;
-    private javax.swing.JScrollPane recommendedProductsScrollPane;
-    private javax.swing.JButton saveButton;
-    private javax.swing.JButton saveButton1;
-    private javax.swing.JButton saveButton2;
-    private javax.swing.JButton searchButton;
-    private javax.swing.JTextField searchField;
-    private javax.swing.JPanel searchResultPanel;
-    private javax.swing.JLabel separator1;
-    private javax.swing.JLabel separator2;
-    private javax.swing.JLabel separator3;
-    private javax.swing.JLabel separator4;
-    private javax.swing.JLabel separator5;
-    private javax.swing.JLabel separator8;
-    private javax.swing.JPanel shoppingCartPanel;
-    private javax.swing.JPanel startViewPanel;
-    private javax.swing.JLabel titleNameLabel;
-    private javax.swing.JPanel topPanel;
-    private javax.swing.JLabel totalPriceLabel;
-    private javax.swing.JLabel tpCartContentsNumber;
-    private javax.swing.JLabel tpCartSumLabel;
-    private javax.swing.JLabel tpChangeUserLabel;
-    private javax.swing.JLabel tpGoToCashierLabel;
-    private javax.swing.JLabel tpMyAccountLabel;
-    private javax.swing.JButton updCartBtn;
-    private javax.swing.JComboBox validMonthComboBox;
-    private javax.swing.JComboBox validMonthComboBox1;
-    private javax.swing.JComboBox validYearComboBox;
-    private javax.swing.JComboBox validYearComboBox1;
-    private javax.swing.JLabel verificationCodeLabel;
-    private javax.swing.JLabel verificationCodeLabel1;
-    private javax.swing.JTextField verificationCodeTextField;
-    private javax.swing.JTextField verificationCodeTextField1;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JLabel acceptAddressLabel;
+        private javax.swing.JLabel acceptCardHolderLabel;
+        private javax.swing.JLabel acceptCardNumberLabel;
+        private javax.swing.JLabel acceptCardTypeLabel;
+        private javax.swing.JLabel acceptDeliveryLabel;
+        private javax.swing.JLabel acceptNameLabel;
+        private javax.swing.JPanel acceptPanel;
+        private javax.swing.JLabel acceptPaymentLabel;
+        private javax.swing.JLabel acceptPostCodeLabel;
+        private javax.swing.JLabel acceptSeparator1;
+        private javax.swing.JLabel acceptSeparator3;
+        private javax.swing.JLabel acceptSeparator4;
+        private javax.swing.JLabel acceptShoppingCartLabel;
+        private javax.swing.JLabel acceptValidMonthYearLabel;
+        private javax.swing.JLabel acceptVerificationCodeLabel;
+        private javax.swing.JLabel accountImage;
+        private javax.swing.JTextField address1TextField;
+        private javax.swing.JTextField address1TextField1;
+        private javax.swing.JTextField address2TextField;
+        private javax.swing.JTextField address2TextField1;
+        private javax.swing.JPanel addressPanel;
+        private javax.swing.JPanel addressPanel2;
+        private javax.swing.JLabel adress1Label;
+        private javax.swing.JLabel adress1Label1;
+        private javax.swing.JLabel adress1Label2;
+        private javax.swing.JLabel adress1Label3;
+        private javax.swing.JLabel adress2Label;
+        private javax.swing.JLabel adress2Label1;
+        private javax.swing.JLabel adress2Label2;
+        private javax.swing.JLabel adress2Label3;
+        private javax.swing.JTextField adress2TextField1;
+        private javax.swing.JTextField adress2TextField2;
+        private javax.swing.JButton backButtonToPayment;
+        private javax.swing.JButton backButtonToPersonalInfo;
+        private javax.swing.JButton backButtonToShoppingCart;
+        private javax.swing.JLabel cardHolderNameLabel;
+        private javax.swing.JLabel cardHolderNameLabel1;
+        private javax.swing.JTextField cardHolderTextField;
+        private javax.swing.JTextField cardHolderTextField1;
+        private javax.swing.JLabel cardNumberLabel;
+        private javax.swing.JLabel cardNumberLabel1;
+        private javax.swing.JTextField cardNumberTextField;
+        private javax.swing.JTextField cardNumberTextField1;
+        private javax.swing.JComboBox cardTypeComboBox;
+        private javax.swing.JComboBox cardTypeComboBox1;
+        private javax.swing.JLabel cardTypeLabel;
+        private javax.swing.JLabel cardTypeLabel1;
+        private javax.swing.JPanel cartContentsPanel;
+        private javax.swing.JLabel cartHeadlineLabel;
+        private javax.swing.JLabel cartImage;
+        private javax.swing.JPanel cartPanel;
+        private javax.swing.JScrollPane cartPanelScrollPane;
+        private javax.swing.JTextField cashierAddressTF;
+        private javax.swing.JTextField cashierEmailTF;
+        private javax.swing.JTextField cashierFirstNameTF;
+        private javax.swing.JTextField cashierLastNameTF;
+        private javax.swing.JTextField cashierOtherAddressTF;
+        private javax.swing.JTextField cashierOtherPostCodeTF;
+        private javax.swing.JPanel cashierPanel;
+        private javax.swing.JTextField cashierPhoneNumberTF;
+        private javax.swing.JTextField cashierPostCodeTF;
+        private javax.swing.JLabel category1MenuLabel;
+        private javax.swing.JLabel category2MenuLabel;
+        private javax.swing.JLabel category3MenuLabel;
+        private javax.swing.JLabel category4MenuLabel;
+        private javax.swing.JLabel category5MenuLabel;
+        private javax.swing.JLabel category6MenuLabel;
+        private javax.swing.JLabel categoryFeatureLabel;
+        private javax.swing.JPanel categoryFeaturePanel;
+        private javax.swing.JPanel categoryPanel;
+        private javax.swing.JPanel checkPaymentPanel;
+        private javax.swing.JPanel checkPersonalInfoPanel;
+        private javax.swing.JLabel cityLabel;
+        private javax.swing.JLabel cityLabel1;
+        private javax.swing.JLabel cityLabel2;
+        private javax.swing.JLabel cityLabel3;
+        private javax.swing.JTextField cityTextField;
+        private javax.swing.JTextField cityTextField1;
+        private javax.swing.JTextField cityTextField2;
+        private javax.swing.JTextField cityTextField3;
+        private javax.swing.JLabel codeLabel1;
+        private javax.swing.JLabel codeLabel2;
+        private javax.swing.JButton dealsBtn;
+        private javax.swing.JLabel dealsLabel;
+        private javax.swing.JPanel dealsViewPanel;
+        private javax.swing.JLabel deliverToMyAddressLabel;
+        private javax.swing.JLabel deliverToMyAddressLabel1;
+        private javax.swing.JPanel deliverToMyAdressPanel;
+        private javax.swing.JPanel deliverToMyAdressPanel1;
+        private javax.swing.JCheckBox deliveryCheckBox;
+        private javax.swing.JCheckBox deliveryCheckBox1;
+        private javax.swing.JLabel deliveryDateLabel;
+        private javax.swing.JLabel deliveryDateLabel1;
+        private javax.swing.JComboBox deliveryDayComboBox;
+        private javax.swing.JComboBox deliveryDayComboBox1;
+        private javax.swing.JPanel deliveryPanel;
+        private javax.swing.JPanel deliveryPanel1;
+        private javax.swing.JComboBox deliveryTimeComboBox;
+        private javax.swing.JComboBox deliveryTimeComboBox1;
+        private javax.swing.JLabel emailLabel;
+        private javax.swing.JLabel emailLabel1;
+        private javax.swing.JTextField emailTextField;
+        private javax.swing.JLabel expDateSlashLabel;
+        private javax.swing.JLabel expDateSlashLabel1;
+        private javax.swing.JLabel expirationDateLabel;
+        private javax.swing.JLabel expirationDateLabel1;
+        private javax.swing.JPanel featurePanel;
+        private javax.swing.JLabel firstNameLabel;
+        private javax.swing.JLabel firstNameLabel1;
+        private javax.swing.JTextField firstNameTextField;
+        private javax.swing.JLabel fpDealsLabel;
+        private javax.swing.JLabel fpHistoryLabel;
+        private javax.swing.JLabel fpMyFavoritesLabel;
+        private javax.swing.JLabel fpMyShoppingBagsLabel;
+        private javax.swing.JLabel fpRecipesLabel;
+        private javax.swing.JButton goToCashierBtn;
+        private javax.swing.JButton historyBtn;
+        private javax.swing.JPanel historyViewPanel;
+        private javax.swing.JLabel iMatLabel;
+        private javax.swing.JPanel itemShower;
+        private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel10;
+        private javax.swing.JLabel jLabel11;
+        private javax.swing.JLabel jLabel13;
+        private javax.swing.JLabel jLabel2;
+        private javax.swing.JLabel jLabel3;
+        private javax.swing.JLabel jLabel4;
+        private javax.swing.JLabel jLabel5;
+        private javax.swing.JLabel jLabel6;
+        private javax.swing.JLabel jLabel7;
+        private javax.swing.JLabel jLabel8;
+        private javax.swing.JLabel jLabel9;
+        private javax.swing.JPanel jPanel1;
+        private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JScrollPane jScrollPane2;
+        private javax.swing.JSeparator jSeparator2;
+        private javax.swing.JSeparator jSeparator3;
+        private javax.swing.JSeparator jSeparator4;
+        private javax.swing.JLabel krLabel;
+        private javax.swing.JLabel lastNameLabel;
+        private javax.swing.JLabel lastNameLabel1;
+        private javax.swing.JTextField lastNameTextField;
+        private javax.swing.JPanel leftPanel;
+        private javax.swing.JPanel leftUpperPanel;
+        private javax.swing.JPanel logoPanel;
+        private javax.swing.JPanel myAccountContentPanel;
+        private javax.swing.JPanel myAccountPanel;
+        private javax.swing.JPanel myAccountTopPanel;
+        private javax.swing.JButton myFavoritesBtn;
+        private javax.swing.JPanel myFavoritesViewPanel;
+        private javax.swing.JButton myShoppingBagsBtn;
+        private javax.swing.JPanel myShoppingBagsViewPanel;
+        private javax.swing.JButton nextStepButtonToAccept;
+        private javax.swing.JButton nextStepButtonToAccept1;
+        private javax.swing.JButton nextStepButtonToPayment;
+        private javax.swing.JButton nextStepButtonToPersonalInfo;
+        private javax.swing.JLabel paymentInfoLabel;
+        private javax.swing.JLabel paymentInfoLabel1;
+        private javax.swing.JPanel paymentInfoPanel;
+        private javax.swing.JPanel paymentInfoPanel1;
+        private javax.swing.JLabel personalInfoLabel;
+        private javax.swing.JLabel personalInfoLabel1;
+        private javax.swing.JLabel personalInfoLabel2;
+        private javax.swing.JLabel personalInfoLabel3;
+        private javax.swing.JPanel personalInfoPanel;
+        private javax.swing.JPanel personalInfoPanel1;
+        private javax.swing.JLabel phoneNumberLabel;
+        private javax.swing.JLabel phoneNumberLabel1;
+        private javax.swing.JTextField phoneNumberTextField;
+        private javax.swing.JLabel popularLabel;
+        private javax.swing.JLabel postCodeLabel;
+        private javax.swing.JLabel postCodeLabel1;
+        private javax.swing.JTextField postCodeTextField;
+        private javax.swing.JTextField postCodeTextField1;
+        private javax.swing.JLabel priceLabel;
+        private javax.swing.JPanel productPanel;
+        private javax.swing.JScrollPane productScrollPane;
+        private javax.swing.JPanel progressPanel;
+        private javax.swing.JLabel recentlyBoughtLabel;
+        private javax.swing.JButton recipesBtn;
+        private javax.swing.JPanel recipesViewPanel;
+        private javax.swing.JLabel recommendedProductsLabel;
+        private javax.swing.JPanel recommendedProductsPanel;
+        private javax.swing.JScrollPane recommendedProductsScrollPane;
+        private javax.swing.JButton saveButton;
+        private javax.swing.JButton saveButton1;
+        private javax.swing.JButton saveButton2;
+        private javax.swing.JButton searchButton;
+        private javax.swing.JTextField searchField;
+        private javax.swing.JPanel searchResultPanel;
+        private javax.swing.JLabel separator1;
+        private javax.swing.JLabel separator2;
+        private javax.swing.JLabel separator3;
+        private javax.swing.JLabel separator4;
+        private javax.swing.JLabel separator5;
+        private javax.swing.JLabel separator8;
+        private javax.swing.JPanel shoppingCartPanel;
+        private javax.swing.JPanel startViewPanel;
+        private javax.swing.JLabel titleNameLabel;
+        private javax.swing.JPanel topPanel;
+        private javax.swing.JLabel totalPriceLabel;
+        private javax.swing.JLabel tpCartContentsNumber;
+        private javax.swing.JLabel tpCartSumLabel;
+        private javax.swing.JLabel tpChangeUserLabel;
+        private javax.swing.JLabel tpGoToCashierLabel;
+        private javax.swing.JLabel tpMyAccountLabel;
+        private javax.swing.JButton updCartBtn;
+        private javax.swing.JComboBox validMonthComboBox;
+        private javax.swing.JComboBox validMonthComboBox1;
+        private javax.swing.JComboBox validYearComboBox;
+        private javax.swing.JComboBox validYearComboBox1;
+        private javax.swing.JLabel verificationCodeLabel;
+        private javax.swing.JLabel verificationCodeLabel1;
+        private javax.swing.JTextField verificationCodeTextField;
+        private javax.swing.JTextField verificationCodeTextField1;
+        // End of variables declaration//GEN-END:variables
 }

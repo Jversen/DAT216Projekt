@@ -81,8 +81,16 @@ public class GUIProject{
            
     }
     
-    public void listCatProds(String s, IMatFrame imf){
-        this.products = iMDH.getProducts(ProductCategory.valueOf(s));
+    public void listCatProds(ArrayList<String> s, IMatFrame imf){
+//        List<Product> tempProdList;
+//       String tempString = s.get(0);
+        this.products.clear();
+         for (int i = 0; i < s.size(); i++){
+//             tempProd = iMDH.getProducts(ProductCategory.valueOf(tempString));
+//        tempProdList = (iMDH.getProducts(ProductCategory.valueOf(s.get(i))));
+        this.products.addAll((iMDH.getProducts(ProductCategory.valueOf(s.get(i)))));
+        }
+        
          this.productCards.clear();
            this.productCards.removeAll(productCards);
 
@@ -93,20 +101,6 @@ public class GUIProject{
 //        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
         
     }
-    
-//    public static void main(String[] args) {
-//        
-//        
-//            IMatFrame app = new IMatFrame(this);
-//            app.setVisible(true);
-//        
-//        
-//        
-//        
-// 
-//        
-//        
-//        // TODO code application logic here
-//    }
+
     
 }
