@@ -5,6 +5,7 @@
  */
 package guiproject;
 
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
@@ -14,18 +15,22 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 
 
 public class CartProdObject extends javax.swing.JPanel {
-
+    private IMatDataHandler dataHandler;
     /**
      * Creates new form CartProdObject
      */
     
     ShoppingItem si;
+    IMatFrame imf;
     
     public CartProdObject(ShoppingItem si, IMatFrame imf) {
         initComponents();
+        dataHandler = IMatDataHandler.getInstance();
         this.si = si;
+        this.imf = imf;
         nameLabel.setText(si.getProduct().getName());
-        imageLabel.setIcon(imf.gpCon.getImage50(si.getProduct()));
+        imageLabelCart.setIcon(dataHandler.getImageIcon(si.getProduct(), 50,50));
+       // imageLabel.setIcon(imf.gpCon.getImage50(si.getProduct()));
         jSpinner2.setValue(si.getAmount());
         
         double amount=0;
@@ -54,6 +59,7 @@ public class CartProdObject extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         imageLabel = new javax.swing.JLabel();
         imagePanel = new javax.swing.JPanel();
+        imageLabelCart = new javax.swing.JLabel();
         editPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
@@ -66,14 +72,21 @@ public class CartProdObject extends javax.swing.JPanel {
 
         imageLabel.setText("jLabel1");
 
+        setBackground(new java.awt.Color(255, 248, 248));
+        setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(196, 43, 43), new java.awt.Color(156, 25, 25)));
         setPreferredSize(new java.awt.Dimension(130, 100));
 
+        imagePanel.setBackground(new java.awt.Color(255, 248, 248));
         imagePanel.setPreferredSize(new java.awt.Dimension(60, 60));
         imagePanel.setLayout(new java.awt.BorderLayout());
+        imagePanel.add(imageLabelCart, java.awt.BorderLayout.PAGE_START);
+
+        editPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         jLabel3.setText("Antal:");
 
-        jButton1.setText("Radera");
+        jButton1.setBackground(new java.awt.Color(189, 31, 31));
+        jButton1.setText("X");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -89,9 +102,9 @@ public class CartProdObject extends javax.swing.JPanel {
         editPanelLayout.setHorizontalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editPanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -99,7 +112,9 @@ public class CartProdObject extends javax.swing.JPanel {
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editPanelLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         editPanelLayout.setVerticalGroup(
@@ -116,7 +131,7 @@ public class CartProdObject extends javax.swing.JPanel {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         nameLabel.setText("jLabel1");
@@ -129,7 +144,7 @@ public class CartProdObject extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 43, Short.MAX_VALUE))
+                        .addGap(0, 55, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -139,11 +154,15 @@ public class CartProdObject extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(nameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nameLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(editPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -156,6 +175,7 @@ public class CartProdObject extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel editPanel;
     private javax.swing.JLabel imageLabel;
+    private javax.swing.JLabel imageLabelCart;
     private javax.swing.JPanel imagePanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

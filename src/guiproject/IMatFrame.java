@@ -615,15 +615,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         searchButton = new javax.swing.JButton();
         categoryPanel = new javax.swing.JPanel();
         topPanel = new javax.swing.JPanel();
-        cartImage = new javax.swing.JLabel();
         tpMyAccountLabel = new javax.swing.JLabel();
         tpChangeUserLabel = new javax.swing.JLabel();
         accountImage = new javax.swing.JLabel();
-        tpCartContentsNumber = new javax.swing.JLabel();
-        tpCartSumLabel = new javax.swing.JLabel();
-        tpGoToCashierLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         myShoppingBagsBtn = new javax.swing.JButton();
         myFavoritesBtn = new javax.swing.JButton();
         recipesBtn = new javax.swing.JButton();
@@ -824,12 +818,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         goToCashierBtn = new javax.swing.JButton();
         cartPanelScrollPane = new javax.swing.JScrollPane();
         cartContentsPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        tpCartContentsNumber = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        tpCartSumLabel = new javax.swing.JLabel();
+        cartImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        leftPanel.setBackground(new java.awt.Color(204, 0, 0));
+        leftPanel.setBackground(new java.awt.Color(215, 173, 173));
+        leftPanel.setToolTipText("");
 
-        leftUpperPanel.setBackground(new java.awt.Color(204, 0, 0));
+        leftUpperPanel.setBackground(new java.awt.Color(215, 173, 173));
         leftUpperPanel.setLayout(new java.awt.BorderLayout());
 
         searchField.setText("Skriv här...");
@@ -851,6 +851,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
         leftUpperPanel.add(searchField, java.awt.BorderLayout.CENTER);
 
+        searchButton.setBackground(new java.awt.Color(215, 173, 173));
         searchButton.setText("sök!");
         searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -864,7 +865,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
         leftUpperPanel.add(searchButton, java.awt.BorderLayout.PAGE_END);
 
-        categoryPanel.setBackground(new java.awt.Color(204, 0, 0));
+        categoryPanel.setBackground(new java.awt.Color(215, 173, 173));
         categoryPanel.setLayout(new java.awt.GridLayout(30, 1));
 
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
@@ -883,9 +884,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap())
         );
 
-        topPanel.setBackground(new java.awt.Color(204, 0, 0));
-
-        cartImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiKundvagn.png"))); // NOI18N
+        topPanel.setBackground(new java.awt.Color(215, 173, 173));
 
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
@@ -901,20 +900,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpChangeUserLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         accountImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
-
-        tpCartContentsNumber.setText("Varor");
-
-        tpCartSumLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tpCartSumLabel.setText("kr");
-
-        tpGoToCashierLabel.setText("Gå till kassan");
-        tpGoToCashierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("XstVaror");
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Xkr");
 
         myShoppingBagsBtn.setText("Mina matkassar");
         myShoppingBagsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -975,23 +960,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addComponent(dealsBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(historyBtn)
-                        .addGap(161, 161, 161))
+                        .addGap(382, 382, 382))
                     .addGroup(topPanelLayout.createSequentialGroup()
                         .addComponent(updCartBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(cartImage)
-                .addGap(28, 28, 28)
-                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tpGoToCashierLabel)
-                    .addGroup(topPanelLayout.createSequentialGroup()
-                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tpCartSumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tpCartContentsNumber))))
-                .addGap(49, 49, 49)
                 .addComponent(accountImage)
                 .addGap(18, 18, 18)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1015,33 +987,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                             .addComponent(historyBtn)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topPanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(accountImage)
-                                .addGroup(topPanelLayout.createSequentialGroup()
-                                    .addComponent(tpMyAccountLabel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tpChangeUserLabel)
-                                    .addGap(18, 18, 18)))
-                            .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(topPanelLayout.createSequentialGroup()
-                                    .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tpCartContentsNumber)
-                                        .addComponent(jLabel2))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tpCartSumLabel)
-                                        .addComponent(jLabel3))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tpGoToCashierLabel))
-                                .addComponent(cartImage)))))
+                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(accountImage)
+                            .addGroup(topPanelLayout.createSequentialGroup()
+                                .addComponent(tpMyAccountLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tpChangeUserLabel)
+                                .addGap(18, 18, 18)))
+                        .addGap(4, 4, 4)))
                 .addGap(49, 49, 49))
         );
 
-        featurePanel.setBackground(new java.awt.Color(255, 51, 255));
+        featurePanel.setBackground(new java.awt.Color(255, 248, 248));
         featurePanel.setLayout(new java.awt.CardLayout());
 
-        startViewPanel.setBackground(new java.awt.Color(255, 255, 204));
+        startViewPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         recentlyBoughtLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         recentlyBoughtLabel.setText("Mina senaste inköp");
@@ -1274,11 +1234,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(categoryFeaturePanel, "categoryFeaturePanel");
 
+        searchResultPanel.setBackground(new java.awt.Color(255, 248, 248));
         searchResultPanel.setLayout(new java.awt.BorderLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel1.setBackground(new java.awt.Color(244, 221, 173));
+        jPanel1.setBackground(new java.awt.Color(255, 248, 248));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         itemShower.setLayout(new java.awt.GridLayout(1, 2));
@@ -1290,12 +1251,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(searchResultPanel, "searchResultPanel");
 
-        myAccountPanel.setBackground(new java.awt.Color(255, 255, 255));
+        myAccountPanel.setBackground(new java.awt.Color(255, 248, 248));
+        myAccountPanel.setToolTipText("");
         myAccountPanel.setPreferredSize(new java.awt.Dimension(1121, 525));
 
-        myAccountContentPanel.setBackground(new java.awt.Color(255, 255, 255));
+        myAccountContentPanel.setBackground(new java.awt.Color(255, 248, 248));
 
-        personalInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
+        personalInfoPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         personalInfoLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         personalInfoLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -1464,7 +1426,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        paymentInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
+        paymentInfoPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         paymentInfoLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         paymentInfoLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -1541,7 +1503,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         separator2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redSeparator.png"))); // NOI18N
 
-        deliveryPanel.setBackground(new java.awt.Color(255, 255, 255));
+        deliveryPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         personalInfoLabel1.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         personalInfoLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1562,7 +1524,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         deliveryDayComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         deliveryDayComboBox.setEnabled(false);
 
-        deliverToMyAdressPanel.setBackground(new java.awt.Color(255, 255, 255));
+        deliverToMyAdressPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         deliverToMyAddressLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
         deliverToMyAddressLabel.setForeground(new java.awt.Color(153, 153, 153));
@@ -1626,7 +1588,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        addressPanel.setBackground(new java.awt.Color(255, 255, 255));
+        addressPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         adress1Label1.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
         adress1Label1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1865,7 +1827,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        myAccountTopPanel.setBackground(new java.awt.Color(255, 255, 255));
+        myAccountTopPanel.setBackground(new java.awt.Color(255, 248, 248));
         myAccountTopPanel.setForeground(new java.awt.Color(255, 0, 51));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -2422,7 +2384,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(personalInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(deliveryPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2781,7 +2743,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(cashierPanel, "cashier");
 
-        logoPanel.setBackground(new java.awt.Color(204, 0, 0));
+        logoPanel.setBackground(new java.awt.Color(215, 173, 173));
         logoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoPanelMouseClicked(evt);
@@ -2810,8 +2772,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap())
         );
 
-        cartPanel.setBackground(new java.awt.Color(204, 100, 0));
+        cartPanel.setBackground(new java.awt.Color(215, 173, 173));
 
+        cartHeadlineLabel.setBackground(new java.awt.Color(215, 173, 173));
         cartHeadlineLabel.setText("Kundvagn");
 
         goToCashierBtn.setText("Gå till kassa");
@@ -2821,9 +2784,22 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        cartContentsPanel.setBackground(new java.awt.Color(204, 100, 0));
-        cartContentsPanel.setLayout(new java.awt.GridLayout(20, 1));
+        cartContentsPanel.setBackground(new java.awt.Color(215, 173, 173));
+        cartContentsPanel.setLayout(new java.awt.GridLayout());
         cartPanelScrollPane.setViewportView(cartContentsPanel);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("XstVaror");
+
+        tpCartContentsNumber.setText("Varor");
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Xkr");
+
+        tpCartSumLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tpCartSumLabel.setText("kr");
+
+        cartImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiKundvagn.png"))); // NOI18N
 
         javax.swing.GroupLayout cartPanelLayout = new javax.swing.GroupLayout(cartPanel);
         cartPanel.setLayout(cartPanelLayout);
@@ -2836,15 +2812,41 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addContainerGap()
                         .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(goToCashierBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cartHeadlineLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(cartPanelLayout.createSequentialGroup()
+                                .addComponent(cartHeadlineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tpCartContentsNumber)
+                                    .addComponent(tpCartSumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cartImage, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)))))
                 .addContainerGap())
         );
         cartPanelLayout.setVerticalGroup(
             cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartPanelLayout.createSequentialGroup()
-                .addComponent(cartHeadlineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cartPanelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(cartHeadlineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(cartPanelLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(tpCartContentsNumber))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tpCartSumLabel))))
+                    .addGroup(cartPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cartImage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addComponent(cartPanelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(goToCashierBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -3337,7 +3339,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel tpCartContentsNumber;
     private javax.swing.JLabel tpCartSumLabel;
     private javax.swing.JLabel tpChangeUserLabel;
-    private javax.swing.JLabel tpGoToCashierLabel;
     private javax.swing.JLabel tpMyAccountLabel;
     private javax.swing.JButton updCartBtn;
     private javax.swing.JComboBox validMonthComboBox;

@@ -22,7 +22,7 @@ public class GUIProject{
     
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
-    public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
+    //public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
     public List <CartProdObject> cpo = new ArrayList<CartProdObject>();
         
     
@@ -66,18 +66,20 @@ public class GUIProject{
      */
     public void addToCart(Product p, int amount, IMatFrame imf){
         
-            sc.addProduct(p, amount);
-            cpo.clear();
-            ShoppingItem si = new ShoppingItem(p, amount);
-            cartContents.add(si);
-            for (int i = 0; i < cartContents.size(); i++){
-                cpo.add(new CartProdObject(cartContents.get(i), imf));
-            }
-           
-            System.out.println("addToCart cpo: " + cpo);
-            System.out.println("cpo size = " + cpo.size());
-            imf.updateCartPanel(cpo);
-            imf.displayCart(cpo);
+//            sc.addProduct(p, amount);
+//            //cpo.clear();
+//            ShoppingItem si = new ShoppingItem(p, amount);
+////            cartContents.add(si);
+////            for (int i = 0; i < cartContents.size(); i++){
+////                cpo.add(new CartProdObject(cartContents.get(i), imf));
+////            }
+//            for(int i=0; i<sc.getItems().size(); i++){
+//            }
+//        
+//            System.out.println("addToCart cpo: " + cpo);
+//            System.out.println("cpo size = " + cpo.size());
+//            imf.updateCartPanel(cpo);
+//            imf.displayCart(cpo);
            
     }
     

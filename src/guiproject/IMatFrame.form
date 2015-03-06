@@ -69,8 +69,9 @@
     <Container class="javax.swing.JPanel" name="leftPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="cc" type="rgb"/>
+          <Color blue="ad" green="ad" red="d7" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
 
       <Layout>
@@ -95,7 +96,7 @@
         <Container class="javax.swing.JPanel" name="leftUpperPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="cc" type="rgb"/>
+              <Color blue="ad" green="ad" red="d7" type="rgb"/>
             </Property>
           </Properties>
 
@@ -119,6 +120,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="searchButton">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ad" green="ad" red="d7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="s&#xf6;k!"/>
               </Properties>
               <Events>
@@ -136,7 +140,7 @@
         <Container class="javax.swing.JPanel" name="categoryPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="cc" type="rgb"/>
+              <Color blue="ad" green="ad" red="d7" type="rgb"/>
             </Property>
           </Properties>
 
@@ -150,7 +154,7 @@
     <Container class="javax.swing.JPanel" name="topPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="cc" type="rgb"/>
+          <Color blue="ad" green="ad" red="d7" type="rgb"/>
         </Property>
       </Properties>
 
@@ -170,30 +174,13 @@
                           <Component id="dealsBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="historyBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="382" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="updCartBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="cartImage" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="tpGoToCashierLabel" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="tpCartSumLabel" max="32767" attributes="0"/>
-                              <Component id="tpCartContentsNumber" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="accountImage" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -222,33 +209,16 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="accountImage" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="tpMyAccountLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tpChangeUserLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tpCartContentsNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tpCartSumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tpGoToCashierLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="cartImage" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="accountImage" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="tpMyAccountLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="tpChangeUserLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="49" pref="49" max="-2" attributes="0"/>
@@ -257,19 +227,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="cartImage">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/guiKundvagn.png"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="tpMyAccountLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
           <Events>
@@ -281,7 +244,7 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Byt anv&#xe4;ndare"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
         </Component>
@@ -290,37 +253,6 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/guiProfile.png"/>
             </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="tpCartContentsNumber">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Varor"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="tpCartSumLabel">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="kr"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="tpGoToCashierLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="G&#xe5; till kassan"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="XstVaror"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Xkr"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="myShoppingBagsBtn">
@@ -376,7 +308,7 @@
     <Container class="javax.swing.JPanel" name="featurePanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="33" red="ff" type="rgb"/>
+          <Color blue="f8" green="f8" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
@@ -385,7 +317,7 @@
         <Container class="javax.swing.JPanel" name="startViewPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="ff" red="ff" type="rgb"/>
+              <Color blue="f8" green="f8" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -681,7 +613,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 1"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -693,7 +625,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 2"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -702,7 +634,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 3"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -711,7 +643,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 4"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -720,7 +652,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 5"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -729,7 +661,7 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Kategori 6"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -787,6 +719,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="searchResultPanel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f8" green="f8" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="searchResultPanel"/>
@@ -810,7 +747,7 @@
                 <Container class="javax.swing.JPanel" name="jPanel1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ad" green="dd" red="f4" type="rgb"/>
+                      <Color blue="f8" green="f8" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -837,8 +774,9 @@
         <Container class="javax.swing.JPanel" name="myAccountPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="f8" green="f8" red="ff" type="rgb"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[1121, 525]"/>
             </Property>
@@ -870,7 +808,7 @@
             <Container class="javax.swing.JPanel" name="myAccountContentPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="f8" green="f8" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -902,7 +840,7 @@
                 <Container class="javax.swing.JPanel" name="personalInfoPanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                      <Color blue="f8" green="f8" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1174,7 +1112,7 @@
                 <Container class="javax.swing.JPanel" name="paymentInfoPanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                      <Color blue="f8" green="f8" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1302,7 +1240,7 @@
                           </StringArray>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1352,7 +1290,7 @@
                         <Property name="selectedIndex" type="int" value="5"/>
                         <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1384,7 +1322,7 @@
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1433,7 +1371,7 @@
                     <Container class="javax.swing.JPanel" name="deliveryPanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                          <Color blue="f8" green="f8" red="ff" type="rgb"/>
                         </Property>
                       </Properties>
 
@@ -1528,7 +1466,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1544,7 +1482,7 @@
                             </Property>
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1552,7 +1490,7 @@
                         <Container class="javax.swing.JPanel" name="deliverToMyAdressPanel">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                              <Color blue="f8" green="f8" red="ff" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -1598,7 +1536,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Standardmark&#xf6;r"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1636,7 +1574,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -1650,7 +1588,7 @@
                         <Container class="javax.swing.JPanel" name="addressPanel">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                              <Color blue="f8" green="f8" red="ff" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -1797,7 +1735,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -1817,7 +1755,7 @@
             <Container class="javax.swing.JPanel" name="myAccountTopPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="f8" green="f8" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -2220,7 +2158,7 @@
                               <Component id="personalInfoPanel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="deliveryPanel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="16" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
@@ -2625,7 +2563,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -2641,7 +2579,7 @@
                             </Property>
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -2695,7 +2633,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Standardmark&#xf6;r"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -2860,7 +2798,7 @@
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                       </Properties>
@@ -3062,7 +3000,7 @@
                               </StringArray>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3109,7 +3047,7 @@
                             <Property name="selectedIndex" type="int" value="5"/>
                             <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3138,7 +3076,7 @@
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3455,7 +3393,7 @@
     <Container class="javax.swing.JPanel" name="logoPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="cc" type="rgb"/>
+          <Color blue="ad" green="ad" red="d7" type="rgb"/>
         </Property>
       </Properties>
       <Events>
@@ -3491,7 +3429,7 @@
             <Property name="text" type="java.lang.String" value="iMat"/>
             <Property name="toolTipText" type="java.lang.String" value="G&#xe5; till startsidan"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
         </Component>
@@ -3500,7 +3438,7 @@
     <Container class="javax.swing.JPanel" name="cartPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="64" red="cc" type="rgb"/>
+          <Color blue="ad" green="ad" red="d7" type="rgb"/>
         </Property>
       </Properties>
 
@@ -3514,7 +3452,22 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="goToCashierBtn" max="32767" attributes="0"/>
-                              <Component id="cartHeadlineLabel" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cartHeadlineLabel" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tpCartContentsNumber" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tpCartSumLabel" min="-2" pref="33" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="cartImage" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -3525,9 +3478,29 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="cartHeadlineLabel" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="cartPanelScrollPane" min="-2" pref="529" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cartHeadlineLabel" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tpCartContentsNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel3" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="tpCartSumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cartImage" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="cartPanelScrollPane" min="-2" pref="465" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="goToCashierBtn" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -3538,6 +3511,9 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="cartHeadlineLabel">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ad" green="ad" red="d7" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Kundvagn"/>
           </Properties>
         </Component>
@@ -3556,17 +3532,47 @@
             <Container class="javax.swing.JPanel" name="cartContentsPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="64" red="cc" type="rgb"/>
+                  <Color blue="ad" green="ad" red="d7" type="rgb"/>
                 </Property>
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-                <Property name="columns" type="int" value="1"/>
-                <Property name="rows" type="int" value="20"/>
+                <Property name="columns" type="int" value="0"/>
+                <Property name="rows" type="int" value="1"/>
               </Layout>
             </Container>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="XstVaror"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="tpCartContentsNumber">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Varor"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Xkr"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="tpCartSumLabel">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+            <Property name="text" type="java.lang.String" value="kr"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="cartImage">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/guiKundvagn.png"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

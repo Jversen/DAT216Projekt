@@ -49,21 +49,28 @@ public class ProductCard extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
-        addProductButton = new javax.swing.JButton();
         PriceLabel2 = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        addProductButton = new javax.swing.JButton();
         Body = new javax.swing.JPanel();
         pictureLabel = new javax.swing.JLabel();
         Head = new javax.swing.JPanel();
         productCardName = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(201, 32, 32), new java.awt.Color(166, 3, 3)));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(244, 221, 173));
+        jPanel1.setBackground(new java.awt.Color(255, 248, 248));
+
+        PriceLabel2.setText("Pris:");
+        jPanel1.add(PriceLabel2);
+
+        priceLabel.setText("Pris");
+        jPanel1.add(priceLabel);
         jPanel1.add(jSpinner1);
 
-        addProductButton.setText("OK");
+        addProductButton.setText("Köp");
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProductButtonActionPerformed(evt);
@@ -71,20 +78,14 @@ public class ProductCard extends javax.swing.JPanel {
         });
         jPanel1.add(addProductButton);
 
-        PriceLabel2.setText("Pris:");
-        jPanel1.add(PriceLabel2);
-
-        priceLabel.setText("Pris");
-        jPanel1.add(priceLabel);
-
         add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
-        Body.setBackground(new java.awt.Color(244, 221, 173));
+        Body.setBackground(new java.awt.Color(255, 248, 248));
         Body.add(pictureLabel);
 
         add(Body, java.awt.BorderLayout.CENTER);
 
-        Head.setBackground(new java.awt.Color(224, 175, 118));
+        Head.setBackground(new java.awt.Color(196, 158, 158));
 
         productCardName.setText("jLabel1");
         Head.add(productCardName);
