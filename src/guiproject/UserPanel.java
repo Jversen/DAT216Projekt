@@ -627,6 +627,7 @@ public class UserPanel extends javax.swing.JPanel {
         saveButton.setBackground(new java.awt.Color(255, 255, 255));
         saveButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         saveButton.setForeground(new java.awt.Color(0, 51, 0));
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButton.png"))); // NOI18N
         saveButton.setText("Spara ändringar");
         saveButton.setToolTipText("Spara ändringar");
         saveButton.setBorder(null);
@@ -634,17 +635,8 @@ public class UserPanel extends javax.swing.JPanel {
         saveButton.setContentAreaFilled(false);
         saveButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         saveButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SaveButtonClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SaveButtonHover(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SaveButtonUnhover(evt);
-            }
-        });
+        saveButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonHover.png"))); // NOI18N
+        saveButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonClick.png"))); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -743,20 +735,6 @@ public class UserPanel extends javax.swing.JPanel {
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         iMDH.shutDown();
     }//GEN-LAST:event_saveButtonActionPerformed
-
-    private void SaveButtonHover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButtonHover
-        saveButton.setIcon(saveButtonHover);
-    }//GEN-LAST:event_SaveButtonHover
-
-    private void SaveButtonUnhover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButtonUnhover
-        saveButton.setIcon(saveButtonNormal);
-        saveButton.setForeground(new Color(003400));
-    }//GEN-LAST:event_SaveButtonUnhover
-
-    private void SaveButtonClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButtonClicked
-        saveButton.setIcon(saveButtonClick);
-        saveButton.setForeground(Color.WHITE);
-    }//GEN-LAST:event_SaveButtonClicked
     // -------------------------------------------------------------------------
     
     
