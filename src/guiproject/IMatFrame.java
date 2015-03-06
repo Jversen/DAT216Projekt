@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -55,8 +57,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<String> categoryStrings = new ArrayList<String>();
-
-
+    
+    public void searchFieldDynSearch(){
+    gpCon.doSearch(searchField.getText(), this);
+        displayGroceries();
+    }
+    
     public void updateCartPanel(List<CartProdObject> cpolist){
 
         cartContentsPanel.removeAll();
@@ -89,6 +95,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         itemShower.setLayout(layout);
         itemShower.removeAll();
+        if (gpCon.products.size()==0){
+            JLabel noSearchResults = new JLabel("Inga sökresultat på " + searchField.getText());
+            itemShower.add(noSearchResults);
+        }
         for (int i = 0; i < gpCon.products.size(); i++) {
             itemShower.add(gpCon.productCards.get(i));
         }
@@ -823,6 +833,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         leftUpperPanel.setLayout(new java.awt.BorderLayout());
 
         searchField.setText("Skriv här...");
+        searchField.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                searchFieldDynSearch();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                searchFieldDynSearch();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                searchFieldDynSearch();
+            }
+        });
         searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFieldActionPerformed(evt);
@@ -2741,7 +2762,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(cashierPanelLayout.createSequentialGroup()
                 .addGroup(cashierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(progressPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(productPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(productPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
