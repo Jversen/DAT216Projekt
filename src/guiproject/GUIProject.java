@@ -99,6 +99,39 @@ public class GUIProject{
     }
     
     public void listCatProds(ArrayList<String> s, IMatFrame imf){
+            productCards.clear();
+            products.clear();
+            
+            for (int i = 0; i < s.size(); i++){
+                products.addAll((iMDH.getProducts(ProductCategory.valueOf(s.get(i)))));
+            }
+            
+            for (int i = 0; i < products.size(); i++){
+                
+            
+                for (int j = 0; j<imf.allProductCards.size(); j++){
+                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
+                       productCards.add(imf.allProductCards.get(j));
+                       
+                }
+            }
+        
+        }
+           /*
+//           this.productCards.removeAll(productCards);
+           
+           for (int i = 0; i<products.size(); i++){
+//               System.out.println("prodcardssize: " + imf.allProductCards.size());
+            for (int j = 0; j<imf.allProductCards.size(); j++){
+//                System.out.println("imf allprdc j : " + imf.allProductCards.get(j).getProduct());
+                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
+                       productCards.add(imf.allProductCards.get(j));
+                       
+//                       System.out.println("productcards: " + imf.allProductCards.get(j).getProduct().getName());
+                }
+            }
+    }
+           
 //        List<Product> tempProdList;
 //       String tempString = s.get(0);
         this.products.clear();
@@ -116,8 +149,8 @@ public class GUIProject{
            }
            
 //        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
-        
-    }
+        */
+    } 
 
     
 }
