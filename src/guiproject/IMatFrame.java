@@ -58,6 +58,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<String> categoryStrings = new ArrayList<String>();
     
+    public List<ProductCard> allProductCards = new ArrayList<ProductCard>();
+    
+    public void createAllProducts(){
+        
+        for (int i = 0; i<gpCon.allProducts.size(); i++){
+            allProductCards.add(new ProductCard(gpCon.allProducts.get(i), this));
+        }
+    }
+    
     public void searchFieldDynSearch(){
     gpCon.doSearch(searchField.getText(), this);
         displayGroceries();

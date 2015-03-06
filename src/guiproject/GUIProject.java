@@ -24,7 +24,8 @@ public class GUIProject{
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
     //public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
     public List <CartProdObject> cpo = new ArrayList<CartProdObject>();
-        
+    
+    public List<Product> allProducts = new ArrayList<Product>();
     
     /**
      * @param args the command line arguments
@@ -38,6 +39,11 @@ public class GUIProject{
     public ImageIcon getImage50(Product prod){
         
             return iMDH.getImageIcon(prod,50,50);
+    }
+    
+    public void createAllProducts(){
+        allProducts = iMDH.getProducts();
+        
     }
     
     public void doSearch(String s, IMatFrame imf){
