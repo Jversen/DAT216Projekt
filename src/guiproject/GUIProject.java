@@ -47,14 +47,23 @@ public class GUIProject{
     }
     
     public void doSearch(String s, IMatFrame imf){
+        
            this.products = iMDH.findProducts(s);
            this.productCards.clear();
-           this.productCards.removeAll(productCards);
-
-           for(int i=0; i<products.size(); i++){
-               productCards.add(new ProductCard(products.get(i), imf));
-           }
+//           this.productCards.removeAll(productCards);
            
+           for (int i = 0; i<products.size(); i++){
+//               System.out.println("prodcardssize: " + imf.allProductCards.size());
+            for (int j = 0; j<imf.allProductCards.size(); j++){
+//                System.out.println("imf allprdc j : " + imf.allProductCards.get(j).getProduct());
+                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
+                       productCards.add(imf.allProductCards.get(j));
+                       
+//                       System.out.println("productcards: " + imf.allProductCards.get(j).getProduct().getName());
+                }
+            }
+    }
+    }
 //            this.products = iMDH.findProducts(s);
 //           this.productCards.clear();
 //           this.productCards.removeAll(productCards);
@@ -65,7 +74,7 @@ public class GUIProject{
 //               cpo.add(new CartProdObject(new ShoppingItem(products.get(i), 1.0), imf));
 //           }
            
-    }
+    
     
     /**
      * Work in progress... 

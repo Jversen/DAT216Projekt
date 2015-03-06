@@ -60,9 +60,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     public List<ProductCard> allProductCards = new ArrayList<ProductCard>();
     
-    public void createAllProducts(){
-        
+    public void createAllProductCards(){
+        gpCon.createAllProducts();
         for (int i = 0; i<gpCon.allProducts.size(); i++){
+//            System.out.println("create all product cards. Product card " + gpCon.allProducts.get(i).getName());
             allProductCards.add(new ProductCard(gpCon.allProducts.get(i), this));
         }
     }
@@ -108,8 +109,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             JLabel noSearchResults = new JLabel("Inga sökresultat på " + searchField.getText());
             itemShower.add(noSearchResults);
         }
-        for (int i = 0; i < gpCon.products.size(); i++) {
+        for (int i = 0; i < gpCon.productCards.size(); i++) {
             itemShower.add(gpCon.productCards.get(i));
+//            System.out.println("produkt: " + gpCon.productCards.get(i).getName());
         }
 
         cl.show(featurePanel, "searchResultPanel");
@@ -144,7 +146,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cl2 = (CardLayout)productPanel.getLayout();
 
         deliveryPanel.add(addressPanel1);
-
+        createAllProductCards();
         /**
          * Skapar label för varje matkategori.
          * Skapa eventuellt JButtons istället för JLabels senare.
@@ -2946,6 +2948,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
  * Flytta detta till en egen metod, kalla från gpcon.
  */
     private void updCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updCartBtnActionPerformed
+        
         cartContentsPanel.removeAll();
 
         List <ShoppingItem> cartContentList = gpCon.sc.getItems();
@@ -3134,7 +3137,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
