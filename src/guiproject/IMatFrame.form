@@ -28,7 +28,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="leftPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="featurePanel" min="-2" pref="849" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="cartPanel" min="-2" max="-2" attributes="0"/>
@@ -45,8 +45,8 @@
                   <Component id="featurePanel" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="leftPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cartPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cartPanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="leftPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -68,17 +68,33 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="categoryPanel" pref="103" max="32767" attributes="0"/>
               <Component id="leftUpperPanel" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="categoryPanel" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="leftPanelSpecials" pref="126" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <Component id="optCatSeparator" alignment="1" max="32767" attributes="0"/>
+              <Component id="searchOptSeparator" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="leftUpperPanel" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="leftUpperPanel" min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                  <Component id="searchOptSeparator" min="-2" pref="6" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="categoryPanel" pref="574" max="32767" attributes="0"/>
+                  <Component id="leftPanelSpecials" min="-2" pref="52" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="optCatSeparator" min="-2" pref="4" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="categoryPanel" min="-2" pref="701" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,7 +103,7 @@
         <Container class="javax.swing.JPanel" name="leftUpperPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ad" green="ad" red="d7" type="rgb"/>
+              <Color blue="f8" green="f8" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -95,7 +111,6 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="searchField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Skriv h&#xe4;r..."/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -112,22 +127,55 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="searchButton">
+            <Component class="javax.swing.JLabel" name="searchFieldIcon">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ad" green="ad" red="d7" type="rgb"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/iMatSearch3.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="s&#xf6;k!"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchButtonMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchButtonActionPerformed"/>
-              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                  <BorderConstraints direction="Last"/>
+                  <BorderConstraints direction="After"/>
                 </Constraint>
               </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="leftPanelSpecials">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ad" green="ad" red="d7" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="1"/>
+            <Property name="rows" type="int" value="2"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lpFavoritesLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Favoriter"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lpFavoritesLabelMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lpDealsLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Erbjudanden"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lpDealsLabelMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -143,6 +191,21 @@
             <Property name="rows" type="int" value="30"/>
           </Layout>
         </Container>
+        <Component class="javax.swing.JSeparator" name="searchOptSeparator">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="3e" green="3e" red="b3" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="optCatSeparator">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="3e" green="3e" red="b3" type="rgb"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="topPanel">
@@ -166,24 +229,17 @@
                           <Component id="updCartBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="myFavoritesBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="recipesBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="dealsBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                           <Component id="historyBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="accountImage" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="tpChangeUserLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="tpMyAccountLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="tpMyAccountLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -200,9 +256,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="myShoppingBagsBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="myFavoritesBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="recipesBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="dealsBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="historyBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -214,9 +268,7 @@
                               <Component id="accountImage" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="tpMyAccountLabel" max="32767" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="tpChangeUserLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -233,26 +285,20 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Hand Cursor"/>
             </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tpMyAccountLabelMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="tpChangeUserLabel">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Byt anv&#xe4;ndare"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="accountImage">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/guiProfile.png"/>
+            </Property>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
             </Property>
           </Properties>
         </Component>
@@ -264,28 +310,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myShoppingBagsBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="myFavoritesBtn">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Favoriter"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myFavoritesBtnActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="recipesBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Recept"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recipesBtnActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="dealsBtn">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Erbjudanden"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dealsBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="historyBtn">
@@ -402,7 +432,7 @@
                       <Component id="dealsLabel" min="-2" pref="26" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="separator9" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace pref="258" max="32767" attributes="0"/>
+                      <EmptySpace pref="373" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -489,7 +519,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpMyShoppingBagsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="646" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="776" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -525,7 +555,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpMyFavoritesLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="646" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="776" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -561,7 +591,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpRecipesLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="646" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="776" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -597,7 +627,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpDealsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="646" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="776" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -633,7 +663,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="fpHistoryLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="645" max="32767" attributes="0"/>
+                      <EmptySpace pref="776" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -671,7 +701,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="categoryFeatureLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="653" max="32767" attributes="0"/>
+                      <EmptySpace pref="780" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -793,11 +823,12 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="personalInfoPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="paymentInfoPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="paymentInfoPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="personalInfoPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1546,8 +1577,8 @@
                           </Properties>
                           <Events>
                             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonClicked"/>
-                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonUnhover"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonHover"/>
+                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonUnhover"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -1790,29 +1821,31 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="progressPanel" max="32767" attributes="0"/>
-                          <Component id="productPanel" pref="0" max="32767" attributes="0"/>
+                          <Component id="productPanel" min="-2" pref="706" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="recommendedProductsPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="recommendedProductsPanel" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="progressPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="productPanel" min="-2" pref="621" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="107" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
