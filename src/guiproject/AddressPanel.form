@@ -83,7 +83,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="address1TextField">
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddressUpdate"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="addressUpdate"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="adress2TextField1">
@@ -118,7 +118,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="postCodeTextField">
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PostCodeUpdate"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="postCodeUpdate"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="cityTextField1">

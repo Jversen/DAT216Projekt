@@ -5,14 +5,19 @@
  */
 package guiproject;
 
+import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
- *
+ * A class for another panel where the customer can enter another address if
+ * he/she wants to get the products delivered to another address.
+ * 
  * @author Jenny
  */
 public class AddressPanel extends javax.swing.JPanel {
 
+    private Customer customer = IMatDataHandler.getInstance().getCustomer();
+    
     /**
      * Creates new form AddressPanel
      */
@@ -47,7 +52,7 @@ public class AddressPanel extends javax.swing.JPanel {
 
         address1TextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                AddressUpdate(evt);
+                addressUpdate(evt);
             }
         });
 
@@ -64,7 +69,7 @@ public class AddressPanel extends javax.swing.JPanel {
 
         postCodeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                PostCodeUpdate(evt);
+                postCodeUpdate(evt);
             }
         });
 
@@ -117,18 +122,15 @@ public class AddressPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AddressUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddressUpdate
-        IMatDataHandler.getInstance().getCustomer().setPostAddress(address1TextField.getText());
-    }//GEN-LAST:event_AddressUpdate
+    private void addressUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addressUpdate
+        customer.setPostAddress(address1TextField.getText());
+    }//GEN-LAST:event_addressUpdate
 
-    private void PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PostCodeUpdate
-        IMatDataHandler.getInstance().getCustomer().setPostCode(postCodeTextField.getText());
-    }//GEN-LAST:event_PostCodeUpdate
+    private void postCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeUpdate
+        customer.setPostCode(postCodeTextField.getText());
+    }//GEN-LAST:event_postCodeUpdate
 
-    protected boolean hasAddress(){
-        return !address1TextField.getText().equals("");
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField address1TextField;
     private javax.swing.JLabel adress1Label1;

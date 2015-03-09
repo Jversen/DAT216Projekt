@@ -5,53 +5,59 @@
  */
 package guiproject;
 
-import java.awt.Color;
-import java.util.Scanner;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
- *
+ * A class handling information about the user such as personal information,
+ * payment and delivery.
+ * 
  * @author Jenny
  */
 public class UserPanel extends javax.swing.JPanel {
+    
+    private IMatDataHandler iMDH = IMatDataHandler.getInstance();
+    private Customer customer = IMatDataHandler.getInstance().getCustomer();
+    private CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+    
     /**
      * Creates new form UserPanel
      */
     public UserPanel() {
         initComponents();
         
-        if(!IMatDataHandler.getInstance().getCustomer().getFirstName().equals("") &&
-                !IMatDataHandler.getInstance().getCustomer().getLastName().equals("")){
+        addressPanel.setVisible(false);
+        
+        if(!customer.getFirstName().equals("") &&
+                !customer.getLastName().equals("")){
             
-            titleNameLabel.setText(IMatDataHandler.getInstance().getCustomer().getFirstName() +
-                    " " + IMatDataHandler.getInstance().getCustomer().getLastName());
+            titleNameLabel.setText(customer.getFirstName() +
+                    " " + customer.getLastName());
         } else{
             titleNameLabel.setText("");
         }
         
         // Sets values for text fields in "Personal information"
-        firstNameTextField.setText(IMatDataHandler.getInstance().getCustomer().getFirstName());
-        lastNameTextField.setText(IMatDataHandler.getInstance().getCustomer().getLastName());
-        address1TextField.setText(IMatDataHandler.getInstance().getCustomer().getAddress());
-        postCodeTextField.setText(IMatDataHandler.getInstance().getCustomer().getPostCode());
-        emailTextField.setText(IMatDataHandler.getInstance().getCustomer().getEmail());
-        phoneNumberTextField.setText(IMatDataHandler.getInstance().getCustomer().getPhoneNumber());
+        firstNameTextField.setText(customer.getFirstName());
+        lastNameTextField.setText(customer.getLastName());
+        address1TextField.setText(customer.getAddress());
+        postCodeTextField.setText(customer.getPostCode());
+        emailTextField.setText(customer.getEmail());
+        phoneNumberTextField.setText(customer.getPhoneNumber());
         
         // Sets values for text fields and comboboxes in "Payment"
-        cardNumberTextField.setText(IMatDataHandler.getInstance().getCreditCard().getCardNumber());
-        validMonthComboBox.setSelectedIndex(iMDH.getCreditCard().getValidMonth());
+        cardNumberTextField.setText(creditCard.getCardNumber());
+        validMonthComboBox.setSelectedIndex(creditCard.getValidMonth());
         
         if (iMDH.isFirstRun()){
-            iMDH.getCreditCard().setValidYear(1);
+            creditCard.setValidYear(1);
         }
-        validYearComboBox.setSelectedIndex(iMDH.getCreditCard().getValidYear());
-        verificationCodeTextField.setText(IMatDataHandler.getInstance().getCreditCard().getVerificationCode() + "");
-        cardHolderTextField.setText(IMatDataHandler.getInstance().getCreditCard().getHoldersName());
+        validYearComboBox.setSelectedIndex(creditCard.getValidYear());
+        verificationCodeTextField.setText(creditCard.getVerificationCode() + "");
+        cardHolderTextField.setText(creditCard.getHoldersName());
         
         // Sets values for combo- and checkboxes in "Delivery"
-        
         
     }
 
@@ -731,85 +737,81 @@ public class UserPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_deliveryCheckBoxActionPerformed
  
-    // ------ Changes the icon for the save button -----------------------------
+    
+    // ------ Saves the user's information -------------------------------------
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         iMDH.shutDown();
     }//GEN-LAST:event_saveButtonActionPerformed
-    // -------------------------------------------------------------------------
-    
+
     
     // ------ Personal information ---------------------------------------------
+    // Sets saved values for the text fields.
     private void phoneNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneNumberUpdate
-        iMDH.getCustomer().setPhoneNumber(phoneNumberTextField.getText());
+        customer.setPhoneNumber(phoneNumberTextField.getText());
     }//GEN-LAST:event_phoneNumberUpdate
 
     private void FirstNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FirstNameUpdate
-        iMDH.getCustomer().setFirstName(firstNameTextField.getText());
+        customer.setFirstName(firstNameTextField.getText());
     }//GEN-LAST:event_FirstNameUpdate
 
     private void LastNameUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LastNameUpdate
-        iMDH.getCustomer().setLastName(lastNameTextField.getText());
+        customer.setLastName(lastNameTextField.getText());
     }//GEN-LAST:event_LastNameUpdate
 
     private void Address1Update(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Address1Update
-        iMDH.getCustomer().setAddress(address1TextField.getText());
+        customer.setAddress(address1TextField.getText());
     }//GEN-LAST:event_Address1Update
 
     private void PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PostCodeUpdate
-        iMDH.getCustomer().setPostCode(postCodeTextField.getText());
+        customer.setPostCode(postCodeTextField.getText());
     }//GEN-LAST:event_PostCodeUpdate
 
     private void EmailUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EmailUpdate
-        iMDH.getCustomer().setEmail(emailTextField.getText());
+        customer.setEmail(emailTextField.getText());
     }//GEN-LAST:event_EmailUpdate
     // -------------------------------------------------------------------------
     
     
     // ------ Payment ----------------------------------------------------------
+    // Sets saved values for the text fields and comboboxes.
     private void CardNumberUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CardNumberUpdate
-        iMDH.getCreditCard().setCardNumber(cardNumberTextField.getText());
+        creditCard.setCardNumber(cardNumberTextField.getText());
     }//GEN-LAST:event_CardNumberUpdate
 
     private void VerificationCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VerificationCodeUpdate
         try{
-            iMDH.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+            creditCard.setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
         } catch(NumberFormatException nfe){
             System.out.println("Incorrect input.");
         }
     }//GEN-LAST:event_VerificationCodeUpdate
 
     private void CardHolderUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CardHolderUpdate
-        iMDH.getCreditCard().setHoldersName(cardHolderTextField.getText());
+        creditCard.setHoldersName(cardHolderTextField.getText());
     }//GEN-LAST:event_CardHolderUpdate
 
     private void CardTypeUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardTypeUpdate
-        iMDH.getCreditCard().setCardType(cardTypeComboBox.getSelectedItem().toString());
+        creditCard.setCardType(cardTypeComboBox.getSelectedItem().toString());
     }//GEN-LAST:event_CardTypeUpdate
 
     private void ValidMonthUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidMonthUpdate
-        iMDH.getCreditCard().setValidMonth(validMonthComboBox.getSelectedIndex());
+        creditCard.setValidMonth(validMonthComboBox.getSelectedIndex());
     }//GEN-LAST:event_ValidMonthUpdate
 
     private void ValidYearUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidYearUpdate
-        iMDH.getCreditCard().setValidYear(validYearComboBox.getSelectedIndex());
+        creditCard.setValidYear(validYearComboBox.getSelectedIndex());
     }//GEN-LAST:event_ValidYearUpdate
 
     private void address1TextField1AddressUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1TextField1AddressUpdate
-        IMatDataHandler.getInstance().getCustomer().setPostAddress(address1TextField.getText());
+        customer.setPostAddress(address1TextField.getText());
     }//GEN-LAST:event_address1TextField1AddressUpdate
 
     private void postCodeTextField1PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeTextField1PostCodeUpdate
-        IMatDataHandler.getInstance().getCustomer().setPostCode(postCodeTextField.getText());
+        customer.setPostCode(postCodeTextField.getText());
     }//GEN-LAST:event_postCodeTextField1PostCodeUpdate
     // -------------------------------------------------------------------------
     
     
-    IMatDataHandler iMDH = IMatDataHandler.getInstance();
-    private final ImageIcon saveButtonNormal = new ImageIcon(getClass().getResource("/greenButton.png"));
-    private final ImageIcon saveButtonHover = new ImageIcon(getClass().getResource("/greenButtonHover.png"));
-    private final ImageIcon saveButtonClick = new ImageIcon(getClass().getResource("/greenButtonClick.png"));
-    private boolean isInteger;   // remove????
-    private JPanel otherAddressPanel = new AddressPanel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField address1TextField;
     private javax.swing.JTextField address1TextField1;
