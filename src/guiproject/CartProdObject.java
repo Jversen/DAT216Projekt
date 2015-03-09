@@ -157,8 +157,9 @@ public class CartProdObject extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //ta bort från listan och förnya panelen
-        // TODO add your handling code here:
+        imf.gpCon.sc.removeItem(si);
+        imf.gpCon.addToCart(null, 0, imf);
+        //imf.updateCartPanel(imf.gpCon.cpo);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked

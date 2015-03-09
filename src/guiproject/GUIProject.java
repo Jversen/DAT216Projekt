@@ -18,20 +18,16 @@ public class GUIProject{
      */
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
     ShoppingCart sc = iMDH.getShoppingCart();
-    //IMatFrame app;
     
     
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
-    //public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
     public List <CartProdObject> cpo = new ArrayList<CartProdObject>();
-    
     public List<Product> allProducts = new ArrayList<Product>();
     public List<Order> orderHistory = new ArrayList<Order>();
     /**
      * @param args the command line arguments
      */
-    
     
     public ImageIcon getImage100(Product prod){
         
@@ -54,25 +50,12 @@ public class GUIProject{
            
            for (int i = 0; i<products.size(); i++){
             for (int j = 0; j<imf.allProductCards.size(); j++){
-//                System.out.println("imf allprdc j : " + imf.allProductCards.get(j).getProduct());
                    if (imf.allProductCards.get(j).getProduct() == products.get(i)){
                        productCards.add(imf.allProductCards.get(j));
-                       
-//                       System.out.println("productcards: " + imf.allProductCards.get(j).getProduct().getName());
-                }
-                               
+                }                  
             }
-    }System.out.print("This is cpo size: "+cpo.size() +". This is the shoppingcart: "+ sc.getItems().size());
+        }
     }
-//            this.products = iMDH.findProducts(s);
-//           this.productCards.clear();
-//           this.productCards.removeAll(productCards);
-//
-//           
-//           for(int i=0; i<products.size(); i++){
-//               
-//               cpo.add(new CartProdObject(new ShoppingItem(products.get(i), 1.0), imf));
-//           }
            
     public void showHistory(IMatFrame imf){
         
@@ -92,18 +75,24 @@ public class GUIProject{
                        productCards.add(imf.allProductCards.get(j));
                 }
             }
+        }
     }
-    }
-    
-    /**
-     * Work in progress... 
-     */
     public void addToCart(Product p, int amount, IMatFrame imf){
+        if(p==null){
+            cpo.clear();
+        for(ShoppingItem si: sc.getItems()){
+             cpo.add(new CartProdObject(si, imf));
+        }
+        imf.updateCartPanel(cpo);    
+        }else{
+             cpo.clear();
         sc.addProduct(p, amount);
         for(ShoppingItem si: sc.getItems()){
              cpo.add(new CartProdObject(si, imf));
         }
         imf.updateCartPanel(cpo);    
+        }
+       
     }
     
     public void listCatProds(ArrayList<String> s, IMatFrame imf){
@@ -123,42 +112,6 @@ public class GUIProject{
                        
                 }
             }
-        
         }
-           /*
-//           this.productCards.removeAll(productCards);
-           
-           for (int i = 0; i<products.size(); i++){
-//               System.out.println("prodcardssize: " + imf.allProductCards.size());
-            for (int j = 0; j<imf.allProductCards.size(); j++){
-//                System.out.println("imf allprdc j : " + imf.allProductCards.get(j).getProduct());
-                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
-                       productCards.add(imf.allProductCards.get(j));
-                       
-//                       System.out.println("productcards: " + imf.allProductCards.get(j).getProduct().getName());
-                }
-            }
-    }
-           
-//        List<Product> tempProdList;
-//       String tempString = s.get(0);
-        this.products.clear();
-         for (int i = 0; i < s.size(); i++){
-//             tempProd = iMDH.getProducts(ProductCategory.valueOf(tempString));
-//        tempProdList = (iMDH.getProducts(ProductCategory.valueOf(s.get(i))));
-        this.products.addAll((iMDH.getProducts(ProductCategory.valueOf(s.get(i)))));
-        }
-        
-         this.productCards.clear();
-           this.productCards.removeAll(productCards);
-
-           for(int i=0; i<products.size(); i++){
-               productCards.add(new ProductCard(products.get(i), imf));
-           }
-           
-//        System.out.println(iMDH.getProducts(ProductCategory.valueOf(s)));
-        */
-    } 
-
-    
+    }  
 }
