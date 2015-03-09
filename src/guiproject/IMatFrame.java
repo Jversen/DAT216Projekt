@@ -453,7 +453,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         allSubCategoryArrayList.addAll(sweetsCategoryArrayList);
 
 
-
         for (int i = 0; i<headCategoryArrayList.size(); i++){
             allCategoryArrayList.add(headCategoryArrayList.get(i));
         }
@@ -488,8 +487,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryPanel.add(allCategoryArrayList.get(i));
                 allCategoryArrayList.get(i).setHorizontalAlignment(SwingConstants.LEFT);
                 allCategoryArrayList.get(i).setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-
         }
     }
 
@@ -521,7 +518,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 
                 for (int i = 0; i<breadCategoryArrayList.size(); i++){
                     allCategoryArrayList.add(1+i, breadCategoryArrayList.get(i));
-                                                
                 }
                 
                 break;
@@ -556,7 +552,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryStrings.add("MELONS");
                 categoryStrings.add("NUTS_AND_SEEDS");
                 categoryStrings.add("ROOT_VEGETABLE");
-                
                 
                 
                 for (int i = 0; i<categoryStrings.size(); i++){
@@ -606,7 +601,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-                
             case "Varma drycker":
                 categoryStrings.add("HOT_DRINKS");
                 gpCon.listCatProds(categoryStrings, this);
@@ -617,7 +611,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-                
             case "Exotiska frukter":
                 categoryStrings.add("EXOTIC_FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
@@ -628,7 +621,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-                
             case "Grönsaksfrukter":
                 categoryStrings.add("VEGETABLE_FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
@@ -654,7 +646,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-           
             case "Mjöl, socker och salt":
                 categoryStrings.add("FLOUR_SUGAR_SALT");
                 gpCon.listCatProds(categoryStrings, this);
@@ -680,7 +671,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-             
             case "Frukt":
                 categoryStrings.add("FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
@@ -696,14 +686,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-                    
                     default:
                 break;
                 
         }
 
         placeCategories();
-
         revalidate();
         
     }                

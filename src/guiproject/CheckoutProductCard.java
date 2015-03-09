@@ -33,8 +33,6 @@ public class CheckoutProductCard extends javax.swing.JPanel {
         this.checkoutProductIcon = new JLabel();
         
         this.product = si.getProduct();
-
-        //System.out.print(product.getName() + " hej");
         
         this.checkoutProductLabel.setText(product.getName());
         this.checkoutPriceLabel.setText(product.getPrice() + "");
