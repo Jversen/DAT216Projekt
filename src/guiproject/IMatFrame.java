@@ -2922,6 +2922,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
         cl.show(featurePanel, "cardHistory");
+        gpCon.showHistory(this);
+        displayGroceries();
+        cl.show(featurePanel, "searchResultPanel");
+        revalidate();
+        repaint();
     }//GEN-LAST:event_historyBtnActionPerformed
 
     private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
@@ -3080,6 +3085,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void acceptPurchaseButton(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptPurchaseButton
         gpCon.iMDH.placeOrder();
+        gpCon.iMDH.shutDown();
+        System.out.println("antal ordrar: " + gpCon.iMDH.getOrders().size());
         cl2.show(productPanel, "end");
     }//GEN-LAST:event_acceptPurchaseButton
 

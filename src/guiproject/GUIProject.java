@@ -27,7 +27,7 @@ public class GUIProject{
     public List <CartProdObject> cpo = new ArrayList<CartProdObject>();
     
     public List<Product> allProducts = new ArrayList<Product>();
-    
+    public List<Order> orderHistory = new ArrayList<Order>();
     /**
      * @param args the command line arguments
      */
@@ -74,7 +74,26 @@ public class GUIProject{
 //               cpo.add(new CartProdObject(new ShoppingItem(products.get(i), 1.0), imf));
 //           }
            
-    
+    public void showHistory(IMatFrame imf){
+        
+           orderHistory = iMDH.getOrders();
+           products.clear();
+           productCards.clear();
+           System.out.println("Order history size: " + orderHistory.size());
+           for (int i = 0; i<orderHistory.size(); i++){
+               for (int j = 0; j<orderHistory.get(i).getItems().size(); j++){
+                    products.add(orderHistory.get(i).getItems().get(j).getProduct());
+               }
+           }
+           
+           for (int i = 0; i<products.size(); i++){
+            for (int j = 0; j<imf.allProductCards.size(); j++){
+                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
+                       productCards.add(imf.allProductCards.get(j));
+                }
+            }
+    }
+    }
     
     /**
      * Work in progress... 
