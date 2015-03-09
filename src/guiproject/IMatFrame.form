@@ -158,7 +158,7 @@
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Favoriter"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Handmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -170,7 +170,7 @@
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Erbjudanden"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Standardmark&#xf6;r"/>
+                  <Color id="Handmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -282,10 +282,13 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="tpMyAccountLabel">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Standardmark&#xf6;r"/>
+              <Color id="Handmark&#xf6;r"/>
             </Property>
           </Properties>
           <Events>
@@ -1581,9 +1584,6 @@
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonClicked"/>
-                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonHover"/>
-                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonSaveButtonUnhover"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -1817,6 +1817,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="checkoutPanel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="checkout"/>
@@ -1859,7 +1864,7 @@
             <Container class="javax.swing.JPanel" name="progressPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -1868,19 +1873,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkoutShoppingCartLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <Component id="arrow1Label" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkoutDeliveryLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <Component id="arrow2Label" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkoutPaymentLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="arrow3Label" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkoutAcceptLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1890,13 +1895,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkoutShoppingCartLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkoutDeliveryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkoutPaymentLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkoutAcceptLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="arrow1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="arrow2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="arrow3Label" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1904,22 +1909,22 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="checkoutShoppingCartLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/greenButton.png"/>
+                      <Image iconType="3" name="/purchaseStep.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Kundvagn"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
                     <Property name="iconTextGap" type="int" value="-90"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="checkoutDeliveryLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/greenButton.png"/>
+                      <Image iconType="3" name="/purchaseStep.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Leverans"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -1927,29 +1932,29 @@
                     <Property name="iconTextGap" type="int" value="-85"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
+                <Component class="javax.swing.JLabel" name="checkoutPaymentLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/greenButton.png"/>
+                      <Image iconType="3" name="/purchaseStep.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Betalning"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
                     <Property name="iconTextGap" type="int" value="-85"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="checkoutAcceptLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/greenButton.png"/>
+                      <Image iconType="3" name="/purchaseStep.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Slutf&#xf6;r k&#xf6;p"/>
                     <Property name="focusCycleRoot" type="boolean" value="true"/>
                     <Property name="iconTextGap" type="int" value="-90"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
+                <Component class="javax.swing.JLabel" name="arrow1Label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1960,7 +1965,7 @@
                     <Property name="text" type="java.lang.String" value="&gt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
+                <Component class="javax.swing.JLabel" name="arrow2Label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1971,7 +1976,7 @@
                     <Property name="text" type="java.lang.String" value="&gt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="arrow3Label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1987,7 +1992,7 @@
             <Container class="javax.swing.JPanel" name="recommendedProductsPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -2009,10 +2014,10 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="recommendedProductsLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="recommendedProductsScrollPane" min="-2" pref="534" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="recommendedProductsLabel" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="recommendedProductsScrollPane" min="-2" pref="541" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2027,7 +2032,10 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="66" green="66" red="66" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Gl&#xf6;mt?"/>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Gl&#xf6;mt n&#xe5;got?"/>
+                    <Property name="verticalAlignment" type="int" value="1"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="recommendedProductsScrollPane">
@@ -2114,7 +2122,7 @@
                         <Property name="text" type="java.lang.String" value="G&#xe5; vidare"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NextStepToPersonalInfo"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextStepToPersonalInfo"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="totalPriceLabel">
@@ -2216,7 +2224,7 @@
                         <Property name="text" type="java.lang.String" value="Tillbaka"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acceptBackToShoppingCart"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToShoppingCart"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="nextStepButtonToPayment">
@@ -2224,7 +2232,7 @@
                         <Property name="text" type="java.lang.String" value="G&#xe5; vidare"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NextStepToPayment"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextStepToPayment"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="personalInfoPanel1">
@@ -2244,17 +2252,17 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="adress1Label2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="cashierAddressTF" min="-2" pref="195" max="-2" attributes="0"/>
+                                              <Component id="checkoutAddressTF" min="-2" pref="195" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="lastNameLabel1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="cashierLastNameTF" min="-2" pref="195" max="-2" attributes="0"/>
+                                              <Component id="checkoutLastNameTF" min="-2" pref="195" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="firstNameLabel1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="cashierFirstNameTF" min="-2" pref="195" max="-2" attributes="0"/>
+                                              <Component id="checkoutFirstNameTF" min="-2" pref="195" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="personalInfoLabel2" min="-2" max="-2" attributes="0"/>
@@ -2270,9 +2278,9 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="address2TextField1" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
-                                                  <Component id="cashierPostCodeTF" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                                                  <Component id="checkoutPostCodeTF" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
                                                   <Component id="cityTextField2" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
-                                                  <Component id="cashierEmailTF" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                                                  <Component id="checkoutEmailTF" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -2283,9 +2291,9 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="phoneNumberLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cashierPhoneNumberTF" min="-2" pref="195" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="checkoutPhoneNumberTF" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2299,17 +2307,17 @@
                                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="firstNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cashierFirstNameTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutFirstNameTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lastNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cashierLastNameTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutLastNameTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="adress1Label2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cashierAddressTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutAddressTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2319,7 +2327,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="postCodeLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cashierPostCodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutPostCodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2329,11 +2337,11 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="emailLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cashierEmailTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutEmailTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cashierPhoneNumberTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutPhoneNumberTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="phoneNumberLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="36" max="32767" attributes="0"/>
@@ -2365,9 +2373,9 @@
                             <Property name="text" type="java.lang.String" value="F&#xf6;rnamn"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cashierFirstNameTF">
+                        <Component class="javax.swing.JTextField" name="checkoutFirstNameTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cashierLastNameTF">
+                        <Component class="javax.swing.JTextField" name="checkoutLastNameTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="lastNameLabel1">
                           <Properties>
@@ -2380,7 +2388,7 @@
                             <Property name="text" type="java.lang.String" value="Efternamn"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cashierAddressTF">
+                        <Component class="javax.swing.JTextField" name="checkoutAddressTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="adress1Label2">
                           <Properties>
@@ -2423,7 +2431,7 @@
                             <Property name="text" type="java.lang.String" value="Postnummer"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cashierPostCodeTF">
+                        <Component class="javax.swing.JTextField" name="checkoutPostCodeTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="cityLabel2">
                           <Properties>
@@ -2455,7 +2463,7 @@
                             <Property name="text" type="java.lang.String" value="E-mailadress"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cashierEmailTF">
+                        <Component class="javax.swing.JTextField" name="checkoutEmailTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="separator4">
                           <Properties>
@@ -2467,7 +2475,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cashierPhoneNumberTF">
+                        <Component class="javax.swing.JTextField" name="checkoutPhoneNumberTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="phoneNumberLabel1">
                           <Properties>
@@ -2558,7 +2566,7 @@
                               <Font name="Gautami" size="14" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="99" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Leveranstid"/>
                           </Properties>
@@ -2580,23 +2588,21 @@
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Standardmark&#xf6;r"/>
                             </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="deliveryDayComboBox1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
+                              <StringArray count="4">
                                 <StringItem index="0" value="idag"/>
                                 <StringItem index="1" value="imorgon"/>
-                                <StringItem index="2" value="i &#xf6;vermorgon"/>
+                                <StringItem index="2" value="om 2 dagar"/>
+                                <StringItem index="3" value="om 3 dagar"/>
                               </StringArray>
                             </Property>
-                            <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Standardmark&#xf6;r"/>
                             </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Container class="javax.swing.JPanel" name="deliverToMyAdressPanel1">
@@ -2677,7 +2683,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="adress1Label3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cashierOtherAddressTF" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="checkoutOtherAddressTF" min="-2" pref="195" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="adress2Label3" min="-2" max="-2" attributes="0"/>
@@ -2687,7 +2693,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="codeLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cashierOtherPostCodeTF" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="checkoutOtherPostCodeTF" min="-2" pref="195" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="cityLabel3" min="-2" max="-2" attributes="0"/>
@@ -2701,7 +2707,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="adress1Label3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cashierOtherAddressTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="checkoutOtherAddressTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -2711,7 +2717,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="codeLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cashierOtherPostCodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="checkoutOtherPostCodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -2734,7 +2740,7 @@
                                 <Property name="text" type="java.lang.String" value="Adress 1"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cashierOtherAddressTF">
+                            <Component class="javax.swing.JTextField" name="checkoutOtherAddressTF">
                             </Component>
                             <Component class="javax.swing.JTextField" name="adress2TextField2">
                               <Properties>
@@ -2766,7 +2772,7 @@
                                 <Property name="text" type="java.lang.String" value="Postnummer"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cashierOtherPostCodeTF">
+                            <Component class="javax.swing.JTextField" name="checkoutOtherPostCodeTF">
                             </Component>
                             <Component class="javax.swing.JTextField" name="cityTextField3">
                               <Properties>
@@ -2816,12 +2822,13 @@
                           <Color id="Standardmark&#xf6;r"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
+                        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/greenButtonHover.png"/>
+                        </Property>
+                        <Property name="rolloverSelectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/greenButtonClick.png"/>
+                        </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButton1SaveButtonClicked"/>
-                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButton1SaveButtonHover"/>
-                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButton1SaveButtonUnhover"/>
-                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2882,7 +2889,7 @@
                         <Property name="text" type="java.lang.String" value="Tillbaka"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonToPersonalInfo"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToPersonalInfo"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="nextStepButtonToAccept">
@@ -2890,7 +2897,7 @@
                         <Property name="text" type="java.lang.String" value="G&#xe5; vidare"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextStepButtonToAccept"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextStepToAccept"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="paymentInfoPanel1">
@@ -2916,22 +2923,22 @@
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="cardTypeComboBox1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <Component id="cardNumberTextField1" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                                                  <Component id="checkoutCardTypeCB" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="checkoutCardNumberTF" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="validMonthComboBox1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="checkoutValidMonthCB" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="expDateSlashLabel1" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="validYearComboBox1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="checkoutValidYearCB" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="verificationCodeTextField1" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                                                  <Component id="checkoutVerificationCodeTF" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="cardHolderNameLabel1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="cardHolderTextField1" min="-2" pref="195" max="-2" attributes="0"/>
+                                              <Component id="checkoutCardHolderTF" min="-2" pref="195" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="separator8" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -2951,29 +2958,29 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="cardNumberLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cardNumberTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutCardNumberTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cardTypeComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutCardTypeCB" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cardTypeLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="expirationDateLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="validMonthComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="validYearComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutValidMonthCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutValidYearCB" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="expDateSlashLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="verificationCodeTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutVerificationCodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="verificationCodeLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="cardHolderNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cardHolderTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkoutCardHolderTF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -3004,9 +3011,9 @@
                             <Property name="text" type="java.lang.String" value="Kortnummer"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cardNumberTextField1">
+                        <Component class="javax.swing.JTextField" name="checkoutCardNumberTF">
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cardTypeComboBox1">
+                        <Component class="javax.swing.JComboBox" name="checkoutCardTypeCB">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="3">
@@ -3042,7 +3049,7 @@
                             <Property name="text" type="java.lang.String" value="Expiration date"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="validMonthComboBox1">
+                        <Component class="javax.swing.JComboBox" name="checkoutValidMonthCB">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="12">
@@ -3078,7 +3085,7 @@
                             <Property name="text" type="java.lang.String" value="/"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="validYearComboBox1">
+                        <Component class="javax.swing.JComboBox" name="checkoutValidYearCB">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
@@ -3107,7 +3114,7 @@
                             <Property name="text" type="java.lang.String" value="CVV"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="verificationCodeTextField1">
+                        <Component class="javax.swing.JTextField" name="checkoutVerificationCodeTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="cardHolderNameLabel1">
                           <Properties>
@@ -3120,7 +3127,7 @@
                             <Property name="text" type="java.lang.String" value="Kortinnehavare"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="cardHolderTextField1">
+                        <Component class="javax.swing.JTextField" name="checkoutCardHolderTF">
                         </Component>
                         <Component class="javax.swing.JLabel" name="separator8">
                           <Properties>
@@ -3187,16 +3194,21 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="acceptShoppingCartLabel" min="-2" pref="22" max="-2" attributes="0"/>
                                           <Component id="acceptDeliveryLabel" min="-2" pref="24" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="acceptSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="acceptSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="acceptAddressLabel" min="-2" max="-2" attributes="0"/>
@@ -3216,16 +3228,10 @@
                                       <Component id="acceptVerificationCodeLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="acceptCardHolderLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="118" max="32767" attributes="0"/>
-                                      <Component id="acceptSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" min="-2" pref="370" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jScrollPane2" min="-2" pref="370" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace pref="90" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="backButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="acceptPurchaseButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -3241,7 +3247,7 @@
                         <Property name="text" type="java.lang.String" value="Tillbaka"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkoutBackToPayment"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToPayment"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="acceptPurchaseButton">
@@ -3249,7 +3255,7 @@
                         <Property name="text" type="java.lang.String" value="Slutf&#xf6;r k&#xf6;p"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acceptPurchaseButton"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acceptPurchase"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
