@@ -28,6 +28,7 @@ public class GUIProject{
     
     public List<Product> allProducts = new ArrayList<Product>();
     public List<Order> orderHistory = new ArrayList<Order>();
+    public List<HistoryObjectCard> historyCards = new ArrayList<HistoryObjectCard>();
     /**
      * @param args the command line arguments
      */
@@ -80,19 +81,24 @@ public class GUIProject{
            products.clear();
            productCards.clear();
            System.out.println("Order history size: " + orderHistory.size());
-           for (int i = 0; i<orderHistory.size(); i++){
-               for (int j = 0; j<orderHistory.get(i).getItems().size(); j++){
-                    products.add(orderHistory.get(i).getItems().get(j).getProduct());
-               }
-           }
+//           for (int i = 0; i<orderHistory.size(); i++){
+//               for (int j = 0; j<orderHistory.get(i).getItems().size(); j++){
+//                    products.add(orderHistory.get(i).getItems().get(j).getProduct());
+//               }
+//           }
            
-           for (int i = 0; i<products.size(); i++){
-            for (int j = 0; j<imf.allProductCards.size(); j++){
-                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
-                       productCards.add(imf.allProductCards.get(j));
-                }
-            }
-    }
+           for (int i = 0; i<orderHistory.size();i++){
+               for (int j = 0; j<orderHistory.get(i).getItems().size(); j++){
+               historyCards.add(new HistoryObjectCard(orderHistory.get(i).getItems().get(j),imf));
+           }
+           }
+//           for (int i = 0; i<products.size(); i++){
+//            for (int j = 0; j<imf.allProductCards.size(); j++){
+//                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
+//                       productCards.add(imf.allProductCards.get(j));
+//                }
+//            }
+//    }
     }
     
     /**
