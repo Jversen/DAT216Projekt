@@ -842,7 +842,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cartImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(215, 173, 173));
 
         leftPanel.setBackground(new java.awt.Color(215, 173, 173));
         leftPanel.setToolTipText("");

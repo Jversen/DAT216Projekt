@@ -68,6 +68,8 @@ public class ProductCard extends javax.swing.JPanel {
 
         priceLabel.setText("Pris");
         jPanel1.add(priceLabel);
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
         jPanel1.add(jSpinner1);
 
         addProductButton.setText("Köp");

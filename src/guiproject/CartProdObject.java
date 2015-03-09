@@ -70,6 +70,8 @@ public class CartProdObject extends javax.swing.JPanel {
 
         jLabel3.setText("Antal:");
 
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
+
         jButton1.setBackground(new java.awt.Color(189, 31, 31));
         jButton1.setText("X");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -134,7 +136,7 @@ public class CartProdObject extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 83, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
