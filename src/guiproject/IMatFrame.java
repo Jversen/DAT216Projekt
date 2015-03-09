@@ -79,7 +79,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     public void updateCartPanel(List<CartProdObject> cpo){
         cartContentsPanel.removeAll();
         
-        GridLayout layout = new GridLayout(cpo.size(),100);
+        GridLayout layout = new GridLayout(cpo.size(),50, 5,5);
         cartContentsPanel.setLayout(layout);
          
         for (CartProdObject cp : cpo) {
@@ -101,8 +101,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private void displayGroceries(){
 
-        GridLayout layout = new GridLayout(gpCon.cpo.size(),1);
-        itemShower.setLayout(layout);
+        GridLayout layout1 = new GridLayout(gpCon.cpo.size(),3,5,5);
+        itemShower.setLayout(layout1);
         itemShower.removeAll();
         if (gpCon.products.isEmpty()){
             JLabel noSearchResults = new JLabel("Inga sökresultat på " + searchField.getText());
@@ -1242,6 +1242,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jPanel1.setBackground(new java.awt.Color(255, 248, 248));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
+        itemShower.setBackground(new java.awt.Color(255, 248, 248));
         itemShower.setLayout(new java.awt.GridLayout(1, 2));
         jPanel1.add(itemShower, new java.awt.GridBagConstraints());
 
