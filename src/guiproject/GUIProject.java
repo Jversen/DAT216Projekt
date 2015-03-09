@@ -20,6 +20,7 @@ public class GUIProject{
     ShoppingCart sc = iMDH.getShoppingCart();
     //IMatFrame app;
     
+    
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
     //public List <ShoppingItem> cartContents = new ArrayList<ShoppingItem>();
@@ -50,10 +51,8 @@ public class GUIProject{
         
            this.products = iMDH.findProducts(s);
            this.productCards.clear();
-//           this.productCards.removeAll(productCards);
            
            for (int i = 0; i<products.size(); i++){
-//               System.out.println("prodcardssize: " + imf.allProductCards.size());
             for (int j = 0; j<imf.allProductCards.size(); j++){
 //                System.out.println("imf allprdc j : " + imf.allProductCards.get(j).getProduct());
                    if (imf.allProductCards.get(j).getProduct() == products.get(i)){
@@ -80,7 +79,17 @@ public class GUIProject{
      * Work in progress... 
      */
     public void addToCart(Product p, int amount, IMatFrame imf){
+        sc.addProduct(p, amount);
+        for(ShoppingItem si: sc.getItems()){
+             cpo.add(new CartProdObject(si, imf));
+        }
+        imf.updateCartPanel(cpo);
         
+        /*
+        getItems() 
+          Returns a List with all ShoppingItems currently in the shoppingcart.
+        cartContentsPanel - panelen med cartprodobjects
+        */
 //            sc.addProduct(p, amount);
 //            //cpo.clear();
 //            ShoppingItem si = new ShoppingItem(p, amount);

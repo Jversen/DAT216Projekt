@@ -25,25 +25,17 @@ public class CartProdObject extends javax.swing.JPanel {
     
     public CartProdObject(ShoppingItem si, IMatFrame imf) {
         initComponents();
-        dataHandler = IMatDataHandler.getInstance();
+        this.dataHandler = IMatDataHandler.getInstance();
         this.si = si;
         this.imf = imf;
         nameLabel.setText(si.getProduct().getName());
         imageLabelCart.setIcon(dataHandler.getImageIcon(si.getProduct(), 50,50));
-       // imageLabel.setIcon(imf.gpCon.getImage50(si.getProduct()));
         jSpinner2.setValue(si.getAmount());
-        
-        double amount=0;
-        for(int i=0; i<si.getAmount(); i++){
-            amount= amount + si.getProduct().getPrice();
-        }
-        
-        priceLabel.setText(""+ amount);
         
     }
     @Override
     public String toString(){
-        return nameLabel.getText()+ ", amount:" + jSpinner2.getValue();
+        return nameLabel.getText()+ ", amount: " + jSpinner2.getValue();
     }
 
     /**

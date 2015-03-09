@@ -60,6 +60,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     public List<ProductCard> allProductCards = new ArrayList<ProductCard>();
     
+    
+    
     public void createAllProductCards(){
         gpCon.createAllProducts();
         for (int i = 0; i<gpCon.allProducts.size(); i++){
@@ -74,18 +76,19 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
     
     public void updateCartPanel(List<CartProdObject> cpolist){
-
         cartContentsPanel.removeAll();
-        System.out.println(cpolist.size());
+         GridLayout layout = new GridLayout(cpolist.size(),1);
+        cartContentsPanel.setLayout(layout);
+         
+       // System.out.println(cpolist.size());
        for (CartProdObject cpo : cpolist) {
-           System.out.println("hello");
-           System.out.println(cpo.toString());
+          // System.out.println("hello");
+          // System.out.println(cpo.toString());
            cartContentsPanel.add(cpo);
        }
+            revalidate();
+            repaint();
         System.out.println("updateCartPanel cpo: " + cpolist);
-
-                revalidate();
-                repaint();
                 System.out.print("Updating cart panel! "+ cartContentsPanel.getComponentCount() + "gpCon"+cpolist.size());
     }
     
@@ -119,19 +122,19 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         repaint();
     }
 
-    public void displayCart(List<CartProdObject> cpolist){
-        //GridLayout layout = new GridLayout(gpCon.products.size(),1);
-
-        //        cartContentsPanel.setLayout(layout);
-                cartContentsPanel.removeAll();
-//                for (int i = 0; i < gpCon.products.size(); i++) {
-                    for (int i = 0; i < cpolist.size(); i++) {
-
-//                    itemShower.add(gpCon.productCards.get(i));
-                    cartContentsPanel.add(cpolist.get(i));
-
-                }
-    }
+//    public void displayCart(List<CartProdObject> cpolist){
+//        //GridLayout layout = new GridLayout(gpCon.products.size(),1);
+//
+//        //        cartContentsPanel.setLayout(layout);
+//        //        cartContentsPanel.removeAll();
+////                for (int i = 0; i < gpCon.products.size(); i++) {
+//                    for (int i = 0; i < cpolist.size(); i++) {
+//
+////                    itemShower.add(gpCon.productCards.get(i));
+//                    cartContentsPanel.add(cpolist.get(i));
+//
+//                }
+//    }
 
     /**
      * Creates new form iMatFrame
@@ -878,7 +881,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpFavoritesLabel.setText("Favoriter");
-        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpFavoritesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpFavoritesLabelMouseClicked(evt);
@@ -888,7 +891,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpDealsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpDealsLabel.setText("Erbjudanden");
-        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpDealsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpDealsLabelMouseClicked(evt);
@@ -937,7 +940,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tpMyAccountLabelMouseClicked(evt);
@@ -945,7 +948,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
 
         accountImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiProfile.png"))); // NOI18N
-        accountImage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        accountImage.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         myShoppingBagsBtn.setText("Mina matkassar");
         myShoppingBagsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -2809,7 +2812,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
 
         cartContentsPanel.setBackground(new java.awt.Color(215, 173, 173));
-        cartContentsPanel.setLayout(new java.awt.GridLayout(1, 0));
         cartPanelScrollPane.setViewportView(cartContentsPanel);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -2831,6 +2833,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         cartImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shoppingCart.png"))); // NOI18N
         cartImage.setToolTipText("Kundvagn");
+        cartImage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cartImageMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cartPanelLayout = new javax.swing.GroupLayout(cartPanel);
         cartPanel.setLayout(cartPanelLayout);
@@ -3104,6 +3111,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void lpDealsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lpDealsLabelMouseClicked
         cl.show(featurePanel, "cardDeals");
     }//GEN-LAST:event_lpDealsLabelMouseClicked
+
+    private void cartImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartImageMouseClicked
+        gpCon.sc.clear();
+        gpCon.cpo.clear();
+        cartContentsPanel.removeAll();
+    }//GEN-LAST:event_cartImageMouseClicked
 
     /**
      * @param args the command line arguments
