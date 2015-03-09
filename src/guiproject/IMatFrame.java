@@ -17,6 +17,7 @@ import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 public class IMatFrame extends javax.swing.JFrame implements ActionListener {
@@ -184,40 +185,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         checkoutAcceptLabel.setForeground(Color.BLACK);
     }
     
-    // Sets the progress bar as visible in the purchase.
-    public void showProgressBar(){
-        checkoutShoppingCartLabel.show();
-        checkoutDeliveryLabel.show();
-        checkoutPaymentLabel.show();
-        checkoutAcceptLabel.show();
+    public void showShoppingCartCheckout(){
         
-        arrow1Label.show();
-        arrow2Label.show();
-        arrow3Label.show();
-    }
-    
-    // Sets the progress bar as invisible in the purchase.
-    public void hideProgressBar(){
-        checkoutShoppingCartLabel.hide();
-        checkoutDeliveryLabel.hide();
-        checkoutPaymentLabel.hide();
-        checkoutAcceptLabel.hide();
+        List<ShoppingItem> shoppingCart = gpCon.sc.getItems();
         
-        arrow1Label.hide();
-        arrow2Label.hide();
-        arrow3Label.hide();
-    }
-    
-    // Sets the recommended products panel as visible in the purchase.
-    public void showRecommendedProducts(){
-        recommendedProductsLabel.show();
-        recommendedProductsScrollPane.show();
-    }
-    
-    // Sets the recommended products panel as invisible in the purchase.
-    public void hideRecommendedProducts(){
-        recommendedProductsLabel.hide();
-        recommendedProductsScrollPane.hide();
+        for(int i=0; i<shoppingCart.size(); i++){
+            productScrollPane.add(new CheckoutProductCard(shoppingCart.get(i), this));
+        }
+        
+        revalidate();
+        repaint();
     }
     
     public void setValuesMyAccount(){
@@ -1979,6 +1956,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         featurePanel.add(myAccountPanel, "myAccount");
 
         checkoutPanel.setBackground(new java.awt.Color(255, 255, 255));
+        checkoutPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         progressPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2055,6 +2033,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap())
         );
 
+        checkoutPanel.add(progressPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 19, -1, -1));
+
         recommendedProductsPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         recommendedProductsLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
@@ -2088,6 +2068,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        checkoutPanel.add(recommendedProductsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(722, 19, -1, -1));
 
         productPanel.setBackground(new java.awt.Color(204, 204, 255));
         productPanel.setLayout(new java.awt.CardLayout());
@@ -2841,52 +2823,28 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         endOfCheckoutPanelLayout.setHorizontalGroup(
             endOfCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endOfCheckoutPanelLayout.createSequentialGroup()
+                .addContainerGap(253, Short.MAX_VALUE)
                 .addGroup(endOfCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(endOfCheckoutPanelLayout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(thanksLabel))
-                    .addGroup(endOfCheckoutPanelLayout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(backToStoreButton)))
-                .addContainerGap(210, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, endOfCheckoutPanelLayout.createSequentialGroup()
+                        .addComponent(thanksLabel)
+                        .addGap(121, 121, 121))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, endOfCheckoutPanelLayout.createSequentialGroup()
+                        .addComponent(backToStoreButton)
+                        .addGap(217, 217, 217))))
         );
         endOfCheckoutPanelLayout.setVerticalGroup(
             endOfCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endOfCheckoutPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(37, 37, 37)
                 .addComponent(thanksLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
+                .addGap(66, 66, 66)
                 .addComponent(backToStoreButton)
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(461, Short.MAX_VALUE))
         );
 
         productPanel.add(endOfCheckoutPanel, "end");
 
-        javax.swing.GroupLayout checkoutPanelLayout = new javax.swing.GroupLayout(checkoutPanel);
-        checkoutPanel.setLayout(checkoutPanelLayout);
-        checkoutPanelLayout.setHorizontalGroup(
-            checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkoutPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(progressPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(productPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        checkoutPanelLayout.setVerticalGroup(
-            checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, checkoutPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(checkoutPanelLayout.createSequentialGroup()
-                        .addComponent(progressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(productPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
-        );
+        checkoutPanel.add(productPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 77, -1, -1));
 
         featurePanel.add(checkoutPanel, "checkout");
 
@@ -3079,11 +3037,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_deliveryCheckBox1ActionPerformed
 
     private void nextStepToPersonalInfo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStepToPersonalInfo
-        //recommendedProductsPanel.setVisible(false);
+        recommendedProductsPanel.setVisible(false);
         setDeliveryInfoCheckout();
         changeActivePurchaseStep("personalInfoDelivery", "shoppingCart");
         cl2.show(productPanel, "personalInfoDelivery");
-        hideRecommendedProducts();
     }//GEN-LAST:event_nextStepToPersonalInfo
 
     private void nextStepToPayment(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStepToPayment
@@ -3094,12 +3051,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void goToCashierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToCashierBtnActionPerformed
         // Go to the checkout.
-        
         resetActivePurchaseStep();
+        showShoppingCartCheckout();
         
         cl2.show(productPanel, "shoppingCart");
         cl.show(featurePanel, "checkout");
-        
+
         progressPanel.setVisible(true);
         recommendedProductsPanel.setVisible(true);
     }//GEN-LAST:event_goToCashierBtnActionPerformed
