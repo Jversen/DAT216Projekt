@@ -38,6 +38,10 @@ public class UserPanel extends javax.swing.JPanel {
             titleNameLabel.setText("");
         }
         
+    }
+    
+    /*
+    public void setValues(){
         // Sets values for text fields in "Personal information"
         firstNameTextField.setText(customer.getFirstName());
         lastNameTextField.setText(customer.getLastName());
@@ -58,8 +62,8 @@ public class UserPanel extends javax.swing.JPanel {
         cardHolderTextField.setText(creditCard.getHoldersName());
         
         // Sets values for combo- and checkboxes in "Delivery"
-        
-    }
+        // Not implemented though
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.

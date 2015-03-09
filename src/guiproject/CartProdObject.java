@@ -25,25 +25,17 @@ public class CartProdObject extends javax.swing.JPanel {
     
     public CartProdObject(ShoppingItem si, IMatFrame imf) {
         initComponents();
-        dataHandler = IMatDataHandler.getInstance();
+        this.dataHandler = IMatDataHandler.getInstance();
         this.si = si;
         this.imf = imf;
         nameLabel.setText(si.getProduct().getName());
         imageLabelCart.setIcon(dataHandler.getImageIcon(si.getProduct(), 50,50));
-       // imageLabel.setIcon(imf.gpCon.getImage50(si.getProduct()));
         jSpinner2.setValue(si.getAmount());
-        
-        double amount=0;
-        for(int i=0; i<si.getAmount(); i++){
-            amount= amount + si.getProduct().getPrice();
-        }
-        
-        priceLabel.setText(""+ amount);
         
     }
     @Override
     public String toString(){
-        return nameLabel.getText()+ ", amount:" + jSpinner2.getValue();
+        return nameLabel.getText()+ ", amount: " + jSpinner2.getValue();
     }
 
     /**
@@ -55,9 +47,6 @@ public class CartProdObject extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSpinner1 = new javax.swing.JSpinner();
-        jLabel2 = new javax.swing.JLabel();
-        imageLabel = new javax.swing.JLabel();
         imagePanel = new javax.swing.JPanel();
         imageLabelCart = new javax.swing.JLabel();
         editPanel = new javax.swing.JPanel();
@@ -67,10 +56,6 @@ public class CartProdObject extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
-
-        jLabel2.setText("jLabel2");
-
-        imageLabel.setText("jLabel1");
 
         setBackground(new java.awt.Color(255, 248, 248));
         setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(196, 43, 43), new java.awt.Color(156, 25, 25)));
@@ -85,8 +70,15 @@ public class CartProdObject extends javax.swing.JPanel {
 
         jLabel3.setText("Antal:");
 
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
+
         jButton1.setBackground(new java.awt.Color(189, 31, 31));
         jButton1.setText("X");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -144,7 +136,7 @@ public class CartProdObject extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 55, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -158,7 +150,7 @@ public class CartProdObject extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                        .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -167,21 +159,23 @@ public class CartProdObject extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //ta bort från listan och förnya panelen
-        // TODO add your handling code here:
+        imf.gpCon.sc.removeItem(si);
+        imf.gpCon.addToCart(null, 0, imf);
+        //imf.updateCartPanel(imf.gpCon.cpo);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        
+    }//GEN-LAST:event_jButton1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel editPanel;
-    private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel imageLabelCart;
     private javax.swing.JPanel imagePanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel priceLabel;

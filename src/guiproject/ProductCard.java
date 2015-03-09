@@ -68,6 +68,8 @@ public class ProductCard extends javax.swing.JPanel {
 
         priceLabel.setText("Pris");
         jPanel1.add(priceLabel);
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
         jPanel1.add(jSpinner1);
 
         addProductButton.setText("Köp");
@@ -94,7 +96,7 @@ public class ProductCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
-        gpCon.addToCart(prod, this.getSpinnerValue(), imf);
+        gpCon.addToCart(this.prod, this.getSpinnerValue(), imf);
     }//GEN-LAST:event_addProductButtonActionPerformed
 
 
