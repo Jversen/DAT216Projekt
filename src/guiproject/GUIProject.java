@@ -60,8 +60,9 @@ public class GUIProject{
                        
 //                       System.out.println("productcards: " + imf.allProductCards.get(j).getProduct().getName());
                 }
+                               
             }
-    }
+    }System.out.print("This is cpo size: "+cpo.size() +". This is the shoppingcart: "+ sc.getItems().size());
     }
 //            this.products = iMDH.findProducts(s);
 //           this.productCards.clear();
@@ -83,28 +84,7 @@ public class GUIProject{
         for(ShoppingItem si: sc.getItems()){
              cpo.add(new CartProdObject(si, imf));
         }
-        imf.updateCartPanel(cpo);
-        
-        /*
-        getItems() 
-          Returns a List with all ShoppingItems currently in the shoppingcart.
-        cartContentsPanel - panelen med cartprodobjects
-        */
-//            sc.addProduct(p, amount);
-//            //cpo.clear();
-//            ShoppingItem si = new ShoppingItem(p, amount);
-////            cartContents.add(si);
-////            for (int i = 0; i < cartContents.size(); i++){
-////                cpo.add(new CartProdObject(cartContents.get(i), imf));
-////            }
-//            for(int i=0; i<sc.getItems().size(); i++){
-//            }
-//        
-//            System.out.println("addToCart cpo: " + cpo);
-//            System.out.println("cpo size = " + cpo.size());
-//            imf.updateCartPanel(cpo);
-//            imf.displayCart(cpo);
-           
+        imf.updateCartPanel(cpo);    
     }
     
     public void listCatProds(ArrayList<String> s, IMatFrame imf){

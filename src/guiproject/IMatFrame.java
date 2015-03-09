@@ -9,6 +9,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import javax.media.j3d.Sound;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -75,21 +76,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         displayGroceries();
     }
     
-    public void updateCartPanel(List<CartProdObject> cpolist){
+    public void updateCartPanel(List<CartProdObject> cpo){
         cartContentsPanel.removeAll();
-         GridLayout layout = new GridLayout(cpolist.size(),1);
+        
+        GridLayout layout = new GridLayout(cpo.size(),100);
         cartContentsPanel.setLayout(layout);
          
-       // System.out.println(cpolist.size());
-       for (CartProdObject cpo : cpolist) {
-          // System.out.println("hello");
-          // System.out.println(cpo.toString());
-           cartContentsPanel.add(cpo);
+        for (CartProdObject cp : cpo) {
+            cartContentsPanel.add(cp);
        }
             revalidate();
             repaint();
-        System.out.println("updateCartPanel cpo: " + cpolist);
-                System.out.print("Updating cart panel! "+ cartContentsPanel.getComponentCount() + "gpCon"+cpolist.size());
     }
     
     private void redrawCategories(){
@@ -104,16 +101,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     private void displayGroceries(){
 
-        GridLayout layout = new GridLayout(gpCon.products.size(),1);
-
+        GridLayout layout = new GridLayout(gpCon.cpo.size(),1);
         itemShower.setLayout(layout);
         itemShower.removeAll();
-        if (gpCon.products.size()==0){
+        if (gpCon.products.isEmpty()){
             JLabel noSearchResults = new JLabel("Inga sökresultat på " + searchField.getText());
             itemShower.add(noSearchResults);
         }
-        for (int i = 0; i < gpCon.productCards.size(); i++) {
-            itemShower.add(gpCon.productCards.get(i));
+        for (ProductCard productCard : gpCon.productCards) {
+            itemShower.add(productCard);
 //            System.out.println("produkt: " + gpCon.productCards.get(i).getName());
         }
 
@@ -3116,6 +3112,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         gpCon.sc.clear();
         gpCon.cpo.clear();
         cartContentsPanel.removeAll();
+        gpCon.iMDH.shutDown();
     }//GEN-LAST:event_cartImageMouseClicked
 
     /**

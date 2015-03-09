@@ -94,7 +94,7 @@ public class ProductCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
-        gpCon.addToCart(prod, this.getSpinnerValue(), imf);
+        gpCon.addToCart(this.prod, this.getSpinnerValue(), imf);
     }//GEN-LAST:event_addProductButtonActionPerformed
 
 
