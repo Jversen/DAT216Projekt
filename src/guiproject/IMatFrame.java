@@ -199,10 +199,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cardNumberTextField.setText(creditCard.getCardNumber());
         validMonthComboBox.setSelectedIndex(creditCard.getValidMonth());
         
-        if (iMDH.isFirstRun()){
-            creditCard.setValidYear(1);
+//        if (iMDH.isFirstRun()){
+//            creditCard.setValidYear(1);
+//        }
+        if (creditCard.getValidYear() < 2015){
+            creditCard.setValidYear(2015);
+        } else if (creditCard.getValidYear() > 2020){
+            creditCard.setValidYear(2020);
         }
-        validYearComboBox.setSelectedIndex(creditCard.getValidYear());
+        
+        validYearComboBox.setSelectedIndex(creditCard.getValidYear() - 2015);
         verificationCodeTextField.setText(creditCard.getVerificationCode() + "");
         cardHolderTextField.setText(creditCard.getHoldersName());
         
@@ -3016,7 +3022,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_verificationCodeTextFieldVerificationCodeUpdate
 
     private void validYearComboBoxValidYearUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validYearComboBoxValidYearUpdate
-        gpCon.iMDH.getCreditCard().setValidYear(validYearComboBox.getSelectedIndex());
+        gpCon.iMDH.getCreditCard().setValidYear(validYearComboBox.getSelectedIndex()+ 2015);
     }//GEN-LAST:event_validYearComboBoxValidYearUpdate
 
     private void validMonthComboBoxValidMonthUpdate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validMonthComboBoxValidMonthUpdate
