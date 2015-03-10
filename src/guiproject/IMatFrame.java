@@ -82,7 +82,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         }
         
     }
-    
+    private void displayHistory(){
+        GridLayout layout = new GridLayout(gpCon.cpo.size(),1);
+        historyItemShower.setLayout(layout);
+        historyItemShower.removeAll();
+
+        for (HistoryObjectCard hOC : gpCon.historyCards) {
+            historyItemShower.add(hOC);
+//            System.out.println("produkt: " + gpCon.productCards.get(i).getName());
+        }
+
+        cl.show(featurePanel, "historyViewPanel");
+        revalidate();
+        repaint();
+    }
+
     private void displayGroceries(){
 
         GridLayout layout1 = new GridLayout(gpCon.cpo.size(),3,5,5);
@@ -649,6 +663,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         fpDealsLabel = new javax.swing.JLabel();
         historyViewPanel = new javax.swing.JPanel();
         fpHistoryLabel = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        historyItemShower = new javax.swing.JPanel();
         categoryFeaturePanel = new javax.swing.JPanel();
         categoryFeatureLabel = new javax.swing.JLabel();
         searchResultPanel = new javax.swing.JPanel();
@@ -1179,6 +1196,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         fpHistoryLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         fpHistoryLabel.setText("Historik");
 
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jPanel2.setBackground(new java.awt.Color(255, 248, 248));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        historyItemShower.setLayout(new java.awt.GridLayout(1, 2));
+        jPanel2.add(historyItemShower, new java.awt.GridBagConstraints());
+
+        jScrollPane3.setViewportView(jPanel2);
+
         javax.swing.GroupLayout historyViewPanelLayout = new javax.swing.GroupLayout(historyViewPanel);
         historyViewPanel.setLayout(historyViewPanelLayout);
         historyViewPanelLayout.setHorizontalGroup(
@@ -1186,12 +1213,22 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
                 .addGap(0, 770, Short.MAX_VALUE))
+            .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(historyViewPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         historyViewPanelLayout.setVerticalGroup(
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
                 .addContainerGap(776, Short.MAX_VALUE))
+            .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(historyViewPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         featurePanel.add(historyViewPanel, "cardHistory");
@@ -2867,8 +2904,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
         cl.show(featurePanel, "cardHistory");
         gpCon.showHistory(this);
-        displayGroceries();
-        cl.show(featurePanel, "searchResultPanel");
+        displayHistory();
+//        cl.show(featurePanel, "searchResultPanel");
         revalidate();
         repaint();
     }//GEN-LAST:event_historyBtnActionPerformed
@@ -3224,6 +3261,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel fpRecipesLabel;
     private javax.swing.JButton goToCashierBtn;
     private javax.swing.JButton historyBtn;
+    private javax.swing.JPanel historyItemShower;
     private javax.swing.JPanel historyViewPanel;
     private javax.swing.JLabel iMatLabel;
     private javax.swing.JPanel itemShower;
@@ -3231,8 +3269,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel krLabel;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel lastNameLabel1;
