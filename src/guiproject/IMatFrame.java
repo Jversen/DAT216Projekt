@@ -9,7 +9,6 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-//import javax.media.j3d.Sound;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -21,19 +20,7 @@ import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 public class IMatFrame extends javax.swing.JFrame implements ActionListener {
-
-
-    /**
-     * prefix för objekt:
-     * lp = leftPanel
-     * tp = topPanel
-     * fp = featurePanel (mittenpanel)
-     *
-     * ex: lpRecipesLabel = label "Recept" i vänsterpanelen
-     */
-
-    /** Skapar controller från GUIProject.java
-     */
+    
     GUIProject gpCon;
     private CardLayout cl;
     private CardLayout cl2;
@@ -47,14 +34,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     // Icons for the steps in the purchase.
     private final ImageIcon purchaseStep = new ImageIcon(getClass().getResource("/purchaseStep.png"));
     private final ImageIcon purchaseStepActive = new ImageIcon(getClass().getResource("/purchaseStepActive.png"));
-    
-    /**
-     * Skapar arraylist för matkategorierna och deras underkategorier.
-     */
     private ArrayList<JLabel> allCategoryArrayList = new ArrayList<JLabel>();
-
     private ArrayList<JLabel> headCategoryArrayList = new ArrayList<JLabel>();
-
     private ArrayList<JLabel> breadCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> drinkCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> fishCategoryArrayList = new ArrayList<JLabel>();
@@ -63,13 +44,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private ArrayList<JLabel> meatCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> dairiesCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<JLabel> sweetsCategoryArrayList = new ArrayList<JLabel>();
-
     private ArrayList<JLabel> allSubCategoryArrayList = new ArrayList<JLabel>();
     private ArrayList<String> categoryStrings = new ArrayList<String>();
-    
     public List<ProductCard> allProductCards = new ArrayList<ProductCard>();
-    
-    
     
     public void createAllProductCards(){
         gpCon.createAllProducts();
@@ -118,7 +95,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         for (ProductCard productCard : gpCon.productCards) {
             itemShower.add(productCard);
-//            System.out.println("produkt: " + gpCon.productCards.get(i).getName());
         }
 
         cl.show(featurePanel, "searchResultPanel");
@@ -133,7 +109,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 }
     }
     
-    // Changes the active/current purchase step.
     public void changeActivePurchaseStep(String newCard, String oldCard){
         
         // Shows the new card as active in the progress bar.
@@ -242,26 +217,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         checkoutVerificationCodeTF.setText(creditCard.getVerificationCode() + "");
         checkoutCardHolderTF.setText(creditCard.getHoldersName());
     }
-    
-    
-    // Vad är detta? / Jenny
-//    public void displayCart(List<CartProdObject> cpolist){
-//        //GridLayout layout = new GridLayout(gpCon.products.size(),1);
-//
-//        //        cartContentsPanel.setLayout(layout);
-//        //        cartContentsPanel.removeAll();
-////                for (int i = 0; i < gpCon.products.size(); i++) {
-//                    for (int i = 0; i < cpolist.size(); i++) {
-//
-////                    itemShower.add(gpCon.productCards.get(i));
-//                    cartContentsPanel.add(cpolist.get(i));
-//
-//                }
-//    }
-
-    /**
-     * Creates new form iMatFrame
-     */
 
     public IMatFrame() {
         initComponents();
@@ -272,48 +227,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
        
         deliveryPanel.add(addressPanel1);
         createAllProductCards();
-        /**
-         * Skapar label för varje matkategori.
-         * Skapa eventuellt JButtons istället för JLabels senare.
-         */
-
-        /**Kategorier och underkategorier:
-         *
-         * Frukt och grönt
-         *  -Baljväxter
-         *  -Bär
-         *  -Citrusfrukter
-         *  -Exotiska frukter
-         *  -Grönsaksfrukter
-         *  -Sallad
-         *  -Meloner
-         *  -Nötter och frön?
-         *  -Frukter
-         *  -Rotfrukter
-         *
-         * Bröd och torrvaror
-         *  -Bröd
-         *  -Mjöl, socker och salt
-         *  -Pasta
-         *  -Potatis och ris
-         *
-         * Kryddor
-         *  -Örter
-         *
-         * Drycker
-         *  -Varma drycker
-         *  -Kalla drycker
-         *
-         * Mejeriprodukter
-         *
-         * Kött
-         *
-         * Fisk
-         *
-         * Sötsaker
-         */
-
-
 
         JLabel headCategoryBread = new JLabel("Bröd och torrvaror");
         headCategoryArrayList.add(headCategoryBread);
@@ -695,12 +608,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         revalidate();
         
     }                
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1316,11 +1223,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 248));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         itemShower.setBackground(new java.awt.Color(255, 248, 248));
         itemShower.setLayout(new java.awt.GridLayout(1, 2));
-        jPanel1.add(itemShower, new java.awt.GridBagConstraints());
+        jPanel1.add(itemShower);
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -2970,10 +2876,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchFieldActionPerformed
-/**
- *
- * Flytta detta till en egen metod, kalla från gpcon.
- */
+
     private void updCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updCartBtnActionPerformed
         
         cartContentsPanel.removeAll();
