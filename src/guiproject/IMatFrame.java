@@ -83,15 +83,32 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         
     }
     private void displayHistory(){
-        GridLayout layout = new GridLayout(gpCon.cpo.size(),1);
+        System.out.println("gpcon.historyCards.size()" + gpCon.historyCards.size());
+        GridLayout layout = new GridLayout(gpCon.historyCards.size(),1);
         historyItemShower.setLayout(layout);
         historyItemShower.removeAll();
-
+        
         for (HistoryObjectCard hOC : gpCon.historyCards) {
             historyItemShower.add(hOC);
 //            System.out.println("produkt: " + gpCon.productCards.get(i).getName());
         }
-
+        
+        
+        
+//        orderHistoryList.setModel(new javax.swing.AbstractListModel() {
+//            String[] strings;
+//            
+//            for(int i = 0; i<gpCon.iMDH.getOrders().size(); i++){
+//            
+//        }
+////            System.out.println("hej");
+////            strings.add(gpCon.historyCards.get(i).get{ "test", "listSak2" };
+//        
+//            public int getSize() { return strings.length; }
+//            public Object getElementAt(int i) { return strings[i]; }
+//        });
+        
+//        orderHistoryList.
         cl.show(featurePanel, "historyViewPanel");
         revalidate();
         repaint();
@@ -202,6 +219,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 //        if (iMDH.isFirstRun()){
 //            creditCard.setValidYear(1);
 //        }
+        
         if (creditCard.getValidYear() < 2015){
             creditCard.setValidYear(2015);
         } else if (creditCard.getValidYear() > 2020){
@@ -230,10 +248,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         //checkoutCardTypeCB
         checkoutValidMonthCB.setSelectedIndex(creditCard.getValidMonth());
         
-        if (iMDH.isFirstRun()){
-            creditCard.setValidYear(1);
+//        if (iMDH.isFirstRun()){
+//            creditCard.setValidYear(1);
+//        }
+        
+        if (creditCard.getValidYear() < 2015){
+            creditCard.setValidYear(2015);
+        } else if (creditCard.getValidYear() > 2020){
+            creditCard.setValidYear(2020);
         }
-        checkoutValidYearCB.setSelectedIndex(creditCard.getValidYear());
+        
+        checkoutValidYearCB.setSelectedIndex(creditCard.getValidYear() - 2015);
         checkoutVerificationCodeTF.setText(creditCard.getVerificationCode() + "");
         checkoutCardHolderTF.setText(creditCard.getHoldersName());
     }
@@ -672,6 +697,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         historyItemShower = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        orderHistoryList = new javax.swing.JList();
         categoryFeaturePanel = new javax.swing.JPanel();
         categoryFeatureLabel = new javax.swing.JLabel();
         searchResultPanel = new javax.swing.JPanel();
@@ -882,7 +909,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpFavoritesLabel.setText("Favoriter");
-        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpFavoritesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpFavoritesLabelMouseClicked(evt);
@@ -892,7 +919,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         lpDealsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpDealsLabel.setText("Erbjudanden");
-        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpDealsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpDealsLabelMouseClicked(evt);
@@ -942,7 +969,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpMyAccountLabel.setForeground(new java.awt.Color(255, 255, 255));
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tpMyAccountLabelMouseClicked(evt);
@@ -1114,7 +1141,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(dealsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(373, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
 
         featurePanel.add(startViewPanel, "cardStart");
@@ -1134,7 +1161,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myShoppingBagsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myShoppingBagsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyShoppingBagsLabel)
-                .addGap(0, 776, Short.MAX_VALUE))
+                .addGap(0, 798, Short.MAX_VALUE))
         );
 
         featurePanel.add(myShoppingBagsViewPanel, "cardBags");
@@ -1154,7 +1181,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myFavoritesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myFavoritesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpMyFavoritesLabel)
-                .addGap(0, 776, Short.MAX_VALUE))
+                .addGap(0, 798, Short.MAX_VALUE))
         );
 
         featurePanel.add(myFavoritesViewPanel, "cardFavorites");
@@ -1174,7 +1201,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             recipesViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipesViewPanelLayout.createSequentialGroup()
                 .addComponent(fpRecipesLabel)
-                .addGap(0, 776, Short.MAX_VALUE))
+                .addGap(0, 798, Short.MAX_VALUE))
         );
 
         featurePanel.add(recipesViewPanel, "cardRecipes");
@@ -1194,7 +1221,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             dealsViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dealsViewPanelLayout.createSequentialGroup()
                 .addComponent(fpDealsLabel)
-                .addGap(0, 776, Short.MAX_VALUE))
+                .addGap(0, 798, Short.MAX_VALUE))
         );
 
         featurePanel.add(dealsViewPanel, "cardDeals");
@@ -1205,12 +1232,33 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel2.setBackground(new java.awt.Color(255, 248, 248));
-        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         historyItemShower.setLayout(new java.awt.GridLayout(1, 2));
-        jPanel2.add(historyItemShower, new java.awt.GridBagConstraints());
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(historyItemShower, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(127, 127, 127))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(historyItemShower, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(803, 803, 803))
+        );
 
         jScrollPane3.setViewportView(jPanel2);
+
+        orderHistoryList.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "test", "listSak2" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        orderHistoryList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane4.setViewportView(orderHistoryList);
 
         javax.swing.GroupLayout historyViewPanelLayout = new javax.swing.GroupLayout(historyViewPanel);
         historyViewPanel.setLayout(historyViewPanelLayout);
@@ -1219,22 +1267,28 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
                 .addGap(0, 770, Short.MAX_VALUE))
+            .addGroup(historyViewPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(historyViewPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyViewPanelLayout.createSequentialGroup()
+                    .addContainerGap(97, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         historyViewPanelLayout.setVerticalGroup(
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addComponent(fpHistoryLabel)
-                .addContainerGap(776, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(174, Short.MAX_VALUE))
             .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(historyViewPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyViewPanelLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         featurePanel.add(historyViewPanel, "cardHistory");
@@ -1255,7 +1309,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(categoryFeaturePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(categoryFeatureLabel)
-                .addContainerGap(780, Short.MAX_VALUE))
+                .addContainerGap(802, Short.MAX_VALUE))
         );
 
         featurePanel.add(categoryFeaturePanel, "categoryFeaturePanel");
@@ -1837,7 +1891,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             myAccountContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(myAccountContentPanelLayout.createSequentialGroup()
                 .addComponent(paymentInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 137, Short.MAX_VALUE))
+                .addGap(0, 159, Short.MAX_VALUE))
             .addGroup(myAccountContentPanelLayout.createSequentialGroup()
                 .addComponent(personalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3279,6 +3333,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel krLabel;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel lastNameLabel1;
@@ -3299,6 +3354,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton nextStepButtonToPayment;
     private javax.swing.JButton nextStepButtonToPersonalInfo;
     private javax.swing.JSeparator optCatSeparator;
+    private javax.swing.JList orderHistoryList;
     private javax.swing.JLabel paymentInfoLabel;
     private javax.swing.JLabel paymentInfoLabel1;
     private javax.swing.JPanel paymentInfoPanel;
