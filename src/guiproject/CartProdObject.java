@@ -29,6 +29,15 @@ public class CartProdObject extends javax.swing.JPanel {
     public String toString(){
         return nameLabel.getText()+ ", amount: " + jSpinner2.getValue();
     }
+    
+    
+//    public int getSpinnerValue(){
+//        int i = (int) jSpinner2.getValue();
+//        return i;
+//    }
+    public ShoppingItem getShoppingItem(){
+        return si;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -58,6 +67,11 @@ public class CartProdObject extends javax.swing.JPanel {
         jLabel3.setText("Antal:");
 
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
+        jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner2StateChanged(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(189, 31, 31));
         jButton1.setText("Ta bort");
@@ -123,7 +137,7 @@ public class CartProdObject extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 86, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -148,12 +162,17 @@ public class CartProdObject extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         imf.gpCon.sc.removeItem(si);
         imf.gpCon.addToCart(null, 0, imf);
+
         //imf.updateCartPanel(imf.gpCon.cpo);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
+
+    }//GEN-LAST:event_jSpinner2StateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

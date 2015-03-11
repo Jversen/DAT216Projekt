@@ -48,9 +48,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private ArrayList<String> categoryStrings = new ArrayList<String>();
     public List<ProductCard> allProductCards = new ArrayList<ProductCard>();
     
-    public void createAllProductCards(){
+    public final void createAllProductCards(){
         gpCon.createAllProducts();
-        for (int i = 0; i<gpCon.allProducts.size(); i++){
+        for(int i = 0; i<gpCon.allProducts.size(); i++){
             allProductCards.add(new ProductCard(gpCon.allProducts.get(i), this));
         }
     }
@@ -58,19 +58,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     public void searchFieldDynSearch(){
     gpCon.doSearch(searchField.getText(), this);
         displayGroceries();
-    }
-    
-    public void updateCartPanel(List<CartProdObject> cpo){
-        cartContentsPanel.removeAll();
-        
-        GridLayout layout = new GridLayout(cpo.size(),50, 5,5);
-        cartContentsPanel.setLayout(layout);
-         
-        for (CartProdObject cp : cpo) {
-            cartContentsPanel.add(cp);
-       }
-            revalidate();
-            repaint();
     }
     
     private void redrawCategories(){
@@ -82,6 +69,32 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         }
         
     }
+//    public void updateCartProd(List<CartProdObject> cpo){
+//        System.out.print("updateCartProd :" + cpo.size());
+//        for(ShoppingItem sc: gpCon.sc.getItems()){
+//            for(CartProdObject cp: cpo){
+//                sc.setAmount(cp.getSpinnerValue());
+//            }
+//        }
+//        
+//    }
+    
+    // DISPLAY METHODS ---------------------------------------------//
+    
+        public void displayCartPanel(List<CartProdObject> cpo){
+        //lägger till Produkter i kassa-panelen  
+        cartContentsPanel.removeAll();
+        
+        GridLayout layout = new GridLayout(cpo.size(),50, 5,5);
+        cartContentsPanel.setLayout(layout);
+         
+        for (CartProdObject cp : cpo) {
+            cartContentsPanel.add(cp);
+        }
+        revalidate();
+        repaint();
+    }
+        
     private void displayHistory(){
         System.out.println("gpcon.historyCards.size()" + gpCon.historyCards.size());
         GridLayout layout = new GridLayout(gpCon.historyCards.size(),1);
@@ -90,55 +103,56 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         
         for (HistoryObjectCard hOC : gpCon.historyCards) {
             historyItemShower.add(hOC);
-//            System.out.println("produkt: " + gpCon.productCards.get(i).getName());
         }
-        
-        
-        
-//        orderHistoryList.setModel(new javax.swing.AbstractListModel() {
-//            String[] strings;
-//            
-//            for(int i = 0; i<gpCon.iMDH.getOrders().size(); i++){
-//            
-//        }
-////            System.out.println("hej");
-////            strings.add(gpCon.historyCards.get(i).get{ "test", "listSak2" };
-//        
-//            public int getSize() { return strings.length; }
-//            public Object getElementAt(int i) { return strings[i]; }
-//        });
-        
-//        orderHistoryList.
         cl.show(featurePanel, "historyViewPanel");
         revalidate();
         repaint();
     }
 
     private void displayGroceries(){
-
-        GridLayout layout1 = new GridLayout(gpCon.cpo.size(),3,5,5);
+        // lägger till produkter i den allmäna panelen
+        GridLayout layout1 = new GridLayout(0,3,5,5);
         itemShower.setLayout(layout1);
+        
         itemShower.removeAll();
         if (gpCon.products.isEmpty()){
             JLabel noSearchResults = new JLabel("Inga sökresultat på " + searchField.getText());
             itemShower.add(noSearchResults);
-        }
-
-        for (ProductCard productCard : gpCon.productCards) {
+        }else{
+            for (ProductCard productCard : gpCon.productCards) {
             itemShower.add(productCard);
+            }
         }
 
         cl.show(featurePanel, "searchResultPanel");
         revalidate();
         repaint();
     }
-
-    public void displayCart(List<CartProdObject> cpolist){
-                cartContentsPanel.removeAll();
-                for (int i = 0; i < cpolist.size(); i++) {
-                    cartContentsPanel.add(cpolist.get(i));
-                }
+    
+    public void displayCheckoutCart(ArrayList<CheckoutProductCard> cpoc){
+        //lägger till produkter i checkout-panelen
+        GridLayout layout2 = new GridLayout(cpoc.size(),1,5,5);
+        prodPanel.setLayout(layout2);
+        
+        prodPanel.removeAll();
+        if(cpoc.isEmpty()){
+            JLabel noSearchResults = new JLabel("Varukorgen är tom");
+            prodPanel.add(noSearchResults);
+            System.out.print("displayCheckoutCart empty!");
+        }else{
+            for(CheckoutProductCard cp: cpoc) {
+            cp.setSize(40, prodPanel.getWidth());
+            prodPanel.add(cp);  
+                System.out.println(cp.getHeight());
+                System.out.println(cp.getWidth());
+            }
+        }
+        cl2.show(productPanel, "shoppingCartPanel");
+        revalidate();
+        repaint();
     }
+    
+    // END DISPLAY METHODS --------------------------------------------//
     
     public void changeActivePurchaseStep(String newCard, String oldCard){
         
@@ -191,18 +205,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         checkoutAcceptLabel.setForeground(Color.BLACK);
     }
     
-    public void showShoppingCartCheckout(){
-        
-        List<ShoppingItem> shoppingCart = gpCon.sc.getItems();
-        
-        for(int i=0; i<shoppingCart.size(); i++){
-            productScrollPane.add(new CheckoutProductCard(shoppingCart.get(i), this));
-        }
-        
-        revalidate();
-        repaint();
-    }
-    
     public void setValuesMyAccount(){
         // Sets values for text fields in "Personal information"
         firstNameTextField.setText(customer.getFirstName());
@@ -215,10 +217,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         // Sets values for text fields and comboboxes in "Payment"
         cardNumberTextField.setText(creditCard.getCardNumber());
         validMonthComboBox.setSelectedIndex(creditCard.getValidMonth());
-        
-//        if (iMDH.isFirstRun()){
-//            creditCard.setValidYear(1);
-//        }
         
         if (creditCard.getValidYear() < 2015){
             creditCard.setValidYear(2015);
@@ -286,14 +284,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         breadCategoryArrayList.add(subCategoryPastaLabel);
         breadCategoryArrayList.add(subCategoryPotatoRiceLabel);
 
-        for (int i = 0; i<breadCategoryArrayList.size(); i++){
+        for(int i = 0; i<breadCategoryArrayList.size(); i++){
             breadCategoryArrayList.get(i).setBackground(Color.white);
             breadCategoryArrayList.get(i).setOpaque(true);
             breadCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 saveButtonSaveButtonHover(evt);
@@ -310,7 +307,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         drinkCategoryArrayList.add(subCategoryHotDrinksLabel);
         drinkCategoryArrayList.add(subCategoryColdDrinksLabel);
 
-        for (int i = 0; i<drinkCategoryArrayList.size(); i++){
+        for(int i = 0; i<drinkCategoryArrayList.size(); i++){
             drinkCategoryArrayList.get(i).setBackground(Color.white);
             drinkCategoryArrayList.get(i).setOpaque(true);
         }
@@ -322,7 +319,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         fishCategoryArrayList.add(subCategoryFishLabel);
 
-        for (int i = 0; i<fishCategoryArrayList.size(); i++){
+        for(int i = 0; i<fishCategoryArrayList.size(); i++){
             fishCategoryArrayList.get(i).setBackground(Color.white);
             fishCategoryArrayList.get(i).setOpaque(true);
         }
@@ -353,7 +350,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         fruitVegsCategoryArrayList.add(subCategoryRootVegetableLabel);
         fruitVegsCategoryArrayList.add(subCategoryCabbageLabel);
 
-        for (int i = 0; i<fruitVegsCategoryArrayList.size(); i++){
+        for(int i = 0; i<fruitVegsCategoryArrayList.size(); i++){
             fruitVegsCategoryArrayList.get(i).setBackground(Color.white);
             fruitVegsCategoryArrayList.get(i).setOpaque(true);
         }
@@ -364,7 +361,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             JLabel subCategoryHerbLabel = new JLabel("Örter");
         spiceCategoryArrayList.add(subCategoryHerbLabel);
 
-        for (int i = 0; i<spiceCategoryArrayList.size(); i++){
+        for(int i = 0; i<spiceCategoryArrayList.size(); i++){
             spiceCategoryArrayList.get(i).setBackground(Color.white);
             spiceCategoryArrayList.get(i).setOpaque(true);
         }
@@ -375,7 +372,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             JLabel subCategoryMeatLabel = new JLabel("Kött");
         meatCategoryArrayList.add(subCategoryMeatLabel);
 
-        for (int i = 0; i<meatCategoryArrayList.size(); i++){
+        for(int i = 0; i<meatCategoryArrayList.size(); i++){
             meatCategoryArrayList.get(i).setBackground(Color.white);
             meatCategoryArrayList.get(i).setOpaque(true);
         }
@@ -386,7 +383,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             JLabel category12Label = new JLabel("Mejeriprodukter");
         dairiesCategoryArrayList.add(category12Label);
 
-        for (int i = 0; i<dairiesCategoryArrayList.size(); i++){
+        for(int i = 0; i<dairiesCategoryArrayList.size(); i++){
             dairiesCategoryArrayList.get(i).setBackground(Color.white);
             dairiesCategoryArrayList.get(i).setOpaque(true);
         }
@@ -397,7 +394,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         JLabel category20Label = new JLabel("Sötsaker");
         sweetsCategoryArrayList.add(category20Label);
 
-        for (int i = 0; i<sweetsCategoryArrayList.size(); i++){
+        for(int i = 0; i<sweetsCategoryArrayList.size(); i++){
             sweetsCategoryArrayList.get(i).setBackground(Color.white);
             sweetsCategoryArrayList.get(i).setOpaque(true);
         }
@@ -779,6 +776,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         productPanel = new javax.swing.JPanel();
         shoppingCartPanel = new javax.swing.JPanel();
         productScrollPane = new javax.swing.JScrollPane();
+        prodPanel = new javax.swing.JPanel();
         nextStepButtonToPersonalInfo = new javax.swing.JButton();
         totalPriceLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
@@ -2031,7 +2029,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         recommendedProductsLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
         recommendedProductsLabel.setForeground(new java.awt.Color(102, 102, 102));
         recommendedProductsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        recommendedProductsLabel.setText("Glömt något?");
+        recommendedProductsLabel.setText("Glömt?");
         recommendedProductsLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         recommendedProductsLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -2043,20 +2041,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             recommendedProductsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recommendedProductsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(recommendedProductsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recommendedProductsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendedProductsPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(recommendedProductsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         recommendedProductsPanelLayout.setVerticalGroup(
             recommendedProductsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recommendedProductsPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(recommendedProductsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -2066,6 +2062,23 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         productPanel.setLayout(new java.awt.CardLayout());
 
         shoppingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        productScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        productScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        productScrollPane.setHorizontalScrollBar(null);
+
+        javax.swing.GroupLayout prodPanelLayout = new javax.swing.GroupLayout(prodPanel);
+        prodPanel.setLayout(prodPanelLayout);
+        prodPanelLayout.setHorizontalGroup(
+            prodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 579, Short.MAX_VALUE)
+        );
+        prodPanelLayout.setVerticalGroup(
+            prodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 466, Short.MAX_VALUE)
+        );
+
+        productScrollPane.setViewportView(prodPanel);
 
         nextStepButtonToPersonalInfo.setText("Gå vidare");
         nextStepButtonToPersonalInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -2091,20 +2104,18 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         shoppingCartPanelLayout.setHorizontalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(shoppingCartPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextStepButtonToPersonalInfo)
-                .addContainerGap())
-            .addGroup(shoppingCartPanelLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shoppingCartPanelLayout.createSequentialGroup()
-                        .addComponent(totalPriceLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(priceLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(krLabel))
-                    .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nextStepButtonToPersonalInfo)
+                    .addGroup(shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shoppingCartPanelLayout.createSequentialGroup()
+                            .addComponent(totalPriceLabel)
+                            .addGap(18, 18, 18)
+                            .addComponent(priceLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(krLabel))
+                        .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         shoppingCartPanelLayout.setVerticalGroup(
             shoppingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2121,7 +2132,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        productPanel.add(shoppingCartPanel, "shoppingCart");
+        productPanel.add(shoppingCartPanel, "shoppingCartPanel");
 
         checkPersonalInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2448,6 +2459,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         saveButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         saveButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonHover.png"))); // NOI18N
         saveButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonClick.png"))); // NOI18N
+        saveButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout checkPersonalInfoPanelLayout = new javax.swing.GroupLayout(checkPersonalInfoPanel);
         checkPersonalInfoPanel.setLayout(checkPersonalInfoPanelLayout);
@@ -2457,18 +2473,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(personalInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(deliveryPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
-                        .addComponent(saveButton1)
-                        .addGap(124, 124, 124))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
-                        .addComponent(backButtonToShoppingCart)
-                        .addGap(18, 18, 18)
-                        .addComponent(nextStepButtonToPayment)
-                        .addContainerGap())))
+                .addComponent(saveButton1)
+                .addGap(124, 124, 124))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPersonalInfoPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backButtonToShoppingCart)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nextStepButtonToPayment)
+                .addGap(90, 90, 90))
         );
         checkPersonalInfoPanelLayout.setVerticalGroup(
             checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2479,11 +2494,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(deliveryPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(saveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(checkPersonalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nextStepButtonToPayment)
-                    .addComponent(backButtonToShoppingCart))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(backButtonToShoppingCart)
+                    .addComponent(nextStepButtonToPayment))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         productPanel.add(checkPersonalInfoPanel, "personalInfoDelivery");
@@ -2619,7 +2634,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         checkPaymentPanelLayout.setHorizontalGroup(
             checkPaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkPaymentPanelLayout.createSequentialGroup()
-                .addContainerGap(532, Short.MAX_VALUE)
+                .addContainerGap(547, Short.MAX_VALUE)
                 .addComponent(backButtonToPersonalInfo)
                 .addGap(18, 18, 18)
                 .addComponent(nextStepButtonToAccept)
@@ -2628,7 +2643,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGroup(checkPaymentPanelLayout.createSequentialGroup()
                     .addGap(167, 167, 167)
                     .addComponent(paymentInfoPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(166, Short.MAX_VALUE)))
+                    .addContainerGap(206, Short.MAX_VALUE)))
         );
         checkPaymentPanelLayout.setVerticalGroup(
             checkPaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2727,7 +2742,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                     .addComponent(jScrollPane2)
                     .addComponent(acceptShoppingCartLabel)
                     .addComponent(acceptSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
                 .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, acceptPanelLayout.createSequentialGroup()
                         .addGroup(acceptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2976,16 +2991,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void updCartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updCartBtnActionPerformed
         
-        cartContentsPanel.removeAll();
-
-        List <ShoppingItem> cartContentList = gpCon.sc.getItems();
-
-        for (int i = 0; i < gpCon.sc.getItems().size(); i++){
-            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName()));
-        }
-        cartContentsPanel.add(new JLabel("Totalt: " + gpCon.sc.getTotal() + " kr"));
-        repaint();
-        revalidate();
+//        cartContentsPanel.removeAll();
+//
+//        List <ShoppingItem> cartContentList = gpCon.sc.getItems();
+//
+//        for (int i = 0; i < gpCon.sc.getItems().size(); i++){
+//            cartContentsPanel.add(new JLabel(cartContentList.get(i).getProduct().getName()));
+//        }
+//        cartContentsPanel.add(new JLabel("Totalt: " + gpCon.sc.getTotal() + " kr"));
+//        repaint();
+//        revalidate();
     }//GEN-LAST:event_updCartBtnActionPerformed
 
     private void deliveryCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryCheckBoxActionPerformed
@@ -3038,11 +3053,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_nextStepToPayment
 
     private void goToCashierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToCashierBtnActionPerformed
-        // Go to the checkout.
+
         resetActivePurchaseStep();
-        showShoppingCartCheckout();
+        System.out.print("Kassa cpo-size: " + gpCon.cpo.size());
         
-        cl2.show(productPanel, "shoppingCart");
+        cl2.show(productPanel, "shoppingCartPanel");
         cl.show(featurePanel, "checkout");
 
         progressPanel.setVisible(true);
@@ -3056,7 +3071,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_nextStepToAccept
 
     private void postCodeTextField1PostCodeUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postCodeTextField1PostCodeUpdate
-        gpCon.iMDH.getInstance().getCustomer().setPostCode(postCodeTextField.getText());
+        gpCon.iMDH.getCustomer().setPostCode(postCodeTextField.getText()); //getInstance efter iMDH
     }//GEN-LAST:event_postCodeTextField1PostCodeUpdate
 
     private void address1TextField1AddressUpdate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1TextField1AddressUpdate
@@ -3161,6 +3176,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cartContentsPanel.removeAll();
         gpCon.iMDH.shutDown();
     }//GEN-LAST:event_cartImageMouseClicked
+
+    private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
+        gpCon.iMDH.shutDown();
+    }//GEN-LAST:event_saveButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3374,6 +3393,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JTextField postCodeTextField;
     private javax.swing.JTextField postCodeTextField1;
     private javax.swing.JLabel priceLabel;
+    private javax.swing.JPanel prodPanel;
     private javax.swing.JPanel productPanel;
     private javax.swing.JScrollPane productScrollPane;
     private javax.swing.JPanel progressPanel;
@@ -3415,4 +3435,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel verificationCodeLabel1;
     private javax.swing.JTextField verificationCodeTextField;
     // End of variables declaration//GEN-END:variables
+
+    void updateCartPanel(ArrayList<CartProdObject> cpo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -7,23 +7,24 @@ import se.chalmers.ait.dat215.project.*;
 
 public class GUIProject{
     
+    
+    
     IMatDataHandler iMDH = IMatDataHandler.getInstance();
     ShoppingCart sc = iMDH.getShoppingCart();
     
-    
     public List<Product> products = new ArrayList<Product>();
     public List<ProductCard> productCards = new ArrayList<ProductCard>();
-    public List <CartProdObject> cpo = new ArrayList<CartProdObject>();
+    public ArrayList <CartProdObject> cpo = new ArrayList<CartProdObject>();
     public List<Product> allProducts = new ArrayList<Product>();
     public List<Order> orderHistory = new ArrayList<Order>();
-
+    public ArrayList<CheckoutProductCard> cpoCheckout = new ArrayList<CheckoutProductCard>();
     public List<HistoryObjectCard> historyCards = new ArrayList<HistoryObjectCard>();
     /**
      * @param args the command line arguments
      */
     
-
     
+    //dessa metoder bör tas bort om tid ges (getImage)
     public ImageIcon getImage100(Product prod){
         
             return iMDH.getImageIcon(prod,100,100);
@@ -57,49 +58,37 @@ public class GUIProject{
            orderHistory = iMDH.getOrders();
            products.clear();
            productCards.clear();
-           System.out.println("Order history size: " + orderHistory.size());
-//           for (int i = 0; i<orderHistory.size(); i++){
-//               for (int j = 0; j<orderHistory.get(i).getItems().size(); j++){
-//                    products.add(orderHistory.get(i).getItems().get(j).getProduct());
-//               }
-//           }
            
-           for (int i = 0; i<orderHistory.size();i++){
+           for(int i = 0; i<orderHistory.size();i++){
                for (int j = 0; j<orderHistory.get(i).getItems().size(); j++){
                historyCards.add(new HistoryObjectCard(orderHistory.get(i).getItems().get(j),imf));
            }
-
-           }
-//           for (int i = 0; i<products.size(); i++){
-//            for (int j = 0; j<imf.allProductCards.size(); j++){
-//                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
-//                       productCards.add(imf.allProductCards.get(j));
-//                }
-//            }
-//    }
+        }
     }
     
-    /**
-     * Work in progress... 
-     */
-
     public void addToCart(Product p, int amount, IMatFrame imf){
-        if(p==null){
-            cpo.clear();
+        cpo.clear();
+        if(p!=null){
+          sc.addProduct(p, amount);
+        }  
         for(ShoppingItem si: sc.getItems()){
-             cpo.add(new CartProdObject(si, imf));
+            cpo.add(new CartProdObject(si, imf));
+        }  
+        imf.displayCartPanel(cpo);    
+        addToCheckoutCart(cpo, imf);
         }
-        imf.updateCartPanel(cpo);    
-        }else{
-             cpo.clear();
-        sc.addProduct(p, amount);
-        for(ShoppingItem si: sc.getItems()){
-             cpo.add(new CartProdObject(si, imf));
+
+    public void addToCheckoutCart(ArrayList<CartProdObject> cpo, IMatFrame imf){
+        cpoCheckout.clear();
+        System.out.println("cpo size: " + cpo.size());
+        for(CartProdObject cp: cpo){
+            cpoCheckout.add(new CheckoutProductCard(cp.getShoppingItem(), imf));
         }
-        imf.updateCartPanel(cpo);    
-        }
-       
-    }
+        System.out.println("cpoCheckout size: " + cpoCheckout.size());
+        //imf.displayCheckoutCart(cpoCheckout);
+        imf.displayCheckoutCart(cpoCheckout);
+    }    
+    
     
     public void listCatProds(ArrayList<String> s, IMatFrame imf){
             productCards.clear();

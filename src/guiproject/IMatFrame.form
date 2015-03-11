@@ -158,7 +158,7 @@
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Favoriter"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -170,7 +170,7 @@
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Erbjudanden"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -288,7 +288,7 @@
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
           <Events>
@@ -301,7 +301,7 @@
               <Image iconType="3" name="/guiProfile.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
           </Properties>
         </Component>
@@ -374,7 +374,7 @@
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="G&#xe5; till startsidan"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardmark&#xf6;r"/>
                 </Property>
               </Properties>
             </Component>
@@ -1325,7 +1325,7 @@
                           </StringArray>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1375,7 +1375,7 @@
                         <Property name="selectedIndex" type="int" value="5"/>
                         <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1407,7 +1407,7 @@
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1551,7 +1551,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1567,7 +1567,7 @@
                             </Property>
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1621,7 +1621,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Standardmark&#xf6;r"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1659,7 +1659,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -1817,7 +1817,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -2060,25 +2060,23 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="recommendedProductsScrollPane" min="-2" pref="108" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="recommendedProductsScrollPane" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="recommendedProductsLabel" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="recommendedProductsLabel" min="-2" pref="108" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="recommendedProductsLabel" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="recommendedProductsScrollPane" min="-2" pref="541" max="-2" attributes="0"/>
+                          <Component id="recommendedProductsScrollPane" min="-2" pref="557" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2094,7 +2092,7 @@
                       <Color blue="66" green="66" red="66" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Gl&#xf6;mt n&#xe5;got?"/>
+                    <Property name="text" type="java.lang.String" value="Gl&#xf6;mt?"/>
                     <Property name="verticalAlignment" type="int" value="1"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
@@ -2132,31 +2130,29 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="shoppingCart"/>
+                      <CardConstraints cardName="shoppingCartPanel"/>
                     </Constraint>
                   </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="nextStepButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="totalPriceLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="priceLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="krLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="nextStepButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="totalPriceLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="priceLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="krLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="productScrollPane" min="-2" pref="583" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="productScrollPane" min="-2" pref="583" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="64" max="32767" attributes="0"/>
+                              <EmptySpace pref="125" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2180,8 +2176,32 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JScrollPane" name="productScrollPane">
+                      <Properties>
+                        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+                        <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+                        <Property name="horizontalScrollBar" type="javax.swing.JScrollBar" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                          <ComponentRef name="null"/>
+                        </Property>
+                      </Properties>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="prodPanel">
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="579" max="32767" attributes="0"/>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="466" max="32767" attributes="0"/>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                        </Container>
+                      </SubComponents>
                     </Container>
                     <Component class="javax.swing.JButton" name="nextStepButtonToPersonalInfo">
                       <Properties>
@@ -2245,22 +2265,19 @@
                               <Component id="personalInfoPanel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="deliveryPanel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="43" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="backButtonToShoppingCart" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="nextStepButtonToPayment" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="backButtonToShoppingCart" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="nextStepButtonToPayment" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2274,12 +2291,12 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="saveButton1" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="nextStepButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="backButtonToShoppingCart" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nextStepButtonToPayment" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="146" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2652,7 +2669,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -2667,7 +2684,7 @@
                               </StringArray>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -2720,7 +2737,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Standardmark&#xf6;r"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -2885,7 +2902,7 @@
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2895,6 +2912,9 @@
                           <Image iconType="3" name="/greenButtonClick.png"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButton1ActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2914,7 +2934,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="532" max="32767" attributes="0"/>
+                              <EmptySpace pref="547" max="32767" attributes="0"/>
                               <Component id="backButtonToPersonalInfo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="nextStepButtonToAccept" min="-2" max="-2" attributes="0"/>
@@ -2924,7 +2944,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                                   <Component id="paymentInfoPanel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="166" max="32767" attributes="0"/>
+                                  <EmptySpace pref="206" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3089,7 +3109,7 @@
                               </StringArray>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3136,7 +3156,7 @@
                             <Property name="selectedIndex" type="int" value="5"/>
                             <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3165,7 +3185,7 @@
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3228,7 +3248,7 @@
                                   <Component id="acceptShoppingCartLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="acceptSeparator1" alignment="0" pref="215" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="130" max="32767" attributes="0"/>
+                              <EmptySpace pref="191" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
