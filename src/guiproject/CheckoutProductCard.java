@@ -27,11 +27,7 @@ public class CheckoutProductCard extends javax.swing.JPanel {
 
     public CheckoutProductCard(ShoppingItem si, IMatFrame imf){
         initComponents();
-        this.checkoutProductLabel = new JLabel();
-        this.checkoutPriceLabel = new JLabel();
-        this.checkoutProductIcon = new JLabel();
-        
-      //  this.si=si;
+
         this.product = si.getProduct();
         
         this.checkoutProductLabel.setText(product.getName());
