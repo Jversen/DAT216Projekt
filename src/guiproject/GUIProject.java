@@ -19,6 +19,7 @@ public class GUIProject{
     public List<Order> orderHistory = new ArrayList<Order>();
     public ArrayList<CheckoutProductCard> cpoCheckout = new ArrayList<CheckoutProductCard>();
     public List<HistoryObjectCard> historyCards = new ArrayList<HistoryObjectCard>();
+    
     /**
      * @param args the command line arguments
      */
@@ -52,8 +53,31 @@ public class GUIProject{
             }
         }
     }
+        
+        public void getFavorites(IMatFrame imf){
+        
+            this.productCards.clear();
+            for (int i = 0; i<imf.allProductCards.size(); i++){
+                   if (iMDH.isFavorite(imf.allProductCards.get(i).getProduct())){
+                       productCards.add(imf.allProductCards.get(i));
+                   }
+            }
+            /*
+           this.products = iMDH.favorites();
+           this.productCards.clear();
            
-        public void showHistory(IMatFrame imf, int orderIndex){
+           for (int i = 0; i<products.size(); i++){
+            for (int j = 0; j<imf.allProductCards.size(); j++){
+                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
+                       productCards.add(imf.allProductCards.get(j));
+                }
+//                   imf.allProductCards.get(j).updateHeart();
+            }
+        } */
+           
+    }
+        
+        public void getHistory(IMatFrame imf, int orderIndex){
         
 //           orderHistory = iMDH.getOrders();
            System.out.println("orderIndex inuti showHistory/guip: " + orderIndex);

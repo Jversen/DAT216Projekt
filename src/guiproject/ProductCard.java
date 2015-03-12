@@ -27,41 +27,36 @@ public class ProductCard extends javax.swing.JPanel {
         pictureLabel.setIcon(gpCon.getImage100(prod));
         productCardName.setText(prod.getName());
         priceLabel.setText(""+ prod.getPrice() + " " + prod.getUnit());
-        if (gpCon.iMDH.isFavorite(prod)){
+        
+        updateHeart();
+        
+       }
+      
+      public void updateHeart(){
+          if (gpCon.iMDH.isFavorite(prod)){
             pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
         }else{
             pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png")));
         }
-        
-       }
-    
+      }
       public void toggleFavorite(){
-//          gpCon.iMDH.addFavorite(prod);
-//        gpCon.iMDH.removeFavorite(prod);
-        System.out.println("gpCon.iMDH.isFavorite(prod): " + gpCon.iMDH.isFavorite(prod));
+
           if (gpCon.iMDH.isFavorite(prod)){
             gpCon.iMDH.removeFavorite(prod);
-            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png")));
-            System.out.println("tog bort fron fav");
-        } else{
+//            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png")));
+        } else if (!gpCon.iMDH.isFavorite(prod)){
             gpCon.iMDH.addFavorite(prod);
-            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
-            System.out.println("lade till fav");
+//            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
         }
+         
+          for (int i = 0; i<gpCon.iMDH.favorites().size(); i++){
+          System.out.println("favorites: " + gpCon.iMDH.favorites().get(i));
+          }
         System.out.println("gpCon.iMDH.isFavorite(prod): " + gpCon.iMDH.isFavorite(prod));
+        updateHeart();
+        gpCon.getFavorites(imf);
       }
-//    public boolean isFavorite(){
-//        for (int i = 0; i<gpCon.iMDH.favorites().size(); i++){
-//            if (prod == gpCon.iMDH.favorites().get(i)){
-//                pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
-//                return true;
-//            }else{ 
-//                pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0b.png")));
-//                
-//            }
-//        }
-//        return false;
-//    }
+
     public int getSpinnerValue(){
         int value = (Integer) jSpinner1.getValue();
         return value;
@@ -97,7 +92,8 @@ public class ProductCard extends javax.swing.JPanel {
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
         jPanel1.add(jSpinner1);
 
-        addProductButton.setText("Köp");
+        addProductButton.setText("Lägg till");
+        addProductButton.setToolTipText("Lägg till i varukorg");
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProductButtonActionPerformed(evt);
@@ -117,9 +113,10 @@ public class ProductCard extends javax.swing.JPanel {
         productCardName.setText("jLabel1");
 
         pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png"))); // NOI18N
+        pcFavLabel.setToolTipText("Lägg till i favoriter");
         pcFavLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pcFavLabelMouseClicked(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pcFavLabelMousePressed(evt);
             }
         });
 
@@ -148,20 +145,9 @@ public class ProductCard extends javax.swing.JPanel {
         gpCon.addToCart(this.prod, this.getSpinnerValue(), imf);
     }//GEN-LAST:event_addProductButtonActionPerformed
 
-    private void pcFavLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pcFavLabelMouseClicked
-       
+    private void pcFavLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pcFavLabelMousePressed
         toggleFavorite();
-//        if (gpCon.iMDH.isFavorite(prod)){
-//            gpCon.iMDH.removeFavorite(prod);
-//            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png")));
-//            System.out.println("tog bort fron fav");
-//        } else{
-//            gpCon.iMDH.addFavorite(prod);
-//            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
-//            System.out.println("lade till fav");
-//        }
-//        System.out.println("gpCon.iMDH.isFavorite(prod): " + gpCon.iMDH.isFavorite(prod));
-    }//GEN-LAST:event_pcFavLabelMouseClicked
+    }//GEN-LAST:event_pcFavLabelMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
