@@ -287,10 +287,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         JLabel headCategoryBread = new JLabel("Bröd och torrvaror");
         headCategoryArrayList.add(headCategoryBread);
 
-            JLabel subCategoryBreadLabel = new JLabel("Bröd");
-            JLabel subCategoryFlourSugarSaltLabel = new JLabel("Mjöl, socker och salt");
-            JLabel subCategoryPastaLabel = new JLabel("Pasta");
-            JLabel subCategoryPotatoRiceLabel = new JLabel("Potatis och ris");
+            JLabel subCategoryBreadLabel = new JLabel("     Bröd");
+            JLabel subCategoryFlourSugarSaltLabel = new JLabel("     Mjöl, socker och salt");
+            JLabel subCategoryPastaLabel = new JLabel("     Pasta");
+            JLabel subCategoryPotatoRiceLabel = new JLabel("     Potatis och ris");
 
         breadCategoryArrayList.add(subCategoryBreadLabel);
         breadCategoryArrayList.add(subCategoryFlourSugarSaltLabel);
@@ -299,23 +299,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         for(int i = 0; i<breadCategoryArrayList.size(); i++){
             breadCategoryArrayList.get(i).setBackground(Color.white);
-            breadCategoryArrayList.get(i).setOpaque(true);
-            breadCategoryArrayList.get(i).addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                saveButtonSaveButtonHover(evt);
-            }
-        });
+            breadCategoryArrayList.get(i).setOpaque(true);;
         }
 
         JLabel headCategoryDrinks = new JLabel("Drycker");
         headCategoryArrayList.add(headCategoryDrinks);
 
-            JLabel subCategoryHotDrinksLabel = new JLabel("Varma drycker");
-            JLabel subCategoryColdDrinksLabel = new JLabel("Kalla drycker");
+            JLabel subCategoryHotDrinksLabel = new JLabel("     Varma drycker");
+            JLabel subCategoryColdDrinksLabel = new JLabel("     Kalla drycker");
 
         drinkCategoryArrayList.add(subCategoryHotDrinksLabel);
         drinkCategoryArrayList.add(subCategoryColdDrinksLabel);
@@ -341,27 +332,29 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         headCategoryArrayList.add(headCategoryFruitsAndVegs);
 
 
-            JLabel subCategoryPodLabel = new JLabel("Baljväxter");
-            JLabel subCategoryBerryLabel = new JLabel("Bär");
-            JLabel subCategoryCitrusFruitLabel = new JLabel("Citrusfrukter");
-            JLabel subCategoryExoticFruitLabel = new JLabel("Exotiska frukter");
-            JLabel subCategoryFruitLabel = new JLabel("Frukt");
-            JLabel subCategoryVegetableFruitLabel = new JLabel("Grönsaksfrukter");
-            JLabel subCategoryMelonsLabel = new JLabel("Meloner");
-            JLabel subCategoryNutsAndSeedsLabel = new JLabel("Nötter och frön");
-            JLabel subCategoryRootVegetableLabel = new JLabel("Rotfrukter");
-            JLabel subCategoryCabbageLabel = new JLabel("Kål");
+            JLabel subCategoryPodLabel = new JLabel("     Baljväxter");
+            JLabel subCategoryBerryLabel = new JLabel("     Bär");
+            JLabel subCategoryCitrusFruitLabel = new JLabel("     Citrusfrukter");
+            JLabel subCategoryExoticFruitLabel = new JLabel("     Exotiska frukter");
+            JLabel subCategoryVegetableFruitLabel = new JLabel("     Grönsaksfrukter");
+            JLabel subCategoryCabbageLabel = new JLabel("     Kål");
+            JLabel subCategoryMelonsLabel = new JLabel("     Meloner");
+            JLabel subCategoryNutsAndSeedsLabel = new JLabel("     Nötter och frön");
+            JLabel subCategoryRootVegetableLabel = new JLabel("     Rotfrukter");
+            JLabel subCategoryFruitLabel = new JLabel("     Stenfrukter");
+            
 
         fruitVegsCategoryArrayList.add(subCategoryPodLabel);
         fruitVegsCategoryArrayList.add(subCategoryBerryLabel);
         fruitVegsCategoryArrayList.add(subCategoryCitrusFruitLabel);
         fruitVegsCategoryArrayList.add(subCategoryExoticFruitLabel);
-        fruitVegsCategoryArrayList.add(subCategoryFruitLabel);
         fruitVegsCategoryArrayList.add(subCategoryVegetableFruitLabel);
+        fruitVegsCategoryArrayList.add(subCategoryCabbageLabel);
         fruitVegsCategoryArrayList.add(subCategoryMelonsLabel);
         fruitVegsCategoryArrayList.add(subCategoryNutsAndSeedsLabel);
         fruitVegsCategoryArrayList.add(subCategoryRootVegetableLabel);
-        fruitVegsCategoryArrayList.add(subCategoryCabbageLabel);
+        fruitVegsCategoryArrayList.add(subCategoryFruitLabel);
+        
 
         for(int i = 0; i<fruitVegsCategoryArrayList.size(); i++){
             fruitVegsCategoryArrayList.get(i).setBackground(Color.white);
@@ -371,7 +364,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         JLabel headCategorySpice = new JLabel("Kryddor");
         headCategoryArrayList.add(headCategorySpice);
 
-            JLabel subCategoryHerbLabel = new JLabel("Örter");
+            JLabel subCategoryHerbLabel = new JLabel("     Örter");
         spiceCategoryArrayList.add(subCategoryHerbLabel);
 
         for(int i = 0; i<spiceCategoryArrayList.size(); i++){
@@ -413,6 +406,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         }
 
         allSubCategoryArrayList.addAll(breadCategoryArrayList);
+        allSubCategoryArrayList.addAll(drinkCategoryArrayList);
         allSubCategoryArrayList.addAll(fishCategoryArrayList);
         allSubCategoryArrayList.addAll(fruitVegsCategoryArrayList);
         allSubCategoryArrayList.addAll(spiceCategoryArrayList);
@@ -466,7 +460,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         JLabel tempLabel1 = (JLabel)evt.getSource();
 
         categoryStrings.clear();
-        
+        System.out.println("Labeltext: " + tempLabel1.getText());
         switch(tempLabel1.getText()){
             case "Bröd och torrvaror": 
                 redrawCategories();
@@ -549,37 +543,37 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 }
                 
                 break;
-            case "Baljväxter":
+            case "     Baljväxter":
                 categoryStrings.add("POD");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Bröd":
+            case "     Bröd":
                 categoryStrings.add("BREAD");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Bär":
+            case "     Bär":
                 categoryStrings.add("BERRY");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Citrusfrukter":
+            case "     Citrusfrukter":
                 categoryStrings.add("CITRUS_FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Varma drycker":
+            case "     Varma drycker":
                 categoryStrings.add("HOT_DRINKS");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Kalla drycker":
+            case "     Kalla drycker":
                 categoryStrings.add("COLD_DRINKS");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Exotiska frukter":
+            case "     Exotiska frukter":
                 categoryStrings.add("EXOTIC_FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
@@ -589,12 +583,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Grönsaksfrukter":
+            case "     Grönsaksfrukter":
                 categoryStrings.add("VEGETABLE_FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Kål":
+            case "     Kål":
                 categoryStrings.add("CABBAGE");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
@@ -609,37 +603,37 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Meloner":
+            case "     Meloner":
                 categoryStrings.add("MELONS");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Mjöl, socker och salt":
+            case "     Mjöl, socker och salt":
                 categoryStrings.add("FLOUR_SUGAR_SALT");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Nötter och frön":
+            case "     Nötter och frön":
                 categoryStrings.add("NUTS_AND_SEEDS");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Pasta":
+            case "     Pasta":
                 categoryStrings.add("PASTA");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Potatis och ris":
+            case "     Potatis och ris":
                 categoryStrings.add("POTATO_RICE");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Rotfrukter":
+            case "     Rotfrukter":
                 categoryStrings.add("ROOT_VEGETABLE");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Frukt":
+            case "     Stenfrukter":
                 categoryStrings.add("FRUIT");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
@@ -649,7 +643,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
                 break;
-            case "Örter":
+            case "     Örter":
                 categoryStrings.add("HERB");
                 gpCon.listCatProds(categoryStrings, this);
                 displayGroceries();
@@ -983,7 +977,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpMyAccountLabel.setForeground(new java.awt.Color(255, 255, 255));
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tpMyAccountLabelMouseClicked(evt);
@@ -1058,7 +1052,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addComponent(recipesBtn)
                 .addGap(113, 113, 113)
                 .addComponent(historyBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 482, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 564, Short.MAX_VALUE)
                 .addComponent(accountImage)
                 .addGap(18, 18, 18)
                 .addComponent(tpMyAccountLabel)
@@ -1087,7 +1081,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGap(49, 49, 49))
         );
 
-        getContentPane().add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 75));
+        getContentPane().add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1310, 75));
 
         featurePanel.setBackground(new java.awt.Color(255, 248, 248));
         featurePanel.setLayout(new java.awt.CardLayout());
@@ -1285,7 +1279,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyViewPanelLayout.createSequentialGroup()
                     .addContainerGap(123, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(8, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         historyViewPanelLayout.setVerticalGroup(
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
