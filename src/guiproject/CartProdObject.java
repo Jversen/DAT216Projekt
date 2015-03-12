@@ -20,6 +20,7 @@ public class CartProdObject extends javax.swing.JPanel {
         this.dataHandler = IMatDataHandler.getInstance();
         this.si = si;
         this.imf = imf;
+        priceLabel.setText(si.getProduct().getPrice() +"");
         nameLabel.setText(si.getProduct().getName());
         imageLabelCart.setIcon(dataHandler.getImageIcon(si.getProduct(), 50,50));
         jSpinner2.setValue(si.getAmount());
@@ -137,7 +138,7 @@ public class CartProdObject extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 88, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
