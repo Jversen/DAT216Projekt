@@ -59,9 +59,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     public void updateOrderListModel(){
         listModel.clear();
             for (int i = 0; i<gpCon.iMDH.getOrders().size(); i++){
-                System.out.println("uppdaterar orderlistmodel");
+//                System.out.println("uppdaterar orderlistmodel");
                 listModel.addElement(gpCon.iMDH.getOrders().get(i).getDate());
-                System.out.println(listModel.get(i).toString());
+//                System.out.println(listModel.get(i).toString());
             }
         orderHistoryList.setModel(listModel);
     }
@@ -107,7 +107,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
         
     private void displayHistory(){
-        System.out.println("gpcon.historyCards.size()" + gpCon.historyCards.size());
+//        System.out.println("gpcon.historyCards.size()" + gpCon.historyCards.size());
         GridLayout layout = new GridLayout(gpCon.historyCards.size(),1);
         historyItemShower.setLayout(layout);
         historyItemShower.removeAll();
@@ -150,13 +150,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         if(cpoc.isEmpty()){
             JLabel noSearchResults = new JLabel("Varukorgen är tom");
             prodPanel.add(noSearchResults);
-            System.out.print("displayCheckoutCart empty!");
+//            System.out.print("displayCheckoutCart empty!");
         }else{
             for(CheckoutProductCard cp: cpoc) {
             cp.setSize(40, prodPanel.getWidth());
             prodPanel.add(cp);  
-                System.out.println(cp.getHeight());
-                System.out.println(cp.getWidth());
+//                System.out.println(cp.getHeight());
+//                System.out.println(cp.getWidth());
             }
         }
         cl2.show(productPanel, "shoppingCartPanel");
@@ -477,7 +477,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryStrings.add("POTATO_RICE");
                 
                 for (int i = 0; i<categoryStrings.size(); i++){
-                    System.out.println(categoryStrings.get(i).toString());
+//                    System.out.println(categoryStrings.get(i).toString());
                 }
                 
                 gpCon.listCatProds(categoryStrings, this);
@@ -495,7 +495,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryStrings.add("COLD_DRINKS");
                                 
                 for (int i = 0; i<categoryStrings.size(); i++){
-                    System.out.println(categoryStrings.get(i).toString());
+//                    System.out.println(categoryStrings.get(i).toString());
                 }
                 
                 gpCon.listCatProds(categoryStrings, this);
@@ -523,7 +523,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 
                 
                 for (int i = 0; i<categoryStrings.size(); i++){
-                    System.out.println(categoryStrings.get(i).toString());
+//                    System.out.println(categoryStrings.get(i).toString());
                 }
                 
                 gpCon.listCatProds(categoryStrings, this);
@@ -3071,7 +3071,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void goToCashierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToCashierBtnActionPerformed
 
         resetActivePurchaseStep();
-        System.out.print("Kassa cpo-size: " + gpCon.cpo.size());
+//        System.out.print("Kassa cpo-size: " + gpCon.cpo.size());
         
         cl2.show(productPanel, "shoppingCartPanel");
         cl.show(featurePanel, "checkout");
@@ -3152,7 +3152,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         updateOrderListModel();
 //        listModel.clear();
         
-        System.out.println("antal ordrar: " + gpCon.iMDH.getOrders().size());
+//        System.out.println("antal ordrar: " + gpCon.iMDH.getOrders().size());
         cl2.show(productPanel, "end");
         progressPanel.setVisible(false);
     }//GEN-LAST:event_acceptPurchase
@@ -3202,7 +3202,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void orderHistoryListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_orderHistoryListValueChanged
                 
                 if (orderHistoryList.getSelectedIndex() >(-1)){
-                System.out.println("orderindex: " + orderHistoryList.getSelectedIndex());
+//                System.out.println("orderindex: " + orderHistoryList.getSelectedIndex());
                 gpCon.showHistory(this, orderHistoryList.getSelectedIndex());
                 historyItemShower.removeAll();
                 displayHistory();
