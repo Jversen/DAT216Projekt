@@ -106,6 +106,8 @@ public class GUIProject{
         }  
         imf.displayCartPanel(cpo);    
         addToCheckoutCart(cpo, imf);
+        imf.setLabelCartNbr(""+sc.getItems().size());
+        imf.setLabelCartCost(""+sc.getTotal());
         }
 
     public void addToCheckoutCart(ArrayList<CartProdObject> cpo, IMatFrame imf){
