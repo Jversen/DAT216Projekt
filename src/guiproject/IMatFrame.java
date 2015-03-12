@@ -24,6 +24,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     GUIProject gpCon;
     private CardLayout cl;
     private CardLayout cl2;
+    DefaultListModel listModel = new DefaultListModel();
 
     private final AddressPanel addressPanel1 = new AddressPanel();
     
@@ -48,13 +49,23 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private ArrayList<String> categoryStrings = new ArrayList<String>();
     public List<ProductCard> allProductCards = new ArrayList<ProductCard>();
     
-    public final void createAllProductCards(){
+    public void createAllProductCards(){
+        orderHistoryList.setModel(listModel);
         gpCon.createAllProducts();
         for(int i = 0; i<gpCon.allProducts.size(); i++){
             allProductCards.add(new ProductCard(gpCon.allProducts.get(i), this));
         }
     }
-    
+    public void updateOrderListModel(){
+        listModel.clear();
+            for (int i = 0; i<gpCon.iMDH.getOrders().size(); i++){
+                System.out.println("uppdaterar orderlistmodel");
+                listModel.addElement(gpCon.iMDH.getOrders().get(i).getDate());
+                System.out.println(listModel.get(i).toString());
+            }
+        orderHistoryList.setModel(listModel);
+    }
+        
     public void searchFieldDynSearch(){
     gpCon.doSearch(searchField.getText(), this);
         displayGroceries();
@@ -104,6 +115,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         for (HistoryObjectCard hOC : gpCon.historyCards) {
             historyItemShower.add(hOC);
         }
+        
         cl.show(featurePanel, "historyViewPanel");
         revalidate();
         repaint();
@@ -270,7 +282,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
        
         deliveryPanel.add(addressPanel1);
         createAllProductCards();
-
+        
+        updateOrderListModel();
         JLabel headCategoryBread = new JLabel("Bröd och torrvaror");
         headCategoryArrayList.add(headCategoryBread);
 
@@ -1256,6 +1269,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             public Object getElementAt(int i) { return strings[i]; }
         });
         orderHistoryList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        orderHistoryList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                orderHistoryListValueChanged(evt);
+            }
+        });
         jScrollPane4.setViewportView(orderHistoryList);
 
         javax.swing.GroupLayout historyViewPanelLayout = new javax.swing.GroupLayout(historyViewPanel);
@@ -2977,10 +2995,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_recipesBtnActionPerformed
 
     private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
-        cl.show(featurePanel, "cardHistory");
-        gpCon.showHistory(this);
+                cl.show(featurePanel, "cardHistory");    
         displayHistory();
-//        cl.show(featurePanel, "searchResultPanel");
         revalidate();
         repaint();
     }//GEN-LAST:event_historyBtnActionPerformed
@@ -3133,6 +3149,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void acceptPurchase(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptPurchase
         gpCon.iMDH.placeOrder();
         gpCon.iMDH.shutDown();
+        updateOrderListModel();
+//        listModel.clear();
         
         System.out.println("antal ordrar: " + gpCon.iMDH.getOrders().size());
         cl2.show(productPanel, "end");
@@ -3180,6 +3198,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
         gpCon.iMDH.shutDown();
     }//GEN-LAST:event_saveButton1ActionPerformed
+
+    private void orderHistoryListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_orderHistoryListValueChanged
+                
+                if (orderHistoryList.getSelectedIndex() >(-1)){
+                System.out.println("orderindex: " + orderHistoryList.getSelectedIndex());
+                gpCon.showHistory(this, orderHistoryList.getSelectedIndex());
+                historyItemShower.removeAll();
+                displayHistory();
+                }
+    }//GEN-LAST:event_orderHistoryListValueChanged
 
     /**
      * @param args the command line arguments
