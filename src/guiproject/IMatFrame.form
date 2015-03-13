@@ -1708,7 +1708,7 @@
                               <Font name="Gautami" size="14" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="99" type="rgb"/>
+                              <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Leveranstid"/>
                           </Properties>
@@ -1730,23 +1730,21 @@
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Standardmark&#xf6;r"/>
                             </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="deliveryDayComboBox">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
+                              <StringArray count="4">
                                 <StringItem index="0" value="idag"/>
                                 <StringItem index="1" value="imorgon"/>
-                                <StringItem index="2" value="i &#xf6;vermorgon"/>
+                                <StringItem index="2" value="om 2 dagar"/>
+                                <StringItem index="3" value="om 3 dagar"/>
                               </StringArray>
                             </Property>
-                            <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Standardmark&#xf6;r"/>
                             </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Container class="javax.swing.JPanel" name="deliverToMyAdressPanel">
@@ -1787,7 +1785,7 @@
                                   <Font name="Gautami" size="14" style="0"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                  <Color blue="33" green="33" red="33" type="rgb"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Leverera till annan adress"/>
                               </Properties>
@@ -2004,6 +2002,12 @@
                       <Color id="Standardmark&#xf6;r"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/greenButtonHover.png"/>
+                    </Property>
+                    <Property name="rolloverSelectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/greenButtonClick.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>

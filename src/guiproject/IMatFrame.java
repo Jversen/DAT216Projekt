@@ -26,7 +26,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private CardLayout cl2;
     DefaultListModel listModel = new DefaultListModel();
 
-    private final AddressPanel addressPanel1 = new AddressPanel();
+    //private final AddressPanel addressPanel1 = new AddressPanel();
     
     private IMatDataHandler iMDH = IMatDataHandler.getInstance();
     private Customer customer = IMatDataHandler.getInstance().getCustomer();
@@ -340,7 +340,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cl = (CardLayout)featurePanel.getLayout();
         cl2 = (CardLayout)productPanel.getLayout();
        
-        deliveryPanel.add(addressPanel1);
+        //deliveryPanel.add(addressPanel1);
+        addressPanel.setVisible(false);
         createAllProductCards();
         
         updateOrderListModel();
@@ -1839,24 +1840,21 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         personalInfoLabel1.setText("Leverans");
 
         deliveryDateLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
-        deliveryDateLabel.setForeground(new java.awt.Color(153, 153, 153));
+        deliveryDateLabel.setForeground(new java.awt.Color(51, 51, 51));
         deliveryDateLabel.setText("Leveranstid");
 
         deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00", "20:00-22:00" }));
         deliveryTimeComboBox.setSelectedIndex(1);
         deliveryTimeComboBox.setToolTipText("");
         deliveryTimeComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        deliveryTimeComboBox.setEnabled(false);
 
-        deliveryDayComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "idag", "imorgon", "i övermorgon" }));
-        deliveryDayComboBox.setSelectedIndex(1);
+        deliveryDayComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "idag", "imorgon", "om 2 dagar", "om 3 dagar" }));
         deliveryDayComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        deliveryDayComboBox.setEnabled(false);
 
         deliverToMyAdressPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         deliverToMyAddressLabel.setFont(new java.awt.Font("Gautami", 0, 14)); // NOI18N
-        deliverToMyAddressLabel.setForeground(new java.awt.Color(153, 153, 153));
+        deliverToMyAddressLabel.setForeground(new java.awt.Color(51, 51, 51));
         deliverToMyAddressLabel.setText("Leverera till annan adress");
 
         deliveryCheckBox.setBackground(new java.awt.Color(255, 255, 255));
@@ -2116,6 +2114,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         saveButton.setContentAreaFilled(false);
         saveButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         saveButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        saveButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonHover.png"))); // NOI18N
+        saveButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonClick.png"))); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -2379,7 +2379,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGap(59, 59, 59)
                 .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, Short.MAX_VALUE)
+                .addComponent(recommendedProductsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shoppingCartPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
