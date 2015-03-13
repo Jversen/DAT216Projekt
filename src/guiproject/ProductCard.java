@@ -24,7 +24,7 @@ public class ProductCard extends javax.swing.JPanel {
         
 //        System.out.println("favorites: " + gpCon.iMDH.favorites());
         this.imf = imf;
-        pictureLabel.setIcon(gpCon.getImage100(prod));
+        pictureLabel.setIcon(gpCon.getImageCustom(prod, 100, 100));
         productCardName.setText(prod.getName());
         priceLabel.setText(""+ prod.getPrice() + " " + prod.getUnit());
         
@@ -55,6 +55,7 @@ public class ProductCard extends javax.swing.JPanel {
         System.out.println("gpCon.iMDH.isFavorite(prod): " + gpCon.iMDH.isFavorite(prod));
         updateHeart();
         gpCon.getFavorites(imf);
+        gpCon.iMDH.shutDown();
       }
 
     public int getSpinnerValue(){

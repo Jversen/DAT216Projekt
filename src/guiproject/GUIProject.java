@@ -1,5 +1,6 @@
 package guiproject;
 
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
@@ -26,14 +27,14 @@ public class GUIProject{
     
     
     //dessa metoder bör tas bort om tid ges (getImage)
-    public ImageIcon getImage100(Product prod){
+    public ImageIcon getImageCustom(Product prod, int x, int y){
         
-            return iMDH.getImageIcon(prod,100,100);
+            return iMDH.getImageIcon(prod,x,y);
     }
-    public ImageIcon getImage50(Product prod){
-        
-            return iMDH.getImageIcon(prod,50,50);
-    }
+//    public ImageIcon getImage50(Product prod){
+//        
+//            return iMDH.getImageIcon(prod,50,50);
+//    }
     
     public void createAllProducts(){
         allProducts = iMDH.getProducts();
@@ -108,6 +109,10 @@ public class GUIProject{
         addToCheckoutCart(cpo, imf);
         imf.setLabelCartNbr(""+sc.getItems().size());
         imf.setLabelCartCost(""+sc.getTotal());
+        imf.setCashierPriceLabel(""+sc.getTotal());
+        
+        GridLayout layout = new GridLayout(cpo.size()+4,1, 5,5);
+        imf.setCartLayout(layout);
         }
 
     public void addToCheckoutCart(ArrayList<CartProdObject> cpo, IMatFrame imf){
@@ -117,7 +122,6 @@ public class GUIProject{
             cpoCheckout.add(new CheckoutProductCard(cp.getShoppingItem(), imf));
         }
         System.out.println("cpoCheckout size: " + cpoCheckout.size());
-        //imf.displayCheckoutCart(cpoCheckout);
         imf.displayCheckoutCart(cpoCheckout);
     }    
     
