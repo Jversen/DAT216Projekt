@@ -48,7 +48,8 @@ public class CheckoutProductCard extends javax.swing.JPanel {
         checkoutProductLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         checkoutPriceLabel = new javax.swing.JLabel();
-        deleteButton = new javax.swing.JButton();
+
+        setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
 
         checkoutProductIcon.setBackground(new java.awt.Color(255, 255, 255));
         checkoutProductIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiKundvagn.png"))); // NOI18N
@@ -68,10 +69,6 @@ public class CheckoutProductCard extends javax.swing.JPanel {
         checkoutPriceLabel.setText("pris");
         checkoutPriceLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deleteNormal.png"))); // NOI18N
-        deleteButton.setBorder(null);
-        deleteButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/deleteHover.png"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,13 +78,11 @@ public class CheckoutProductCard extends javax.swing.JPanel {
                 .addComponent(checkoutProductIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(checkoutProductLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(checkoutPriceLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addGap(45, 45, 45)
-                .addComponent(deleteButton)
-                .addContainerGap())
+                .addGap(80, 80, 80))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,12 +93,10 @@ public class CheckoutProductCard extends javax.swing.JPanel {
                         .addComponent(checkoutProductIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel1)
-                                .addComponent(checkoutPriceLabel)
-                                .addComponent(checkoutProductLabel)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(checkoutPriceLabel)
+                            .addComponent(checkoutProductLabel))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -113,7 +106,6 @@ public class CheckoutProductCard extends javax.swing.JPanel {
     private javax.swing.JLabel checkoutPriceLabel;
     private javax.swing.JLabel checkoutProductIcon;
     private javax.swing.JLabel checkoutProductLabel;
-    private javax.swing.JButton deleteButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -31,6 +31,9 @@ public class HistoryObjectCard extends javax.swing.JPanel {
         amountLabel.setText(""+si.getAmount());
         priceLabel.setText(""+si.getProduct().getPrice());
     }
+       public ShoppingItem getShoppingItem(){
+           return si;
+       }
 
     /**
      * This method is called from within the constructor to initialize the form.

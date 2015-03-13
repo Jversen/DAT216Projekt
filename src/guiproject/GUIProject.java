@@ -81,13 +81,13 @@ public class GUIProject{
         public void getHistory(IMatFrame imf, int orderIndex){
         
 //           orderHistory = iMDH.getOrders();
-           System.out.println("orderIndex inuti showHistory/guip: " + orderIndex);
+//           System.out.println("orderIndex inuti showHistory/guip: " + orderIndex);
            Order order = iMDH.getOrders().get(orderIndex);
            
            products.clear();
            productCards.clear();
            historyCards.clear();
-           System.out.println("Order history size: " + orderHistory.size());
+//           System.out.println("Order history size: " + orderHistory.size());
 
            
            for (int i = 0; i<order.getItems().size(); i++){
@@ -125,6 +125,11 @@ public class GUIProject{
         imf.displayCheckoutCart(cpoCheckout);
     }    
     
+    public void addHistoryToCart(IMatFrame imf){
+            for (int i = 0; i<historyCards.size(); i++){
+                addToCart(historyCards.get(i).getShoppingItem().getProduct(), (int) historyCards.get(i).getShoppingItem().getAmount(), imf);
+            }
+        }
     
     public void listCatProds(ArrayList<String> s, IMatFrame imf){
             productCards.clear();
