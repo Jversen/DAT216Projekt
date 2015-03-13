@@ -2708,7 +2708,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         saveButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/greenButtonClick.png"))); // NOI18N
         saveButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveButton1ActionPerformed(evt);
+                checkoutSaveButton(evt);
             }
         });
 
@@ -3462,9 +3462,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         gpCon.iMDH.shutDown();
     }//GEN-LAST:event_cartImageMouseClicked
 
-    private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
+    private void checkoutSaveButton(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutSaveButton
+        gpCon.iMDH.getCustomer().setFirstName(checkoutFirstNameTF.getText());
+        gpCon.iMDH.getCustomer().setLastName(checkoutLastNameTF.getText());
+        gpCon.iMDH.getCustomer().setAddress(checkoutAddressTF.getText());
+        gpCon.iMDH.getCustomer().setPostAddress(checkoutAddressTF.getText());
+        gpCon.iMDH.getCustomer().setPostCode(checkoutPostCodeTF.getText());
+        gpCon.iMDH.getCustomer().setEmail(checkoutEmailTF.getText());
+        gpCon.iMDH.getCustomer().setPhoneNumber(checkoutPhoneNumberTF.getText());
+        
         gpCon.iMDH.shutDown();
-    }//GEN-LAST:event_saveButton1ActionPerformed
+    }//GEN-LAST:event_checkoutSaveButton
 
     private void orderHistoryListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_orderHistoryListValueChanged
                 
