@@ -1473,7 +1473,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         historyTotalCostPHLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         historyTotalCostPHLabel.setText("0 kr");
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
+        jButton1.setBackground(new java.awt.Color(179, 62, 62));
         jButton1.setText("Radera order");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3184,7 +3184,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
+        jButton2.setBackground(new java.awt.Color(179, 62, 62));
         jButton2.setText("Töm korg");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
