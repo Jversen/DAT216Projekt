@@ -3425,8 +3425,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_backToPayment
 
     private void backToShoppingCart(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToShoppingCart
-//        recommendedProductsPanel.setVisible(true);
-//        changeActivePurchaseStep("shoppingCart", "personalInfoDelivery");
+        changeActivePurchaseStep("shoppingCart", "personalInfoDelivery");
 //        cl2.show(productPanel, "shoppingCart");
         
         cl2.show(productPanel, "shoppingCartPanel");
