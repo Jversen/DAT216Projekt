@@ -171,7 +171,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     public void displayCheckoutCart(ArrayList<CheckoutProductCard> cpoc){
         //lägger till produkter i checkout-panelen
-        GridLayout layout2 = new GridLayout(cpoc.size(),1,5,5);
+        GridLayout layout2 = new GridLayout(cpoc.size()+4,1,5,5);
         prodPanel.setLayout(layout2);
         
         prodPanel.removeAll();
