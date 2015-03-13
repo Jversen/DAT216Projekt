@@ -333,6 +333,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         revalidate();
     }
     
+    // Checks if the shopping cart is empty.
+    public boolean cartIsEmpty(){
+        if(gpCon.sc.getItems().size() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     public IMatFrame() {
         initComponents();
         this.gpCon = new GUIProject();
@@ -3328,6 +3337,14 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void goToCashierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToCashierBtnActionPerformed
 
+        if(cartIsEmpty()){
+            nextStepButtonToPersonalInfo.setEnabled(false);
+        }else{
+            nextStepButtonToPersonalInfo.setEnabled(true);
+        }
+        
+        //System.out.println(gpCon.sc.getItems().size() + " items in cart");
+        
         resetActivePurchaseStep();
 //        System.out.print("Kassa cpo-size: " + gpCon.cpo.size());
         
@@ -3434,6 +3451,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void backToShoppingCart(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToShoppingCart
         changeActivePurchaseStep("shoppingCart", "personalInfoDelivery");
 //        cl2.show(productPanel, "shoppingCart");
+        
+        if(cartIsEmpty()){
+            nextStepButtonToPersonalInfo.setEnabled(false);
+        }else{
+            nextStepButtonToPersonalInfo.setEnabled(true);
+        }
         
         cl2.show(productPanel, "shoppingCartPanel");
         cl.show(featurePanel, "checkout");
