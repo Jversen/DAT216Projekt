@@ -25,7 +25,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private CardLayout cl;
     private CardLayout cl2;
     DefaultListModel listModel = new DefaultListModel();
-
+    
     //private final AddressPanel addressPanel1 = new AddressPanel();
     
     private IMatDataHandler iMDH = IMatDataHandler.getInstance();
@@ -355,7 +355,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         
         updateOrderListModel();
         startLatestOrdersDisplayPanel.setLayout(new GridLayout(1, 20, 10, 1));
-        
+        gpCon.addToCart(null, 0, this);
         refreshStartPage();
         
         revalidate();
@@ -576,7 +576,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void categoryLabelMouseClicked(java.awt.event.MouseEvent evt) {   
 
         JLabel tempLabel1 = (JLabel)evt.getSource();
-
+        fpHistoryLabel1.setText(tempLabel1.getText());
         categoryStrings.clear();
         System.out.println("Labeltext: " + tempLabel1.getText());
         switch(tempLabel1.getText()){
@@ -832,7 +832,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         historyTotalCostPHLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         categoryFeaturePanel = new javax.swing.JPanel();
-        categoryFeatureLabel = new javax.swing.JLabel();
+        fpHistoryLabel1 = new javax.swing.JLabel();
         searchResultPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
@@ -1046,7 +1046,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         lpFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpFavoritesLabel.setText("Favoriter");
         lpFavoritesLabel.setToolTipText("Visa favoriter");
-        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpFavoritesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpFavoritesLabelMouseClicked(evt);
@@ -1057,7 +1057,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         lpDealsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpDealsLabel.setText("Erbjudanden");
         lpDealsLabel.setToolTipText("Visa erbjudanden");
-        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lpDealsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpDealsLabelMouseClicked(evt);
@@ -1111,7 +1111,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
         tpMyAccountLabel.setToolTipText("Visa mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tpMyAccountLabelMouseClicked(evt);
@@ -1120,7 +1120,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         accountImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatAvatar2.png"))); // NOI18N
         accountImage.setToolTipText("Visa mitt konto");
-        accountImage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        accountImage.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         accountImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 accountImageMouseClicked(evt);
@@ -1137,7 +1137,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         myShoppingBagsBtn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         myShoppingBagsBtn.setText("Mina matkassar");
         myShoppingBagsBtn.setToolTipText("Se mina matkassar");
-        myShoppingBagsBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        myShoppingBagsBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         myShoppingBagsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myShoppingBagsBtnActionPerformed(evt);
@@ -1148,7 +1148,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         recipesBtn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         recipesBtn.setText("Recept");
         recipesBtn.setToolTipText("Hitta recept");
-        recipesBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipesBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recipesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recipesBtnActionPerformed(evt);
@@ -1159,7 +1159,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         historyBtn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         historyBtn.setText("Historik");
         historyBtn.setToolTipText("Se information om tidigare beställningar");
-        historyBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        historyBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         historyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 historyBtnActionPerformed(evt);
@@ -1176,7 +1176,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         iMatLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         iMatLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logga.png"))); // NOI18N
         iMatLabel.setToolTipText("Gå till startsidan");
-        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         iMatLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iMatLabelMouseClicked(evt);
@@ -1551,7 +1551,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(historyViewPanel, "cardHistory");
 
-        categoryFeatureLabel.setText("Kategorinamn");
+        fpHistoryLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fpHistoryLabel1.setText("KATNamn");
 
         javax.swing.GroupLayout categoryFeaturePanelLayout = new javax.swing.GroupLayout(categoryFeaturePanel);
         categoryFeaturePanel.setLayout(categoryFeaturePanelLayout);
@@ -1559,21 +1560,20 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             categoryFeaturePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(categoryFeaturePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(categoryFeatureLabel)
-                .addContainerGap(773, Short.MAX_VALUE))
+                .addComponent(fpHistoryLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(732, Short.MAX_VALUE))
         );
         categoryFeaturePanelLayout.setVerticalGroup(
             categoryFeaturePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(categoryFeaturePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(categoryFeatureLabel)
-                .addContainerGap(583, Short.MAX_VALUE))
+                .addComponent(fpHistoryLabel1)
+                .addContainerGap(565, Short.MAX_VALUE))
         );
 
         featurePanel.add(categoryFeaturePanel, "categoryFeaturePanel");
 
         searchResultPanel.setBackground(new java.awt.Color(255, 248, 248));
-        searchResultPanel.setLayout(new java.awt.BorderLayout());
 
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(18);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -1586,7 +1586,19 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         jScrollPane1.setViewportView(jPanel1);
 
-        searchResultPanel.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout searchResultPanelLayout = new javax.swing.GroupLayout(searchResultPanel);
+        searchResultPanel.setLayout(searchResultPanelLayout);
+        searchResultPanelLayout.setHorizontalGroup(
+            searchResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        searchResultPanelLayout.setVerticalGroup(
+            searchResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchResultPanelLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         featurePanel.add(searchResultPanel, "searchResultPanel");
 
@@ -3467,6 +3479,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void backToStore(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToStore
         refreshStartPage();
+        
         cartContentsPanel.removeAll();
         cl.show(featurePanel, "cardStart");
         cl2.show(productPanel, "shoppingCart");
@@ -3645,7 +3658,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel cartPanelNbrOfItemsLabel;
     private javax.swing.JScrollPane cartPanelScrollPane;
     private javax.swing.JLabel cartPanelTotalCostLabel;
-    private javax.swing.JLabel categoryFeatureLabel;
     private javax.swing.JPanel categoryFeaturePanel;
     private javax.swing.JPanel categoryPanel;
     private javax.swing.JPanel checkPaymentPanel;
@@ -3710,6 +3722,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel fpDealsLabel;
     private javax.swing.JLabel fpDealsLabel1;
     private javax.swing.JLabel fpHistoryLabel;
+    private javax.swing.JLabel fpHistoryLabel1;
     private javax.swing.JLabel fpMyFavoritesLabel;
     private javax.swing.JLabel fpMyShoppingBagsLabel;
     private javax.swing.JLabel fpRecipesLabel;
