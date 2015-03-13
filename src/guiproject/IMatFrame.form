@@ -137,7 +137,7 @@
                 <Property name="text" type="java.lang.String" value="Favoriter"/>
                 <Property name="toolTipText" type="java.lang.String" value="Visa favoriter"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
+                  <Color id="Handmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -150,7 +150,7 @@
                 <Property name="text" type="java.lang.String" value="Erbjudanden"/>
                 <Property name="toolTipText" type="java.lang.String" value="Visa erbjudanden"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
+                  <Color id="Handmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -214,9 +214,9 @@
                   <Component id="historyBtn" min="-2" pref="96" max="-2" attributes="0"/>
                   <EmptySpace pref="701" max="32767" attributes="0"/>
                   <Component id="accountImage" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="tpMyAccountLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -237,16 +237,12 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="accountImage" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="tpMyAccountLabel" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="accountImage" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="tpMyAccountLabel" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="49" pref="49" max="-2" attributes="0"/>
@@ -264,7 +260,7 @@
             <Property name="text" type="java.lang.String" value="Mitt konto"/>
             <Property name="toolTipText" type="java.lang.String" value="Visa mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Handmark&#xf6;r"/>
             </Property>
           </Properties>
           <Events>
@@ -278,7 +274,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Visa mitt konto"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Handmark&#xf6;r"/>
             </Property>
           </Properties>
           <Events>
@@ -297,6 +293,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Mina matkassar"/>
             <Property name="toolTipText" type="java.lang.String" value="Se mina matkassar"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myShoppingBagsBtnActionPerformed"/>
@@ -312,6 +311,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Recept"/>
             <Property name="toolTipText" type="java.lang.String" value="Hitta recept"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recipesBtnActionPerformed"/>
@@ -327,6 +329,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Historik"/>
             <Property name="toolTipText" type="java.lang.String" value="Se information om tidigare best&#xe4;llningar"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historyBtnActionPerformed"/>
@@ -369,7 +374,7 @@
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="G&#xe5; till startsidan"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
+                  <Color id="Handmark&#xf6;r"/>
                 </Property>
               </Properties>
               <Events>
@@ -731,14 +736,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPane4" min="-2" pref="191" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="fpHistoryLabel" min="-2" pref="107" max="-2" attributes="0"/>
-                              <EmptySpace min="73" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane4" alignment="0" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="fpHistoryLabel" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -1506,7 +1505,7 @@
                           </StringArray>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1556,7 +1555,7 @@
                         <Property name="selectedIndex" type="int" value="5"/>
                         <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1588,7 +1587,7 @@
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Standardmark&#xf6;r"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1729,7 +1728,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1745,7 +1744,7 @@
                             </Property>
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -1799,7 +1798,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Standardmark&#xf6;r"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1965,7 +1964,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
@@ -2002,7 +2001,7 @@
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Standardmark&#xf6;r"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
@@ -2280,7 +2279,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="productScrollPane" min="-2" pref="416" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="recommendedProductsPanel" pref="0" max="32767" attributes="0"/>
+                                  <Component id="recommendedProductsPanel" pref="427" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2861,7 +2860,7 @@
                             <Property name="selectedIndex" type="int" value="1"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -2876,7 +2875,7 @@
                               </StringArray>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -2930,7 +2929,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Standardmark&#xf6;r"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -3122,7 +3121,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -3331,7 +3330,7 @@
                               </StringArray>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3378,7 +3377,7 @@
                             <Property name="selectedIndex" type="int" value="5"/>
                             <Property name="toolTipText" type="java.lang.String" value="M&#xe5;nad"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3407,7 +3406,7 @@
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value="&#xc5;r"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Standardmark&#xf6;r"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3472,35 +3471,30 @@
                               </Group>
                               <EmptySpace pref="224" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="acceptDeliveryLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="acceptSeparator4" min="-2" pref="215" max="-2" attributes="0"/>
-                                              <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="acceptAddressLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="acceptPostCodeLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="acceptPaymentLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="acceptSeparator3" min="-2" pref="215" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="acceptValidMonthYearLabel" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="acceptCardTypeLabel" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="acceptCardNumberLabel" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="acceptCardHolderLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="acceptDeliveryLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptSeparator4" min="-2" pref="215" max="-2" attributes="0"/>
+                                          <Component id="acceptNameLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptAddressLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptPostCodeLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptPaymentLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="acceptSeparator3" min="-2" pref="215" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="acceptValidMonthYearLabel" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="acceptCardTypeLabel" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="acceptCardNumberLabel" min="-2" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Component id="acceptCardHolderLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
                                           <Component id="acceptDeliveryTime" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="backButtonToPayment" min="-2" max="-2" attributes="0"/>
@@ -3727,6 +3721,9 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="14" style="0"/>
                         </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Leveranstid"/>
                       </Properties>
                     </Component>
@@ -3920,7 +3917,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="0 st"/>
           </Properties>
         </Component>
@@ -3929,7 +3926,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="varor"/>
+            <Property name="text" type="java.lang.String" value="Varor"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartPanelTotalCostLabel">
@@ -3940,7 +3937,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="0 kr"/>
           </Properties>
         </Component>
