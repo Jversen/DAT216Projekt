@@ -302,14 +302,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
     
     public void setDeliveryAdress(){
+        
         acceptNameLabel.setText(checkoutFirstNameTF.getText() + " " + checkoutLastNameTF.getText());
         acceptAddressLabel.setText(checkoutAddressTF.getText());
         acceptPostCodeLabel.setText(checkoutPostCodeTF.getText());
         acceptDeliveryTime.setText("Leveranstid: " + deliveryTimeComboBox1.getSelectedItem().toString());
         acceptCardTypeLabel.setText(checkoutCardTypeCB.getSelectedItem().toString());
+        
+        if (checkoutCardNumberTF.getText().length() >= 10){
         acceptCardNumberLabel.setText("****" + checkoutCardNumberTF.getText().substring(10));
-
-        acceptValidMonthYearLabel.setText("Utgångsdatum: " + checkoutValidMonthCB.getSelectedItem().toString() + "/" + checkoutValidYearCB.getSelectedItem().toString());
+        }
+        acceptValidMonthYearLabel.setText("Utgångsdatum: " + checkoutValidMonthCB.getSelectedItem().toString() + "/" + checkoutValidYearCB.getSelectedItem());
         acceptCardHolderLabel.setText("Kortinnehavare: " + checkoutCardHolderTF.getText());
            
     }
@@ -333,7 +336,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     public IMatFrame() {
         initComponents();
         this.gpCon = new GUIProject();
-        
+        gpCon.iMDH.reset();
         cl = (CardLayout)featurePanel.getLayout();
         cl2 = (CardLayout)productPanel.getLayout();
        
@@ -342,7 +345,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         
         updateOrderListModel();
         startLatestOrdersDisplayPanel.setLayout(new GridLayout(1, 20, 10, 1));
-//        gpCon.iMDH.reset();
+        
         refreshStartPage();
         
         revalidate();
@@ -3439,6 +3442,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_backToShoppingCart
 
     private void backToStore(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToStore
+        refreshStartPage();
+        cartContentsPanel.removeAll();
         cl.show(featurePanel, "cardStart");
         cl2.show(productPanel, "shoppingCart");
     }//GEN-LAST:event_backToStore
@@ -3495,10 +3500,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_accountImageMouseClicked
 
     private void addHistoryToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHistoryToCartActionPerformed
-        System.out.println("ey" + orderHistoryList.getSelectedIndex());
+//        System.out.println("ey" + orderHistoryList.getSelectedIndex());
+        if (orderHistoryList.getSelectedIndex() == 0 || orderHistoryList.getSelectedIndex() > 0){
         gpCon.getHistory(this, orderHistoryList.getSelectedIndex());
         
         gpCon.addHistoryToCart(this);
+    }
     }//GEN-LAST:event_addHistoryToCartActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
