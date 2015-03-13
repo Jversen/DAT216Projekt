@@ -17,6 +17,7 @@ public class RecProductCard extends javax.swing.JPanel {
 
     Product prod;
     IMatFrame imf;
+    int value;
     
     /**
      * Creates new form historyObjectCard
@@ -28,7 +29,8 @@ public class RecProductCard extends javax.swing.JPanel {
         nameLabel.setText(prod.getName());
         imageLabelCart.setIcon(imf.gpCon.getImageCustom(prod, 25,25));
         priceLabel.setText(""+prod.getPrice());
-        jSpinner2.setValue(1);
+        //jSpinner2.setValue(1);
+        this.value= (int)jSpinner2.getValue();
         
     }
 
@@ -119,7 +121,9 @@ public class RecProductCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       //imf.gpCon.sc.addProduct(prod, value);
+       imf.gpCon.addToCart(prod, value, imf);
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
