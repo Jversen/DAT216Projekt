@@ -336,7 +336,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     public IMatFrame() {
         initComponents();
         this.gpCon = new GUIProject();
-        gpCon.iMDH.reset();
+//        gpCon.iMDH.reset();
         cl = (CardLayout)featurePanel.getLayout();
         cl2 = (CardLayout)productPanel.getLayout();
        
