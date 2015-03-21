@@ -18,19 +18,25 @@ public class RecProductCard extends javax.swing.JPanel {
     Product prod;
     IMatFrame imf;
     int value;
-    
+    boolean pinkBG;
     /**
      * Creates new form historyObjectCard
      */
-    public RecProductCard(Product prod, IMatFrame imf) {
+    public RecProductCard(Product prod, IMatFrame imf, boolean pinkBG) {
         initComponents();
         this.prod = prod;
         this.imf = imf;
+        this.pinkBG = pinkBG;
+        
         nameLabel.setText(prod.getName());
         imageLabelCart.setIcon(imf.gpCon.getImageCustom(prod, 25,25));
-        priceLabel.setText(""+prod.getPrice());
-        //jSpinner2.setValue(1);
+        priceLabel.setText(""+prod.getPrice() + prod.getUnit());
         this.value= (int)jSpinner2.getValue();
+        
+        if (pinkBG){
+            jPanel1.setBackground(new java.awt.Color(215,173,173));
+            imagePanel.setBackground(new java.awt.Color(215,173,173));
+        } 
         
     }
 
@@ -50,6 +56,8 @@ public class RecProductCard extends javax.swing.JPanel {
         jSpinner2 = new javax.swing.JSpinner();
         priceLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 248));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(196, 43, 43), new java.awt.Color(156, 25, 25)));
@@ -78,10 +86,6 @@ public class RecProductCard extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(201, 201, 201))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -92,6 +96,10 @@ public class RecProductCard extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(157, 157, 157))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,13 +126,12 @@ public class RecProductCard extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       //imf.gpCon.sc.addProduct(prod, value);
-       imf.gpCon.addToCart(prod, value, imf);
+    imf.gpCon.addToCart(prod, value, imf);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

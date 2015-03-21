@@ -11,6 +11,10 @@
       </Border>
     </Property>
   </Properties>
+  <Events>
+    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="formMouseEntered"/>
+    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="formMouseExited"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -51,13 +55,17 @@
               <SpinnerModel initial="1" maximum="100" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSpinner1MouseEntered"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="addProductButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
-            <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till i varukorg"/>
+            <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till i kundvagn"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addProductButtonMouseEntered"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addProductButtonActionPerformed"/>
           </Events>
         </Component>
@@ -99,7 +107,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
                   <Component id="productCardName" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
                   <Component id="pcFavLabel" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -123,11 +131,12 @@
         <Component class="javax.swing.JLabel" name="pcFavLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iMatFav0w.png"/>
+              <Image iconType="3" name="/invisibleHeart.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till i favoriter"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pcFavLabelMouseEntered"/>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pcFavLabelMousePressed"/>
           </Events>
         </Component>

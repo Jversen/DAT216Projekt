@@ -17,19 +17,27 @@ public class HistoryObjectCard extends javax.swing.JPanel {
     private IMatDataHandler dataHandler;
     ShoppingItem si;
     IMatFrame imf;
-    
+    boolean pinkBG;
     /**
      * Creates new form historyObjectCard
      */
-    public HistoryObjectCard(ShoppingItem si, IMatFrame imf) {
+    public HistoryObjectCard(ShoppingItem si, IMatFrame imf, boolean pinkBG) {
         initComponents();
         this.dataHandler = IMatDataHandler.getInstance();
         this.si = si;
         this.imf = imf;
+        this.pinkBG = pinkBG;
+        
         nameLabel.setText(si.getProduct().getName());
         imageLabelCart.setIcon(dataHandler.getImageIcon(si.getProduct(), 50,50));
         amountLabel.setText(""+si.getAmount());
-        priceLabel.setText(""+si.getProduct().getPrice());
+        priceLabel.setText(""+si.getTotal() + " kr");
+        
+        if (pinkBG){
+            jPanel1.setBackground(new java.awt.Color(215,173,173));
+            imagePanel.setBackground(new java.awt.Color(215,173,173));
+            editPanel.setBackground(new java.awt.Color(215,173,173));
+        } 
     }
        public ShoppingItem getShoppingItem(){
            return si;
@@ -53,6 +61,8 @@ public class HistoryObjectCard extends javax.swing.JPanel {
         priceLabel = new javax.swing.JLabel();
         amountLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 248, 248));
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 248));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(196, 43, 43), new java.awt.Color(156, 25, 25)));

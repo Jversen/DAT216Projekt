@@ -59,9 +59,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     public void updateOrderListModel(){
         listModel.clear();
             for (int i = 0; i<gpCon.iMDH.getOrders().size(); i++){
-//                System.out.println("uppdaterar orderlistmodel");
                 listModel.addElement(gpCon.iMDH.getOrders().get(i).getDate());
-//                System.out.println(listModel.get(i).toString());
             }
         orderHistoryList.setModel(listModel);
     }
@@ -83,15 +81,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         }
         
     }
-//    public void updateCartProd(List<CartProdObject> cpo){
-//        System.out.print("updateCartProd :" + cpo.size());
-//        for(ShoppingItem sc: gpCon.sc.getItems()){
-//            for(CartProdObject cp: cpo){
-//                sc.setAmount(cp.getSpinnerValue());
-//            }
-//        }
-//        
-//    }
+
     
     // DISPLAY METHODS ---------------------------------------------//
     
@@ -99,7 +89,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         //lägger till Produkter i kassa-panelen  
         cartContentsPanel.removeAll();
         
-        GridLayout layout = new GridLayout(gpCon.cpo.size()+4,1, 5,5);
+        GridLayout layout = new GridLayout(gpCon.cpo.size()+4,1, 0,0);
         cartContentsPanel.setLayout(layout);
          
         for (CartProdObject cp : cpo) {
@@ -110,7 +100,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
         
     public void displayFavorites(){
-//        System.out.println("gpcon.historyCards.size()" + gpCon.historyCards.size());
+
         
         myFavoritesDisplayPanel.removeAll();
         GridLayout layout = new GridLayout(0,3,5,5);
@@ -119,15 +109,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         
         for (ProductCard pc : gpCon.productCards) {
             myFavoritesDisplayPanel.add(pc);
-            System.out.println(pc.getProduct() + " " + gpCon.iMDH.isFavorite(pc.getProduct()));
         }
         
         revalidate();
         repaint();
     }    
     private void displayHistory(){
-//        System.out.println("gpcon.historyCards.size()" + gpCon.historyCards.size());
-        GridLayout layout = new GridLayout(gpCon.historyCards.size()+4,1);
+        GridLayout layout = new GridLayout(gpCon.historyCards.size()+4,1, 0, 0);
         historyItemShower.setLayout(layout);
         historyItemShower.removeAll();
         double cost = 0;
@@ -171,20 +159,17 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     
     public void displayCheckoutCart(ArrayList<CheckoutProductCard> cpoc){
         //lägger till produkter i checkout-panelen
-        GridLayout layout2 = new GridLayout(cpoc.size()+4,1,5,5);
+        GridLayout layout2 = new GridLayout(cpoc.size()+4,1,0,0);
         prodPanel.setLayout(layout2);
         
         prodPanel.removeAll();
         if(cpoc.isEmpty()){
             JLabel noSearchResults = new JLabel("Varukorgen är tom");
             prodPanel.add(noSearchResults);
-//            System.out.print("displayCheckoutCart empty!");
         }else{
             for(CheckoutProductCard cp: cpoc) {
             cp.setSize(40, prodPanel.getWidth());
             prodPanel.add(cp);  
-//                System.out.println(cp.getHeight());
-//                System.out.println(cp.getWidth());
             }
         }
         cl2.show(productPanel, "shoppingCartPanel");
@@ -534,10 +519,11 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }
     
     public void addRecommendations(){
+        boolean pinkBG = true;
         boolean match = false;
+        int nbrOfRecs = 0;
         recProdsInsideScroll.removeAll();
-        GridLayout layout = new GridLayout(30,1, 3,3);
-        recProdsInsideScroll.setLayout(layout);
+        
         
         for (int i = 0; i < gpCon.iMDH.favorites().size(); i++){
             for (int j = 0; j < gpCon.sc.getItems().size(); j++){
@@ -546,9 +532,16 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 }
             }
             if (match == false){
-//                System.out.println("lägger till " + gpCon.iMDH.favorites().get(i).toString() + " till glömtlista.");
-
-                recProdsInsideScroll.add(new RecProductCard(gpCon.iMDH.favorites().get(i), this));
+                nbrOfRecs++;
+                GridLayout layout = new GridLayout(nbrOfRecs,1, 0,0);
+                recProdsInsideScroll.setLayout(layout);
+                
+                recProdsInsideScroll.add(new RecProductCard(gpCon.iMDH.favorites().get(i), this, pinkBG));
+                if (pinkBG == true){
+                pinkBG = false;
+                } else if (pinkBG == false){
+                pinkBG = true;
+                }
             }
             match = false;
         }
@@ -578,7 +571,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         JLabel tempLabel1 = (JLabel)evt.getSource();
         fpHistoryLabel1.setText(tempLabel1.getText());
         categoryStrings.clear();
-        System.out.println("Labeltext: " + tempLabel1.getText());
         switch(tempLabel1.getText()){
             case "Bröd och torrvaror": 
                 redrawCategories();
@@ -587,10 +579,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryStrings.add("FLOUR_SUGAR_SALT");
                 categoryStrings.add("PASTA");
                 categoryStrings.add("POTATO_RICE");
-                
-                for (int i = 0; i<categoryStrings.size(); i++){
-//                    System.out.println(categoryStrings.get(i).toString());
-                }
+               
                 
                 gpCon.listCatProds(categoryStrings, this);
                 
@@ -606,9 +595,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryStrings.add("HOT_DRINKS");
                 categoryStrings.add("COLD_DRINKS");
                                 
-                for (int i = 0; i<categoryStrings.size(); i++){
-//                    System.out.println(categoryStrings.get(i).toString());
-                }
                 
                 gpCon.listCatProds(categoryStrings, this);
                 
@@ -633,11 +619,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 categoryStrings.add("NUTS_AND_SEEDS");
                 categoryStrings.add("ROOT_VEGETABLE");
                 
-                
-                for (int i = 0; i<categoryStrings.size(); i++){
-//                    System.out.println(categoryStrings.get(i).toString());
-                }
-                
+                               
                 gpCon.listCatProds(categoryStrings, this);
                 
                 displayGroceries();
@@ -1046,7 +1028,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         lpFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpFavoritesLabel.setText("Favoriter");
         lpFavoritesLabel.setToolTipText("Visa favoriter");
-        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lpFavoritesLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lpFavoritesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpFavoritesLabelMouseClicked(evt);
@@ -1057,7 +1039,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         lpDealsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lpDealsLabel.setText("Erbjudanden");
         lpDealsLabel.setToolTipText("Visa erbjudanden");
-        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lpDealsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lpDealsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lpDealsLabelMouseClicked(evt);
@@ -1111,7 +1093,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         tpMyAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         tpMyAccountLabel.setText("Mitt konto");
         tpMyAccountLabel.setToolTipText("Visa mitt konto");
-        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tpMyAccountLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tpMyAccountLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tpMyAccountLabelMouseClicked(evt);
@@ -1120,7 +1102,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         accountImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatAvatar2.png"))); // NOI18N
         accountImage.setToolTipText("Visa mitt konto");
-        accountImage.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        accountImage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         accountImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 accountImageMouseClicked(evt);
@@ -1176,7 +1158,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         iMatLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         iMatLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logga.png"))); // NOI18N
         iMatLabel.setToolTipText("Gå till startsidan");
-        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        iMatLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iMatLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 iMatLabelMouseClicked(evt);
@@ -1282,6 +1264,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jScrollPane6.setViewportView(startLatestOrdersDisplayPanel);
 
         fpDealsLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fpDealsLabel1.setForeground(new java.awt.Color(51, 51, 51));
         fpDealsLabel1.setText("Start");
 
         javax.swing.GroupLayout startViewPanelLayout = new javax.swing.GroupLayout(startViewPanel);
@@ -1326,7 +1309,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(startViewPanel, "cardStart");
 
+        myShoppingBagsViewPanel.setBackground(new java.awt.Color(255, 248, 248));
+
         fpMyShoppingBagsLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fpMyShoppingBagsLabel.setForeground(new java.awt.Color(51, 51, 51));
         fpMyShoppingBagsLabel.setText("Mina matkassar");
 
         javax.swing.GroupLayout myShoppingBagsViewPanelLayout = new javax.swing.GroupLayout(myShoppingBagsViewPanel);
@@ -1347,10 +1333,13 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         featurePanel.add(myShoppingBagsViewPanel, "cardBags");
 
         fpMyFavoritesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fpMyFavoritesLabel.setForeground(new java.awt.Color(51, 51, 51));
         fpMyFavoritesLabel.setText("Mina favoriter");
 
         jScrollPane5.getVerticalScrollBar().setUnitIncrement(18);
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        myFavoritesDisplayPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         javax.swing.GroupLayout myFavoritesDisplayPanelLayout = new javax.swing.GroupLayout(myFavoritesDisplayPanel);
         myFavoritesDisplayPanel.setLayout(myFavoritesDisplayPanelLayout);
@@ -1385,6 +1374,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(myFavoritesViewPanel, "cardFavorites");
 
+        recipesViewPanel.setBackground(new java.awt.Color(255, 248, 248));
+        recipesViewPanel.setForeground(new java.awt.Color(51, 51, 51));
+
         fpRecipesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         fpRecipesLabel.setText("Recept");
 
@@ -1405,7 +1397,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(recipesViewPanel, "cardRecipes");
 
+        dealsViewPanel.setBackground(new java.awt.Color(255, 248, 248));
+
         fpDealsLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fpDealsLabel.setForeground(new java.awt.Color(51, 51, 51));
         fpDealsLabel.setText("Erbjudanden");
 
         javax.swing.GroupLayout dealsViewPanelLayout = new javax.swing.GroupLayout(dealsViewPanel);
@@ -1425,13 +1420,20 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(dealsViewPanel, "cardDeals");
 
+        historyViewPanel.setBackground(new java.awt.Color(255, 248, 248));
+
+        fpHistoryLabel.setBackground(new java.awt.Color(255, 248, 248));
         fpHistoryLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fpHistoryLabel.setForeground(new java.awt.Color(51, 51, 51));
         fpHistoryLabel.setText("Historik");
 
+        jScrollPane3.setBackground(new java.awt.Color(255, 248, 248));
+        jScrollPane3.getVerticalScrollBar().setUnitIncrement(18);
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel2.setBackground(new java.awt.Color(255, 248, 248));
 
+        historyItemShower.setBackground(new java.awt.Color(255, 248, 248));
         historyItemShower.setLayout(new java.awt.GridLayout(1, 2));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1449,6 +1451,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         jScrollPane3.setViewportView(jPanel2);
 
+        jScrollPane4.setBackground(new java.awt.Color(255, 248, 248));
+
+        orderHistoryList.setBackground(new java.awt.Color(255, 248, 248));
         orderHistoryList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "test", "listSak2" };
             public int getSize() { return strings.length; }
@@ -1464,7 +1469,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         jScrollPane4.setViewportView(orderHistoryList);
 
         addHistoryToCart.setBackground(new java.awt.Color(215, 173, 173));
-        addHistoryToCart.setText("Lägg till i varukorg");
+        addHistoryToCart.setText("Lägg till i kundvagn");
+        addHistoryToCart.setToolTipText("Lägg alla artiklar från denna order i kundvagnen");
         addHistoryToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addHistoryToCartActionPerformed(evt);
@@ -1472,19 +1478,25 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         });
 
         historyNbrOfItemsLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        historyNbrOfItemsLabel.setForeground(new java.awt.Color(51, 51, 51));
         historyNbrOfItemsLabel.setText("Antal varor");
 
         historyNbrOfItemsPHLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        historyNbrOfItemsPHLabel.setForeground(new java.awt.Color(51, 51, 51));
         historyNbrOfItemsPHLabel.setText("0");
 
         historyTotalCostlabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        historyTotalCostlabel.setForeground(new java.awt.Color(51, 51, 51));
         historyTotalCostlabel.setText("Total kostnad");
 
         historyTotalCostPHLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        historyTotalCostPHLabel.setForeground(new java.awt.Color(51, 51, 51));
         historyTotalCostPHLabel.setText("0 kr");
 
         jButton1.setBackground(new java.awt.Color(179, 62, 62));
         jButton1.setText("Radera order");
+        jButton1.setToolTipText("Radera order från historiken");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1498,9 +1510,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             .addGroup(historyViewPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fpHistoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(fpHistoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addGap(113, 113, 113)
                 .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1515,9 +1527,9 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addGap(47, 47, 47))
             .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyViewPanelLayout.createSequentialGroup()
-                    .addContainerGap(225, Short.MAX_VALUE)
+                    .addContainerGap(227, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(45, Short.MAX_VALUE)))
+                    .addContainerGap(47, Short.MAX_VALUE)))
         );
         historyViewPanelLayout.setVerticalGroup(
             historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1527,20 +1539,22 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                         .addGap(19, 19, 19)
                         .addComponent(addHistoryToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(historyViewPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(historyViewPanelLayout.createSequentialGroup()
+                                .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(historyNbrOfItemsLabel)
+                                    .addComponent(historyNbrOfItemsPHLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(historyTotalCostlabel)
+                                    .addComponent(historyTotalCostPHLabel)))
+                            .addComponent(jButton1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(historyViewPanelLayout.createSequentialGroup()
-                .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fpHistoryLabel)
-                    .addComponent(historyNbrOfItemsLabel)
-                    .addComponent(historyNbrOfItemsPHLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(historyTotalCostlabel)
-                    .addComponent(historyTotalCostPHLabel))
+                .addComponent(fpHistoryLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(historyViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyViewPanelLayout.createSequentialGroup()
@@ -2220,7 +2234,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         featurePanel.add(myAccountPanel, "myAccount");
 
-        checkoutPanel.setBackground(new java.awt.Color(255, 255, 255));
+        checkoutPanel.setBackground(new java.awt.Color(255, 248, 248));
         checkoutPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         progressPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -2303,7 +2317,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         productPanel.setBackground(new java.awt.Color(204, 204, 255));
         productPanel.setLayout(new java.awt.CardLayout());
 
-        shoppingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
+        shoppingCartPanel.setBackground(new java.awt.Color(255, 248, 248));
 
         productScrollPane.getVerticalScrollBar().setUnitIncrement(18);
         productScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -2338,7 +2352,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         priceLabel.setForeground(new java.awt.Color(51, 51, 51));
         priceLabel.setText("pris");
 
-        recommendedProductsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        recommendedProductsPanel.setBackground(new java.awt.Color(255, 248, 248));
         recommendedProductsPanel.setPreferredSize(new java.awt.Dimension(192, 400));
 
         recommendedProductsLabel.setFont(new java.awt.Font("Gautami", 0, 18)); // NOI18N
@@ -2352,6 +2366,8 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         recommendedProductsScrollPane.getVerticalScrollBar().setUnitIncrement(18);
         recommendedProductsScrollPane.setBorder(null);
         recommendedProductsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        recProdsInsideScroll.setBackground(new java.awt.Color(255, 248, 248));
 
         javax.swing.GroupLayout recProdsInsideScrollLayout = new javax.swing.GroupLayout(recProdsInsideScroll);
         recProdsInsideScroll.setLayout(recProdsInsideScrollLayout);
@@ -2384,7 +2400,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
                 .addContainerGap()
                 .addComponent(recommendedProductsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recommendedProductsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -3199,14 +3215,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
         cartImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shoppingCart.png"))); // NOI18N
         cartImage.setToolTipText("Kundvagn");
-        cartImage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cartImageMouseClicked(evt);
-            }
-        });
 
         jButton2.setBackground(new java.awt.Color(179, 62, 62));
-        jButton2.setText("Töm korg");
+        jButton2.setText("Töm vagn");
+        jButton2.setToolTipText("Ta bort alla artiklar från kundvagnen");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -3243,24 +3255,20 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cartPanelLayout.setVerticalGroup(
             cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cartPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cartPanelLayout.createSequentialGroup()
-                                .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cartPanelNbrOfItemsLabel)
-                                    .addComponent(tpCartContentsNumber))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cartPanelTotalCostLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tpCartSumLabel)))
-                            .addComponent(cartImage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(cartPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(cartPanelLayout.createSequentialGroup()
+                            .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cartPanelNbrOfItemsLabel)
+                                .addComponent(tpCartContentsNumber))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(cartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cartPanelTotalCostLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tpCartSumLabel)))
+                        .addComponent(cartImage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
                 .addComponent(cartPanelScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(goToCashierBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3286,7 +3294,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_recipesBtnActionPerformed
 
     private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
-                cl.show(featurePanel, "cardHistory");    
+        cl.show(featurePanel, "cardHistory");    
         displayHistory();
         revalidate();
         repaint();
@@ -3355,16 +3363,15 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
             nextStepButtonToPersonalInfo.setEnabled(true);
         }
         
-        //System.out.println(gpCon.sc.getItems().size() + " items in cart");
         
         resetActivePurchaseStep();
-//        System.out.print("Kassa cpo-size: " + gpCon.cpo.size());
         
         cl2.show(productPanel, "shoppingCartPanel");
         cl.show(featurePanel, "checkout");
 
         progressPanel.setVisible(true);
         recommendedProductsPanel.setVisible(true);
+        
         
         addRecommendations();
         
@@ -3441,9 +3448,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         gpCon.iMDH.placeOrder();
         gpCon.iMDH.shutDown();
         updateOrderListModel();
-//        listModel.clear();
-        
-//        System.out.println("antal ordrar: " + gpCon.iMDH.getOrders().size());
+
         cl2.show(productPanel, "end");
         progressPanel.setVisible(false);
     }//GEN-LAST:event_acceptPurchase
@@ -3462,7 +3467,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
 
     private void backToShoppingCart(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToShoppingCart
         changeActivePurchaseStep("shoppingCart", "personalInfoDelivery");
-//        cl2.show(productPanel, "shoppingCart");
         
         if(cartIsEmpty()){
             nextStepButtonToPersonalInfo.setEnabled(false);
@@ -3497,13 +3501,6 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
         cl.show(featurePanel, "cardDeals");
     }//GEN-LAST:event_lpDealsLabelMouseClicked
 
-    private void cartImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartImageMouseClicked
-        gpCon.sc.clear();
-        gpCon.cpo.clear();
-        cartContentsPanel.removeAll();
-        gpCon.iMDH.shutDown();
-    }//GEN-LAST:event_cartImageMouseClicked
-
     private void checkoutSaveButton(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutSaveButton
         gpCon.iMDH.getCustomer().setFirstName(checkoutFirstNameTF.getText());
         gpCon.iMDH.getCustomer().setLastName(checkoutLastNameTF.getText());
@@ -3519,7 +3516,7 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     private void orderHistoryListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_orderHistoryListValueChanged
                 
                 if (orderHistoryList.getSelectedIndex() >(-1)){
-//                System.out.println("orderindex: " + orderHistoryList.getSelectedIndex());
+
                 gpCon.getHistory(this, orderHistoryList.getSelectedIndex());
                 historyItemShower.removeAll();
                 displayHistory();
@@ -3545,11 +3542,12 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_accountImageMouseClicked
 
     private void addHistoryToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHistoryToCartActionPerformed
-//        System.out.println("ey" + orderHistoryList.getSelectedIndex());
+
         if (orderHistoryList.getSelectedIndex() == 0 || orderHistoryList.getSelectedIndex() > 0){
         gpCon.getHistory(this, orderHistoryList.getSelectedIndex());
         
         gpCon.addHistoryToCart(this);
+        gpCon.iMDH.shutDown();
     }
     }//GEN-LAST:event_addHistoryToCartActionPerformed
 
@@ -3558,11 +3556,10 @@ public class IMatFrame extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//        for(ShoppingItem sh: gpCon.sc.getItems()){
-//            gpCon.sc.removeItem(sh);
-//        }
+
         gpCon.sc.clear();
         gpCon.addToCart(null, 0, this);
+        gpCon.iMDH.shutDown();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

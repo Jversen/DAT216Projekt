@@ -22,37 +22,33 @@ public class ProductCard extends javax.swing.JPanel {
         initComponents();
         this.prod = prod;
         
-//        System.out.println("favorites: " + gpCon.iMDH.favorites());
         this.imf = imf;
         pictureLabel.setIcon(gpCon.getImageCustom(prod, 100, 100));
         productCardName.setText(prod.getName());
         priceLabel.setText(""+ prod.getPrice() + " " + prod.getUnit());
         
         updateHeart();
-        
+        if (!gpCon.iMDH.isFavorite(prod)){
+        pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/invisibleHeart.png")));
+        }
        }
       
       public void updateHeart(){
           if (gpCon.iMDH.isFavorite(prod)){
-            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
+            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/filledHeart.png")));
         }else{
-            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png")));
+            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/emptyHeart.png")));
         }
       }
       public void toggleFavorite(){
 
           if (gpCon.iMDH.isFavorite(prod)){
             gpCon.iMDH.removeFavorite(prod);
-//            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png")));
         } else if (!gpCon.iMDH.isFavorite(prod)){
             gpCon.iMDH.addFavorite(prod);
-//            pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav1bc.png")));
         }
          
-          for (int i = 0; i<gpCon.iMDH.favorites().size(); i++){
-          System.out.println("favorites: " + gpCon.iMDH.favorites().get(i));
-          }
-        System.out.println("gpCon.iMDH.isFavorite(prod): " + gpCon.iMDH.isFavorite(prod));
+
         updateHeart();
         gpCon.getFavorites(imf);
         gpCon.iMDH.shutDown();
@@ -68,6 +64,11 @@ public class ProductCard extends javax.swing.JPanel {
         return pc;
     }
   
+    public void unHoverHeart(){
+        if (!gpCon.iMDH.isFavorite(prod)){
+        pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/invisibleHeart.png")));
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,6 +84,14 @@ public class ProductCard extends javax.swing.JPanel {
         pcFavLabel = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(201, 32, 32), new java.awt.Color(166, 3, 3)));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+        });
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 248));
@@ -91,10 +100,20 @@ public class ProductCard extends javax.swing.JPanel {
         jPanel1.add(priceLabel);
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 0, 100, 1));
+        jSpinner1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jSpinner1MouseEntered(evt);
+            }
+        });
         jPanel1.add(jSpinner1);
 
         addProductButton.setText("Lägg till");
-        addProductButton.setToolTipText("Lägg till i varukorg");
+        addProductButton.setToolTipText("Lägg till i kundvagn");
+        addProductButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addProductButtonMouseEntered(evt);
+            }
+        });
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProductButtonActionPerformed(evt);
@@ -113,9 +132,12 @@ public class ProductCard extends javax.swing.JPanel {
 
         productCardName.setText("jLabel1");
 
-        pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iMatFav0w.png"))); // NOI18N
+        pcFavLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/invisibleHeart.png"))); // NOI18N
         pcFavLabel.setToolTipText("Lägg till i favoriter");
         pcFavLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pcFavLabelMouseEntered(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pcFavLabelMousePressed(evt);
             }
@@ -128,7 +150,7 @@ public class ProductCard extends javax.swing.JPanel {
             .addGroup(HeadLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(productCardName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(pcFavLabel))
         );
         HeadLayout.setVerticalGroup(
@@ -144,11 +166,33 @@ public class ProductCard extends javax.swing.JPanel {
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
         gpCon.addToCart(this.prod, this.getSpinnerValue(), imf);
+        gpCon.iMDH.shutDown();
     }//GEN-LAST:event_addProductButtonActionPerformed
 
     private void pcFavLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pcFavLabelMousePressed
         toggleFavorite();
     }//GEN-LAST:event_pcFavLabelMousePressed
+
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+        updateHeart();
+        
+    }//GEN-LAST:event_formMouseEntered
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        unHoverHeart();
+    }//GEN-LAST:event_formMouseExited
+
+    private void jSpinner1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSpinner1MouseEntered
+        updateHeart();
+    }//GEN-LAST:event_jSpinner1MouseEntered
+
+    private void addProductButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addProductButtonMouseEntered
+        updateHeart();
+    }//GEN-LAST:event_addProductButtonMouseEntered
+
+    private void pcFavLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pcFavLabelMouseEntered
+        updateHeart();
+    }//GEN-LAST:event_pcFavLabelMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

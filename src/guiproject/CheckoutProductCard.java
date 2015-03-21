@@ -19,22 +19,32 @@ public class CheckoutProductCard extends javax.swing.JPanel {
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private Product product;
-   // private ShoppingItem si;
+    boolean pinkBG;
 
     /**
      * Creates new form CheckoutProductCard
      */
 
-    public CheckoutProductCard(ShoppingItem si, IMatFrame imf){
+    public CheckoutProductCard(ShoppingItem si, IMatFrame imf, boolean pinkBG){
         initComponents();
-
+        this.pinkBG = pinkBG;
         this.product = si.getProduct();
         
-        this.checkoutProductLabel.setText(product.getName());
-        this.checkoutPriceLabel.setText(product.getPrice() + "");
-        this.checkoutProductIcon.setIcon(imf.gpCon.getImageCustom(product, 100, 100));
+        updateLabels(si, imf);
+        
+        if (pinkBG){
+            checkoutProductIcon.setBackground(new java.awt.Color(215,173,173));
+            setBackground(new java.awt.Color(215,173,173));
+        } 
+        
     }
-
+    
+    public void updateLabels(ShoppingItem si, IMatFrame imf){
+        this.checkoutProductLabel.setText(product.getName());
+        this.checkoutProductIcon.setIcon(imf.gpCon.getImageCustom(product, 100, 100));
+        checkoutAmountLabel.setText(si.getProduct().getPrice() + si.getProduct().getUnit() + " x " + si.getAmount());
+        checkoutTotalPriceLabel.setText("Totalt: "+si.getTotal() + " kr");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,9 +56,10 @@ public class CheckoutProductCard extends javax.swing.JPanel {
 
         checkoutProductIcon = new javax.swing.JLabel();
         checkoutProductLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        checkoutPriceLabel = new javax.swing.JLabel();
+        checkoutAmountLabel = new javax.swing.JLabel();
+        checkoutTotalPriceLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 248, 248));
         setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
 
         checkoutProductIcon.setBackground(new java.awt.Color(255, 255, 255));
@@ -61,13 +72,11 @@ public class CheckoutProductCard extends javax.swing.JPanel {
         checkoutProductLabel.setForeground(new java.awt.Color(51, 51, 51));
         checkoutProductLabel.setText("Produktnamn");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("kr");
+        checkoutAmountLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        checkoutAmountLabel.setText("xst");
 
-        checkoutPriceLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        checkoutPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        checkoutPriceLabel.setText("pris");
-        checkoutPriceLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        checkoutTotalPriceLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        checkoutTotalPriceLabel.setText("totkr");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -78,11 +87,11 @@ public class CheckoutProductCard extends javax.swing.JPanel {
                 .addComponent(checkoutProductIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(checkoutProductLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                .addComponent(checkoutPriceLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addGap(80, 80, 80))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(checkoutAmountLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addComponent(checkoutTotalPriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,19 +103,19 @@ public class CheckoutProductCard extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(checkoutPriceLabel)
-                            .addComponent(checkoutProductLabel))))
+                            .addComponent(checkoutProductLabel)
+                            .addComponent(checkoutAmountLabel)
+                            .addComponent(checkoutTotalPriceLabel))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel checkoutPriceLabel;
+    private javax.swing.JLabel checkoutAmountLabel;
     private javax.swing.JLabel checkoutProductIcon;
     private javax.swing.JLabel checkoutProductLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel checkoutTotalPriceLabel;
     // End of variables declaration//GEN-END:variables
 }
 

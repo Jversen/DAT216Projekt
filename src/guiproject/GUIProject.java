@@ -26,15 +26,11 @@ public class GUIProject{
      */
     
     
-    //dessa metoder bör tas bort om tid ges (getImage)
     public ImageIcon getImageCustom(Product prod, int x, int y){
         
             return iMDH.getImageIcon(prod,x,y);
     }
-//    public ImageIcon getImage50(Product prod){
-//        
-//            return iMDH.getImageIcon(prod,50,50);
-//    }
+
     
     public void createAllProducts(){
         allProducts = iMDH.getProducts();
@@ -63,47 +59,44 @@ public class GUIProject{
                        productCards.add(imf.allProductCards.get(i));
                    }
             }
-            /*
-           this.products = iMDH.favorites();
-           this.productCards.clear();
-           
-           for (int i = 0; i<products.size(); i++){
-            for (int j = 0; j<imf.allProductCards.size(); j++){
-                   if (imf.allProductCards.get(j).getProduct() == products.get(i)){
-                       productCards.add(imf.allProductCards.get(j));
-                }
-//                   imf.allProductCards.get(j).updateHeart();
-            }
-        } */
-           
     }
         
         public void getHistory(IMatFrame imf, int orderIndex){
-        
-//           orderHistory = iMDH.getOrders();
-//           System.out.println("orderIndex inuti showHistory/guip: " + orderIndex);
+        boolean pinkBG = true;
+
            Order order = iMDH.getOrders().get(orderIndex);
            
            products.clear();
            productCards.clear();
            historyCards.clear();
-//           System.out.println("Order history size: " + orderHistory.size());
+
 
            
            for (int i = 0; i<order.getItems().size(); i++){
-               historyCards.add(new HistoryObjectCard(order.getItems().get(i),imf));
+               historyCards.add(new HistoryObjectCard(order.getItems().get(i),imf, pinkBG));
+               if (pinkBG == true){
+                pinkBG = false;
+            } else if (pinkBG == false){
+                pinkBG = true;
+            }
            }
            
 
     }
     
     public void addToCart(Product p, int amount, IMatFrame imf){
+        boolean pinkBG = true;
         cpo.clear();
         if(p!=null){
           sc.addProduct(p, amount);
         }  
         for(ShoppingItem si: sc.getItems()){
-            cpo.add(new CartProdObject(si, imf));
+            cpo.add(new CartProdObject(si, imf, pinkBG));
+            if (pinkBG == true){
+                pinkBG = false;
+            } else if (pinkBG == false){
+                pinkBG = true;
+            }
         }  
         imf.displayCartPanel(cpo);    
         addToCheckoutCart(cpo, imf);
@@ -111,17 +104,28 @@ public class GUIProject{
         imf.setLabelCartCost(""+sc.getTotal());
         imf.setCashierPriceLabel(""+sc.getTotal());
         
-        GridLayout layout = new GridLayout(cpo.size()+4,1, 5,5);
+        if (cpo.size()<5){
+        GridLayout layout = new GridLayout(cpo.size()+4,1, 0,0);
         imf.setCartLayout(layout);
+        } else {
+            GridLayout layout = new GridLayout(cpo.size(),1, 0,0);
+            imf.setCartLayout(layout);
         }
+    }
 
     public void addToCheckoutCart(ArrayList<CartProdObject> cpo, IMatFrame imf){
         cpoCheckout.clear();
-        System.out.println("cpo size: " + cpo.size());
+        boolean pinkBG = true;
+        
         for(CartProdObject cp: cpo){
-            cpoCheckout.add(new CheckoutProductCard(cp.getShoppingItem(), imf));
+            
+            cpoCheckout.add(new CheckoutProductCard(cp.getShoppingItem(), imf, pinkBG));
+            if (pinkBG == true){
+                pinkBG = false;
+            } else if (pinkBG == false){
+                pinkBG = true;
+            }
         }
-        System.out.println("cpoCheckout size: " + cpoCheckout.size());
         imf.displayCheckoutCart(cpoCheckout);
     }    
     
